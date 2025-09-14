@@ -1,0 +1,33 @@
+@import './base/reset.scss';
+@import './base/font.scss';
+@import './base/globals.scss';
+
+@import './components/underline.scss';
+@import './components/button.scss';
+@import './components/select.scss';
+@import './components/input.scss';
+@import './components/checkbox.scss';
+@import './components/price_range.scss';
+@import './components/tag.scss';
+@import './components/animation.scss';
+@import './components/menu.scss';
+@import './components/modal.scss';
+@import './components/toastify.scss';
+@import './components/scrollbar.scss';
+@import './components/card_item.scss';
+@import './components/list_social.scss';
+@import './components/custom-swiper.scss';
+@import './components/scroll-to-top.scss';
+
+@import './section/header.scss';
+@import './section/slider.scss';
+@import './section/banner.scss';
+@import './section/map.scss';
+@import './section/testimonial.scss';
+@import './section/location.scss';
+@import './section/process.scss';
+@import './section/faqs.scss';
+@import './section/video.scss';
+@import './section/dashboard.scss';
+
+@import './section/layout_filter.scss';
