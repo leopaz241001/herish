@@ -1,4 +1,4 @@
-.menu_tab {
+.menu-tab {
     position: relative;
     overflow-x: auto;
     max-width: max-content;
@@ -15,8 +15,8 @@
         max-width: none;
     }
 
-    &:has(.tab_btn.is_hover.active) {
-        .tab_btn {
+    &:has(.tab-btn.is-hover.active) {
+        .tab-btn {
             filter: blur(3px);
 
             &.active {
@@ -25,7 +25,7 @@
         }
     }
 
-    .tab_btn {
+    .tab-btn {
         text-align: left;
         
         &.-before {
@@ -64,7 +64,7 @@
             }
         }
 
-        &.is_hover {
+        &.is-hover {
             transform-style: preserve-3d;
             transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
             filter: blur(0px);
@@ -72,7 +72,7 @@
     }
 }
 
-.tab_list {
+.tab-list {
     visibility: hidden;
     opacity: 0;
     transition: visibility .5s, opacity .5s;

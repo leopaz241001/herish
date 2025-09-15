@@ -24,7 +24,7 @@
         }
 
         &:hover {
-            .sub_menu {
+            .sub-menu {
                 visibility: visible;
                 opacity: 1;
                 transform: translateY(0);
@@ -33,7 +33,7 @@
         }
     }
 
-    .sub_menu {
+    .sub-menu {
         visibility: hidden;
         top: 100%;
         left: -14px;
@@ -65,7 +65,7 @@
                     background-color: var(--primary-hover-ui);
                 }
 
-                .sub_menu_two {
+                .sub-menu-two {
                     visibility: visible;
                     opacity: 1;
                     transform: translateX(0);
@@ -74,7 +74,7 @@
         }
     }
 
-    .sub_menu_two {
+    .sub-menu-two {
         visibility: hidden;
         opacity: 0;
         transform: translateX(20px);
@@ -83,18 +83,18 @@
     }
 }
 
-.list_action {
+.list-action {
     @media (max-width: 640px) {
 
         .button-main,
-        .list_icon {
+        .list-icon {
             display: none;
         }
     }
 }
 
-/* menu_mobile */
-.menu_mobile {
+/* menu-mobile */
+.menu-mobile {
     overflow: hidden;
     visibility: hidden;
     position: fixed;
@@ -116,14 +116,14 @@
         transform: translateX(0);
     }
 
-    .nav_mobile {
+    .nav-mobile {
         position: relative;
         padding: 0 20px;
 
-        .nav_item {
+        .nav-item {
 
-            .sub_nav_mobile,
-            .sub_nav_mobile2 {
+            .sub-nav-mobile,
+            .sub-nav-mobile2 {
                 position: absolute;
                 top: 0;
                 left: calc(100% + 24px);
@@ -138,7 +138,7 @@
                     height: max-content;
                     max-height: calc(100vh - 120px);
 
-                    .nav_item {
+                    .nav-item {
                         >a {
                             position: relative;
 
@@ -162,10 +162,10 @@
                 }
             }
 
-            .sub_nav_mobile {
-                .nav_item {
+            .sub-nav-mobile {
+                .nav-item {
                     &.open {
-                        .sub_nav_mobile2 {
+                        .sub-nav-mobile2 {
                             left: 0;
                         }
                     }
@@ -174,7 +174,7 @@
 
             &.open {
 
-                .sub_nav_mobile {
+                .sub-nav-mobile {
                     left: 0;
                 }
             }

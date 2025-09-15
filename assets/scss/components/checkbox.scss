@@ -1,11 +1,11 @@
-.checkbox_block {
+.checkbox-block {
     position: relative;
 
     .checkbox {
         display: none;
     }
 
-    .check_icon {
+    .check-icon {
         visibility: hidden;
         position: absolute;
         top: 50%;
@@ -33,7 +33,7 @@
         }
     }
 
-    .checkbox:checked+.check_icon {
+    .checkbox:checked+.check-icon {
         visibility: visible;
         opacity: 1;
     }

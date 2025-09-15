@@ -26,7 +26,7 @@ body {
 }
 
 html {
-    &:has(body.scroll_locked) {
+    &:has(body.scroll-locked) {
         overflow: hidden;
     }
 }

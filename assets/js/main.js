@@ -75,33 +75,33 @@
 
     // Open menu mobile
     const handleOpenHeaderMobile = function () {
-        const menuMobile = $(".menu_mobile")
+        const menuMobile = $(".menu-mobile")
 
-        $(".humburger_btn").on("click", function () {
+        $(".humburger-btn").on("click", function () {
             menuMobile.toggleClass('open')
-            $('body').addClass('scroll_locked')
+            $('body').addClass('scroll-locked')
         })
 
-        $(".menu_mobile_close").on("click", function () {
+        $(".menu-mobile-close").on("click", function () {
             menuMobile.removeClass('open')
-            $('body').removeClass('scroll_locked')
+            $('body').removeClass('scroll-locked')
         })
 
-        $('.nav_mobile .nav_item').on("click", function () {
+        $('.nav-mobile .nav-item').on("click", function () {
             if (!$(this).hasClass("open")) {
                 $(this).addClass("open")
             }
         });
 
-        $('.nav_mobile .sub_nav_mobile .nav_item').on("click", function () {
+        $('.nav-mobile .sub-nav-mobile .nav-item').on("click", function () {
             if (!$(this).hasClass("open")) {
                 $(this).addClass("open")
             }
         });
 
-        $('.sub_nav_mobile .back_btn').on("click", function (e) {
+        $('.sub-nav-mobile .back-btn').on("click", function (e) {
             e.stopPropagation()
-            $(this).closest('.nav_item').removeClass('open')
+            $(this).closest('.nav-item').removeClass('open')
         });
     }
 
@@ -173,12 +173,12 @@
             var marker = L.marker([item.lat, item.lng], { icon: locateIcon }).addTo(map);
 
             marker.bindPopup(`
-                <a href="jobs-detail1.html" class="jobs_info flex gap-4">
-                    <img src=${item.companyImg} alt=${item.companyName} class="jobs_avatar flex-shrink-0 w-15 h-15 rounded-full" />
-                    <div href="jobs-detail1.html" class="jobs_detail flex flex-col gap-0.5">
-                        <span class="jobs_company text-sm font-semibold text-primary capitalize">${item.companyName}</span>
-                        <strong class="jobs_name text-title -style-1 text-black capitalize">${item.jobName}</strong>
-                        <div class="jobs_address -style-1 text-secondary">
+                <a href="jobs-detail1.html" class="jobs-info flex gap-4">
+                    <img src=${item.companyImg} alt=${item.companyName} class="jobs-avatar flex-shrink-0 w-15 h-15 rounded-full" />
+                    <div href="jobs-detail1.html" class="jobs-detail flex flex-col gap-0.5">
+                        <span class="jobs-company text-sm font-semibold text-primary capitalize">${item.companyName}</span>
+                        <strong class="jobs-name text-title -style-1 text-black capitalize">${item.jobName}</strong>
+                        <div class="jobs-address -style-1 text-secondary">
                             <span class="ph ph-map-pin text-lg"></span>
                             <span class="address caption1 align-top capitalize">${item.address}</span>
                         </div>
@@ -279,9 +279,9 @@
 
     // Active menu tab Feature services
     const handleActiveMenu = function () {
-        $(".tab_btn").each(function () {
+        $(".tab-btn").each(function () {
             if ($(this).hasClass("active")) {
-                let indicator = $(this).closest('.menu_tab').find(".indicator");
+                let indicator = $(this).closest('.menu-tab').find(".indicator");
                 if (indicator.length > 0) {
                     indicator.css('width', $(this)[0].getBoundingClientRect().width + "px")
                     indicator.css('left', $(this)[0].getBoundingClientRect().left - $(this)[0].closest('.menu').getBoundingClientRect().left + "px")
@@ -291,16 +291,16 @@
 
         function active(button) {
             // Find parent section include menu, tabs
-            const $section = button.closest('section, .category_nav, .list_tags, .list_pagination');
+            const $section = button.closest('section, .category-nav, .list-tags, .list-pagination');
 
             // active menu
-            $section.find('.tab_btn').removeClass('active');
+            $section.find('.tab-btn').removeClass('active');
             button.addClass('active');
 
             // change indicator
-            $(".tab_btn").each(function () {
+            $(".tab-btn").each(function () {
                 if (button.hasClass("active")) {
-                    let indicator = button.closest('.menu_tab').find(".indicator");
+                    let indicator = button.closest('.menu-tab').find(".indicator");
                     if (indicator.length > 0) {
                         indicator.css('width', button[0].getBoundingClientRect().width + "px")
                         indicator.css('left', button[0].getBoundingClientRect().left - button[0].closest('.menu').getBoundingClientRect().left + "px")
@@ -309,7 +309,7 @@
             })
 
             // change aria-selected menu
-            $section.find('.tab_btn').attr('aria-selected', 'false')
+            $section.find('.tab-btn').attr('aria-selected', 'false')
             button.attr('aria-selected', 'true')
 
             // active tabs
@@ -317,16 +317,16 @@
             $($ariaControl).addClass('active').siblings().removeClass('active');
 
             // change aria-hidden tabs
-            $section.find('.tab_list').attr('aria-hidden', 'true');
+            $section.find('.tab-list').attr('aria-hidden', 'true');
             $($ariaControl).attr('aria-hidden', 'false');
         }
 
-        $('.tab_btn').on('click', function () {
+        $('.tab-btn').on('click', function () {
             active($(this))
         })
 
-        $(".tab_btn").each(function () {
-            if ($(this).hasClass("is_hover")) {
+        $(".tab-btn").each(function () {
+            if ($(this).hasClass("is-hover")) {
                 $(this).on('mouseenter', function () {
                     active($(this))
                 })
@@ -335,7 +335,7 @@
     }
 
     // Popular services home2
-    var swiperPopularServices = new Swiper(".swiper-popular_services", {
+    var swiperPopularServices = new Swiper(".swiper-popular-services", {
         navigation: {
             prevEl: ".custom-button-prev",
             nextEl: ".custom-button-next",
@@ -368,7 +368,7 @@
     });
 
     // Feature services home3
-    var swiperPopularCategories = new Swiper(".swiper-feature_services", {
+    var swiperPopularCategories = new Swiper(".swiper-feature-services", {
         navigation: {
             prevEl: ".custom-button-prev2",
             nextEl: ".custom-button-next2",
@@ -505,7 +505,7 @@
     // List testimonials home6
     const handleActiveAvatar6 = function (swiper) {
         const currentSlideIndex = swiper.activeIndex;
-        $('.testimonials_avatar').each(function () {
+        $('.testimonials-avatar').each(function () {
             if (Number($(this).attr('data-item')) === (currentSlideIndex + 1)) {
                 $(this).fadeIn(250);
             } else {
@@ -589,10 +589,10 @@
 
     // FAQs
     const handleFaq = function () {
-        $(".faq_item .heading, .toggle_item .heading").on('click', function () {
-            $(this).closest('.faq_item, .toggle_item').toggleClass('active').siblings('.faq_item, .toggle_item').removeClass('active');
-            $(this).closest('.faq_item, .toggle_item').find('.answer, .toggle_menu').slideToggle(300)
-            $(this).closest('.faq_item, .toggle_item').siblings('.faq_item, .toggle_item').find('.answer, .toggle_menu').slideUp(300);
+        $(".faq-item .heading, .toggle-item .heading").on('click', function () {
+            $(this).closest('.faq-item, .toggle-item').toggleClass('active').siblings('.faq-item, .toggle-item').removeClass('active');
+            $(this).closest('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideToggle(300)
+            $(this).closest('.faq-item, .toggle-item').siblings('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideUp(300);
         })
     }
 
@@ -686,21 +686,21 @@
 
     // Open popup
     const handleOpenPopup = function () {
-        const btnOpenPopup = $('.btn_open_popup')
+        const btnOpenPopup = $('.btn-open-popup')
 
         btnOpenPopup.on("click", function (e) {
             e.preventDefault()
 
             const popupType = $(this).data('type')
-            $('.modal_item').each(function (e) {
+            $('.modal-item').each(function (e) {
                 if ($(this).data('type') === popupType) {
                     $(this).addClass('open')
-                    $('body').addClass('scroll_locked')
+                    $('body').addClass('scroll-locked')
                 }
             })
         })
 
-        $('.modal_item').on("click", function (e) {
+        $('.modal-item').on("click", function (e) {
             e.stopPropagation()
         })
     }
@@ -711,12 +711,12 @@
 
         modal.on('click', function () {
             modal.find('>.open').removeClass('open')
-            $('body').removeClass('scroll_locked')
+            $('body').removeClass('scroll-locked')
         })
 
-        $('.close_popup_btn').on('click', function () {
+        $('.close-popup-btn').on('click', function () {
             modal.find('>.open').removeClass('open')
-            $('body').removeClass('scroll_locked')
+            $('body').removeClass('scroll-locked')
         })
     }
 
@@ -724,9 +724,9 @@
     const handleOpenSidebar = function () {
         const sidebar = $(".sidebar")
 
-        $(".filter_btn").on("click", function () {
+        $(".filter-btn").on("click", function () {
             sidebar.toggleClass('open')
-            $('body').addClass('scroll_locked')
+            $('body').addClass('scroll-locked')
         })
 
         sidebar.on("click", function (e) {
@@ -736,29 +736,29 @@
 
     // Add filter to screen when click
     const handleAddFilter = function () {
-        const optionItems = $(".select_block .list_option li");
-        const checkboxItems = $(".filter_section .checkbox_block .checkbox");
+        const optionItems = $(".select-block .list-option li");
+        const checkboxItems = $(".filter-section .checkbox-block .checkbox");
 
         optionItems.on('click', function () {
             let dataItem = $(this).attr('data-item');
-            const filterSection = $(this).closest('.filter_section');
+            const filterSection = $(this).closest('.filter-section');
 
             if (filterSection.length > 0) {
                 const filterType = filterSection.attr('class').split(' ')[1];
 
-                // Check and remove old items in $('.list_filtered .list') for current filter_section
-                $('.list_filtered .list .selected_item[data-type="' + filterType + '"]').remove();
+                // Check and remove old items in $('.list-filtered .list') for current filter-section
+                $('.list-filtered .list .selected-item[data-type="' + filterType + '"]').remove();
 
-                // Create new item and add to $('.list_filtered .list')
+                // Create new item and add to $('.list-filtered .list')
                 const selectedItem = `
-                    <button class="selected_item inline-flex items-center gap-1 py-1 px-2 border border-line rounded-full capitalize duration-300 hover:border-black" data-type="${filterType}">
+                    <button class="selected-item inline-flex items-center gap-1 py-1 px-2 border border-line rounded-full capitalize duration-300 hover:border-black" data-type="${filterType}">
                         <span class="ph ph-x text-sm"></span>
                         <span class="caption1">${dataItem}</span>
                     </button>
                 `
 
-                // Add item to $('.list_filtered .list')
-                $('.list_filtered .list').append(selectedItem)
+                // Add item to $('.list-filtered .list')
+                $('.list-filtered .list').append(selectedItem)
 
                 handleOpenListFiltered()
             }
@@ -769,26 +769,26 @@
             var selectedLabel = $(this).data('label');
 
             if ($(this).is(':checked')) {
-                // Create new item and add to $('.list_filtered .list')
+                // Create new item and add to $('.list-filtered .list')
                 const selectedItem = `
-                    <button class="selected_item inline-flex items-center gap-1 py-1 px-2 border border-line rounded-full capitalize duration-300 hover:border-black" data-id="${selectedId}">
+                    <button class="selected-item inline-flex items-center gap-1 py-1 px-2 border border-line rounded-full capitalize duration-300 hover:border-black" data-id="${selectedId}">
                         <span class="ph ph-x text-sm"></span>
                         <span class="caption1">${selectedLabel}</span>
                     </button>
                 `
 
-                // Add item to $('.list_filtered .list')
-                $('.list_filtered .list').append(selectedItem)
+                // Add item to $('.list-filtered .list')
+                $('.list-filtered .list').append(selectedItem)
             } else {
                 // Remove selected item
-                $('.list_filtered .list').find(`.selected_item[data-id="${selectedId}"]`).remove();
+                $('.list-filtered .list').find(`.selected-item[data-id="${selectedId}"]`).remove();
             }
 
             handleOpenListFiltered()
         })
 
         // Remove item
-        $(document).on('click', '.selected_item', function () {
+        $(document).on('click', '.selected-item', function () {
             $(this).remove();
 
             // checkbox
@@ -799,28 +799,28 @@
         });
 
         // Remove all item
-        $(document).on('click', '.clear_all_btn', function () {
-            $('.list_filtered .list').text('');
-            $('.checkbox_block .checkbox').prop('checked', false);
+        $(document).on('click', '.clear-all-btn', function () {
+            $('.list-filtered .list').text('');
+            $('.checkbox-block .checkbox').prop('checked', false);
             handleOpenListFiltered()
         });
 
-        // Toggle list_filtered
+        // Toggle list-filtered
         const handleOpenListFiltered = function () {
-            if ($('.list_filtered .list .selected_item').length < 1) {
-                $('.list_filtered').removeClass('open')
+            if ($('.list-filtered .list .selected-item').length < 1) {
+                $('.list-filtered').removeClass('open')
             } else {
-                $('.list_filtered').addClass('open')
+                $('.list-filtered').addClass('open')
             }
         }
     }
 
     // Price range
     const handlePriceRange = function () {
-        const rangeInput = $('.filter_price .range_input .input')
-        const progress = $('.filter_price .tow_bar_block .progress')
-        const minPrice = $('.filter_price .price_min input')
-        const maxPrice = $('.filter_price .price_max input')
+        const rangeInput = $('.filter-price .range-input .input')
+        const progress = $('.filter-price .tow-bar-block .progress')
+        const minPrice = $('.filter-price .price-min input')
+        const maxPrice = $('.filter-price .price-max input')
         let priceGap = 200
 
         rangeInput.on('input', function () {
@@ -828,7 +828,7 @@
             let maxValue = parseInt(rangeInput.eq(1).val())
 
             if (maxValue - minValue <= priceGap) {
-                if ($(this).hasClass('range_min')) {
+                if ($(this).hasClass('range-min')) {
                     rangeInput.eq(0).val(maxValue - priceGap)
                     minValue = maxValue - priceGap
                 } else {
@@ -897,10 +897,10 @@
 
     // Age range
     const handleAgeRange = function () {
-        const rangeInput = $('.filter_age .range_input .input')
-        const progress = $('.filter_age .tow_bar_block .progress')
-        const minAge = $('.filter_age .age_min')
-        const maxAge = $('.filter_age .age_max')
+        const rangeInput = $('.filter-age .range-input .input')
+        const progress = $('.filter-age .tow-bar-block .progress')
+        const minAge = $('.filter-age .age-min')
+        const maxAge = $('.filter-age .age-max')
         let ageGap = 5
 
         rangeInput.on('input', function () {
@@ -908,7 +908,7 @@
             let maxValue = parseInt(rangeInput.eq(1).val())
 
             if (maxValue - minValue <= ageGap) {
-                if ($(this).hasClass('range_min')) {
+                if ($(this).hasClass('range-min')) {
                     rangeInput.eq(0).val(maxValue - ageGap)
                     minValue = maxValue - ageGap
                 } else {
@@ -929,19 +929,19 @@
 
     // Radius range
     const handleRadius = function () {
-        const rangeInput = $('.filter_radius .range_input .input')
-        const progress = $('.filter_radius .tow_bar_block .progress')
+        const rangeInput = $('.filter-radius .range-input .input')
+        const progress = $('.filter-radius .tow-bar-block .progress')
 
         rangeInput.on('input', function () {
             let radiusValue = parseInt(rangeInput.val());
             progress.css({ 'right': 100 - (radiusValue / rangeInput.attr('max')) * 100 + "%" });
-            $('.filter_radius .radius').text(radiusValue + 'km');
+            $('.filter-radius .radius').text(radiusValue + 'km');
         })
     }
 
     // Handle number delivery popup Apply
     const handleNumberDeliveryPopupApply = function () {
-        $('.delivery .minus_btn').on('click', function (e) {
+        $('.delivery .minus-btn').on('click', function (e) {
             e.preventDefault()
             let currentValue = parseInt($('.delivery input').val())
             $('.delivery input').val(currentValue - 1)
@@ -951,13 +951,13 @@
             }
         })
 
-        $('.delivery .plus_btn').on('click', function (e) {
+        $('.delivery .plus-btn').on('click', function (e) {
             e.preventDefault()
             let currentValue = parseInt($('.delivery input').val())
             $('.delivery input').val(currentValue + 1)
 
             if (parseInt($('.delivery input').val()) > 1) {
-                $('.delivery .minus_btn').removeClass('disabled')
+                $('.delivery .minus-btn').removeClass('disabled')
             }
         })
     }
@@ -1297,7 +1297,7 @@
             }
 
             document
-                .querySelector('#one_month')
+                .querySelector('#one-month')
                 .addEventListener('click', function (e) {
                     resetCssClasses(e)
                     chart.zoomX(
@@ -1307,7 +1307,7 @@
                 })
 
             document
-                .querySelector('#one_week')
+                .querySelector('#one-week')
                 .addEventListener('click', function (e) {
                     resetCssClasses(e)
                     chart.zoomX(
@@ -1317,7 +1317,7 @@
                 })
 
             document
-                .querySelector('#one_year')
+                .querySelector('#one-year')
                 .addEventListener('click', function (e) {
                     resetCssClasses(e)
                     chart.zoomX(
@@ -1332,38 +1332,38 @@
     const handleRemoveItemDashboard = function () {
         let itemToDelete;
 
-        $('.btn_delete').on('click', function (e) {
+        $('.btn-delete').on('click', function (e) {
             e.preventDefault()
 
             itemToDelete = $(this).closest('tr.item, li.item');
 
-            if($('.modal_delete').length <= 0) {
+            if($('.modal-delete').length <= 0) {
                 itemToDelete.remove();
             }
         });
 
-        $('.btn_confirm_delete').on('click', function () {
+        $('.btn-confirm-delete').on('click', function () {
             itemToDelete.remove();
-            $('.modal_delete').removeClass('open')
+            $('.modal-delete').removeClass('open')
         });
     }
 
     // Remove active message
     const handleActiveMessage = function () {
-        $('.chat_item').on('click', function () {
+        $('.chat-item').on('click', function () {
             $(this).addClass('active').siblings().removeClass('active')
 
             let dataPerson = $(this).data('chat')
-            $('.chat_box').each(function () {
+            $('.chat-box').each(function () {
                 if ($(this).data('chat') === dataPerson) {
                     $(this).addClass('open').siblings().removeClass('open')
                 }
             })
         })
 
-        $('.back_to_list_btn').on('click', function () {
-            $('.chat_item').removeClass('active')
-            $('.chat_box').removeClass('open')
+        $('.back-to-list-btn').on('click', function () {
+            $('.chat-item').removeClass('active')
+            $('.chat-box').removeClass('open')
         })
     }
 
@@ -1371,7 +1371,7 @@
     const handleDisplayPreviewImage = function () {
         $('#uploadImage, #uploadLogo, #uploadBanner').on('change', function (event) {
             const file = event.target.files[0];
-            let img = $(this).closest('.upload_image').find('.upload_img')
+            let img = $(this).closest('.upload-image').find('.upload-img')
             
             if (file) {
                 const reader = new FileReader();
@@ -1504,17 +1504,17 @@
 
     // Select
     const handleSelectBlock = function () {
-        const selectBlock = $(".select_block");
-        const listOption = $(".select_block .list_option");
-        const optionItems = $(".select_block .list_option li");
-        const formInput = $(".select_block .form_input");
+        const selectBlock = $(".select-block");
+        const listOption = $(".select-block .list-option");
+        const optionItems = $(".select-block .list-option li");
+        const formInput = $(".select-block .form-input");
 
         if (selectBlock.length > 0) {
             selectBlock.on('click', function () {
-                let list = $(this).find('.list_option');
+                let list = $(this).find('.list-option');
                 let isOpen = list.hasClass('open');
 
-                $('.list_option').removeClass('open');
+                $('.list-option').removeClass('open');
 
                 if (!isOpen) {
                     list.addClass('open');
@@ -1525,7 +1525,7 @@
                 e.stopPropagation()
                 listOption.removeClass('open');
                 let dataItem = $(this).attr('data-item')
-                $(this).closest('.select_block').find('.selected').text(dataItem)
+                $(this).closest('.select-block').find('.selected').text(dataItem)
             })
 
             formInput.on('click', function (e) {
@@ -1533,7 +1533,7 @@
             })
 
             $(window).on('click', function (e) {
-                if (!$(e.target).closest('.select_block').length) {
+                if (!$(e.target).closest('.select-block').length) {
                     listOption.removeClass('open');
                 }
             })
@@ -1542,7 +1542,7 @@
 
     // Active wishlist icon
     const handleActiveWishlistIcon = function () {
-        $('.add_wishlist_btn').on('click', function (e) {
+        $('.add-wishlist-btn').on('click', function (e) {
             e.preventDefault()
             $(this).toggleClass('active')
         })
@@ -1550,7 +1550,7 @@
 
     // Toggle button
     const handleToggleButton = function () {
-        $('.toggle_btn').on('click', function () {
+        $('.toggle-btn').on('click', function () {
             if(!$(this).hasClass('disabled')) {
                 $(this).toggleClass('active');
             }
@@ -1562,25 +1562,25 @@
         var selectedRating = 0;
 
         // Handle mouse enter (hover) event
-        $('.user_rating .star').on('mouseenter', function () {
+        $('.user-rating .star').on('mouseenter', function () {
             var rating = $(this).data('value');
             highlightStars(rating);
         });
 
         // Handle mouse leave event
-        $('.user_rating .list_rate').on('mouseleave', function () {
+        $('.user-rating .list-rate').on('mouseleave', function () {
             highlightStars(selectedRating);
         });
 
         // Handle click event
-        $('.user_rating .star').on('click', function () {
+        $('.user-rating .star').on('click', function () {
             selectedRating = $(this).data('value');
             highlightStars(selectedRating);
         });
 
         // Function to highlight stars
         function highlightStars(rating) {
-            $('.user_rating .star').each(function () {
+            $('.user-rating .star').each(function () {
                 var starValue = $(this).data('value');
                 if (starValue <= rating) {
                     $(this).css('color', 'var(--yellow)');
@@ -1611,7 +1611,7 @@
             $('.toastify').removeClass('active')
         }, [5000])
 
-        $('.toastify_close_btn').on('click', function () {
+        $('.toastify-close-btn').on('click', function () {
             $('.toastify').removeClass('active')
         })
     }
@@ -1626,7 +1626,7 @@
             const revealpoint = 300 * 100 / 1920;
 
             if (revealTop < windowHeight - revealpoint) {
-                $(element).addClass("animate_active");
+                $(element).addClass("animate-active");
             }
         });
     }

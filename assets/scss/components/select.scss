@@ -1,4 +1,4 @@
-.select_block {
+.select-block {
     position: relative;
     cursor: pointer;
 
@@ -16,7 +16,7 @@
         }
     }
 
-    .list_option {
+    .list-option {
         visibility: hidden;
         position: absolute;
         top: 100%;
@@ -41,7 +41,7 @@
                 background: var(--background);
             }
 
-            &.form_input {
+            &.form-input {
                 background: transparent;
             }
         }
@@ -66,7 +66,7 @@
             visibility: visible;
         }
 
-        .list_result {
+        .list-result {
             overflow-x: hidden;
             max-height: 200px;
 
@@ -82,7 +82,7 @@
         }
     }
 
-    .icon_down {
+    .icon-down {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);

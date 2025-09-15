@@ -2,16 +2,16 @@
 /*slider freelancer3*/
 .slider {
     &.-style-3 {
-        .slider_bg {
+        .slider-bg {
             .icon {
 
-                &_link,
-                &_like {
-                    animation: slide_1 20s linear 0s infinite;
+                &-link,
+                &-like {
+                    animation: slide-1 20s linear 0s infinite;
                 }
 
-                &_heart {
-                    animation: slide_2 20s linear 0s infinite;
+                &-heart {
+                    animation: slide-2 20s linear 0s infinite;
                 }
             }
         }
@@ -24,7 +24,7 @@
     }
 
     &.-style-reverse {
-        .slider_bg {
+        .slider-bg {
             img {
                 transform: rotateY(180deg);
             }

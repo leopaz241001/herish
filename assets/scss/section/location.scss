@@ -4,7 +4,7 @@
         margin-right: -10px;
         cursor: grab;
 
-        .location_slide {
+        .location-slide {
             padding: 0 10px;
         }
     }
@@ -14,7 +14,7 @@
     }
 }
 
-.location_item {
+.location-item {
     &.-shadow {
         position: relative;
 
@@ -30,12 +30,12 @@
         }
     }
 
-    .location_img {
+    .location-img {
         transition: transform 0.8s ease;
     }
 
     &:hover {
-        .location_img {
+        .location-img {
             transform: scale(1.1);
         }
     }

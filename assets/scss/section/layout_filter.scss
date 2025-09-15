@@ -5,11 +5,11 @@
 .services {
     &.-half-map {
 
-        .jobs_inner,
-        .project_inner,
-        .employers_inner,
-        .candidates_inner,
-        .services_inner {
+        .jobs-inner,
+        .project-inner,
+        .employers-inner,
+        .candidates-inner,
+        .services-inner {
             overflow-x: hidden;
             height: 100%;
             max-height: calc(100% - 68px);
@@ -25,13 +25,13 @@
             }
         }
 
-        .list_pagination {
+        .list-pagination {
             max-width: unset;
             box-shadow: 0px 5px 18px 5px rgba(64, 72, 87, 0.15);
         }
     }
 
-    &_sidebar {
+    &-sidebar {
         .delivery {
             .days {
                 input {
@@ -42,8 +42,8 @@
     }
 }
 
-.list_layout {
-    .layout_item {
+.list-layout {
+    .layout-item {
         display: block;
         position: relative;
         width: 30px;
@@ -111,7 +111,7 @@
     }
 }
 
-.list_filtered {
+.list-filtered {
     display: none;
 
     &.open {

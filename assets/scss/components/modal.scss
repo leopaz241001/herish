@@ -21,10 +21,10 @@
     }
 
     &:has(>.sidebar.open),
-    &:has(>.menu_dashboard.open) {
+    &:has(>.menu-dashboard.open) {
 
         .sidebar,
-        .menu_dashboard {
+        .menu-dashboard {
             transform: translateX(0);
         }
     }
@@ -33,7 +33,7 @@
         cursor: not-allowed;
     }
 
-    &_item {
+    &-item {
         display: none;
         cursor: default;
 
@@ -43,10 +43,10 @@
     }
 }
 
-/* modal_apply */
-.modal_apply {
+/* modal-apply */
+.modal-apply {
     .delivery {
-        .minus_btn {
+        .minus-btn {
             &.disabled {
                 opacity: 0.5;
                 pointer-events: none;
@@ -73,8 +73,8 @@
         transform: unset;
     }
 
-    &_inner,
-    .block_filter {
+    &-inner,
+    .block-filter {
         overflow-x: hidden;
         max-height: calc(100vh - 68px);
 
@@ -93,13 +93,13 @@
         }
     }
 
-    .block_btn {
+    .block-btn {
         box-shadow: 0px 5px 18px 5px rgba(64, 72, 87, 0.15);
     }
 }
 
-/* menu_dashboard */
-.menu_dashboard {
+/* menu-dashboard */
+.menu-dashboard {
     &.-relative {
         position: relative;
         top: unset;
@@ -118,7 +118,7 @@
         transition: all ease 0.3s;
     }
 
-    .list_link {
+    .list-link {
         .link {
             &.active {
                 background-color: var(--background);
@@ -131,9 +131,9 @@
     }
 }
 
-/* modal_chat */
-.modal_chat {
-    .chat_content {
+/* modal-chat */
+.modal-chat {
+    .chat-content {
         max-height: 500px;
 
         @media (max-height: 800px) {

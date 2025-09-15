@@ -1,5 +1,5 @@
 // dashboard
-.dashboard_main {
+.dashboard-main {
 
     tr,
     .outstanding {
@@ -27,12 +27,12 @@
 }
 
 // message
-.message_block {
+.message-block {
     @media(max-width: 639.98px) {
         .left {
             transition: all 0.3s ease;
 
-            &:has(.chat_item.active) {
+            &:has(.chat-item.active) {
                 transform: translateX(-100%);
             }
         }
@@ -40,25 +40,25 @@
         .right {
             transition: all 0.3s ease;
 
-            &:has(.chat_box.open) {
+            &:has(.chat-box.open) {
                 transform: translateX(-100%);
             }
         }
     }
 
-    .list_chat,
-    .chat_content {
+    .list-chat,
+    .chat-content {
         max-height: calc(100% - 5.5rem);
     }
 
-    .list_chat {
-        .chat_item {
+    .list-chat {
+        .chat-item {
             &.active {
                 background-color: var(--background);
             }
 
-            .chat_name,
-            .chat_text {
+            .chat-name,
+            .chat-text {
                 display: block; //ie
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
@@ -69,15 +69,15 @@
                 text-overflow: ellipsis;
             }
 
-            .chat_time,
-            .chat_quantity {
+            .chat-time,
+            .chat-quantity {
                 flex-shrink: 0;
                 white-space: nowrap;
             }
         }
     }
 
-    .chat_box {
+    .chat-box {
         display: none;
 
         &.open {
@@ -86,9 +86,9 @@
     }
 }
 
-// dashboard_meeting
-.dashboard_meeting {
-    .list_meeting {
+// dashboard-meeting
+.dashboard-meeting {
+    .list-meeting {
         .item {
             &:last-child {
                 border-bottom: transparent;
@@ -97,20 +97,20 @@
     }
 }
 
-// dashboard_payouts
-.dashboard_payouts {
-    .menu_tab {
-        .tab_btn {
-            .ic_check {
+// dashboard-payouts
+.dashboard-payouts {
+    .menu-tab {
+        .tab-btn {
+            .ic-check {
                 display: none;
             }
 
             &.active {
-                .ic_type {
+                .ic-type {
                     color: var(--primary);
                 }
 
-                .ic_check {
+                .ic-check {
                     display: block;
                 }
             }
@@ -118,9 +118,9 @@
     }
 }
 
-// dashboard_service
-.choose_plan {
-    .list_plan {
+// dashboard-service
+.choose-plan {
+    .list-plan {
         .item {
             &:has(input:checked) {
                 background-color: var(--background);
@@ -162,16 +162,16 @@
     }
 }
 
-.list_package {
-    .list_pricing {
-        .pricing_item {
-            .btn_buy {
+.list-package {
+    .list-pricing {
+        .pricing-item {
+            .btn-buy {
                 input {
                     appearance: none;
                     outline: none;
                 }
 
-                .ic_check {
+                .ic-check {
                     display: none;
                 }
 
@@ -182,7 +182,7 @@
                         border: none;
                     }
 
-                    .ic_check {
+                    .ic-check {
                         display: block;
                     }
 
@@ -195,7 +195,7 @@
     }
 }
 
-.upload_portfolio {
+.upload-portfolio {
     .image-previews {
         &:has(.image-preview) {
             padding-right: 1.25rem;

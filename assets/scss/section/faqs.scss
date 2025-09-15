@@ -1,13 +1,13 @@
 /* faqs */
 .faqs {
-    .list_faqs {
-        .faq_item {
+    .list-faqs {
+        .faq-item {
             .answer {
                 display: none;
             }
 
             &.active {
-                .icon_arrow {
+                .icon-arrow {
                     transform: rotate(-180deg);
                 }
             }
