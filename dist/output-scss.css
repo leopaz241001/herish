@@ -203,23 +203,43 @@ input::-webkit-inner-spin-button {
 }
 /* Main color */
 :root {
+  /* primary */
   --primary: #665BAF;
   --primary-hover: #5C50A5;
+  --primary-txt: #6257AA;
+  --primary-txt-head: #2F2956;
+  --primary-hover-ui: #E7E6FE;
+  --primary-ui: #F2F1FD;
+  /* secondary */
   --secondary: #AF6C9B;
   --secondary-hover: #A55F91;
-  --feature: #212E37;
-  --features: #504CFE;
-  --placehover: #b1b1b1;
-  --line: #e4e4e4;
-  --neutral: #F0F0F3;
+  --secondary-txt: #9B5A88;
+  --secondary-txt-head: #5B204C;
+  --secondary-hover-ui: #F8E2F0;
+  --secondary-ui: #FCEEF7;
+  /* neutral */
+  --neutral: #8B8D98;
+  --neutral-hover: #7E818B;
+  --neutral-txt-low: #767B84;
+  --neutral-txt-high: #1C2024;
+  --neutral-hover-ui: #E8E8EC;
+  --neutral-ui: #F0F0F3;
+  /* success */
+  --success: #22C55E;
+  --success-hover: #00B250;
+  --success-txt: #118D57;
+  --success-txt-head: #065E49;
+  --success-hover-ui: #8BEE9C;
+  --success-ui: #DBF5DB;
+  /* error */
+  --error: #F94346;
+  --error-hover: #EA2931;
+  --error-txt: #C31324;
+  --error-txt-head: #6C0421;
+  --error-hover-ui: #FECDCE;
+  --error-ui: #FFE9EA;
   --black: #1C2024;
-  --white: #fff;
-  --error: #eb4d4d;
-  --success: #37B853;
-  --warning: #F4AA1A;
-  --background: #eef7f7;
-  --text-primary: #6257AA;
-  --text-low: #767A84;
+  --white: #ffffff;
 }
 
 /* Main class used in Him2Her */
@@ -242,36 +262,42 @@ input::-webkit-inner-spin-button {
   font-size: 72px;
   line-height: 88px;
   font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .heading2 {
   font-size: 48px;
   line-height: 56px;
   font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .heading3 {
   font-size: 36px;
   line-height: 44px;
   font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .heading4 {
   font-size: 28px;
   line-height: 36px;
   font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .heading5 {
   font-size: 24px;
   line-height: 32px;
   font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .heading6 {
   font-size: 20px;
   line-height: 28px;
   font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .body1 {
@@ -397,6 +423,7 @@ input::-webkit-inner-spin-button {
   font-weight: 600;
   line-height: 24px;
   color: var(--white);
+  white-space: nowrap;
   cursor: pointer;
   transition: all ease-out 0.5s;
 }
@@ -413,7 +440,7 @@ input::-webkit-inner-spin-button {
 }
 .button-main.-border {
   border: 1px solid var(--primary);
-  background-color: var(--background);
+  background-color: var(--white);
   color: var(--black);
 }
 .button-main.-border:hover {
@@ -421,33 +448,29 @@ input::-webkit-inner-spin-button {
   color: var(--white);
 }
 .button-main.-disabled {
-  background-color: var(--line);
-  color: var(--placehover);
+  background-color: var(--neutral-ui);
+  color: var(--neutral-txt-low);
   pointer-events: none;
 }
 .button-main.bg-white {
   background-color: var(--white);
-  color: var(--text-primary);
+  color: var(--primary-txt);
 }
 .button-main.bg-white:hover {
   background-color: var(--primary);
   color: var(--white);
 }
-.button-main.bg-red {
-  background-color: var(--red);
+.button-main.bg-error {
+  background-color: var(--error);
 }
-.button-main.bg-red:hover {
-  background-color: #d10f0f;
-}
-.button-main.border-line {
-  border-color: var(--line);
+.button-main.bg-error:hover {
+  background-color: var(--error-hover);
 }
 @media (max-width: 767.98px) {
   .button-main {
     font-size: 14px;
     line-height: 22px;
     padding: 10px 16px;
-    border-radius: 4px;
   }
   .button-main.-small {
     padding: 8px 14px;
@@ -911,12 +934,6 @@ textarea:focus {
     transform: matrix(1, 0, 0, 1, 0, 0);
   }
 }
-.heading_menu {
-  overflow-x: auto;
-  width: 100%;
-  max-width: max-content;
-}
-
 .menu_tab {
   position: relative;
   overflow-x: auto;
@@ -931,8 +948,14 @@ textarea:focus {
 .menu_tab.max-w-none {
   max-width: none;
 }
+.menu_tab:has(.tab_btn.is_hover.active) .tab_btn {
+  filter: blur(3px);
+}
+.menu_tab:has(.tab_btn.is_hover.active) .tab_btn.active {
+  filter: blur(0px);
+}
 .menu_tab .tab_btn {
-  white-space: nowrap;
+  text-align: left;
 }
 .menu_tab .tab_btn.-before.active::before {
   width: 100%;
@@ -953,23 +976,20 @@ textarea:focus {
 .menu_tab .tab_btn.-border.active {
   border-color: var(--primary);
 }
+.menu_tab .tab_btn.is_hover {
+  transform-style: preserve-3d;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  filter: blur(0px);
+}
 
 .tab_list {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s;
 }
 .tab_list.active {
-  display: block;
-}
-
-.list_link .menu_tab {
-  overflow: unset;
-}
-.list_link .menu_tab .tab_btn.active {
-  border-color: var(--primary);
-}
-
-.form_register .menu_tab {
-  max-width: unset;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* modal */
@@ -1349,36 +1369,9 @@ textarea:focus {
   overflow: unset;
 }
 
-.slider-main .swiper-pagination-fraction,
-.slider-main .swiper-pagination-custom,
-.slider-main .swiper-horizontal > .swiper-pagination-bullets,
-.slider-main .swiper-pagination-bullets.swiper-pagination-horizontal {
-  bottom: 24px;
-}
-
 /* Swiper Navigation */
-.section-swiper-navigation:has(.swiper.-section) .custom-button-prev,
-.section-swiper-navigation:has(.swiper.-section) .custom-button-next,
-.section-swiper-navigation:has(.swiper.-section) .custom-button-prev2,
-.section-swiper-navigation:has(.swiper.-section) .custom-button-next2,
-.section-swiper-navigation:has(.swiper.-section) .custom-button-prev3,
-.section-swiper-navigation:has(.swiper.-section) .custom-button-next3,
-.section-swiper-navigation:has(.swiper.-section) .custom-button-prev4,
-.section-swiper-navigation:has(.swiper.-section) .custom-button-next4,
-.section-swiper-navigation:has(.swiper.-section) .custom-button-testimonials-prev,
-.section-swiper-navigation:has(.swiper.-section) .custom-button-testimonials-next {
-  top: calc(50% - 26px);
-}
 .section-swiper-navigation .custom-button-prev,
-.section-swiper-navigation .custom-button-next,
-.section-swiper-navigation .custom-button-prev2,
-.section-swiper-navigation .custom-button-next2,
-.section-swiper-navigation .custom-button-prev3,
-.section-swiper-navigation .custom-button-next3,
-.section-swiper-navigation .custom-button-prev4,
-.section-swiper-navigation .custom-button-next4,
-.section-swiper-navigation .custom-button-testimonials-prev,
-.section-swiper-navigation .custom-button-testimonials-next {
+.section-swiper-navigation .custom-button-next {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1386,35 +1379,19 @@ textarea:focus {
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  color: var(--black);
-  background-color: var(--white);
-  width: 52px;
-  height: 52px;
+  color: var(--primary);
+  background-color: var(--primary-ui);
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  transition: all ease 0.4s;
+  transition: all ease 0.5s;
 }
 .section-swiper-navigation .custom-button-prev.-border,
-.section-swiper-navigation .custom-button-next.-border,
-.section-swiper-navigation .custom-button-prev2.-border,
-.section-swiper-navigation .custom-button-next2.-border,
-.section-swiper-navigation .custom-button-prev3.-border,
-.section-swiper-navigation .custom-button-next3.-border,
-.section-swiper-navigation .custom-button-prev4.-border,
-.section-swiper-navigation .custom-button-next4.-border,
-.section-swiper-navigation .custom-button-testimonials-prev.-border,
-.section-swiper-navigation .custom-button-testimonials-next.-border {
+.section-swiper-navigation .custom-button-next.-border {
   border: 1px solid var(--line);
 }
 .section-swiper-navigation .custom-button-prev.-relative,
-.section-swiper-navigation .custom-button-next.-relative,
-.section-swiper-navigation .custom-button-prev2.-relative,
-.section-swiper-navigation .custom-button-next2.-relative,
-.section-swiper-navigation .custom-button-prev3.-relative,
-.section-swiper-navigation .custom-button-next3.-relative,
-.section-swiper-navigation .custom-button-prev4.-relative,
-.section-swiper-navigation .custom-button-next4.-relative,
-.section-swiper-navigation .custom-button-testimonials-prev.-relative,
-.section-swiper-navigation .custom-button-testimonials-next.-relative {
+.section-swiper-navigation .custom-button-next.-relative {
   position: relative !important;
   top: unset !important;
   left: unset !important;
@@ -1423,45 +1400,19 @@ textarea:focus {
   transform: unset !important;
 }
 .section-swiper-navigation .custom-button-prev:hover,
-.section-swiper-navigation .custom-button-next:hover,
-.section-swiper-navigation .custom-button-prev2:hover,
-.section-swiper-navigation .custom-button-next2:hover,
-.section-swiper-navigation .custom-button-prev3:hover,
-.section-swiper-navigation .custom-button-next3:hover,
-.section-swiper-navigation .custom-button-prev4:hover,
-.section-swiper-navigation .custom-button-next4:hover,
-.section-swiper-navigation .custom-button-testimonials-prev:hover,
-.section-swiper-navigation .custom-button-testimonials-next:hover {
-  border-color: var(--black);
-  background-color: var(--black);
+.section-swiper-navigation .custom-button-next:hover {
+  background-color: var(--primary);
   color: var(--white);
 }
 .section-swiper-navigation .custom-button-prev.swiper-button-disabled,
-.section-swiper-navigation .custom-button-next.swiper-button-disabled,
-.section-swiper-navigation .custom-button-prev2.swiper-button-disabled,
-.section-swiper-navigation .custom-button-next2.swiper-button-disabled,
-.section-swiper-navigation .custom-button-prev3.swiper-button-disabled,
-.section-swiper-navigation .custom-button-next3.swiper-button-disabled,
-.section-swiper-navigation .custom-button-prev4.swiper-button-disabled,
-.section-swiper-navigation .custom-button-next4.swiper-button-disabled,
-.section-swiper-navigation .custom-button-testimonials-prev.swiper-button-disabled,
-.section-swiper-navigation .custom-button-testimonials-next.swiper-button-disabled {
+.section-swiper-navigation .custom-button-next.swiper-button-disabled {
   cursor: default;
-  background-color: var(--line);
-  border-color: var(--line);
-  color: var(--black);
+  color: var(--neutral-txt-low);
+  background-color: var(--neutral-ui);
 }
 @media (max-width: 767.98px) {
   .section-swiper-navigation .custom-button-prev,
-  .section-swiper-navigation .custom-button-next,
-  .section-swiper-navigation .custom-button-prev2,
-  .section-swiper-navigation .custom-button-next2,
-  .section-swiper-navigation .custom-button-prev3,
-  .section-swiper-navigation .custom-button-next3,
-  .section-swiper-navigation .custom-button-prev4,
-  .section-swiper-navigation .custom-button-next4,
-  .section-swiper-navigation .custom-button-testimonials-prev,
-  .section-swiper-navigation .custom-button-testimonials-next {
+  .section-swiper-navigation .custom-button-next {
     width: 40px;
     height: 40px;
   }
@@ -1511,7 +1462,7 @@ textarea:focus {
 .navigator > ul > li > a::before {
   content: "";
   position: absolute;
-  bottom: 22px;
+  bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
@@ -1519,7 +1470,7 @@ textarea:focus {
   transition: all ease 0.3s;
 }
 .navigator > ul > li > a.active::before {
-  width: calc(100% - 20px);
+  width: 100%;
 }
 .navigator > ul > li:hover .sub_menu {
   visibility: visible;
@@ -1530,6 +1481,7 @@ textarea:focus {
 .navigator .sub_menu {
   visibility: hidden;
   top: 100%;
+  left: -14px;
   z-index: 1;
   opacity: 0;
   transform: translateY(20px);
@@ -1546,10 +1498,10 @@ textarea:focus {
   content: "";
 }
 .navigator .sub_menu li > .link.active {
-  background-color: var(--secondary-hover);
+  background-color: var(--primary-hover-ui);
 }
 .navigator .sub_menu li:hover > .link {
-  background-color: var(--secondary-hover);
+  background-color: var(--primary-hover-ui);
 }
 .navigator .sub_menu li:hover .sub_menu_two {
   visibility: visible;

@@ -105,6 +105,26 @@
         });
     }
 
+    // Expert Freelancers home5
+    var swiperBestseller = new Swiper(".best-seller-swiper", {
+        navigation: {
+            prevEl: ".custom-button-prev",
+            nextEl: ".custom-button-next",
+        },
+        slidesPerView: 1,
+        spaceBetween: 16,
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            1280: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+        },
+    });
+
     // Map
     // Initial leaflet map
     if ($('#map').length > 0) {
@@ -169,31 +189,44 @@
     }
 
     // List brand
-    var swiperListBrand = new Swiper(".swiper-list-brand", {
-        pagination: { clickable: true, el: ".swiper-pagination" },
+    var swiperListBrand = new Swiper(".testimonials-swiper", {
         loop: true,
         autoplay: {
-            delay: 4000,
+            delay: 0,
             disableOnInteraction: false,
         },
-        slidesPerView: 2,
-        spaceBetween: 12,
+        allowTouchMove: false,
+        speed: 6000,
+        slidesPerView: 1,
+        spaceBetween: 16,
         breakpoints: {
             640: {
-                slidesPerView: 3,
-                spaceBetween: 12,
+                slidesPerView: 2,
+                spaceBetween: 16,
             },
             768: {
-                slidesPerView: 4,
-                spaceBetween: 0,
+                slidesPerView: 2,
+                spaceBetween: 20,
             },
             1024: {
-                slidesPerView: 5,
-                spaceBetween: 0,
+                slidesPerView: 3,
+                spaceBetween: 24,
             },
-            1280: {
+            1440: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+            },
+            1600: {
+                slidesPerView: 5,
+                spaceBetween: 24,
+            },
+            1800: {
                 slidesPerView: 6,
-                spaceBetween: 0,
+                spaceBetween: 24,
+            },
+            2300: {
+                slidesPerView: 7,
+                spaceBetween: 24,
             },
         },
     });
@@ -228,30 +261,6 @@
         },
     });
 
-    // Expert Freelancers home5
-    var swiperExpertFreelancers = new Swiper(".swiper-expert_freelancers", {
-        navigation: {
-            prevEl: ".custom-button-prev3",
-            nextEl: ".custom-button-next3",
-        },
-        slidesPerView: 1,
-        spaceBetween: 16,
-        breakpoints: {
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
-            1320: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-            },
-        },
-    });
-
     // Projects home6
     var swiperProjects6 = new Swiper(".swiper-projects6", {
         slidesPerView: 1,
@@ -280,36 +289,48 @@
             }
         })
 
-        $('.tab_btn').on('click', function () {
+        function active(button) {
             // Find parent section include menu, tabs
-            const $section = $(this).closest('section, .category_nav, .list_tags, .list_pagination');
+            const $section = button.closest('section, .category_nav, .list_tags, .list_pagination');
 
             // active menu
             $section.find('.tab_btn').removeClass('active');
-            $(this).addClass('active');
+            button.addClass('active');
 
             // change indicator
             $(".tab_btn").each(function () {
-                if ($(this).hasClass("active")) {
-                    let indicator = $(this).closest('.menu_tab').find(".indicator");
+                if (button.hasClass("active")) {
+                    let indicator = button.closest('.menu_tab').find(".indicator");
                     if (indicator.length > 0) {
-                        indicator.css('width', $(this)[0].getBoundingClientRect().width + "px")
-                        indicator.css('left', $(this)[0].getBoundingClientRect().left - $(this)[0].closest('.menu').getBoundingClientRect().left + "px")
+                        indicator.css('width', button[0].getBoundingClientRect().width + "px")
+                        indicator.css('left', button[0].getBoundingClientRect().left - button[0].closest('.menu').getBoundingClientRect().left + "px")
                     }
                 }
             })
 
             // change aria-selected menu
             $section.find('.tab_btn').attr('aria-selected', 'false')
-            $(this).attr('aria-selected', 'true')
+            button.attr('aria-selected', 'true')
 
             // active tabs
-            const $ariaControl = '#' + $(this).attr('aria-controls');
+            const $ariaControl = '#' + button.attr('aria-controls');
             $($ariaControl).addClass('active').siblings().removeClass('active');
 
             // change aria-hidden tabs
             $section.find('.tab_list').attr('aria-hidden', 'true');
             $($ariaControl).attr('aria-hidden', 'false');
+        }
+
+        $('.tab_btn').on('click', function () {
+            active($(this))
+        })
+
+        $(".tab_btn").each(function () {
+            if ($(this).hasClass("is_hover")) {
+                $(this).on('mouseenter', function () {
+                    active($(this))
+                })
+            }
         })
     }
 

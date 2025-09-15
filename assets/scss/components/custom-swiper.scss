@@ -83,44 +83,10 @@
     }
 }
 
-.slider-main {
-
-    .swiper-pagination-fraction,
-    .swiper-pagination-custom,
-    .swiper-horizontal>.swiper-pagination-bullets,
-    .swiper-pagination-bullets.swiper-pagination-horizontal {
-        bottom: 24px;
-    }
-}
-
 /* Swiper Navigation */
 .section-swiper-navigation {
-    &:has(.swiper.-section) {
-
-        .custom-button-prev,
-        .custom-button-next,
-        .custom-button-prev2,
-        .custom-button-next2,
-        .custom-button-prev3,
-        .custom-button-next3,
-        .custom-button-prev4,
-        .custom-button-next4,
-        .custom-button-testimonials-prev,
-        .custom-button-testimonials-next {
-            top: calc(50% - 26px);
-        }
-    }
-
     .custom-button-prev,
-    .custom-button-next,
-    .custom-button-prev2,
-    .custom-button-next2,
-    .custom-button-prev3,
-    .custom-button-next3,
-    .custom-button-prev4,
-    .custom-button-next4,
-    .custom-button-testimonials-prev,
-    .custom-button-testimonials-next {
+    .custom-button-next {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -128,12 +94,12 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 2;
-        color: var(--black);
-        background-color: var(--white);
-        width: 52px;
-        height: 52px;
+        color: var(--primary);
+        background-color: var(--primary-ui);
+        width: 56px;
+        height: 56px;
         border-radius: 50%;
-        transition: all ease 0.4s;
+        transition: all ease 0.5s;
 
         &.-border {
             border: 1px solid var(--line);
@@ -149,16 +115,14 @@
         }
 
         &:hover {
-            border-color: var(--black);
-            background-color: var(--black);
+            background-color: var(--primary);
             color: var(--white);
         }
 
         &.swiper-button-disabled {
             cursor: default;
-            background-color: var(--line);
-            border-color: var(--line);
-            color: var(--black);
+            color: var(--neutral-txt-low);
+            background-color: var(--neutral-ui);
         }
 
         @media (max-width: 767.98px) {

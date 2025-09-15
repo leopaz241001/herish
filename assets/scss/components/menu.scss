@@ -1,9 +1,3 @@
-.heading_menu {
-    overflow-x: auto;
-    width: 100%;
-    max-width: max-content;
-}
-
 .menu_tab {
     position: relative;
     overflow-x: auto;
@@ -21,9 +15,19 @@
         max-width: none;
     }
 
-    .tab_btn {
-        white-space: nowrap;
+    &:has(.tab_btn.is_hover.active) {
+        .tab_btn {
+            filter: blur(3px);
 
+            &.active {
+                filter: blur(0px);
+            }
+        }
+    }
+
+    .tab_btn {
+        text-align: left;
+        
         &.-before {
             &.active {
                 &::before {
@@ -59,31 +63,22 @@
                 border-color: var(--primary);
             }
         }
-    }
-}
 
-.tab_list {
-    display: none;
-
-    &.active {
-        display: block;
-    }
-}
-
-.list_link {
-    .menu_tab {
-        overflow: unset;
-
-        .tab_btn {
-            &.active {
-                border-color: var(--primary);
-            }
+        &.is_hover {
+            transform-style: preserve-3d;
+            transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+            filter: blur(0px);
         }
     }
 }
 
-.form_register {
-    .menu_tab {
-        max-width: unset;
+.tab_list {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s, opacity .5s;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
     }
 }
