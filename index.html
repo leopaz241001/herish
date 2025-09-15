@@ -757,9 +757,25 @@
             </div>
         </section>
 
-        <ul class="contact-list">
+        <!-- List contact -->
+        <ul class="contact-list flex flex-col gap-5 fixed bottom-8 right-8 z-[10]">
             <li class="contact-item">
-                <a href="" class="contact-link"></a>
+                <a href="https://www.messenger.com/" target="_blank" class="contact-link button-main w-17 h-17 p-0">
+                    <i class="hgi hgi-stroke hgi-messenger text-[1.75rem]"></i>
+                    <span class="blind">link to messenger</span>
+                </a>
+            </li>
+            <li class="contact-item">
+                <a href="https://www.zalo.com/" target="_blank" class="contact-link button-main w-17 h-17 p-0">
+                    <i class="hgi hgi-stroke hgi-zalo text-[1.75rem]"></i>
+                    <span class="blind">link to zalo</span>
+                </a>
+            </li>
+            <li class="contact-item">
+                <a href="callto:0123456789" target="_blank" class="contact-link button-main w-17 h-17 p-0">
+                    <i class="hgi hgi-stroke hgi-call text-[1.75rem]"></i>
+                    <span class="blind">link to call</span>
+                </a>
             </li>
         </ul>
 
@@ -785,20 +801,26 @@
                             </div>
                             <div class="list-social flex flex-wrap items-center gap-5 mt-auto pt-6">
                                 <span>Theo dõi chúng tôi tại:</span>
-                                <div class="list flex flex-wrap items-center gap-3">
-                                    <a href="https://www.facebook.com/" target="_blank" class="w-10 h-10 flex items-center justify-center border border-light text-white rounded-full duration-300 hover:bg-white hover:text-black">
-                                        <span class="icon-facebook text-lg"></span>
-                                        <span class="blind">link to facebook</span>
-                                    </a>
-                                    <a href="https://www.tiktok.com/" target="_blank" class="w-10 h-10 flex items-center justify-center border border-light text-white rounded-full duration-300 hover:bg-white hover:text-black">
-                                        <span class="icon-tiktok text-lg"></span>
-                                        <span class="blind">link to tiktok</span>
-                                    </a>
-                                    <a href="https://www.shopee.com/" target="_blank" class="w-10 h-10 flex items-center justify-center border border-light text-white rounded-full duration-300 hover:bg-white hover:text-black">
-                                        <span class="icon-shopee text-lg"></span>
-                                        <span class="blind">link to shopee</span>
-                                    </a>
-                                </div>
+                                <ul class="list flex flex-wrap items-center gap-5">
+                                    <li class="item">
+                                        <a href="https://www.tiktok.com/" target="_blank" class="duration-300 hover:text-primary">
+                                            <i class="hgi hgi-stroke hgi-tiktok text-4xl"></i>
+                                            <span class="blind">link to tiktok</span>
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="https://www.facebook.com/" target="_blank" class="duration-300 hover:text-primary">
+                                            <i class="hgi hgi-stroke hgi-tiktok text-4xl"></i>
+                                            <span class="blind">link to facebook</span>
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="https://www.shopee.com/" target="_blank" class="duration-300 hover:text-primary">
+                                            <i class="hgi hgi-stroke hgi-tiktok text-4xl"></i>
+                                            <span class="blind">link to shopee</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         <div class="footer-nav">
