@@ -12,6 +12,26 @@ module.exports = {
         '13': '3.25rem',
         '7.5': '1.875rem',
       },
+      fontSize: {
+        'head1': ['72px', { lineHeight: '88px', letterSpacing: '0.3px', fontWeight: 600 }],
+        'head2': ['48px', { lineHeight: '56px', letterSpacing: '0.3px', fontWeight: 600 }],
+        'head3': ['36px', { lineHeight: '44px', letterSpacing: '0.3px', fontWeight: 600 }],
+        'head4': ['28px', { lineHeight: '36px', letterSpacing: '0.3px', fontWeight: 600 }],
+        'head5': ['24px', { lineHeight: '32px', letterSpacing: '0.3px', fontWeight: 600 }],
+        'head6': ['20px', { lineHeight: '28px', letterSpacing: '0.3px', fontWeight: 600 }],
+        'body1': ['18px', { lineHeight: '28px' }],
+        'body2': ['16px', { lineHeight: '24px' }],
+        'body3': ['14px', { lineHeight: '20px' }],
+        'head1-mo': ['32px', { lineHeight: '40px', letterSpacing: '0.3px', fontWeight: 600 }],
+        'head2-mo': ['24px', { lineHeight: '32px', letterSpacing: '0.3px', fontWeight: 600 }],
+        'head3-mo': ['24px', { lineHeight: '32px', letterSpacing: '0.3px', fontWeight: 600 }],
+        'head4-mo': ['20px', { lineHeight: '28px', letterSpacing: '0.3px', fontWeight: 600 }],
+        'head5-mo': ['16px', { lineHeight: '24px', letterSpacing: '0.3px', fontWeight: 600 }],
+        'head6-mo': ['12px', { lineHeight: '20px', letterSpacing: '0.3px', fontWeight: 600 }],
+        'body1-mo': ['16px', { lineHeight: '24px' }],
+        'body2-mo': ['16px', { lineHeight: '24px' }],
+        'body3-mo': ['14px', { lineHeight: '20px' }],
+      },
       borderRadius: {
         '20': '1.25rem',
       }
@@ -62,5 +82,5 @@ module.exports = {
       transparent: 'transparent',
     },
   },
-  plugins: [],
+  plugins: []
 }

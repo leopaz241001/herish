@@ -87,9 +87,6 @@
 .section-swiper-navigation {
     .custom-button-prev,
     .custom-button-next {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);

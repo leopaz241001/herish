@@ -58,145 +58,56 @@
   }
 }
 
-.heading1 {
-  display: block;
-  font-size: 72px;
-  line-height: 88px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-}
-
-.heading2 {
-  display: block;
-  font-size: 48px;
-  line-height: 56px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-}
-
-.heading3 {
-  display: block;
-  font-size: 36px;
-  line-height: 44px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-}
-
-.heading4 {
-  display: block;
-  font-size: 28px;
-  line-height: 36px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-}
-
-.heading5 {
-  display: block;
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-}
-
-.heading6 {
-  display: block;
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-}
-
-.body1 {
-  font-size: 18px;
-  line-height: 28px;
-}
-
-.body2 {
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.body3 {
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.bg-linear {
-  background: linear-gradient(238deg, #faf7ef 0%, #f4f6fc 99.66%);
-}
-
-.bg-gradient {
-  background: linear-gradient(180deg, #35CFCF 0%, #104E97 100%);
-}
-
-.shadow-md {
-  box-shadow: 0px 1px 7px 0px rgba(72, 95, 119, 0.12);
-
-  &:hover {
-    box-shadow: 0px 5px 20px 1px rgba(72, 95, 119, 0.18);
-  }
-}
-
-.shadow-lg {
-  box-shadow: 0px 1px 7px 0px rgba(72, 95, 119, 0.15);
-
-  &:hover {
-    box-shadow: 0px 5px 20px 1px rgba(72, 95, 119, 0.22);
-  }
-}
-
 @media (max-width: 1023.98px) {
-  .heading1 {
+  .text-head1 {
     font-size: 52px;
     line-height: 60px;
   }
 
-  .heading2 {
+  .text-head2 {
     font-size: 44px;
     line-height: 52px;
+  }
+
+  .text-head3 {
+    font-size: 36px;
+    line-height: 44px;
   }
 }
 
 @media (max-width: 639.98px) {
-  .heading1 {
+  .text-head1 {
     font-size: 32px;
     line-height: 40px;
   }
 
-  .heading2 {
+  .text-head2 {
     font-size: 24px;
     line-height: 32px;
   }
 
-  .heading3 {
+  .text-head3 {
     font-size: 24px;
     line-height: 32px;
   }
 
-  .heading4 {
+  .text-head4 {
     font-size: 20px;
     line-height: 28px;
   }
 
-  .heading5 {
+  .text-head5 {
     font-size: 16px;
     line-height: 24px;
   }
 
-  .heading6 {
+  .text-head6 {
     font-size: 12px;
     line-height: 20px;
   }
 
-  .body1 {
+  .text-body1 {
     font-size: 16px;
     line-height: 24px;
-  }
-
-  .button-main {
-    font-size: 14px;
-    line-height: 22px;
-    padding: 10px 16px;
-    border-radius: 4px;
   }
 }
