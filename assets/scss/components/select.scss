@@ -2,43 +2,64 @@
     position: relative;
     cursor: pointer;
 
-    .selected {
-        display: inline-flex;
-        flex-direction: column;
-        position: relative;
-
-        &::before {
-            content: attr(data-title);
-            height: 0;
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
+    &.bg-secondary-ui {
+        &:hover {
+            background-color: var(--secondary-ui);
+            color: var(--neutral-txt-high);
         }
     }
 
-    .list-option {
+    .selected {
+        position: relative;
+    }
+
+    .menu {
         visibility: hidden;
+        overflow: hidden;
         position: absolute;
-        top: 100%;
-        left: 50%;
-        z-index: 1;
-        padding: 12px;
-        border-radius: 6px;
+        top: calc(100% + 0.5rem);
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        min-width: 280px;
+        border: 1px solid var(--secondary);
+        border-radius: 0.5rem;
+        background-color: var(--white);
         opacity: 0;
         transition: all ease 0.3s;
-        transform: translate(-50%, 2px) scaleY(0);
+        transform: scaleY(0);
         transform-origin: top center;
-        box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.12);
+
+        .list-option {
+            overflow-x: hidden;
+            max-height: 352px;
+            padding: 0.5rem;
+            
+            &::-webkit-scrollbar {
+                width: 0.25rem;
+                background-color: var(--neutral-ui);
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--neutral);
+                border-radius: 100px;
+            }
+        }
 
         li {
-            padding: 6px 16px;
-            border-radius: 4px;
+            padding: 1rem 0.5rem;
+            border-bottom: 1px solid var(--neutral-ui);
             white-space: nowrap;
+            color: var(--neutral-txt-high);
             cursor: pointer;
             transition: 0.3s;
 
+            &:last-child {
+                border: none;
+            }
+
             &:hover {
-                background: var(--background);
+                background: var(--secondary-ui);
             }
 
             &.form-input {
@@ -46,22 +67,18 @@
             }
         }
 
-        &.p-0 {
-            padding: 0;
-        }
-
         &.-top {
             top: unset;
-            bottom: 100%;
+            bottom: calc(100% + 8px);
             transform-origin: bottom center;
 
             &.open {
-                transform: translate(-50%, -2px) scaleY(1);
+                transform: scaleY(1);
             }
         }
 
         &.open {
-            transform: translate(-50%, 2px) scaleY(1);
+            transform: scaleY(1);
             opacity: 1;
             visibility: visible;
         }
@@ -80,12 +97,6 @@
                 border-radius: 6px;
             }
         }
-    }
-
-    .icon-down {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
     }
 }
 

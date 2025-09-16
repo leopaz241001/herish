@@ -16,19 +16,6 @@ body {
   font-weight: 400;
   scroll-behavior: smooth;
 }
-@media (max-width: 1024px) {
-  html,
-  body {
-    font-size: 15px;
-  }
-}
-@media (max-width: 640px) {
-  html,
-  body {
-    font-size: 14px;
-    line-height: 24px;
-  }
-}
 
 html:has(body.scroll-locked) {
   overflow: hidden;
@@ -431,21 +418,19 @@ input::-webkit-inner-spin-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 24px;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
   border-radius: 100px;
   background-color: var(--primary);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: var(--white);
   white-space: nowrap;
   cursor: pointer;
   transition: all ease-out 0.5s;
 }
-.button-main.-small {
-  padding: 8px 24px;
-}
-.button-main.-disabled {
+.button-main.disabled {
   background-color: var(--neutral-ui);
   color: var(--neutral-txt-low);
   pointer-events: none;
@@ -477,9 +462,6 @@ input::-webkit-inner-spin-button {
     font-size: 14px;
     line-height: 22px;
     padding: 10px 16px;
-  }
-  .button-main.-small {
-    padding: 8px 14px;
   }
 }
 
@@ -612,77 +594,84 @@ input::-webkit-inner-spin-button {
   position: relative;
   cursor: pointer;
 }
+.select-block.bg-secondary-ui:hover {
+  background-color: var(--secondary-ui);
+  color: var(--neutral-txt-high);
+}
 .select-block .selected {
-  display: inline-flex;
-  flex-direction: column;
   position: relative;
 }
-.select-block .selected::before {
-  content: attr(data-title);
-  height: 0;
-  opacity: 0;
+.select-block .menu {
   visibility: hidden;
-  pointer-events: none;
-}
-.select-block .list-option {
-  visibility: hidden;
+  overflow: hidden;
   position: absolute;
-  top: 100%;
-  left: 50%;
-  z-index: 1;
-  padding: 12px;
-  border-radius: 6px;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  min-width: 280px;
+  border: 1px solid var(--secondary);
+  border-radius: 0.5rem;
+  background-color: var(--white);
   opacity: 0;
   transition: all ease 0.3s;
-  transform: translate(-50%, 2px) scaleY(0);
+  transform: scaleY(0);
   transform-origin: top center;
-  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.12);
 }
-.select-block .list-option li {
-  padding: 6px 16px;
-  border-radius: 4px;
+.select-block .menu .list-option {
+  overflow-x: hidden;
+  max-height: 352px;
+  padding: 0.5rem;
+}
+.select-block .menu .list-option::-webkit-scrollbar {
+  width: 0.25rem;
+  background-color: var(--neutral-ui);
+}
+.select-block .menu .list-option::-webkit-scrollbar-thumb {
+  background-color: var(--neutral);
+  border-radius: 100px;
+}
+.select-block .menu li {
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid var(--neutral-ui);
   white-space: nowrap;
+  color: var(--neutral-txt-high);
   cursor: pointer;
   transition: 0.3s;
 }
-.select-block .list-option li:hover {
-  background: var(--background);
+.select-block .menu li:last-child {
+  border: none;
 }
-.select-block .list-option li.form-input {
+.select-block .menu li:hover {
+  background: var(--secondary-ui);
+}
+.select-block .menu li.form-input {
   background: transparent;
 }
-.select-block .list-option.p-0 {
-  padding: 0;
-}
-.select-block .list-option.-top {
+.select-block .menu.-top {
   top: unset;
-  bottom: 100%;
+  bottom: calc(100% + 8px);
   transform-origin: bottom center;
 }
-.select-block .list-option.-top.open {
-  transform: translate(-50%, -2px) scaleY(1);
+.select-block .menu.-top.open {
+  transform: scaleY(1);
 }
-.select-block .list-option.open {
-  transform: translate(-50%, 2px) scaleY(1);
+.select-block .menu.open {
+  transform: scaleY(1);
   opacity: 1;
   visibility: visible;
 }
-.select-block .list-option .list-result {
+.select-block .menu .list-result {
   overflow-x: hidden;
   max-height: 200px;
 }
-.select-block .list-option .list-result::-webkit-scrollbar {
+.select-block .menu .list-result::-webkit-scrollbar {
   width: 6px;
   background-color: #f1f1f1;
 }
-.select-block .list-option .list-result::-webkit-scrollbar-thumb {
+.select-block .menu .list-result::-webkit-scrollbar-thumb {
   background-color: #c5c5c5;
   border-radius: 6px;
-}
-.select-block .icon-down {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .category-selector input {

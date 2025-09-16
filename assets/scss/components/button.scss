@@ -3,22 +3,19 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 24px;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
     border-radius: 100px;
     background-color: var(--primary);
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
-    line-height: 24px;
+    line-height: 1.5rem;
     color: var(--white);
     white-space: nowrap;
     cursor: pointer;
     transition: all ease-out 0.5s;
 
-    &.-small {
-        padding: 8px 24px;
-    }
-
-    &.-disabled {
+    &.disabled {
         background-color: var(--neutral-ui);
         color: var(--neutral-txt-low);
         pointer-events: none;
@@ -56,10 +53,6 @@
         font-size: 14px;
         line-height: 22px;
         padding: 10px 16px;
-
-        &.-small {
-            padding: 8px 14px;
-        }
     }
 }
 

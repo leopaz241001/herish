@@ -560,16 +560,16 @@
     // Select
     const handleSelectBlock = function () {
         const selectBlock = $(".select-block");
-        const listOption = $(".select-block .list-option");
-        const optionItems = $(".select-block .list-option li");
+        const menu = $(".select-block .menu");
+        const optionItems = $(".select-block .menu li");
         const formInput = $(".select-block .form-input");
 
         if (selectBlock.length > 0) {
             selectBlock.on('click', function () {
-                let list = $(this).find('.list-option');
+                let list = $(this).find('.menu');
                 let isOpen = list.hasClass('open');
 
-                $('.list-option').removeClass('open');
+                $('.menu').removeClass('open');
 
                 if (!isOpen) {
                     list.addClass('open');
@@ -578,7 +578,7 @@
 
             optionItems.on('click', function (e) {
                 e.stopPropagation()
-                listOption.removeClass('open');
+                menu.removeClass('open');
                 let dataItem = $(this).attr('data-item')
                 $(this).closest('.select-block').find('.selected').text(dataItem)
             })
@@ -589,7 +589,7 @@
 
             $(window).on('click', function (e) {
                 if (!$(e.target).closest('.select-block').length) {
-                    listOption.removeClass('open');
+                    menu.removeClass('open');
                 }
             })
         }
