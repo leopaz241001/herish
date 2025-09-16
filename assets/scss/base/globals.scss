@@ -46,14 +46,13 @@
 
 /* Main class used in Him2Her */
 .container {
-  max-width: 1322px !important;
+  max-width: 1350px !important;
   width: 100%;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin: 0 auto;
 
   @media (min-width: 1024px) {
-    max-width: 1350px !important;
     padding-right: 35px;
     padding-left: 35px;
   }
@@ -158,20 +157,40 @@
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 639.98px) {
   .heading1 {
-    font-size: 48px;
-    line-height: 56px;
+    font-size: 32px;
+    line-height: 40px;
   }
 
   .heading2 {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .heading3 {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .heading4 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .heading5 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .heading6 {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .body1 {
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .button-main {

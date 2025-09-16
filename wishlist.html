@@ -16,18 +16,18 @@
 
     <body>
         <!-- Header -->
-        <header id="header" class="header absolute top-0 left-0 w-full z-[10]">
+        <header id="header" class="header relative w-full z-[10]">
             <div class="container relative">
-                <div class="header-inner flex items-center justify-between z-[1] sm:h-24 h-20 py-4">
+                <div class="header-inner flex items-center justify-between z-[1] lg:h-24 h-[4.5rem] lg:py-4 py-2">
                     <h1>
                         <a href="index.html">
-                            <img src="./assets/images/logo-white.png" alt="logo" class="logo-white md:h-[42px] h-10 w-auto" />
+                            <img src="./assets/images/logo.png" alt="logo" class="logo xl:h-[42px] h-10 w-auto" />
                         </a>
                     </h1>
-                    <div class="navigator h-full max-xl:hidden px-6 rounded-full">
-                        <ul class="list flex items-center gap-8 h-full">
+                    <div class="navigator h-full max-lg:hidden xl:px-6 rounded-full">
+                        <ul class="list flex items-center gap-8 max-[1180px]:gap-4 h-full">
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full duration-300 text-white">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Sản phẩm</span>
                                     <i class="hgi hgi-stroke hgi-arrow-down-01"></i>
                                 </a>
@@ -55,22 +55,22 @@
                                 </div>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full duration-300 text-white">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Cá nhân hóa</span>
                                 </a>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full duration-300 text-white">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Sinh nhật</span>
                                 </a>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full duration-300 text-white">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Ngày kỷ niệm</span>
                                 </a>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full duration-300 text-white">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Dịp đặc biệt</span>
                                     <i class="hgi hgi-stroke hgi-arrow-down-01"></i>
                                 </a>
@@ -117,603 +117,258 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="list-action flex items-center gap-1">
-                        <button type="button" class="btn-open-popup flex items-center justify-center w-14 h-14 text-xl text-white max-lg:hidden" data-type="modal-search">
+                    <div class="list-action flex items-center xl:gap-1">
+                        <button type="button" class="btn-open-popup flex items-center justify-center w-14 h-14 text-xl max-lg:hidden" data-type="modal-search">
                             <i class="icon-search"></i>
                             <span class="blind">button open modal search</span>
                         </button>
-                        <a href="wishlist.html" class="flex items-center justify-center w-14 h-14 text-xl text-white max-lg:hidden">
+                        <a href="wishlist.html" class="flex items-center justify-center w-14 h-14 text-xl max-lg:hidden">
                             <i class="icon-favourite"></i>
                             <span class="blind">link to wishlist</span>
                         </a>
-                        <a href="reminders.html" class="flex items-center justify-center w-14 h-14 text-xl text-white max-lg:hidden">
+                        <a href="reminders.html" class="flex items-center justify-center w-14 h-14 text-xl max-lg:hidden">
                             <i class="icon-calendar-love-02"></i>
                             <span class="blind">link to reminders</span>
                         </a>
-                        <a href="profile.html" class="flex items-center justify-center w-14 h-14 text-xl text-white max-lg:hidden">
+                        <button class="humburger-btn mr-1.5 lg:hidden">
+                            <i class="hgi hgi-stroke hgi-menu-01 text-2xl"></i>
+                            <span class="blind">button open menu mobile</span>
+                        </button>
+                        <a href="profile.html" class="flex items-center justify-center w-14 h-14 text-xl">
                             <img src="./assets/images/avatar/avatar1.png" alt="avatar" class="w-9 h-9 rounded-full object-cover">
                             <span class="blind">link to profile</span>
                         </a>
-                        <button class="humburger-btn xl:hidden">
-                            <i class="hgi hgi-stroke hgi-menu-11 text-3xl text-white"></i>
-                            <span class="blind">button open menu mobile</span>
-                        </button>
                     </div>
                 </div>
             </div>
         </header>
 
-        <!-- Slider -->
-        <section class="slider">
-            <div class="slider-inner relative md:h-[612px] max-md:pt-60 overflow-hidden">
-                <div class="slider-bg absolute top-0 left-0 w-full h-full z-[-1]" aria-hidden="true">
-                    <img src="./assets/images/slider/hero-product-list.jpg" alt="slider1" class="w-full h-full object-cover" />
-                </div>
-                <div class="container h-full">
-                    <div class="slider-content flex flex-col items-start justify-end pb-[88px] w-full h-full text-white">
-                        <div class="flex items-center gap-3 animate animate-top" style="--i: 1">
-                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-[#d9d9d9]"></span>
-                            <strong class="body1 font-semibold">Dịp đặc biệt</strong>
-                            <span class="flex-shrink-0 w-8 h-0.5 bg-white"></span>
-                        </div>
-                        <h2 class="heading1 mt-9 animate animate-top" style="--i: 2">Tặng một hộp quà - Gửi một ngày vui</h2>
-                        <p class="body2 mt-7 animate animate-top" style="--i: 3">Mỗi hộp là một câu chuyện nhỏ được chăm chút - để bạn dễ dàng gửi lời chúc đúng lúc, đúng cách.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Filter -->
-        <section class="filter sm:pt-32 pt-16 border-b border-primary-txt">
+        <!-- Wishlist -->
+        <section class="wishlist sm:pt-[88px] pt-8 sm:pb-32">
             <div class="container">
-                <h2 class="heading5 text-neutral-hover">Bộ lọc</h2>
-                <ul class="flex flex-wrap gap-4 mt-6">
-                    <li>
-                        <div class="select-block button-main font-normal bg-secondary-ui">
-                            <div class="select">
-                                <span class="selected">Mục đích tặng</span>
-                                <div class="menu">
-                                    <ul class="list-option">
-                                        <li data-item="Sinh nhật">Sinh nhật</li>
-                                        <li data-item="Ngày kỷ niệm">Ngày kỷ niệm</li>
-                                        <li data-item="Dịp đặc biệt">Dịp đặc biệt</li>
-                                        <li data-item="Chúc mừng">Chúc mừng</li>
-                                        <li data-item="Đám cưới & Cầu hôn">Đám cưới & Cầu hôn</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <span class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-2xl"></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="select-block button-main font-normal bg-secondary-ui">
-                            <div class="select">
-                                <span class="selected">Người nhận</span>
-                                <div class="menu">
-                                    <ul class="list-option">
-                                        <li data-item="Bạn trai">Bạn trai</li>
-                                        <li data-item="Bạn gái">Bạn gái</li>
-                                        <li data-item="Chồng">Chồng</li>
-                                        <li data-item="Vợ">Vợ</li>
-                                        <li data-item="Bố">Bố</li>
-                                        <li data-item="Mẹ">Mẹ</li>
-                                        <li data-item="Con trai">Con trai</li>
-                                        <li data-item="Con gái">Con gái</li>
-                                        <li data-item="Anh/Em trai">Anh/Em trai</li>
-                                        <li data-item="Chị/Em gái">Chị/Em gái</li>
-                                        <li data-item="Ông">Ông</li>
-                                        <li data-item="Bà">Bà</li>
-                                        <li data-item="Bạn bè (nam)">Bạn bè (nam)</li>
-                                        <li data-item="Bạn bè (nữ)">Bạn bè (nữ)</li>
-                                        <li data-item="Đồng nghiệp">Đồng nghiệp</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <span class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-2xl"></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="select-block button-main font-normal bg-secondary-ui">
-                            <div class="select">
-                                <span class="selected">Phong cách</span>
-                                <div class="menu">
-                                    <ul class="list-option">
-                                        <li data-item="Dễ thương">Dễ thương</li>
-                                        <li data-item="Tối giản">Tối giản</li>
-                                        <li data-item="Lãng mạn">Lãng mạn</li>
-                                        <li data-item="Hoài cổ">Hoài cổ</li>
-                                        <li data-item="Nghệ thuật">Nghệ thuật</li>
-                                        <li data-item="Sang trọng">Sang trọng</li>
-                                        <li data-item="Hiện đại">Hiện đại</li>
-                                        <li data-item="Truyền thống">Truyền thống</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <span class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-2xl"></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="select-block button-main font-normal bg-secondary-ui">
-                            <div class="select">
-                                <span class="selected">Giá</span>
-                                <div class="menu">
-                                    <ul class="list-option">
-                                        <li data-item="Dưới ₫200.000">Dưới ₫200.000</li>
-                                        <li data-item="Từ ₫200.000 đến ₫400.000 ">Từ ₫200.000 đến ₫400.000 </li>
-                                        <li data-item="Từ ₫400.000 đến ₫700.000 ">Từ ₫400.000 đến ₫700.000 </li>
-                                        <li data-item="Trên ₫700.000 ">Trên ₫700.000 </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <span class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-2xl"></span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Products -->
-        <section class="products sm:pt-32 pt-16">
-            <div class="container">
-                <div class="flex flex-wrap justify-between gap-4">
-                    <div class="flex flex-wrap items-end gap-5 gap-y-2">
-                        <h2 class="heading2">Hộp quà tặng</h2>
-                        <span class="heading6 text-neutral-txt-low mb-1">68 sản phẩm</span>
+                <div class="flex flex-col items-center justify-center">
+                    <div class="flex items-center gap-3 animate animate-top" style="--i: 1">
+                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary"></span>
+                        <strong class="body1 font-semibold">Yêu thích</strong>
+                        <span class="flex-shrink-0 w-14 h-0.5 bg-neutral-txt-high"></span>
                     </div>
-                    <div class="select-block button-main font-normal bg-secondary-ui">
-                        <span>Sắp xếp theo:</span>
-                        <div class="select">
-                            <span class="selected font-semibold text-primary-txt">Phổ biến nhất</span>
-                            <div class="menu">
-                                <ul class="list-option">
-                                    <li data-item="Phổ biến nhất">Phổ biến nhất</li>
-                                    <li data-item="Mới nhất">Mới nhất</li>
-                                    <li data-item="Giá cao → thấp">Giá cao → thấp</li>
-                                    <li data-item="Giá thấp → cao">Giá thấp → cao</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <span class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-2xl"></span>
-                    </div>
+                    <h2 class="heading1 sm:mt-9 mt-6 text-center animate animate-top" style="--i: 2">Sản phẩm bạn đã thích</h2>
+                    <p class="body2 sm:mt-7 mt-5 text-center animate animate-top" style="--i: 3">Những món quà khiến bạn dừng lại ngắm nhìn lâu hơn</p>
                 </div>
-                <div class="product mt-13">
-                    <ul class="product-list grid xl:grid-cols-3 sm:grid-cols-2 gap-6 gap-y-8">
+                <div class="product sm:mt-13 mt-8">
+                    <!-- Nếu có sản phẩm -->
+                    <ul class="product-list grid xl:grid-cols-3 grid-cols-2 sm:gap-6 gap-4 sm:gap-y-8 gap-y-5">
                         <li class="product-item animate animate-top" style="--i: 1">
                             <a href="product-detail.html" class="product-link block group">
-                                <div class="image overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/1.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
-                                </div>
-                                <div class="content mt-5">
-                                    <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                    <div class="list-price flex items-center mt-3">
-                                        <span class="heading4 text-secondary">₫899.000</span>
-                                        <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                        <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="product-item animate animate-top" style="--i: 2">
-                            <a href="product-detail.html" class="product-link block group">
-                                <div class="image overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/2.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
-                                </div>
-                                <div class="content mt-5">
-                                    <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                    <div class="list-price flex items-center mt-3">
-                                        <span class="heading4 text-secondary">₫899.000</span>
-                                        <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                        <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="product-item animate animate-top" style="--i: 3">
-                            <a href="product-detail.html" class="product-link block group">
-                                <div class="image overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/3.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
-                                </div>
-                                <div class="content mt-5">
-                                    <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                    <div class="list-price flex items-center mt-3">
-                                        <span class="heading4 text-secondary">₫899.000</span>
-                                        <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                        <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="product-item animate animate-top" style="--i: 1">
-                            <a href="product-detail.html" class="product-link block group">
-                                <div class="image overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/4.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
-                                </div>
-                                <div class="content mt-5">
-                                    <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                    <div class="list-price flex items-center mt-3">
-                                        <span class="heading4 text-secondary">₫899.000</span>
-                                        <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                        <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="product-item animate animate-top" style="--i: 2">
-                            <a href="product-detail.html" class="product-link block group">
-                                <div class="image overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/5.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
-                                </div>
-                                <div class="content mt-5">
-                                    <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                    <div class="list-price flex items-center mt-3">
-                                        <span class="heading4 text-secondary">₫899.000</span>
-                                        <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                        <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="product-item animate animate-top" style="--i: 3">
-                            <a href="product-detail.html" class="product-link block group">
-                                <div class="image overflow-hidden rounded-xl">
+                                <div class="image overflow-hidden rounded-xl max-sm:aspect-square">
                                     <img src="./assets/images/product/6.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
                                 </div>
-                                <div class="content mt-5">
+                                <div class="content sm:mt-5 mt-3">
                                     <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                    <div class="list-price flex items-center mt-3">
-                                        <span class="heading4 text-secondary">₫899.000</span>
-                                        <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                        <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
+                                    <div class="list-price flex max-sm:flex-col-reverse sm:items-center sm:gap-3 gap-0.5 sm:mt-3 mt-1">
+                                        <div class="flex items-end sm:gap-2 gap-1">
+                                            <span class="heading4 max-sm:text-base text-secondary">₫899.000</span>
+                                            <span class="heading6 sm:mb-0.5 text-neutral-txt-low line-through">₫1.101.000</span>
+                                        </div>
+                                        <span class="badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-hover-ui font-semibold max-sm:text-xs">-20%</span>
                                     </div>
                                 </div>
                             </a>
                         </li>
                         <li class="product-item animate animate-top" style="--i: 1">
                             <a href="product-detail.html" class="product-link block group">
-                                <div class="image overflow-hidden rounded-xl">
+                                <div class="image overflow-hidden rounded-xl max-sm:aspect-square">
                                     <img src="./assets/images/product/7.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
                                 </div>
-                                <div class="content mt-5">
+                                <div class="content sm:mt-5 mt-3">
                                     <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                    <div class="list-price flex items-center mt-3">
-                                        <span class="heading4 text-secondary">₫899.000</span>
-                                        <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                        <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="product-item animate animate-top" style="--i: 2">
-                            <a href="product-detail.html" class="product-link block group">
-                                <div class="image overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/8.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
-                                </div>
-                                <div class="content mt-5">
-                                    <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                    <div class="list-price flex items-center mt-3">
-                                        <span class="heading4 text-secondary">₫899.000</span>
-                                        <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                        <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="product-item animate animate-top" style="--i: 3">
-                            <a href="product-detail.html" class="product-link block group">
-                                <div class="image overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/9.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
-                                </div>
-                                <div class="content mt-5">
-                                    <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                    <div class="list-price flex items-center mt-3">
-                                        <span class="heading4 text-secondary">₫899.000</span>
-                                        <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                        <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
+                                    <div class="list-price flex max-sm:flex-col-reverse sm:items-center sm:gap-3 gap-0.5 sm:mt-3 mt-1">
+                                        <div class="flex items-end sm:gap-2 gap-1">
+                                            <span class="heading4 max-sm:text-base text-secondary">₫899.000</span>
+                                            <span class="heading6 sm:mb-0.5 text-neutral-txt-low line-through">₫1.101.000</span>
+                                        </div>
+                                        <span class="badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-hover-ui font-semibold max-sm:text-xs">-20%</span>
                                     </div>
                                 </div>
                             </a>
                         </li>
                         <li class="product-item animate animate-top" style="--i: 1">
                             <a href="product-detail.html" class="product-link block group">
-                                <div class="image overflow-hidden rounded-xl">
+                                <div class="image overflow-hidden rounded-xl max-sm:aspect-square">
+                                    <img src="./assets/images/product/8.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
+                                </div>
+                                <div class="content sm:mt-5 mt-3">
+                                    <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
+                                    <div class="list-price flex max-sm:flex-col-reverse sm:items-center sm:gap-3 gap-0.5 sm:mt-3 mt-1">
+                                        <div class="flex items-end sm:gap-2 gap-1">
+                                            <span class="heading4 max-sm:text-base text-secondary">₫899.000</span>
+                                            <span class="heading6 sm:mb-0.5 text-neutral-txt-low line-through">₫1.101.000</span>
+                                        </div>
+                                        <span class="badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-hover-ui font-semibold max-sm:text-xs">-20%</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="product-item animate animate-top" style="--i: 1">
+                            <a href="product-detail.html" class="product-link block group">
+                                <div class="image overflow-hidden rounded-xl max-sm:aspect-square">
+                                    <img src="./assets/images/product/9.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
+                                </div>
+                                <div class="content sm:mt-5 mt-3">
+                                    <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
+                                    <div class="list-price flex max-sm:flex-col-reverse sm:items-center sm:gap-3 gap-0.5 sm:mt-3 mt-1">
+                                        <div class="flex items-end sm:gap-2 gap-1">
+                                            <span class="heading4 max-sm:text-base text-secondary">₫899.000</span>
+                                            <span class="heading6 sm:mb-0.5 text-neutral-txt-low line-through">₫1.101.000</span>
+                                        </div>
+                                        <span class="badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-hover-ui font-semibold max-sm:text-xs">-20%</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="product-item animate animate-top" style="--i: 1">
+                            <a href="product-detail.html" class="product-link block group">
+                                <div class="image overflow-hidden rounded-xl max-sm:aspect-square">
                                     <img src="./assets/images/product/10.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
                                 </div>
-                                <div class="content mt-5">
+                                <div class="content sm:mt-5 mt-3">
                                     <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                    <div class="list-price flex items-center mt-3">
-                                        <span class="heading4 text-secondary">₫899.000</span>
-                                        <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                        <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="product-item animate animate-top" style="--i: 2">
-                            <a href="product-detail.html" class="product-link block group">
-                                <div class="image overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/11.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
-                                </div>
-                                <div class="content mt-5">
-                                    <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                    <div class="list-price flex items-center mt-3">
-                                        <span class="heading4 text-secondary">₫899.000</span>
-                                        <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                        <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="product-item animate animate-top" style="--i: 3">
-                            <a href="product-detail.html" class="product-link block group">
-                                <div class="image overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/12.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
-                                </div>
-                                <div class="content mt-5">
-                                    <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                    <div class="list-price flex items-center mt-3">
-                                        <span class="heading4 text-secondary">₫899.000</span>
-                                        <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                        <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
+                                    <div class="list-price flex max-sm:flex-col-reverse sm:items-center sm:gap-3 gap-0.5 sm:mt-3 mt-1">
+                                        <div class="flex items-end sm:gap-2 gap-1">
+                                            <span class="heading4 max-sm:text-base text-secondary">₫899.000</span>
+                                            <span class="heading6 sm:mb-0.5 text-neutral-txt-low line-through">₫1.101.000</span>
+                                        </div>
+                                        <span class="badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-hover-ui font-semibold max-sm:text-xs">-20%</span>
                                     </div>
                                 </div>
                             </a>
                         </li>
                     </ul>
-                    <div class="w-fit mx-auto mt-13 animate animate-top" style="--i: 3">
-                        <a href="#!" class="button-main bg-primary-ui text-primary-txt-head">Xem thêm sản phẩm</a>
-                    </div>
+                    
+                    <!-- Nếu không có sản phẩm -->
+                    <!-- <div class="flex flex-col items-center justify-center">
+                        <div class="flex-shrink-0 h-[200px] animate animate-top" style="--i: 3">
+                            <img src="./assets/images/components/cart-blank.png" alt="cart blank" class="h-full">
+                        </div>
+                        <strong class="heading4 mt-8 text-center animate animate-top" style="--i: 4">Bạn chưa lưu sản phẩm nào vào danh sách yêu thích</strong>
+                        <p class="body2 mt-2 text-center animate animate-top" style="--i: 5">Hãy khám phá ngay để tìm ra những món đồ bạn ưng ý và lưu lại để dễ dàng tìm lại sau.</p>
+                        <div class="mt-8 animate animate-top" style="--i: 6">
+                            <a href="index.html" class="button-main">Trang chủ</a>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="testimonials sm:pt-32 pt-16">
+        <!-- Nếu đã login -->
+        <!-- Recent product -->
+        <section class="recent-product sm:py-32 py-16">
             <div class="container">
-                <div class="grid md:grid-cols-12 gap-6">
-                    <strong class="flex items-center gap-3 md:col-span-4 h-fit animate animate-top" style="--i: 1">
-                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary"></span>
-                        <span class="body1 font-semibold">Cảm nhận của khách hàng</span>
-                    </strong>
-                    <div class="banner-content md:col-span-8">
-                        <h2 class="heading2 animate animate-top" style="--i: 1">Khách hàng nói gì về chúng tôi?</h2>
-                        <p class="desc mt-7 animate animate-top" style="--i: 2">Mỗi món quà là một kết nối, mỗi lời cảm ơn là động lực để chúng tôi làm tốt hơn mỗi ngày.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonials-swiper swiper pt-13 max-sm:px-6 animate animate-top" style="--i: 1">
-                <ul class="testimonials-list swiper-wrapper ease-linear">
-                    <li class="testimonials-item swiper-slide flex flex-col justify-between relative p-6 bg-neutral-ui rounded-xl">
-                        <span class="icon-quote absolute -top-5 text-[32px]"></span>
-                        <p class="review body2">“Lần đầu tặng quà mà được khen có gu, từ giờ chắc sẽ đặt thường xuyên quá!”</p>
-                        <div class="user flex gap-4 mt-11">
-                            <div class="avatar overflow-hidden flex-shrink-0 w-13 h-13 rounded-full">
-                                <img src="./assets/images/avatar/IMG-1.webp" alt="Hà Linh" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <strong class="name block pb-1 heading6">Hà Linh</strong>
-                                <span class="job body2 text-neutral-txt-low">Chuyên viên nhân sự</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="testimonials-item swiper-slide flex flex-col justify-between relative p-6 bg-neutral-ui rounded-xl">
-                        <span class="icon-quote absolute -top-5 text-[32px]"></span>
-                        <p class="review body2">“Đặt quà cho mẹ 20/10, mẹ mở hộp mà xúc động. Cảm ơn team vì sự chỉn chu.”</p>
-                        <div class="user flex gap-4 mt-11">
-                            <div class="avatar overflow-hidden flex-shrink-0 w-13 h-13 rounded-full">
-                                <img src="./assets/images/avatar/IMG-2.webp" alt="Thu Thảo" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <strong class="name block pb-1 heading6">Thu Thảo</strong>
-                                <span class="job body2 text-neutral-txt-low">Nhà báo</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="testimonials-item swiper-slide flex flex-col justify-between relative p-6 bg-neutral-ui rounded-xl">
-                        <span class="icon-quote absolute -top-5 text-[32px]"></span>
-                        <p class="review body2">“Shop rất tâm lý, còn nhắc mình ngày kỷ niệm. Nhờ vậy không bị quên ngày quan trọng nữa!”</p>
-                        <div class="user flex gap-4 mt-11">
-                            <div class="avatar overflow-hidden flex-shrink-0 w-13 h-13 rounded-full">
-                                <img src="./assets/images/avatar/IMG-3.webp" alt="Đức Anh" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <strong class="name block pb-1 heading6">Đức Anh</strong>
-                                <span class="job body2 text-neutral-txt-low">Nhân viên IT</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="testimonials-item swiper-slide flex flex-col justify-between relative p-6 bg-neutral-ui rounded-xl">
-                        <span class="icon-quote absolute -top-5 text-[32px]"></span>
-                        <p class="review body2">“Đây là lần thứ ba đặt ở đây, món nào cũng đẹp và đúng dịp. Dịch vụ đáng tin cậy.”</p>
-                        <div class="user flex gap-4 mt-11">
-                            <div class="avatar overflow-hidden flex-shrink-0 w-13 h-13 rounded-full">
-                                <img src="./assets/images/avatar/IMG-4.webp" alt="Phương Vy" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <strong class="name block pb-1 heading6">Phương Vy</strong>
-                                <span class="job body2 text-neutral-txt-low">Doanh nhân</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="testimonials-item swiper-slide flex flex-col justify-between relative p-6 bg-neutral-ui rounded-xl">
-                        <span class="icon-quote absolute -top-5 text-[32px]"></span>
-                        <p class="review body2">“Mình đặt hộp quà sinh nhật cho bạn, giao đúng ngày và rất tinh tế. Cảm ơn shop nhiều!”</p>
-                        <div class="user flex gap-4 mt-11">
-                            <div class="avatar overflow-hidden flex-shrink-0 w-13 h-13 rounded-full">
-                                <img src="./assets/images/avatar/IMG-5.webp" alt="Trần Hoàng Nam" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <strong class="name block pb-1 heading6">Trần Hoàng Nam</strong>
-                                <span class="job body2 text-neutral-txt-low">Giáo viên tiếng Anh</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="testimonials-item swiper-slide flex flex-col justify-between relative p-6 bg-neutral-ui rounded-xl">
-                        <span class="icon-quote absolute -top-5 text-[32px]"></span>
-                        <p class="review body2">“Lần đầu tặng quà mà được khen có gu, từ giờ chắc sẽ đặt thường xuyên quá!”</p>
-                        <div class="user flex gap-4 mt-11">
-                            <div class="avatar overflow-hidden flex-shrink-0 w-13 h-13 rounded-full">
-                                <img src="./assets/images/avatar/IMG-6.webp" alt="Hà Linh" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <strong class="name block pb-1 heading6">Hà Linh</strong>
-                                <span class="job body2 text-neutral-txt-low">Chuyên viên nhân sự</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="testimonials-item swiper-slide flex flex-col justify-between relative p-6 bg-neutral-ui rounded-xl">
-                        <span class="icon-quote absolute -top-5 text-[32px]"></span>
-                        <p class="review body2">“Đặt quà cho mẹ 20/10, mẹ mở hộp mà xúc động. Cảm ơn team vì sự chỉn chu.”</p>
-                        <div class="user flex gap-4 mt-11">
-                            <div class="avatar overflow-hidden flex-shrink-0 w-13 h-13 rounded-full">
-                                <img src="./assets/images/avatar/IMG-7.webp" alt="Thu Thảo" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <strong class="name block pb-1 heading6">Thu Thảo</strong>
-                                <span class="job body2 text-neutral-txt-low">Nhà báo</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="testimonials-item swiper-slide flex flex-col justify-between relative p-6 bg-neutral-ui rounded-xl">
-                        <span class="icon-quote absolute -top-5 text-[32px]"></span>
-                        <p class="review body2">“Shop rất tâm lý, còn nhắc mình ngày kỷ niệm. Nhờ vậy không bị quên ngày quan trọng nữa!”</p>
-                        <div class="user flex gap-4 mt-11">
-                            <div class="avatar overflow-hidden flex-shrink-0 w-13 h-13 rounded-full">
-                                <img src="./assets/images/avatar/IMG-8.webp" alt="Đức Anh" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <strong class="name block pb-1 heading6">Đức Anh</strong>
-                                <span class="job body2 text-neutral-txt-low">Nhân viên IT</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="testimonials-item swiper-slide flex flex-col justify-between relative p-6 bg-neutral-ui rounded-xl">
-                        <span class="icon-quote absolute -top-5 text-[32px]"></span>
-                        <p class="review body2">“Đây là lần thứ ba đặt ở đây, món nào cũng đẹp và đúng dịp. Dịch vụ đáng tin cậy.”</p>
-                        <div class="user flex gap-4 mt-11">
-                            <div class="avatar overflow-hidden flex-shrink-0 w-13 h-13 rounded-full">
-                                <img src="./assets/images/avatar/IMG-9.webp" alt="Phương Vy" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <strong class="name block pb-1 heading6">Phương Vy</strong>
-                                <span class="job body2 text-neutral-txt-low">Doanh nhân</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="testimonials-item swiper-slide flex flex-col justify-between relative p-6 bg-neutral-ui rounded-xl">
-                        <span class="icon-quote absolute -top-5 text-[32px]"></span>
-                        <p class="review body2">“Mình đặt hộp quà sinh nhật cho bạn, giao đúng ngày và rất tinh tế. Cảm ơn shop nhiều!”</p>
-                        <div class="user flex gap-4 mt-11">
-                            <div class="avatar overflow-hidden flex-shrink-0 w-13 h-13 rounded-full">
-                                <img src="./assets/images/avatar/IMG-10.webp" alt="Trần Hoàng Nam" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <strong class="name block pb-1 heading6">Trần Hoàng Nam</strong>
-                                <span class="job body2 text-neutral-txt-low">Giáo viên tiếng Anh</span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Best seller -->
-        <section class="best-seller sm:py-32 py-16">
-            <div class="container">
-                <div class="grid md:grid-cols-12 gap-6">
+                <div class="grid md:grid-cols-12 sm:gap-6 gap-4">
                     <strong class="flex items-center gap-3 md:col-span-4 h-fit animate animate-top" style="--i: 1">
                         <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary"></span>
                         <span class="body1 font-semibold">Sản phẩm</span>
                     </strong>
                     <div class="banner-content md:col-span-8">
-                        <h2 class="heading2 animate animate-top" style="--i: 1">Bán chạy nhất</h2>
-                        <p class="desc mt-7 animate animate-top" style="--i: 2">Những món quà được yêu thích và lựa chọn nhiều nhất - có thể bạn cũng sẽ thích.</p>
+                        <h2 class="heading2 animate animate-top" style="--i: 1">Đã xem gần đây</h2>
+                        <p class="desc sm:mt-7 mt-2 animate animate-top" style="--i: 2">Gợi nhớ nhanh các sản phẩm bạn từng quan tâm để bạn tiện so sánh và chọn lựa</p>
                     </div>
                 </div>
-                <div class="list section-swiper-navigation relative mt-13">
-                    <button class="custom-button-prev lg:-left-20 left-2">
+                <div class="list section-swiper-navigation relative sm:mt-13 mt-8">
+                    <button class="custom-button-prev -left-20 max-lg:hidden">
                         <span class="blind">button prev</span>
                         <i class="icon-arrow-left-01-round text-2xl"></i>
                     </button>
-                    <div class="product-swiper swiper">
+                    <div class="product-swiper swiper max-sm:overflow-unset">
                         <ul class="product-list swiper-wrapper">
                             <li class="product-item swiper-slide animate animate-top" style="--i: 1">
                                 <a href="product-detail.html" class="product-link block group">
-                                    <div class="image overflow-hidden rounded-xl">
-                                        <img src="./assets/images/product/1.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
+                                    <div class="image overflow-hidden rounded-xl max-sm:aspect-square">
+                                        <img src="./assets/images/product/6.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
                                     </div>
-                                    <div class="content mt-5">
+                                    <div class="content sm:mt-5 mt-3">
                                         <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                        <div class="list-price flex items-center mt-3">
-                                            <span class="heading4 text-secondary">₫899.000</span>
-                                            <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                            <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
+                                        <div class="list-price flex max-sm:flex-col-reverse sm:items-center sm:gap-3 gap-0.5 sm:mt-3 mt-1">
+                                            <div class="flex items-end sm:gap-2 gap-1">
+                                                <span class="heading4 max-sm:text-base text-secondary">₫899.000</span>
+                                                <span class="heading6 sm:mb-0.5 text-neutral-txt-low line-through">₫1.101.000</span>
+                                            </div>
+                                            <span class="badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-hover-ui font-semibold max-sm:text-xs">-20%</span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                             <li class="product-item swiper-slide animate animate-top" style="--i: 2">
                                 <a href="product-detail.html" class="product-link block group">
-                                    <div class="image overflow-hidden rounded-xl">
-                                        <img src="./assets/images/product/2.jpg" alt="[20/10] Quà phong cách hoài cổ - Chạm vào hồi ức" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
+                                    <div class="image overflow-hidden rounded-xl max-sm:aspect-square">
+                                        <img src="./assets/images/product/6.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
                                     </div>
-                                    <div class="content mt-5">
-                                        <strong class="heading5 line-clamp-2">[20/10] Quà phong cách hoài cổ - Chạm vào hồi ức</strong>
-                                        <div class="list-price flex items-center mt-3">
-                                            <span class="heading4 text-secondary">₫899.000</span>
-                                            <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                            <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
+                                    <div class="content sm:mt-5 mt-3">
+                                        <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
+                                        <div class="list-price flex max-sm:flex-col-reverse sm:items-center sm:gap-3 gap-0.5 sm:mt-3 mt-1">
+                                            <div class="flex items-end sm:gap-2 gap-1">
+                                                <span class="heading4 max-sm:text-base text-secondary">₫899.000</span>
+                                                <span class="heading6 sm:mb-0.5 text-neutral-txt-low line-through">₫1.101.000</span>
+                                            </div>
+                                            <span class="badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-hover-ui font-semibold max-sm:text-xs">-20%</span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                             <li class="product-item swiper-slide animate animate-top" style="--i: 3">
                                 <a href="product-detail.html" class="product-link block group">
-                                    <div class="image overflow-hidden rounded-xl">
-                                        <img src="./assets/images/product/3.jpg" alt="[20/10] Lồng hoa trang trí nghệ thuật - Giữ lại một mùa xanh" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
+                                    <div class="image overflow-hidden rounded-xl max-sm:aspect-square">
+                                        <img src="./assets/images/product/6.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
                                     </div>
-                                    <div class="content mt-5">
-                                        <strong class="heading5 line-clamp-2">[20/10] Lồng hoa trang trí nghệ thuật - Giữ lại một mùa xanh</strong>
-                                        <div class="list-price flex items-center mt-3">
-                                            <span class="heading4 text-secondary">₫899.000</span>
-                                            <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                            <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
+                                    <div class="content sm:mt-5 mt-3">
+                                        <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
+                                        <div class="list-price flex max-sm:flex-col-reverse sm:items-center sm:gap-3 gap-0.5 sm:mt-3 mt-1">
+                                            <div class="flex items-end sm:gap-2 gap-1">
+                                                <span class="heading4 max-sm:text-base text-secondary">₫899.000</span>
+                                                <span class="heading6 sm:mb-0.5 text-neutral-txt-low line-through">₫1.101.000</span>
+                                            </div>
+                                            <span class="badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-hover-ui font-semibold max-sm:text-xs">-20%</span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                             <li class="product-item swiper-slide animate animate-top" style="--i: 4">
                                 <a href="product-detail.html" class="product-link block group">
-                                    <div class="image overflow-hidden rounded-xl">
-                                        <img src="./assets/images/product/4.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
+                                    <div class="image overflow-hidden rounded-xl max-sm:aspect-square">
+                                        <img src="./assets/images/product/6.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
                                     </div>
-                                    <div class="content mt-5">
+                                    <div class="content sm:mt-5 mt-3">
                                         <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
-                                        <div class="list-price flex items-center mt-3">
-                                            <span class="heading4 text-secondary">₫899.000</span>
-                                            <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                            <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
+                                        <div class="list-price flex max-sm:flex-col-reverse sm:items-center sm:gap-3 gap-0.5 sm:mt-3 mt-1">
+                                            <div class="flex items-end sm:gap-2 gap-1">
+                                                <span class="heading4 max-sm:text-base text-secondary">₫899.000</span>
+                                                <span class="heading6 sm:mb-0.5 text-neutral-txt-low line-through">₫1.101.000</span>
+                                            </div>
+                                            <span class="badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-hover-ui font-semibold max-sm:text-xs">-20%</span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                             <li class="product-item swiper-slide animate animate-top" style="--i: 5">
                                 <a href="product-detail.html" class="product-link block group">
-                                    <div class="image overflow-hidden rounded-xl">
-                                        <img src="./assets/images/product/5.jpg" alt="[20/10] Quà phong cách hoài cổ - Chạm vào hồi ức" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
+                                    <div class="image overflow-hidden rounded-xl max-sm:aspect-square">
+                                        <img src="./assets/images/product/6.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
                                     </div>
-                                    <div class="content mt-5">
-                                        <strong class="heading5 line-clamp-2">[20/10] Quà phong cách hoài cổ - Chạm vào hồi ức</strong>
-                                        <div class="list-price flex items-center mt-3">
-                                            <span class="heading4 text-secondary">₫899.000</span>
-                                            <span class="heading6 mt-auto mb-0.5 ml-2 mr-3 text-neutral-txt-low line-through">₫1.101.000</span>
-                                            <span class="badge py-2 px-4 rounded-full bg-secondary-hover-ui font-semibold">-20%</span>
+                                    <div class="content sm:mt-5 mt-3">
+                                        <strong class="heading5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>
+                                        <div class="list-price flex max-sm:flex-col-reverse sm:items-center sm:gap-3 gap-0.5 sm:mt-3 mt-1">
+                                            <div class="flex items-end sm:gap-2 gap-1">
+                                                <span class="heading4 max-sm:text-base text-secondary">₫899.000</span>
+                                                <span class="heading6 sm:mb-0.5 text-neutral-txt-low line-through">₫1.101.000</span>
+                                            </div>
+                                            <span class="badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-hover-ui font-semibold max-sm:text-xs">-20%</span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <button class="custom-button-next lg:-right-20 right-2">
+                    <button class="custom-button-next -right-20 max-lg:hidden">
                         <span class="blind">button next</span>
                         <i class="icon-arrow-right-01-round text-2xl"></i>
                     </button>

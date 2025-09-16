@@ -6,7 +6,7 @@
 // ------ Open menu mobile ------
 // ------ Show result search when input typing ------
 // --- Swiper ----
-// ------ Best seller ------
+// ------ List product swiper ------
 // ------ List testimonials ------
 // --- Services ----
 // ------ Active menu tab Feature services ------
@@ -95,13 +95,13 @@
         })
     }
 
-    // Best seller
-    var swiperBestseller = new Swiper(".best-seller-swiper", {
+    // List product swiper
+    var swiperBestseller = new Swiper(".product-swiper", {
         navigation: {
             prevEl: ".custom-button-prev",
             nextEl: ".custom-button-next",
         },
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 16,
         breakpoints: {
             640: {
