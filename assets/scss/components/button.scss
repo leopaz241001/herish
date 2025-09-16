@@ -14,29 +14,8 @@
     cursor: pointer;
     transition: all ease-out 0.5s;
 
-    &.text-button-sm {
-        font-size: 14px;
-        line-height: 22px;
-        font-weight: 600;
-    }
-
-    &:hover {
-        background-color: var(--primary-hover);
-    }
-
     &.-small {
         padding: 8px 24px;
-    }
-
-    &.-border {
-        border: 1px solid var(--primary);
-        background-color: var(--white);
-        color: var(--black);
-
-        &:hover {
-            background-color: var(--primary);
-            color: var(--white);
-        }
     }
 
     &.-disabled {
@@ -47,7 +26,7 @@
 
     &.bg-white {
         background-color: var(--white);
-        color: var(--primary-txt);
+        color: var(--primary-txt-head);
 
         &:hover {
             background-color: var(--primary);
@@ -55,12 +34,22 @@
         }
     }
 
+    &.bg-secondary-ui {
+        background-color: var(--secondary-ui);
+        color: var(--neutral-txt-high);
+    }
+
     &.bg-error {
         background-color: var(--error);
 
         &:hover {
-            background-color: var(--error-hover);
+            background-color: var(--error-txt-head);
         }
+    }
+
+    &:hover {
+        background-color: var(--primary-hover);
+        color: var(--white);
     }
 
     @media (max-width: 767.98px) {

@@ -8,6 +8,7 @@
 html,
 body {
   overflow-x: hidden;
+  position: relative;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -31,6 +32,14 @@ body {
 
 html:has(body.scroll-locked) {
   overflow: hidden;
+}
+@media (min-width: 1024px) {
+  html:has(body.scroll-locked) {
+    padding-right: 15px;
+  }
+  html:has(body.scroll-locked) .fixed {
+    margin-right: 15px;
+  }
 }
 
 body.overflow-unset {
@@ -259,6 +268,7 @@ input::-webkit-inner-spin-button {
 }
 
 .heading1 {
+  display: block;
   font-size: 72px;
   line-height: 88px;
   font-weight: 600;
@@ -266,6 +276,7 @@ input::-webkit-inner-spin-button {
 }
 
 .heading2 {
+  display: block;
   font-size: 48px;
   line-height: 56px;
   font-weight: 600;
@@ -273,6 +284,7 @@ input::-webkit-inner-spin-button {
 }
 
 .heading3 {
+  display: block;
   font-size: 36px;
   line-height: 44px;
   font-weight: 600;
@@ -280,6 +292,7 @@ input::-webkit-inner-spin-button {
 }
 
 .heading4 {
+  display: block;
   font-size: 28px;
   line-height: 36px;
   font-weight: 600;
@@ -287,6 +300,7 @@ input::-webkit-inner-spin-button {
 }
 
 .heading5 {
+  display: block;
   font-size: 24px;
   line-height: 32px;
   font-weight: 600;
@@ -294,6 +308,7 @@ input::-webkit-inner-spin-button {
 }
 
 .heading6 {
+  display: block;
   font-size: 20px;
   line-height: 28px;
   font-weight: 600;
@@ -427,25 +442,8 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
   transition: all ease-out 0.5s;
 }
-.button-main.text-button-sm {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 600;
-}
-.button-main:hover {
-  background-color: var(--primary-hover);
-}
 .button-main.-small {
   padding: 8px 24px;
-}
-.button-main.-border {
-  border: 1px solid var(--primary);
-  background-color: var(--white);
-  color: var(--black);
-}
-.button-main.-border:hover {
-  background-color: var(--primary);
-  color: var(--white);
 }
 .button-main.-disabled {
   background-color: var(--neutral-ui);
@@ -454,17 +452,25 @@ input::-webkit-inner-spin-button {
 }
 .button-main.bg-white {
   background-color: var(--white);
-  color: var(--primary-txt);
+  color: var(--primary-txt-head);
 }
 .button-main.bg-white:hover {
   background-color: var(--primary);
   color: var(--white);
 }
+.button-main.bg-secondary-ui {
+  background-color: var(--secondary-ui);
+  color: var(--neutral-txt-high);
+}
 .button-main.bg-error {
   background-color: var(--error);
 }
 .button-main.bg-error:hover {
-  background-color: var(--error-hover);
+  background-color: var(--error-txt-head);
+}
+.button-main:hover {
+  background-color: var(--primary-hover);
+  color: var(--white);
 }
 @media (max-width: 767.98px) {
   .button-main {
@@ -721,7 +727,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-color: var(--black);
+  border-color: var(--primary);
 }
 
 .form-input input {
@@ -1018,12 +1024,8 @@ textarea:focus {
 .modal:has(> .menu-dashboard.open) .menu-dashboard {
   transform: translateX(0);
 }
-.modal:hover {
-  cursor: not-allowed;
-}
 .modal-item {
   display: none;
-  cursor: default;
 }
 .modal-item.open {
   display: block;

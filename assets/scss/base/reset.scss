@@ -8,6 +8,7 @@
 html,
 body {
     overflow-x: hidden;
+    position: relative;
     font-family: "Inter", sans-serif;
     font-size: 16px;
     line-height: 24px;
@@ -28,6 +29,14 @@ body {
 html {
     &:has(body.scroll-locked) {
         overflow: hidden;
+
+        @media (min-width: 1024px) {
+            padding-right: 15px;
+
+            .fixed {
+                margin-right: 15px;
+            }
+        }
     }
 }
 

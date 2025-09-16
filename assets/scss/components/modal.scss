@@ -29,13 +29,8 @@
         }
     }
 
-    &:hover {
-        cursor: not-allowed;
-    }
-
     &-item {
         display: none;
-        cursor: default;
 
         &.open {
             display: block;

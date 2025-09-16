@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?66sese');
-  src:  url('fonts/icomoon.eot?66sese#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?66sese') format('truetype'),
-    url('fonts/icomoon.woff?66sese') format('woff'),
-    url('fonts/icomoon.svg?66sese#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?tqo7xx');
+  src:  url('fonts/icomoon.eot?tqo7xx#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?tqo7xx') format('truetype'),
+    url('fonts/icomoon.woff?tqo7xx') format('woff'),
+    url('fonts/icomoon.svg?tqo7xx#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,40 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-call:before {
+  content: "\e90f";
+  color: #fff;
+}
+.icon-facebook:before {
+  content: "\e910";
+  color: #fff;
+}
+.icon-messenger:before {
+  content: "\e911";
+  color: #fff;
+}
+.icon-shopee:before {
+  content: "\e912";
+  color: #fff;
+}
+.icon-tiktok:before {
+  content: "\e913";
+  color: #fff;
+}
+.icon-zalo .path1:before {
+  content: "\e914";
+  color: rgb(255, 255, 255);
+  opacity: 0.28;
+}
+.icon-zalo .path2:before {
+  content: "\e915";
+  color: rgb(0, 26, 51);
+  opacity: 0.12;
+}
+.icon-zalo .path3:before {
+  content: "\e916";
+  color: rgb(255, 255, 255);
+}
 .icon-quote:before {
   content: "\e900";
   color: #665baf;
