@@ -373,11 +373,23 @@ input::-webkit-inner-spin-button {
   color: var(--primary-txt);
 }
 .button-main.bg-white:hover {
-  background-color: var(--primary);
+  background-color: var(--primary-hover);
   color: var(--white);
 }
 .button-main.bg-secondary-ui {
   background-color: var(--secondary-ui);
+  color: var(--neutral-txt-high);
+}
+.button-main.bg-secondary-ui:hover {
+  background-color: var(--secondary-hover-ui);
+  color: var(--neutral-txt-high);
+}
+.button-main.bg-primary-ui {
+  background-color: var(--primary-ui);
+  color: var(--primary-txt-head);
+}
+.button-main.bg-primary-ui:hover {
+  background-color: var(--primary-hover-ui);
   color: var(--neutral-txt-high);
 }
 .button-main.bg-error {
@@ -391,131 +403,6 @@ input::-webkit-inner-spin-button {
   color: var(--white);
 }
 
-.add-wishlist-btn {
-  display: flex;
-  flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 40px;
-  height: 40px;
-  border: 1px solid transparent;
-  border-radius: 100px;
-  background-color: var(--white);
-  cursor: pointer;
-  transition: all ease 0.4s;
-}
-.add-wishlist-btn.-relative {
-  position: relative !important;
-  top: unset !important;
-  left: unset !important;
-  right: unset !important;
-  bottom: unset !important;
-  transform: unset !important;
-}
-.add-wishlist-btn.-border {
-  border-color: var(--line);
-}
-.add-wishlist-btn.w-12 {
-  width: 3rem;
-  height: 3rem;
-}
-.add-wishlist-btn.top-5 {
-  top: 1.25rem;
-}
-.add-wishlist-btn.right-5 {
-  left: unset;
-  right: 1.25rem;
-}
-.add-wishlist-btn:hover {
-  border-color: var(--red);
-}
-.add-wishlist-btn .ph {
-  display: block;
-}
-.add-wishlist-btn .ph-fill {
-  display: none;
-}
-.add-wishlist-btn.active .ph {
-  display: none;
-}
-.add-wishlist-btn.active .ph-fill {
-  display: block;
-  color: var(--red);
-  animation: animateBounce 0.5s ease;
-}
-
-.toggle-btn {
-  position: relative;
-  width: 3rem;
-  height: 1.5rem;
-  border-radius: 100px;
-  background-color: var(--line);
-  cursor: pointer;
-  transition: all ease 0.4s;
-}
-.toggle-btn::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 2px;
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 50%;
-  background-color: var(--white);
-  transform: translateY(-50%);
-  aspect-ratio: 1/1;
-  transition: all ease 0.3s;
-}
-.toggle-btn.active {
-  background-color: var(--primary);
-}
-.toggle-btn.active::before {
-  left: calc(1.75rem - 2px);
-}
-
-.btn-action .flag {
-  visibility: hidden;
-  opacity: 0;
-  transition: all ease 0.4s;
-  transform: translate(-50%, -10px);
-  box-shadow: 0px 5px 15px 0px rgba(72, 95, 119, 0.15);
-}
-.btn-action .flag::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 48%;
-  width: 12px;
-  height: 12px;
-  background-color: var(--white);
-  transform: rotate(45deg) translateX(-50%);
-}
-.btn-action:hover .flag {
-  visibility: visible;
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-
-@keyframes animateBounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-  70% {
-    transform: translateY(0);
-  }
-  80% {
-    transform: translateY(1px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 .select-block {
   position: relative;
   cursor: pointer;
@@ -656,6 +543,15 @@ textarea:focus {
   border-color: var(--black) !important;
 }
 
+.form-radio input[type=radio]:checked + label {
+  background: var(--secondary-hover-ui);
+  border-color: var(--secondary);
+}
+
+.form-date input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
 .checkbox-block {
   position: relative;
 }
@@ -763,7 +659,7 @@ textarea:focus {
 /* animate when scroll */
 .animate {
   opacity: 0;
-  transition: all 0.5s ease, opacity 0.8s ease-out calc(var(--i) * 0.15s), transform 0.8s ease-out calc(var(--i) * 0.15s);
+  transition: opacity 0.8s ease-out calc(var(--i) * 0.15s), transform 0.8s ease-out calc(var(--i) * 0.15s);
 }
 .animate-top {
   transform: translateY(80px);
@@ -1028,15 +924,21 @@ textarea:focus {
 
 .toastify {
   position: fixed;
-  top: 138px;
-  right: 0;
+  bottom: 40px;
+  right: 40px;
   z-index: 1000;
-  transform: translateX(100%);
-  box-shadow: 0px 10px 25px 0px rgba(72, 95, 119, 0.1);
-  transition: all 1s ease;
+  max-width: calc(100% - 32px);
+  transform: translateY(100vh);
+  transition: all 0.8s ease;
 }
 .toastify.active {
-  transform: translateX(0);
+  transform: translateY(0);
+}
+@media (max-width: 767.98px) {
+  .toastify {
+    bottom: 48px;
+    right: 16px;
+  }
 }
 
 .scrollbar-custom {

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?tqo7xx');
-  src:  url('fonts/icomoon.eot?tqo7xx#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?tqo7xx') format('truetype'),
-    url('fonts/icomoon.woff?tqo7xx') format('woff'),
-    url('fonts/icomoon.svg?tqo7xx#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?2lzpvd');
+  src:  url('fonts/icomoon.eot?2lzpvd#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?2lzpvd') format('truetype'),
+    url('fonts/icomoon.woff?2lzpvd') format('woff'),
+    url('fonts/icomoon.svg?2lzpvd#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,63 +25,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-call:before {
+.icon-alert:before {
   content: "\e90f";
-  color: #fff;
+  color: #f94346;
 }
-.icon-facebook:before {
+.icon-checkmark-circle:before {
   content: "\e910";
-  color: #fff;
-}
-.icon-messenger:before {
-  content: "\e911";
-  color: #fff;
-}
-.icon-shopee:before {
-  content: "\e912";
-  color: #fff;
-}
-.icon-tiktok:before {
-  content: "\e913";
-  color: #fff;
-}
-.icon-zalo .path1:before {
-  content: "\e914";
-  color: rgb(255, 255, 255);
-  opacity: 0.28;
-}
-.icon-zalo .path2:before {
-  content: "\e915";
-  color: rgb(0, 26, 51);
-  opacity: 0.12;
-}
-.icon-zalo .path3:before {
-  content: "\e916";
-  color: rgb(255, 255, 255);
-}
-.icon-quote:before {
-  content: "\e900";
-  color: #665baf;
+  color: #22c55e;
 }
 .icon-arrow-left-01-round:before {
-  content: "\e901";
+  content: "\e900";
 }
 .icon-arrow-left-02-round:before {
-  content: "\e902";
+  content: "\e901";
 }
 .icon-arrow-right-01-round:before {
-  content: "\e903";
+  content: "\e902";
 }
 .icon-arrow-right-02-round:before {
-  content: "\e904";
+  content: "\e903";
 }
 .icon-arrow-up-01-round:before {
-  content: "\e905";
+  content: "\e904";
 }
 .icon-arrow-up-02-round:before {
-  content: "\e906";
+  content: "\e905";
 }
 .icon-award-04:before {
+  content: "\e906";
+}
+.icon-birthday-cake:before {
   content: "\e907";
 }
 .icon-calendar-03:before {
@@ -90,18 +63,70 @@
 .icon-calendar-love-02:before {
   content: "\e909";
 }
-.icon-favourite:before {
+.icon-call:before {
   content: "\e90a";
+  color: #fff;
 }
-.icon-fire:before {
+.icon-facebook:before {
   content: "\e90b";
+  color: #fff;
 }
-.icon-gift:before {
+.icon-favourite:before {
   content: "\e90c";
 }
-.icon-search:before {
+.icon-female:before {
   content: "\e90d";
 }
-.icon-user-circle:before {
+.icon-fire:before {
   content: "\e90e";
+}
+.icon-flower-pot:before {
+  content: "\e917";
+}
+.icon-gift:before {
+  content: "\e918";
+}
+.icon-male:before {
+  content: "\e919";
+}
+.icon-messenger:before {
+  content: "\e91a";
+  color: #fff;
+}
+.icon-pine:before {
+  content: "\e91b";
+}
+.icon-quote:before {
+  content: "\e91c";
+  color: #665baf;
+}
+.icon-search:before {
+  content: "\e91d";
+}
+.icon-shopee:before {
+  content: "\e91e";
+  color: #fff;
+}
+.icon-tiktok:before {
+  content: "\e91f";
+  color: #fff;
+}
+.icon-user-circle:before {
+  content: "\e920";
+}
+.icon-zalo .path1:before {
+  content: "\e921";
+  color: rgb(255, 255, 255);
+  opacity: 0.28;
+}
+.icon-zalo .path2:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: rgb(0, 26, 51);
+  opacity: 0.12;
+}
+.icon-zalo .path3:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }

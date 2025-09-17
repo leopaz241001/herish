@@ -23,3 +23,20 @@ textarea:focus {
         }
     }
 }
+
+.form-radio {
+    input[type="radio"] {
+        &:checked + label {
+            background: var(--secondary-hover-ui);
+            border-color: var(--secondary);
+        }
+    }
+}
+
+.form-date {
+    input[type="date"] {
+        &::-webkit-calendar-picker-indicator {
+            opacity: 0;
+        }
+    }
+}

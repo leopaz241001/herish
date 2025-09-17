@@ -192,7 +192,7 @@
 
         function active(button) {
             // Find parent section include menu, tabs
-            const $section = button.closest('section, .category-nav, .list-tags, .list-pagination');
+            const $section = button.closest('section, .list');
 
             // active menu
             $section.find('.tab-btn').removeClass('active');
@@ -588,11 +588,17 @@
             selectBlock.on('click', function () {
                 let list = $(this).find('.menu');
                 let isOpen = list.hasClass('open');
+                console.log(list[0].getBoundingClientRect().left, list[0].getBoundingClientRect().right, list.innerWidth());
+                
 
-                $('.menu').removeClass('open');
+                $('.menu').removeClass('open left right');
 
                 if (!isOpen) {
-                    list.addClass('open');
+                    if(list[0].getBoundingClientRect().left + list.innerWidth() > window.innerWidth) {
+                        list.addClass('open right');
+                    } else {
+                        list.addClass('open left');
+                    }
                 }
             })
 
@@ -670,13 +676,22 @@
 
     // Toastify
     const handleToastify = function () {
-        setTimeout(function () {
-            $('.toastify').addClass('active')
-        }, [500])
+        $(".toastify").each(function () {
+            const target = this;
 
-        setTimeout(function () {
-            $('.toastify').removeClass('active')
-        }, [5000])
+            const observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    if (mutation.attributeName === "class") {
+                        if ($(target).hasClass("active")) {
+                            setTimeout(() => $(target).removeClass("active"), 5000);
+                        }
+                    }
+                });
+            });
+
+            observer.observe(target, { attributes: true });
+        });
+
 
         $('.toastify-close-btn').on('click', function () {
             $('.toastify').removeClass('active')
