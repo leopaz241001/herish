@@ -49,8 +49,9 @@
         li {
             padding: 1rem 0.5rem;
             border-bottom: 1px solid var(--neutral-ui);
-            white-space: nowrap;
             color: var(--neutral-txt-high);
+            text-align: left;
+            white-space: nowrap;
             cursor: pointer;
             transition: 0.3s;
 

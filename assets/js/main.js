@@ -115,6 +115,26 @@
         },
     });
 
+    // List product swiper section 2 in page
+    var swiperBestseller = new Swiper(".product-swiper-two", {
+        navigation: {
+            prevEl: ".custom-button-prev-two",
+            nextEl: ".custom-button-next-two",
+        },
+        slidesPerView: 2,
+        spaceBetween: 16,
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            1280: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+        },
+    });
+
     // List testimonials
     var swiperListTestimonials = new Swiper(".testimonials-swiper", {
         loop: true,

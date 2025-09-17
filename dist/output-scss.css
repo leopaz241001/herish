@@ -560,8 +560,9 @@ input::-webkit-inner-spin-button {
 .select-block .menu li {
   padding: 1rem 0.5rem;
   border-bottom: 1px solid var(--neutral-ui);
-  white-space: nowrap;
   color: var(--neutral-txt-high);
+  text-align: left;
+  white-space: nowrap;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -1083,72 +1084,12 @@ textarea:focus {
 .swiper-slide {
   height: unset !important;
 }
-.swiper-pagination-bullet {
-  position: relative;
-  margin: 0 8px !important;
-  background: transparent;
-  border: 1px solid var(--black);
-  opacity: 1 !important;
-  transition: all ease 0.5s;
-}
-.swiper-pagination-bullet::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 8px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid transparent;
-  transition: all ease 0.5s;
-  border-radius: 50%;
-}
-@media (max-width: 767.98px) {
-  .swiper-pagination-bullet::before {
-    padding: 6px;
-  }
-}
-.swiper-pagination-bullet-active {
-  background: var(--black);
-}
-.swiper-pagination-bullet-active::before {
-  border-color: var(--black);
-}
-.swiper.dots-white .swiper-pagination-bullet {
-  border-color: var(--white);
-}
-.swiper.dots-white .swiper-pagination-bullet-active {
-  background: var(--white);
-}
-.swiper.dots-white .swiper-pagination-bullet-active::before {
-  border-color: var(--white);
-}
-.swiper.-section {
-  padding-bottom: 56px;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-left: -16px;
-  margin-right: -16px;
-}
-.swiper.-section .swiper-pagination {
-  bottom: 0;
-}
-@media (max-width: 767.98px) {
-  .swiper.-section {
-    padding-bottom: 40px;
-  }
-}
-.swiper-list-images {
-  cursor: pointer;
-}
 .swiper.overflow-unset {
   overflow: unset;
 }
 
 /* Swiper Navigation */
-.section-swiper-navigation .custom-button-prev,
-.section-swiper-navigation .custom-button-next {
+.section-swiper-navigation .custom-button-prev, .section-swiper-navigation .custom-button-next, .section-swiper-navigation .custom-button-prev-two, .section-swiper-navigation .custom-button-next-two {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1160,12 +1101,10 @@ textarea:focus {
   border-radius: 50%;
   transition: all ease 0.5s;
 }
-.section-swiper-navigation .custom-button-prev.-border,
-.section-swiper-navigation .custom-button-next.-border {
+.section-swiper-navigation .custom-button-prev.-border, .section-swiper-navigation .custom-button-next.-border, .section-swiper-navigation .custom-button-prev-two.-border, .section-swiper-navigation .custom-button-next-two.-border {
   border: 1px solid var(--line);
 }
-.section-swiper-navigation .custom-button-prev.-relative,
-.section-swiper-navigation .custom-button-next.-relative {
+.section-swiper-navigation .custom-button-prev.-relative, .section-swiper-navigation .custom-button-next.-relative, .section-swiper-navigation .custom-button-prev-two.-relative, .section-swiper-navigation .custom-button-next-two.-relative {
   position: relative !important;
   top: unset !important;
   left: unset !important;
@@ -1173,20 +1112,17 @@ textarea:focus {
   bottom: unset !important;
   transform: unset !important;
 }
-.section-swiper-navigation .custom-button-prev:hover,
-.section-swiper-navigation .custom-button-next:hover {
+.section-swiper-navigation .custom-button-prev:hover, .section-swiper-navigation .custom-button-next:hover, .section-swiper-navigation .custom-button-prev-two:hover, .section-swiper-navigation .custom-button-next-two:hover {
   background-color: var(--primary);
   color: var(--white);
 }
-.section-swiper-navigation .custom-button-prev.swiper-button-disabled,
-.section-swiper-navigation .custom-button-next.swiper-button-disabled {
+.section-swiper-navigation .custom-button-prev.swiper-button-disabled, .section-swiper-navigation .custom-button-next.swiper-button-disabled, .section-swiper-navigation .custom-button-prev-two.swiper-button-disabled, .section-swiper-navigation .custom-button-next-two.swiper-button-disabled {
   cursor: default;
   color: var(--neutral-txt-low);
   background-color: var(--neutral-ui);
 }
 @media (max-width: 767.98px) {
-  .section-swiper-navigation .custom-button-prev,
-  .section-swiper-navigation .custom-button-next {
+  .section-swiper-navigation .custom-button-prev, .section-swiper-navigation .custom-button-next, .section-swiper-navigation .custom-button-prev-two, .section-swiper-navigation .custom-button-next-two {
     width: 40px;
     height: 40px;
   }
