@@ -238,7 +238,7 @@ input::-webkit-inner-spin-button {
   --white: #ffffff;
 }
 
-/* Main class used in Him2Her */
+/* Main class used in Herish */
 .container {
   max-width: 1350px !important;
   width: 100%;
@@ -402,14 +402,21 @@ input::-webkit-inner-spin-button {
   background-color: var(--primary-hover);
   color: var(--white);
 }
+.button-main.select-block, .button-main.chip {
+  font-weight: 400;
+}
+@media (max-width: 639.98px) {
+  .button-main.select-block, .button-main.chip {
+    gap: 12px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
 
 .select-block {
   position: relative;
   cursor: pointer;
-}
-.select-block.bg-secondary-ui:hover {
-  background-color: var(--secondary-ui);
-  color: var(--neutral-txt-high);
 }
 .select-block .selected {
   position: relative;
@@ -427,8 +434,7 @@ input::-webkit-inner-spin-button {
   border-radius: 0.5rem;
   background-color: var(--white);
   opacity: 0;
-  transition: all ease 0.3s;
-  transform: scaleY(0);
+  transform: translateY(20px);
   transform-origin: top center;
 }
 .select-block .menu .list-option {
@@ -462,16 +468,8 @@ input::-webkit-inner-spin-button {
 .select-block .menu li.form-input {
   background: transparent;
 }
-.select-block .menu.-top {
-  top: unset;
-  bottom: calc(100% + 8px);
-  transform-origin: bottom center;
-}
-.select-block .menu.-top.open {
-  transform: scaleY(1);
-}
 .select-block .menu.open {
-  transform: scaleY(1);
+  transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
@@ -831,94 +829,28 @@ textarea:focus {
   visibility: visible;
   opacity: 1;
 }
-.modal:has(> .sidebar.open) .sidebar,
-.modal:has(> .sidebar.open) .menu-dashboard, .modal:has(> .menu-dashboard.open) .sidebar,
-.modal:has(> .menu-dashboard.open) .menu-dashboard {
-  transform: translateX(0);
-}
 .modal-item {
   display: none;
+  max-height: 95vh;
 }
 .modal-item.open {
   display: block;
 }
-
-/* modal-apply */
-.modal-apply .delivery .minus-btn.disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
-.modal-apply .delivery input {
-  field-sizing: content;
-}
-
-/* sidebar */
-.sidebar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  cursor: default;
-  transform: translateX(-100%);
-  transition: all ease 0.3s;
-}
-.sidebar.-relative {
-  position: relative;
-  transform: unset;
-}
-.sidebar-inner,
-.sidebar .block-filter {
+.modal-content {
   overflow-x: hidden;
-  max-height: calc(100vh - 68px);
+  max-height: calc(95vh - 218px);
 }
-.sidebar-inner::-webkit-scrollbar,
-.sidebar .block-filter::-webkit-scrollbar {
-  width: 8px;
-  background-color: #dddddd;
+.modal-content::-webkit-scrollbar {
+  width: 0.25rem;
+  background-color: var(--neutral-ui);
 }
-.sidebar-inner::-webkit-scrollbar-thumb,
-.sidebar .block-filter::-webkit-scrollbar-thumb {
-  background-color: #afafaf;
-  border-radius: 8px;
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: var(--neutral);
+  border-radius: 100px;
 }
-.sidebar-inner.full-height,
-.sidebar .block-filter.full-height {
-  max-height: 100%;
-}
-.sidebar .block-btn {
-  box-shadow: 0px 5px 18px 5px rgba(64, 72, 87, 0.15);
-}
-
-/* menu-dashboard */
-.menu-dashboard.-relative {
-  position: relative;
-  top: unset;
-  left: unset;
-  right: unset;
-  bottom: unset;
-  transform: translate(0);
-}
-.menu-dashboard.-modal {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateX(-100%);
-  transition: all ease 0.3s;
-}
-.menu-dashboard .list-link .link.active {
-  background-color: var(--background);
-}
-.menu-dashboard .list-link .link.active span {
-  color: var(--primary);
-}
-
-/* modal-chat */
-.modal-chat .chat-content {
-  max-height: 500px;
-}
-@media (max-height: 800px) {
-  .modal-chat .chat-content {
-    max-height: calc(90vh - 10rem);
+@media (max-width: 639.98px) {
+  .modal-content {
+    max-height: calc(95vh - 162px);
   }
 }
 
@@ -926,7 +858,7 @@ textarea:focus {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  z-index: 1000;
+  z-index: 1002;
   max-width: calc(100% - 32px);
   transform: translateY(100vh);
   transition: all 0.8s ease;
@@ -938,6 +870,7 @@ textarea:focus {
   .toastify {
     bottom: 48px;
     right: 16px;
+    width: 100%;
   }
 }
 

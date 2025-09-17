@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 40px;
     right: 40px;
-    z-index: 1000;
+    z-index: 1002;
     max-width: calc(100% - 32px);
     transform: translateY(100vh);
     transition: all .8s ease;
@@ -14,5 +14,6 @@
     @media (max-width: 767.98px) {
         bottom: 48px;
         right: 16px;
+        width: 100%;
     }
 }

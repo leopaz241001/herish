@@ -20,119 +20,31 @@
         opacity: 1;
     }
 
-    &:has(>.sidebar.open),
-    &:has(>.menu-dashboard.open) {
-
-        .sidebar,
-        .menu-dashboard {
-            transform: translateX(0);
-        }
-    }
-
     &-item {
         display: none;
+        max-height: 95vh;
 
         &.open {
             display: block;
         }
     }
-}
 
-/* modal-apply */
-.modal-apply {
-    .delivery {
-        .minus-btn {
-            &.disabled {
-                opacity: 0.5;
-                pointer-events: none;
-            }
-        }
-
-        input {
-            field-sizing: content;
-        }
-    }
-}
-
-/* sidebar */
-.sidebar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    cursor: default;
-    transform: translateX(-100%);
-    transition: all ease 0.3s;
-
-    &.-relative {
-        position: relative;
-        transform: unset;
-    }
-
-    &-inner,
-    .block-filter {
+    &-content {
         overflow-x: hidden;
-        max-height: calc(100vh - 68px);
-
+        max-height: calc(95vh - 218px);
+        
         &::-webkit-scrollbar {
-            width: 8px;
-            background-color: #dddddd;
+            width: 0.25rem;
+            background-color: var(--neutral-ui);
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: #afafaf;
-            border-radius: 8px;
+            background-color: var(--neutral);
+            border-radius: 100px;
         }
 
-        &.full-height {
-            max-height: 100%;
-        }
-    }
-
-    .block-btn {
-        box-shadow: 0px 5px 18px 5px rgba(64, 72, 87, 0.15);
-    }
-}
-
-/* menu-dashboard */
-.menu-dashboard {
-    &.-relative {
-        position: relative;
-        top: unset;
-        left: unset;
-        right: unset;
-        bottom: unset;
-        transform: translate(0);
-    }
-
-    &.-modal {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translateX(-100%);
-        transition: all ease 0.3s;
-    }
-
-    .list-link {
-        .link {
-            &.active {
-                background-color: var(--background);
-
-                span {
-                    color: var(--primary);
-                }
-            }
-        }
-    }
-}
-
-/* modal-chat */
-.modal-chat {
-    .chat-content {
-        max-height: 500px;
-
-        @media (max-height: 800px) {
-            max-height: calc(90vh - 10rem);
+        @media (max-width: 639.98px) {
+            max-height: calc(95vh - 162px);
         }
     }
 }

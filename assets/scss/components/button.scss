@@ -64,4 +64,16 @@
         background-color: var(--primary-hover);
         color: var(--white);
     }
+
+    &.select-block,
+    &.chip {
+        font-weight: 400;
+        
+        @media (max-width: 639.98px) {
+            gap: 12px;
+            padding: 8px 12px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
 }

@@ -329,7 +329,7 @@
             $('body').removeClass('scroll-locked')
         })
 
-        $('.close-popup-btn').on('click', function () {
+        $('.btn-close-popup').on('click', function () {
             modal.find('>.open').removeClass('open')
             $('body').removeClass('scroll-locked')
         })
@@ -588,16 +588,24 @@
             selectBlock.on('click', function () {
                 let list = $(this).find('.menu');
                 let isOpen = list.hasClass('open');
-                console.log(list[0].getBoundingClientRect().left, list[0].getBoundingClientRect().right, list.innerWidth());
+                console.log(list[0].getBoundingClientRect().left, $(this).innerWidth(), list.innerWidth(), window.innerWidth);
                 
 
-                $('.menu').removeClass('open left right');
-
+                $('.menu').removeClass('open');
+                $('.menu').removeAttr('style');
                 if (!isOpen) {
                     if(list[0].getBoundingClientRect().left + list.innerWidth() > window.innerWidth) {
-                        list.addClass('open right');
+                        list.addClass('open');
+                        if(list[0].getBoundingClientRect().left + $(this).innerWidth() < list.innerWidth()) {
+                            list.css('left', -list[0].getBoundingClientRect().left + 20 + 'px');
+                        } else {
+                            list.css('right', 0);
+                            list.css('left', 'auto');
+                        }
                     } else {
-                        list.addClass('open left');
+                        list.addClass('open');
+                        list.css('left', 0);
+                        list.css('right', 'auto');
                     }
                 }
             })

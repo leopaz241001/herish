@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Him2Her - Gợi ý những món quà phù hợp nhất cho người đặc biệt của bạn." />
-        <title>Him2Her</title>
+        <meta name="description" content="Herish - Gợi ý những món quà phù hợp nhất cho người đặc biệt của bạn." />
+        <title>Herish</title>
         <link rel="shortcut icon" href="./assets/images/fav.png" type="image/x-icon" />
         <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
         <link rel="stylesheet" href="./assets/css/icons.css" />
@@ -145,19 +145,19 @@
 
         <!-- Slider -->
         <section class="slider">
-            <div class="slider-inner relative md:h-[612px] max-md:pt-60 overflow-hidden">
+            <div class="slider-inner relative md:h-[612px] h-[436px] overflow-hidden">
                 <div class="slider-bg absolute top-0 left-0 w-full h-full z-[-1]" aria-hidden="true">
                     <img src="./assets/images/slider/hero-product-list.jpg" alt="slider1" class="w-full h-full object-cover" />
                 </div>
                 <div class="container h-full">
                     <div class="slider-content flex flex-col items-start justify-end sm:pb-[88px] pb-5 w-full h-full text-white">
                         <div class="flex items-center gap-3 animate animate-top" style="--i: 1">
-                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-[#d9d9d9]"></span>
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-white"></span>
                             <strong class="text-body1 font-semibold">Lời nhắc</strong>
                             <span class="flex-shrink-0 w-8 h-0.5 bg-white"></span>
                         </div>
-                        <h2 class="text-head1 sm:mt-9 mt-6 animate animate-top" style="--i: 2">Nhớ giúp bạn, tặng đúng lúc</h2>
-                        <p class="text-body2 sm:mt-7 mt-3 animate animate-top" style="--i: 3">Thêm ngày sinh, kỷ niệm hay bất kỳ dịp đặc biệt nào - chúng tôi sẽ nhắc bạn trước, để yêu thương không đến muộn.</p>
+                        <h2 class="text-head1 sm:mt-9 mt-5 animate animate-top" style="--i: 2">Nhớ giúp bạn, tặng đúng lúc</h2>
+                        <p class="text-body2 sm:mt-7 mt-4 animate animate-top" style="--i: 3">Thêm ngày sinh, kỷ niệm hay bất kỳ dịp đặc biệt nào - chúng tôi sẽ nhắc bạn trước, để yêu thương không đến muộn.</p>
                         <div class="group-btn flex gap-5 sm:mt-12 mt-9 animate animate-top" style="--i: 4">
                             <button type="button" class="btn-open-popup button-main bg-white" data-type="modal-reminders">Thêm lời nhắc</button>
                         </div>
@@ -167,89 +167,77 @@
         </section>
 
         <!-- Filter -->
-        <section class="filter py-13 border-b border-primary-txt">
+        <section class="filter sm:py-32 pt-8 pb-11 border-b border-primary-txt">
             <div class="container">
-                <h2 class="text-head5 text-neutral-hover">Bộ lọc</h2>
-                <ul class="flex flex-wrap gap-4 mt-6">
-                    <li class="animate animate-top" style="--i: 1">
-                        <div class="select-block button-main font-normal bg-secondary-ui">
-                            <div class="select">
-                                <span class="selected">Mục đích tặng</span>
-                                <div class="menu">
-                                    <ul class="list-option">
-                                        <li data-item="Sinh nhật">Sinh nhật</li>
-                                        <li data-item="Ngày kỷ niệm">Ngày kỷ niệm</li>
-                                        <li data-item="Dịp đặc biệt">Dịp đặc biệt</li>
-                                        <li data-item="Chúc mừng">Chúc mừng</li>
-                                        <li data-item="Đám cưới & Cầu hôn">Đám cưới & Cầu hôn</li>
-                                    </ul>
-                                </div>
+                <h2 class="text-head3">Lời nhắc đã lưu (4)</h2>
+                <ul class="grid lg:grid-cols-3 sm:grid-cols-2 sm:gap-6 gap-4 sm:mt-10 mt-6">
+                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl">
+                        <div class="flex justify-between gap-12">
+                            <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 6 tháng 8</span>
+                            <div class="flex gap-6">
+                                <button type="button">
+                                    <i class="hgi hgi-stroke hgi-edit-02 block text-[24px]"></i>
+                                    <span class="blind">button edit</span>
+                                </button>
+                                <button type="button">
+                                    <i class="hgi hgi-stroke hgi-delete-03 block text-[24px] text-error"></i>
+                                    <span class="blind">button delete</span>
+                                </button>
                             </div>
-                            <span class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-2xl"></span>
                         </div>
+                        <strong class="block text-head4 sm:my-12 my-5">Bạn A</strong>
+                        <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Ngày kỷ niệm</span>
                     </li>
-                    <li class="animate animate-top" style="--i: 2">
-                        <div class="select-block button-main font-normal bg-secondary-ui">
-                            <div class="select">
-                                <span class="selected">Người nhận</span>
-                                <div class="menu">
-                                    <ul class="list-option">
-                                        <li data-item="Bạn trai">Bạn trai</li>
-                                        <li data-item="Bạn gái">Bạn gái</li>
-                                        <li data-item="Chồng">Chồng</li>
-                                        <li data-item="Vợ">Vợ</li>
-                                        <li data-item="Bố">Bố</li>
-                                        <li data-item="Mẹ">Mẹ</li>
-                                        <li data-item="Con trai">Con trai</li>
-                                        <li data-item="Con gái">Con gái</li>
-                                        <li data-item="Anh/Em trai">Anh/Em trai</li>
-                                        <li data-item="Chị/Em gái">Chị/Em gái</li>
-                                        <li data-item="Ông">Ông</li>
-                                        <li data-item="Bà">Bà</li>
-                                        <li data-item="Bạn bè (nam)">Bạn bè (nam)</li>
-                                        <li data-item="Bạn bè (nữ)">Bạn bè (nữ)</li>
-                                        <li data-item="Đồng nghiệp">Đồng nghiệp</li>
-                                    </ul>
-                                </div>
+                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl">
+                        <div class="flex justify-between gap-12">
+                            <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 7 tháng 8</span>
+                            <div class="flex gap-6">
+                                <button type="button">
+                                    <i class="hgi hgi-stroke hgi-edit-02 block text-[24px]"></i>
+                                    <span class="blind">button edit</span>
+                                </button>
+                                <button type="button">
+                                    <i class="hgi hgi-stroke hgi-delete-03 block text-[24px] text-error"></i>
+                                    <span class="blind">button delete</span>
+                                </button>
                             </div>
-                            <span class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-2xl"></span>
                         </div>
+                        <strong class="block text-head4 sm:my-12 my-5">Chị gái hehehe</strong>
+                        <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Sinh nhật</span>
                     </li>
-                    <li class="animate animate-top" style="--i: 3">
-                        <div class="select-block button-main font-normal bg-secondary-ui">
-                            <div class="select">
-                                <span class="selected">Phong cách</span>
-                                <div class="menu">
-                                    <ul class="list-option">
-                                        <li data-item="Dễ thương">Dễ thương</li>
-                                        <li data-item="Tối giản">Tối giản</li>
-                                        <li data-item="Lãng mạn">Lãng mạn</li>
-                                        <li data-item="Hoài cổ">Hoài cổ</li>
-                                        <li data-item="Nghệ thuật">Nghệ thuật</li>
-                                        <li data-item="Sang trọng">Sang trọng</li>
-                                        <li data-item="Hiện đại">Hiện đại</li>
-                                        <li data-item="Truyền thống">Truyền thống</li>
-                                    </ul>
-                                </div>
+                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl">
+                        <div class="flex justify-between gap-12">
+                            <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 10 tháng 8</span>
+                            <div class="flex gap-6">
+                                <button type="button">
+                                    <i class="hgi hgi-stroke hgi-edit-02 block text-[24px]"></i>
+                                    <span class="blind">button edit</span>
+                                </button>
+                                <button type="button">
+                                    <i class="hgi hgi-stroke hgi-delete-03 block text-[24px] text-error"></i>
+                                    <span class="blind">button delete</span>
+                                </button>
                             </div>
-                            <span class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-2xl"></span>
                         </div>
+                        <strong class="block text-head4 sm:my-12 my-5">Cháu trai</strong>
+                        <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Tiệc đầy tháng</span>
                     </li>
-                    <li class="animate animate-top" style="--i: 4">
-                        <div class="select-block button-main font-normal bg-secondary-ui">
-                            <div class="select">
-                                <span class="selected">Giá</span>
-                                <div class="menu">
-                                    <ul class="list-option">
-                                        <li data-item="Dưới ₫200.000">Dưới ₫200.000</li>
-                                        <li data-item="Từ ₫200.000 đến ₫400.000 ">Từ ₫200.000 đến ₫400.000 </li>
-                                        <li data-item="Từ ₫400.000 đến ₫700.000 ">Từ ₫400.000 đến ₫700.000 </li>
-                                        <li data-item="Trên ₫700.000 ">Trên ₫700.000 </li>
-                                    </ul>
-                                </div>
+                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl">
+                        <div class="flex justify-between gap-12">
+                            <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 7 tháng 12</span>
+                            <div class="flex gap-6">
+                                <button type="button">
+                                    <i class="hgi hgi-stroke hgi-edit-02 block text-[24px]"></i>
+                                    <span class="blind">button edit</span>
+                                </button>
+                                <button type="button">
+                                    <i class="hgi hgi-stroke hgi-delete-03 block text-[24px] text-error"></i>
+                                    <span class="blind">button delete</span>
+                                </button>
                             </div>
-                            <span class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-2xl"></span>
                         </div>
+                        <strong class="block text-head4 sm:my-12 my-5">Louis Ramsay</strong>
+                        <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Lễ tốt nghiệp</span>
                     </li>
                 </ul>
             </div>
@@ -334,7 +322,7 @@
             </div>
             <div class="footer-bottom bg-[#000] bg-opacity-[0.12]">
                 <div class="container flex lg:items-center justify-between max-lg:flex-col gap-2 gap-y-4 lg:py-4 py-8">
-                    <p class="copyright max-sm:text-body3">&copy; 2025 HIM2HER. All Rights Reserved.</p>
+                    <p class="copyright max-sm:text-body3">&copy; 2025 HERISH. All Rights Reserved.</p>
                     <ul class="flex flex-wrap gap-6 gap-y-2">
                         <li>
                             <a href="#!" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách &amp; Quy định</a>
@@ -953,92 +941,93 @@
                 </div>
             </div>
             <div class="modal-item modal-reminders overflow-hidden md:w-[628px] w-[90vw] rounded-20 bg-white" data-type="modal-reminders">
-                <div class="modal-header py-8 px-6 border-b border-neutral-ui">
+                <div class="modal-header sm:py-8 py-5 sm:px-6 px-4 border-b border-neutral-ui">
                     <strong class="text-head5">Thêm lời nhắc</strong>
                 </div>
                 <form>
-                    <div class="modal-content p-6">
+                    <div class="modal-content sm:p-6 py-5 px-4">
                         <div class="form-control">
                             <label for="name" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Tên của người ấy<span class="text-error ml-0.5">*</span></label>
                             <input id="name" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="name" placeholder="Tên người nhận" required />
                         </div>
-                        <div class="form-control form-radio mt-5">
+                        <div class="form-control form-radio sm:mt-5 mt-4">
                             <label class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày đặc biệt<span class="text-error ml-0.5">*</span></label>
                             <ul class="list flex flex-wrap gap-4">
                                 <li class="relative">
                                     <input id="birthday" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0" required>
-                                    <label for="birthday" class="button-main border border-transparent font-normal bg-secondary-ui">
-                                        <span class="icon-birthday-cake text-[24px]"></span>
+                                    <label for="birthday" class="chip button-main border border-transparent bg-secondary-ui">
+                                        <span class="icon-birthday-cake sm:text-[24px] text-[20px]"></span>
                                         <span>Sinh nhật</span>
                                     </label>
                                 </li>
                                 <li class="relative">
                                     <input id="anniversary" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="anniversary" class="button-main border border-transparent font-normal bg-secondary-ui">
-                                        <span class="icon-calendar-love-02 text-[24px]"></span>
+                                    <label for="anniversary" class="chip button-main border border-transparent bg-secondary-ui">
+                                        <span class="icon-calendar-love-02 sm:text-[24px] text-[20px]"></span>
                                         <span>Ngày kỷ niệm</span>
                                     </label>
                                 </li>
                                 <li class="relative">
                                     <input id="valentine" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="valentine" class="button-main border border-transparent font-normal bg-secondary-ui">
-                                        <span class="icon-favourite text-[24px]"></span>
+                                    <label for="valentine" class="chip button-main border border-transparent bg-secondary-ui">
+                                        <span class="icon-favourite sm:text-[24px] text-[20px]"></span>
                                         <span>Ngày Valentine</span>
                                     </label>
                                 </li>
                                 <li class="relative">
                                     <input id="womenDay" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="womenDay" class="button-main border border-transparent font-normal bg-secondary-ui">
-                                        <span class="icon-female text-[24px]"></span>
+                                    <label for="womenDay" class="chip button-main border border-transparent bg-secondary-ui">
+                                        <span class="icon-female sm:text-[24px] text-[20px]"></span>
                                         <span>Ngày Quốc tế Phụ nữ</span>
                                     </label>
                                 </li>
                                 <li class="relative">
                                     <input id="menDay" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="menDay" class="button-main border border-transparent font-normal bg-secondary-ui">
-                                        <span class="icon-male text-[24px]"></span>
+                                    <label for="menDay" class="chip button-main border border-transparent bg-secondary-ui">
+                                        <span class="icon-male sm:text-[24px] text-[20px]"></span>
                                         <span>Ngày Quốc tế Nam giới</span>
                                     </label>
                                 </li>
                                 <li class="relative">
                                     <input id="womenVietnam" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="womenVietnam" class="button-main border border-transparent font-normal bg-secondary-ui">
-                                        <span class="icon-flower-pot text-[24px]"></span>
+                                    <label for="womenVietnam" class="chip button-main border border-transparent bg-secondary-ui">
+                                        <span class="icon-flower-pot sm:text-[24px] text-[20px]"></span>
                                         <span>Ngày Phụ nữ Việt Nam</span>
                                     </label>
                                 </li>
-                                <li>
+                                <li class="relative">
                                     <input id="christmas" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="christmas" class="button-main border border-transparent font-normal bg-secondary-ui">
-                                        <span class="icon-pine text-[24px]"></span>
+                                    <label for="christmas" class="chip button-main border border-transparent bg-secondary-ui">
+                                        <span class="icon-pine sm:text-[24px] text-[20px]"></span>
                                         <span>Lễ Giáng sinh</span>
                                     </label>
                                 </li>
-                                <li>
+                                <li class="relative">
                                     <input id="other" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="other" class="button-main border border-transparent font-normal bg-secondary-ui">
-                                        <i class="hgi hgi-stroke hgi-add-01 text-[24px]"></i>
+                                    <label for="other" class="chip button-main border border-transparent bg-secondary-ui">
+                                        <i class="hgi hgi-stroke hgi-add-01 sm:text-[24px] text-[20px]"></i>
                                         <span>Khác</span>
                                     </label>
                                 </li>
                             </ul>
                         </div>
-                        <div class="form-control mt-5 hidden">
+                        <div class="form-control sm:mt-5 mt-4 hidden">
                             <label for="otherDate" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày khác<span class="text-error ml-0.5">*</span></label>
                             <input id="otherDate" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="otherDate" placeholder="Lễ tốt nghiệp, Tiệc đầy tháng, v.v..." />
                         </div>
-                        <div class="form-control mt-5">
+                        <div class="form-control sm:mt-5 mt-4">
                             <label for="date" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày<span class="text-error ml-0.5">*</span></label>
                             <div class="form-date relative">
                                 <input id="date" class="w-full p-4 rounded-lg bg-neutral-ui" type="date" name="date" required />
                                 <i class="hgi hgi-stroke hgi-calendar-03 absolute top-1/2 -translate-y-1/2 right-4 text-2xl pointer-events-none"></i>
                             </div>
+                            <p class="text-body3 mt-2 text-neutral-txt-low">HERISH sẽ gửi lời nhắc đến bạn trước 15 ngày.</p>
                         </div>
                     </div>
-                    <div class="modal-footer py-8 px-6 border-t border-neutral-ui">
+                    <div class="modal-footer sm:py-8 py-5 sm:px-6 px-4 border-t border-neutral-ui">
                         <ul class="group-btn flex flex-wrap justify-end gap-4 w-full">
                             <li>
-                                <button type="button" class="button-main bg-primary-ui">Hủy</button>
+                                <button type="button" class="btn-close-popup button-main bg-primary-ui">Hủy</button>
                             </li>
                             <li>
                                 <button type="submit" class="button-main">Thêm lời nhắc</button>

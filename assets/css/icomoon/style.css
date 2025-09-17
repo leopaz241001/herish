@@ -121,12 +121,10 @@
 }
 .icon-zalo .path2:before {
   content: "\e922";
-  margin-left: -1em;
   color: rgb(0, 26, 51);
   opacity: 0.12;
 }
 .icon-zalo .path3:before {
   content: "\e923";
-  margin-left: -1em;
   color: rgb(255, 255, 255);
 }

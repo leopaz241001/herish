@@ -2,13 +2,6 @@
     position: relative;
     cursor: pointer;
 
-    &.bg-secondary-ui {
-        &:hover {
-            background-color: var(--secondary-ui);
-            color: var(--neutral-txt-high);
-        }
-    }
-
     .selected {
         position: relative;
     }
@@ -26,8 +19,8 @@
         border-radius: 0.5rem;
         background-color: var(--white);
         opacity: 0;
-        transition: all ease 0.3s;
-        transform: scaleY(0);
+        // transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease, left 0s 0.5s, right 0s 0.5s;
+        transform: translateY(20px);
         transform-origin: top center;
 
         .list-option {
@@ -68,20 +61,11 @@
             }
         }
 
-        &.-top {
-            top: unset;
-            bottom: calc(100% + 8px);
-            transform-origin: bottom center;
-
-            &.open {
-                transform: scaleY(1);
-            }
-        }
-
         &.open {
-            transform: scaleY(1);
+            transform: translateY(0);
             opacity: 1;
             visibility: visible;
+            // transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
         }
 
         .list-result {
