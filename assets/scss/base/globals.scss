@@ -58,6 +58,10 @@
   }
 }
 
+[class^="text-head"], [class*=" text-head"] {
+  display: block;
+}
+
 @media (max-width: 1023.98px) {
   .text-head1 {
     font-size: 52px;
