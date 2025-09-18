@@ -588,24 +588,18 @@
             selectBlock.on('click', function () {
                 let list = $(this).find('.menu');
                 let isOpen = list.hasClass('open');
-                console.log(list[0].getBoundingClientRect().left, $(this).innerWidth(), list.innerWidth(), window.innerWidth);
-                
 
-                $('.menu').removeClass('open');
-                $('.menu').removeAttr('style');
+                $('.menu').removeClass('open left right center');
                 if (!isOpen) {
                     if(list[0].getBoundingClientRect().left + list.innerWidth() > window.innerWidth) {
                         list.addClass('open');
                         if(list[0].getBoundingClientRect().left + $(this).innerWidth() < list.innerWidth()) {
-                            list.css('left', -list[0].getBoundingClientRect().left + 20 + 'px');
+                            list.addClass('center')
                         } else {
-                            list.css('right', 0);
-                            list.css('left', 'auto');
+                            list.addClass('right')
                         }
                     } else {
-                        list.addClass('open');
-                        list.css('left', 0);
-                        list.css('right', 'auto');
+                        list.addClass('open left');
                     }
                 }
             })

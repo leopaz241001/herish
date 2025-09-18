@@ -13,7 +13,6 @@
         top: calc(100% + 0.5rem);
         left: 0;
         z-index: 2;
-        width: 100%;
         min-width: 280px;
         border: 1px solid var(--secondary);
         border-radius: 0.5rem;
@@ -66,6 +65,17 @@
             opacity: 1;
             visibility: visible;
             // transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+
+            &.center {
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+
+            &.right,
+            &.fixed-right {
+                right: 0;
+                left: auto;
+            }
         }
 
         .list-result {

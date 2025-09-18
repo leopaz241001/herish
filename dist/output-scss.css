@@ -428,7 +428,6 @@ input::-webkit-inner-spin-button {
   top: calc(100% + 0.5rem);
   left: 0;
   z-index: 2;
-  width: 100%;
   min-width: 280px;
   border: 1px solid var(--secondary);
   border-radius: 0.5rem;
@@ -472,6 +471,14 @@ input::-webkit-inner-spin-button {
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
+}
+.select-block .menu.open.center {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.select-block .menu.open.right, .select-block .menu.open.fixed-right {
+  right: 0;
+  left: auto;
 }
 .select-block .menu .list-result {
   overflow-x: hidden;
