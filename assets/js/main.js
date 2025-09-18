@@ -37,73 +37,73 @@
     // Header 
     // Add fixed header
     const handleFixedHeader = function () {
-        const header = $(".header")
+        const header = $('.header')
 
         // if (window.scrollY > 200) {
-        //     header.addClass("fixed");
-        //     $('.scroll-to-top-btn').addClass("active");
+        //     header.addClass('fixed');
+        //     $('.scroll-to-top-btn').addClass('active');
         // } else {
-        //     header.removeClass("fixed");
-        //     $('.scroll-to-top-btn').removeClass("active");
+        //     header.removeClass('fixed');
+        //     $('.scroll-to-top-btn').removeClass('active');
         // }
     }
 
     // Open menu mobile
     const handleOpenHeaderMobile = function () {
-        const menu = $(".menu-mobile")
-        const navItem = $(".nav-mobile .nav-item")
-        const subNav = $(".sub-nav-mobile")
+        const menu = $('.menu-mobile')
+        const navItem = $('.nav-mobile .nav-item')
+        const subNav = $('.sub-nav-mobile')
 
         function closeMenu () {
-            menu.removeClass("open")
-            $("body").removeClass("scroll-locked")
-            navItem.removeClass("open")
+            menu.removeClass('open')
+            $('body').removeClass('scroll-locked')
+            navItem.removeClass('open')
             subNav.slideUp()
         }
 
-        $(".humburger-btn").on("click", function () {
-            if(!menu.hasClass("open")) {
-                menu.toggleClass("open")
-                $("body").addClass("scroll-locked")
+        $('.humburger-btn').on('click', function () {
+            if(!menu.hasClass('open')) {
+                menu.toggleClass('open')
+                $('body').addClass('scroll-locked')
             } else {
                 closeMenu()
             }
         })
 
-        $(".menu-mobile-close").on("click", closeMenu)
+        $('.menu-mobile-close').on('click', closeMenu)
 
-        navItem.on("click", function () {
-            isOpen = $(this).hasClass("open")
+        navItem.on('click', function () {
+            isOpen = $(this).hasClass('open')
             subNav.slideUp()
-            navItem.removeClass("open")
+            navItem.removeClass('open')
 
             if (!isOpen) {
-                $(this).addClass("open")
-                $(this).find(".sub-nav-mobile").slideDown()
+                $(this).addClass('open')
+                $(this).find('.sub-nav-mobile').slideDown()
             }
         });
     }
 
     // Show result search when input typing
     const showResultWhenTyping = function () {
-        $(".modal-search input").on("input", function (e) {
+        $('.modal-search input').on('input', function (e) {
             setTimeout(function () {
-                if(e.target.value !== "") {
-                    $(".modal-search .keyword").addClass("hidden")
-                    $(".modal-search .result").removeClass("hidden")
+                if(e.target.value !== '') {
+                    $('.modal-search .keyword').addClass('hidden')
+                    $('.modal-search .result').removeClass('hidden')
                 } else {
-                    $(".modal-search .keyword").removeClass("hidden")
-                    $(".modal-search .result").addClass("hidden")
+                    $('.modal-search .keyword').removeClass('hidden')
+                    $('.modal-search .result').addClass('hidden')
                 }
             }, 500);
         })
     }
 
     // List product swiper
-    var swiperBestseller = new Swiper(".product-swiper", {
+    var swiperBestseller = new Swiper('.product-swiper', {
         navigation: {
-            prevEl: ".custom-button-prev",
-            nextEl: ".custom-button-next",
+            prevEl: '.custom-button-prev',
+            nextEl: '.custom-button-next',
         },
         slidesPerView: 2,
         spaceBetween: 16,
@@ -120,10 +120,10 @@
     });
 
     // List product swiper section 2 in page
-    var swiperBestseller = new Swiper(".product-swiper-two", {
+    var swiperBestseller = new Swiper('.product-swiper-two', {
         navigation: {
-            prevEl: ".custom-button-prev-two",
-            nextEl: ".custom-button-next-two",
+            prevEl: '.custom-button-prev-two',
+            nextEl: '.custom-button-next-two',
         },
         slidesPerView: 2,
         spaceBetween: 16,
@@ -140,7 +140,7 @@
     });
 
     // List testimonials
-    var swiperListTestimonials = new Swiper(".testimonials-swiper", {
+    var swiperListTestimonials = new Swiper('.testimonials-swiper', {
         loop: true,
         autoplay: {
             delay: 0,
@@ -184,12 +184,12 @@
 
     // Active menu tab Feature services
     const handleActiveMenu = function () {
-        $(".tab-btn").each(function () {
-            if ($(this).hasClass("active")) {
-                let indicator = $(this).closest('.menu-tab').find(".indicator");
+        $('.tab-btn').each(function () {
+            if ($(this).hasClass('active')) {
+                let indicator = $(this).closest('.menu-tab').find('.indicator');
                 if (indicator.length > 0) {
-                    indicator.css('width', $(this)[0].getBoundingClientRect().width + "px")
-                    indicator.css('left', $(this)[0].getBoundingClientRect().left - $(this)[0].closest('.menu').getBoundingClientRect().left + "px")
+                    indicator.css('width', $(this)[0].getBoundingClientRect().width + 'px')
+                    indicator.css('left', $(this)[0].getBoundingClientRect().left - $(this)[0].closest('.menu').getBoundingClientRect().left + 'px')
                 }
             }
         })
@@ -203,12 +203,12 @@
             button.addClass('active');
 
             // change indicator
-            $(".tab-btn").each(function () {
-                if (button.hasClass("active")) {
-                    let indicator = button.closest('.menu-tab').find(".indicator");
+            $('.tab-btn').each(function () {
+                if (button.hasClass('active')) {
+                    let indicator = button.closest('.menu-tab').find('.indicator');
                     if (indicator.length > 0) {
-                        indicator.css('width', button[0].getBoundingClientRect().width + "px")
-                        indicator.css('left', button[0].getBoundingClientRect().left - button[0].closest('.menu').getBoundingClientRect().left + "px")
+                        indicator.css('width', button[0].getBoundingClientRect().width + 'px')
+                        indicator.css('left', button[0].getBoundingClientRect().left - button[0].closest('.menu').getBoundingClientRect().left + 'px')
                     }
                 }
             })
@@ -230,8 +230,8 @@
             active($(this))
         })
 
-        $(".tab-btn").each(function () {
-            if ($(this).hasClass("is-hover")) {
+        $('.tab-btn').each(function () {
+            if ($(this).hasClass('is-hover')) {
                 $(this).on('mouseenter', function () {
                     active($(this))
                 })
@@ -240,7 +240,7 @@
     }
 
     // List thumb images
-    var swiperListServiceDetail = new Swiper(".swiper-list-images", {
+    var swiperListServiceDetail = new Swiper('.swiper-list-images', {
         loop: true,
         spaceBetween: 12,
         slidesPerView: 3,
@@ -253,12 +253,12 @@
         },
     });
 
-    var swiperThumbServiceDetail = new Swiper(".swiper-thumb-images", {
+    var swiperThumbServiceDetail = new Swiper('.swiper-thumb-images', {
         loop: true,
         spaceBetween: 10,
         navigation: {
-            nextEl: ".custom-button-next",
-            prevEl: ".custom-button-prev",
+            nextEl: '.custom-button-next',
+            prevEl: '.custom-button-prev',
         },
         thumbs: {
             swiper: swiperListServiceDetail,
@@ -277,10 +277,10 @@
         })
     }
 
-    var swiperListTestimonials6 = new Swiper(".swiper-list-testimonials6", {
+    var swiperListTestimonials6 = new Swiper('.swiper-list-testimonials6', {
         navigation: {
-            prevEl: ".custom-button-testimonials-prev",
-            nextEl: ".custom-button-testimonials-next",
+            prevEl: '.custom-button-testimonials-prev',
+            nextEl: '.custom-button-testimonials-next',
         },
         slidesPerView: 1,
         spaceBetween: 24,
@@ -296,7 +296,7 @@
 
     // FAQs
     const handleFaq = function () {
-        $(".faq-item .heading, .toggle-item .heading").on('click', function () {
+        $('.faq-item .heading, .toggle-item .heading').on('click', function () {
             $(this).closest('.faq-item, .toggle-item').toggleClass('active').siblings('.faq-item, .toggle-item').removeClass('active');
             $(this).closest('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideToggle(300)
             $(this).closest('.faq-item, .toggle-item').siblings('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideUp(300);
@@ -307,7 +307,7 @@
     const handleOpenPopup = function () {
         const btnOpenPopup = $('.btn-open-popup')
 
-        btnOpenPopup.on("click", function (e) {
+        btnOpenPopup.on('click', function (e) {
             e.preventDefault()
 
             const popupType = $(this).data('type')
@@ -319,14 +319,14 @@
             })
         })
 
-        $('.modal-item').on("click", function (e) {
+        $('.modal-item').on('click', function (e) {
             e.stopPropagation()
         })
     }
 
     // Close popup
     const handleClosePopup = function () {
-        const modal = $(".modal")
+        const modal = $('.modal')
 
         modal.on('click', function () {
             modal.find('>.open').removeClass('open')
@@ -341,22 +341,22 @@
 
     // Sidebar
     const handleOpenSidebar = function () {
-        const sidebar = $(".sidebar")
+        const sidebar = $('.sidebar')
 
-        $(".filter-btn").on("click", function () {
+        $('.filter-btn').on('click', function () {
             sidebar.toggleClass('open')
             $('body').addClass('scroll-locked')
         })
 
-        sidebar.on("click", function (e) {
+        sidebar.on('click', function (e) {
             e.stopPropagation()
         })
     }
 
     // Add filter to screen when click
     const handleAddFilter = function () {
-        const optionItems = $(".select-block .list-option li");
-        const checkboxItems = $(".filter-section .checkbox-block .checkbox");
+        const optionItems = $('.select-block .list-option li');
+        const checkboxItems = $('.filter-section .checkbox-block .checkbox');
 
         optionItems.on('click', function () {
             let dataItem = $(this).attr('data-item');
@@ -366,13 +366,13 @@
                 const filterType = filterSection.attr('class').split(' ')[1];
 
                 // Check and remove old items in $('.list-filtered .list') for current filter-section
-                $('.list-filtered .list .selected-item[data-type="' + filterType + '"]').remove();
+                $(`.list-filtered .list .selected-item[data-type='${filterType}']`).remove();
 
                 // Create new item and add to $('.list-filtered .list')
                 const selectedItem = `
-                    <button class="selected-item inline-flex items-center gap-1 py-1 px-2 border border-line rounded-full capitalize duration-300 hover:border-black" data-type="${filterType}">
-                        <span class="ph ph-x text-sm"></span>
-                        <span class="caption1">${dataItem}</span>
+                    <button class='selected-item inline-flex items-center gap-1 py-1 px-2 border border-line rounded-full capitalize duration-300 hover:border-black' data-type='${filterType}'>
+                        <span class='ph ph-x text-sm'></span>
+                        <span class='caption1'>${dataItem}</span>
                     </button>
                 `
 
@@ -390,9 +390,9 @@
             if ($(this).is(':checked')) {
                 // Create new item and add to $('.list-filtered .list')
                 const selectedItem = `
-                    <button class="selected-item inline-flex items-center gap-1 py-1 px-2 border border-line rounded-full capitalize duration-300 hover:border-black" data-id="${selectedId}">
-                        <span class="ph ph-x text-sm"></span>
-                        <span class="caption1">${selectedLabel}</span>
+                    <button class='selected-item inline-flex items-center gap-1 py-1 px-2 border border-line rounded-full capitalize duration-300 hover:border-black' data-id='${selectedId}'>
+                        <span class='ph ph-x text-sm'></span>
+                        <span class='caption1'>${selectedLabel}</span>
                     </button>
                 `
 
@@ -400,7 +400,7 @@
                 $('.list-filtered .list').append(selectedItem)
             } else {
                 // Remove selected item
-                $('.list-filtered .list').find(`.selected-item[data-id="${selectedId}"]`).remove();
+                $('.list-filtered .list').find(`.selected-item[data-id='${selectedId}']`).remove();
             }
 
             handleOpenListFiltered()
@@ -456,8 +456,8 @@
                 }
             } else {
                 progress.css({
-                    'left': (minValue / rangeInput.eq(0).attr('max')) * 100 + "%",
-                    'right': 100 - (maxValue / rangeInput.eq(1).attr('max')) * 100 + "%"
+                    'left': (minValue / rangeInput.eq(0).attr('max')) * 100 + '%',
+                    'right': 100 - (maxValue / rangeInput.eq(1).attr('max')) * 100 + '%'
                 });
             }
 
@@ -471,14 +471,14 @@
             if ($(this).val() < 0) {
                 $(this).val(0)
                 rangeInput.eq(0).val(0)
-                progress.css({ 'left': "0%" });
+                progress.css({ 'left': '0%' });
             } else if ($(this).val() < maxValue - priceGap) {
                 rangeInput.eq(0).val($(this).val())
-                progress.css({ 'left': ($(this).val() / rangeInput.eq(0).attr('max')) * 100 + "%" });
+                progress.css({ 'left': ($(this).val() / rangeInput.eq(0).attr('max')) * 100 + '%' });
             } else if ($(this).val() >= maxValue - priceGap) {
                 $(this).val(maxValue - priceGap)
                 rangeInput.eq(0).val(maxValue - priceGap)
-                progress.css({ 'left': ((maxValue - priceGap) / rangeInput.eq(0).attr('max')) * 100 + "%" });
+                progress.css({ 'left': ((maxValue - priceGap) / rangeInput.eq(0).attr('max')) * 100 + '%' });
             }
         })
 
@@ -495,14 +495,14 @@
             if (parseInt($(this).val()) > rangeInput.eq(1).attr('max')) {
                 $(this).val(rangeInput.eq(1).attr('max'))
                 rangeInput.eq(1).val(rangeInput.eq(1).attr('max'))
-                progress.css({ 'right': "0%" });
+                progress.css({ 'right': '0%' });
             } else if (parseInt($(this).val()) > minValue + priceGap && parseInt($(this).val()) <= rangeInput.eq(1).attr('max')) {
                 rangeInput.eq(1).val($(this).val())
-                progress.css({ 'right': 100 - ($(this).val() / rangeInput.eq(1).attr('max')) * 100 + "%" });
+                progress.css({ 'right': 100 - ($(this).val() / rangeInput.eq(1).attr('max')) * 100 + '%' });
             } else if (parseInt($(this).val()) <= minValue + priceGap) {
                 $(this).val(minValue + priceGap)
                 rangeInput.eq(1).val(minValue + priceGap)
-                progress.css({ 'right': 100 - ((minValue + priceGap) / rangeInput.eq(1).attr('max')) * 100 + "%" });
+                progress.css({ 'right': 100 - ((minValue + priceGap) / rangeInput.eq(1).attr('max')) * 100 + '%' });
             }
         })
 
@@ -536,8 +536,8 @@
                 }
             } else {
                 progress.css({
-                    'left': (minValue / rangeInput.eq(0).attr('max')) * 100 + "%",
-                    'right': 100 - (maxValue / rangeInput.eq(1).attr('max')) * 100 + "%"
+                    'left': (minValue / rangeInput.eq(0).attr('max')) * 100 + '%',
+                    'right': 100 - (maxValue / rangeInput.eq(1).attr('max')) * 100 + '%'
                 });
             }
 
@@ -553,7 +553,7 @@
 
         rangeInput.on('input', function () {
             let radiusValue = parseInt(rangeInput.val());
-            progress.css({ 'right': 100 - (radiusValue / rangeInput.attr('max')) * 100 + "%" });
+            progress.css({ 'right': 100 - (radiusValue / rangeInput.attr('max')) * 100 + '%' });
             $('.filter-radius .radius').text(radiusValue + 'km');
         })
     }
@@ -583,10 +583,10 @@
 
     // Select
     const handleSelectBlock = function () {
-        const selectBlock = $(".select-block");
-        const menu = $(".select-block .menu");
-        const optionItems = $(".select-block .menu li");
-        const formInput = $(".select-block .form-input");
+        const selectBlock = $('.select-block');
+        const menu = $('.select-block .menu');
+        const optionItems = $('.select-block .menu li');
+        const formInput = $('.select-block .form-input');
 
         if (selectBlock.length > 0) {
             selectBlock.on('click', function () {
@@ -629,9 +629,30 @@
 
     // Toggle button
     const handleToggleButton = function () {
-        $('.toggle-btn').on('click', function () {
+        $('.btn-toggle').on('click', function () {
             if(!$(this).hasClass('disabled')) {
                 $(this).toggleClass('active');
+            }
+        });
+    }
+
+    // Toggle button
+    const handleShowPassword = function () {
+        $('.form-password input').on('input', function () {
+            if($(this).val() !== '') {
+                // ẩn button mắt và chuyển type input thành text mỗi lần value bằng rỗng
+                $(this).closest('.form-password').find('.btn-show-password').removeClass('hidden active')
+                $(this).attr('type', 'password')
+            } else {
+                $(this).closest('.form-password').find('.btn-show-password').addClass('hidden')
+            }
+        })
+
+        $('.btn-show-password').on('click', function () {
+            if(!$(this).hasClass('active')) {
+                $(this).closest('.form-password').find('input').attr('type', 'password')
+            } else {
+                $(this).closest('.form-password').find('input').attr('type', 'text')
             }
         });
     }
@@ -675,21 +696,21 @@
                 e.preventDefault(); // Prevent form submission
                 alert('Please select your rating before submit the comment.');
             } else {
-                $('#form-review .form').append('<input type="hidden" name="rating" value="' + selectedRating + '">');
+                $('#form-review .form').append(`<input type='hidden' name='rating' value='${selectedRating}'>`);
             }
         });
     }
 
     // Toastify
     const handleToastify = function () {
-        $(".toastify").each(function () {
+        $('.toastify').each(function () {
             const target = this;
 
             const observer = new MutationObserver(mutations => {
                 mutations.forEach(mutation => {
-                    if (mutation.attributeName === "class") {
-                        if ($(target).hasClass("active")) {
-                            setTimeout(() => $(target).removeClass("active"), 5000);
+                    if (mutation.attributeName === 'class') {
+                        if ($(target).hasClass('active')) {
+                            setTimeout(() => $(target).removeClass('active'), 5000);
                         }
                     }
                 });
@@ -706,7 +727,7 @@
 
     // Scroll reveal
     const handleReveal = function () {
-        var reveal = $(".animate");
+        var reveal = $('.animate');
 
         reveal.each(function (index, element) {
             const windowHeight = window.innerHeight;
@@ -714,7 +735,7 @@
             const revealpoint = 300 * 100 / 1920;
 
             if (revealTop < windowHeight - revealpoint) {
-                $(element).addClass("animate-active");
+                $(element).addClass('animate-active');
             }
         });
     }
@@ -739,6 +760,7 @@
         handleNumberDeliveryPopupApply()
         handleSelectBlock()
         handleToggleButton()
+        handleShowPassword()
         handleRate()
         handleToastify()
     });

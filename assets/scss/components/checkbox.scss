@@ -2,39 +2,56 @@
     position: relative;
 
     .checkbox {
-        display: none;
+        position: absolute;
+        left: 0;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        pointer-events: none;
     }
 
     .check-icon {
         visibility: hidden;
         position: absolute;
-        top: 50%;
-        left: -1px;
+        top: 0;
+        left: 0;
         z-index: 1;
-        transform: translateY(-50%);
         opacity: 0;
+
+        &::before {
+            color: var(--primary);
+        }
     }
 
     .label {
+        display: block;
         position: relative;
         z-index: 1;
+        user-select: none;
 
         &::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 1px;
-            width: 16px;
-            height: 16px;
-            border: 1px solid var(--secondary);
-            border-radius: 2px;
-            transform: translateY(-50%);
+            top: 0;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--neutral);
+            border-radius: 5px;
             transition: 0.4s;
         }
     }
 
-    .checkbox:checked+.check-icon {
-        visibility: visible;
-        opacity: 1;
+    .checkbox:checked {
+        &+.check-icon {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        & ~ .label {
+            &::before {
+                display: none;
+            }
+        }
     }
 }

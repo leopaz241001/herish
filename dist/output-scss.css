@@ -557,40 +557,58 @@ textarea:focus {
   opacity: 0;
 }
 
+.form-password .btn-show-password.active .ic-view {
+  display: none;
+}
+.form-password .btn-show-password.active .ic-view-off {
+  display: block;
+}
+
 .checkbox-block {
   position: relative;
 }
 .checkbox-block .checkbox {
-  display: none;
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 .checkbox-block .check-icon {
   visibility: hidden;
   position: absolute;
-  top: 50%;
-  left: -1px;
+  top: 0;
+  left: 0;
   z-index: 1;
-  transform: translateY(-50%);
   opacity: 0;
 }
+.checkbox-block .check-icon::before {
+  color: var(--primary);
+}
 .checkbox-block .label {
+  display: block;
   position: relative;
   z-index: 1;
+  user-select: none;
 }
 .checkbox-block .label::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 1px;
-  width: 16px;
-  height: 16px;
-  border: 1px solid var(--secondary);
-  border-radius: 2px;
-  transform: translateY(-50%);
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--neutral);
+  border-radius: 5px;
   transition: 0.4s;
 }
 .checkbox-block .checkbox:checked + .check-icon {
   visibility: visible;
   opacity: 1;
+}
+.checkbox-block .checkbox:checked ~ .label::before {
+  display: none;
 }
 
 .filter-price .tow-bar-block,

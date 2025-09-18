@@ -40,3 +40,17 @@ textarea:focus {
         }
     }
 }
+
+.form-password {
+    .btn-show-password {
+        &.active {
+            .ic-view {
+                display: none;
+
+                &-off {
+                    display: block;
+                }
+            }
+        }
+    }
+}
