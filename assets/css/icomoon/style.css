@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?2lzpvd');
-  src:  url('fonts/icomoon.eot?2lzpvd#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?2lzpvd') format('truetype'),
-    url('fonts/icomoon.woff?2lzpvd') format('woff'),
-    url('fonts/icomoon.svg?2lzpvd#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?db59qi');
+  src:  url('fonts/icomoon.eot?db59qi#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?db59qi') format('truetype'),
+    url('fonts/icomoon.woff?db59qi') format('woff'),
+    url('fonts/icomoon.svg?db59qi#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,106 +25,172 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-alert:before {
-  content: "\e90f";
-  color: #f94346;
-}
-.icon-checkmark-circle:before {
-  content: "\e910";
-  color: #22c55e;
-}
-.icon-arrow-left-01-round:before {
+.icon-plus:before {
   content: "\e900";
 }
-.icon-arrow-left-02-round:before {
+.icon-information-circle:before {
   content: "\e901";
 }
-.icon-arrow-right-01-round:before {
+.icon-edit:before {
   content: "\e902";
 }
-.icon-arrow-right-02-round:before {
+.icon-agreement:before {
   content: "\e903";
 }
-.icon-arrow-up-01-round:before {
+.icon-alert:before {
   content: "\e904";
+  color: #f94346;
 }
-.icon-arrow-up-02-round:before {
+.icon-arrow-left-01-round:before {
   content: "\e905";
 }
-.icon-award-04:before {
+.icon-arrow-left-02-round:before {
   content: "\e906";
 }
-.icon-birthday-cake:before {
+.icon-arrow-right-01-round:before {
   content: "\e907";
 }
-.icon-calendar-03:before {
+.icon-arrow-right-02-round:before {
   content: "\e908";
 }
-.icon-calendar-love-02:before {
+.icon-arrow-up-01-round:before {
   content: "\e909";
 }
-.icon-call:before {
+.icon-arrow-up-02-round:before {
   content: "\e90a";
+}
+.icon-award-04:before {
+  content: "\e90b";
+}
+.icon-birthday-cake:before {
+  content: "\e90c";
+}
+.icon-calendar-03:before {
+  content: "\e90d";
+}
+.icon-calendar-love-02:before {
+  content: "\e90e";
+}
+.icon-call:before {
+  content: "\e90f";
   color: #fff;
 }
+.icon-check:before {
+  content: "\e910";
+}
+.icon-checkmark-circle:before {
+  content: "\e911";
+  color: #22c55e;
+}
+.icon-clock:before {
+  content: "\e912";
+}
+.icon-close:before {
+  content: "\e913";
+}
+.icon-dollar-circle:before {
+  content: "\e914";
+}
 .icon-facebook:before {
-  content: "\e90b";
+  content: "\e915";
   color: #fff;
 }
 .icon-favourite:before {
-  content: "\e90c";
+  content: "\e916";
 }
 .icon-female:before {
-  content: "\e90d";
-}
-.icon-fire:before {
-  content: "\e90e";
-}
-.icon-flower-pot:before {
   content: "\e917";
 }
-.icon-gift:before {
+.icon-fire:before {
   content: "\e918";
 }
-.icon-male:before {
+.icon-flower-pot:before {
   content: "\e919";
 }
-.icon-messenger:before {
+.icon-gift:before {
   content: "\e91a";
+}
+.icon-gift-card:before {
+  content: "\e91b";
+}
+.icon-healthcare:before {
+  content: "\e91c";
+}
+.icon-idea:before {
+  content: "\e91d";
+}
+.icon-lamp:before {
+  content: "\e91e";
+}
+.icon-location:before {
+  content: "\e91f";
+}
+.icon-mail:before {
+  content: "\e920";
+}
+.icon-male:before {
+  content: "\e921";
+}
+.icon-manager:before {
+  content: "\e922";
+}
+.icon-messenger:before {
+  content: "\e923";
   color: #fff;
 }
 .icon-pine:before {
-  content: "\e91b";
+  content: "\e924";
 }
 .icon-quote:before {
-  content: "\e91c";
+  content: "\e925";
   color: #665baf;
 }
+.icon-safe:before {
+  content: "\e926";
+}
 .icon-search:before {
-  content: "\e91d";
+  content: "\e927";
 }
 .icon-shopee:before {
-  content: "\e91e";
+  content: "\e928";
   color: #fff;
+}
+.icon-square-lock:before {
+  content: "\e929";
 }
 .icon-tiktok:before {
-  content: "\e91f";
+  content: "\e92a";
   color: #fff;
 }
+.icon-trash:before {
+  content: "\e92b";
+}
+.icon-upload:before {
+  content: "\e92c";
+}
+.icon-user:before {
+  content: "\e92d";
+}
 .icon-user-circle:before {
-  content: "\e920";
+  content: "\e92e";
+}
+.icon-view:before {
+  content: "\e92f";
+}
+.icon-view-off:before {
+  content: "\e930";
 }
 .icon-zalo .path1:before {
-  content: "\e921";
+  content: "\e931";
   color: rgb(255, 255, 255);
   opacity: 0.28;
 }
 .icon-zalo .path2:before {
-  content: "\e922";
+  content: "\e932";
   color: rgb(0, 26, 51);
   opacity: 0.12;
 }
 .icon-zalo .path3:before {
-  content: "\e923";
+  content: "\e933";
   color: rgb(255, 255, 255);
 }
