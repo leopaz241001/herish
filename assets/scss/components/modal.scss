@@ -22,7 +22,7 @@
 
     &-item {
         display: none;
-        max-height: 95vh;
+        max-height: calc(100vh - 40px);
 
         &.open {
             display: block;
@@ -31,7 +31,7 @@
 
     &-content {
         overflow-x: hidden;
-        max-height: calc(95vh - 218px);
+        max-height: calc(100vh - 40px - 218px);
         
         &::-webkit-scrollbar {
             width: 0.25rem;
@@ -44,7 +44,7 @@
         }
 
         @media (max-width: 639.98px) {
-            max-height: calc(95vh - 162px);
+            max-height: calc(100vh - 40px - 162px);
         }
     }
 }

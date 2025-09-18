@@ -50,33 +50,37 @@
 
     // Open menu mobile
     const handleOpenHeaderMobile = function () {
-        const menuMobile = $(".menu-mobile")
+        const menu = $(".menu-mobile")
+        const navItem = $(".nav-mobile .nav-item")
+        const subNav = $(".sub-nav-mobile")
+
+        function closeMenu () {
+            menu.removeClass("open")
+            $("body").removeClass("scroll-locked")
+            navItem.removeClass("open")
+            subNav.slideUp()
+        }
 
         $(".humburger-btn").on("click", function () {
-            menuMobile.toggleClass('open')
-            $('body').addClass('scroll-locked')
+            if(!menu.hasClass("open")) {
+                menu.toggleClass("open")
+                $("body").addClass("scroll-locked")
+            } else {
+                closeMenu()
+            }
         })
 
-        $(".menu-mobile-close").on("click", function () {
-            menuMobile.removeClass('open')
-            $('body').removeClass('scroll-locked')
-        })
+        $(".menu-mobile-close").on("click", closeMenu)
 
-        $('.nav-mobile .nav-item').on("click", function () {
-            if (!$(this).hasClass("open")) {
+        navItem.on("click", function () {
+            isOpen = $(this).hasClass("open")
+            subNav.slideUp()
+            navItem.removeClass("open")
+
+            if (!isOpen) {
                 $(this).addClass("open")
+                $(this).find(".sub-nav-mobile").slideDown()
             }
-        });
-
-        $('.nav-mobile .sub-nav-mobile .nav-item').on("click", function () {
-            if (!$(this).hasClass("open")) {
-                $(this).addClass("open")
-            }
-        });
-
-        $('.sub-nav-mobile .back-btn').on("click", function (e) {
-            e.stopPropagation()
-            $(this).closest('.nav-item').removeClass('open')
         });
     }
 
