@@ -93,6 +93,19 @@
             }
         }
     }
+
+    &.select-profile {
+        .menu {
+            min-width: 220px;
+            top: calc(100% - 4px);
+
+            &.open {
+                right: -10px;
+                left: auto;
+                transform: none;
+            }
+        }
+    }
 }
 
 .category-selector {

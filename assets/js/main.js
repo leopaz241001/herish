@@ -27,6 +27,7 @@
 // --- Select ---
 // --- Active Wishlist icon ---
 // --- Toggle button ---
+// --- Show hide password ---
 
 // Animation
 // --- Toastify ---
@@ -66,6 +67,12 @@
                 menu.toggleClass('open')
                 $('body').addClass('scroll-locked')
             } else {
+                closeMenu()
+            }
+        })
+
+        $(window).on('click', function (e) {
+            if (!$(e.target).closest('.menu-mobile').length && !$(e.target).closest('.humburger-btn').length) {
                 closeMenu()
             }
         })
@@ -612,7 +619,7 @@
                 e.stopPropagation()
                 menu.removeClass('open');
                 let dataItem = $(this).attr('data-item')
-                $(this).closest('.select-block').find('.selected').text(dataItem)
+                if(dataItem) $(this).closest('.select-block').find('.selected').text(dataItem)
             })
 
             formInput.on('click', function (e) {
@@ -636,7 +643,7 @@
         });
     }
 
-    // Toggle button
+    // Show hide password
     const handleShowPassword = function () {
         $('.form-password input').on('input', function () {
             if($(this).val() !== '') {

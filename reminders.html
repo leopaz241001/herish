@@ -25,7 +25,7 @@
                         </a>
                     </h1>
                     <div class="navigator h-full max-lg:hidden xl:px-6 px-4 rounded-full">
-                        <ul class="list flex items-center gap-8 max-[1180px]:gap-4 h-full">
+                        <ul class="list flex items-center gap-8 max-[1180px]:gap-3 h-full">
                             <li class="h-full relative">
                                 <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
                                     <span>Sản phẩm</span>
@@ -117,8 +117,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="list-action flex items-center xl:gap-1">
-                        <button type="button" class="btn-open-popup flex items-center justify-center w-14 h-14 text-xl text-white max-lg:hidden" data-type="modal-search">
+                    <div class="list-action flex items-center gap-1">
+                        <button type="button" class="btn-open-popup flex items-center justify-center lg:w-14 w-11 h-14 text-xl text-white" data-type="modal-search">
                             <i class="icon-search"></i>
                             <span class="blind">button open modal search</span>
                         </button>
@@ -130,14 +130,43 @@
                             <i class="icon-calendar-love-02"></i>
                             <span class="blind">link to reminders</span>
                         </a>
-                        <button class="humburger-btn mr-1.5 text-white lg:hidden">
-                            <i class="hgi hgi-stroke hgi-menu-01 text-2xl"></i>
+                        <button class="humburger-btn flex items-center justify-center w-11 h-14 text-2xl text-white lg:hidden">
+                            <i class="hgi hgi-stroke hgi-menu-01"></i>
                             <span class="blind">button open menu mobile</span>
                         </button>
-                        <a href="profile.html" class="flex items-center justify-center w-14 h-14 text-xl text-white">
+                        <a href="profile.html" class="flex items-center justify-center w-14 h-14 max-lg:hidden">
                             <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-9 h-9 rounded-full object-cover">
                             <span class="blind">link to profile</span>
                         </a>
+                        <div class="select-block select-profile flex items-center justify-end w-11 h-14 lg:hidden">
+                            <div class="select">
+                                <span>
+                                    <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-9 h-9 rounded-full object-cover">
+                                </span>
+                                <div class="menu">
+                                    <ul class="list-option">
+                                        <li>
+                                            <a href="profile.html" class="flex items-center gap-3 w-full">
+                                                <span class="icon-user-circle text-[24px]"></span>
+                                                <span>Tài khoản</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="wishlist.html" class="flex items-center gap-3 w-full">
+                                                <span class="icon-favourite text-[24px]"></span>
+                                                <span>Sản phẩm yêu thích</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="reminders.html" class="flex items-center gap-3 w-full">
+                                                <span class="icon-calendar-love-02 text-[24px]"></span>
+                                                <span>Lời nhắc</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -167,11 +196,11 @@
         </section>
 
         <!-- Reminders -->
-        <section class="reminders sm:py-32 pt-8 pb-11 border-b border-primary-txt">
+        <section class="reminders overflow-hidden sm:py-32 pt-8 pb-11 border-b border-primary-txt">
             <div class="container">
                 <h2 class="text-head3">Lời nhắc đã lưu (4)</h2>
                 <ul class="grid lg:grid-cols-3 sm:grid-cols-2 sm:gap-6 gap-4 sm:mt-10 mt-6">
-                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl">
+                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 1">
                         <div class="flex justify-between gap-12">
                             <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 6 tháng 8</span>
                             <div class="flex gap-6">
@@ -188,7 +217,7 @@
                         <strong class="block text-head4 sm:my-12 my-5">Bạn A</strong>
                         <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Ngày kỷ niệm</span>
                     </li>
-                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl">
+                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 2">
                         <div class="flex justify-between gap-12">
                             <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 7 tháng 8</span>
                             <div class="flex gap-6">
@@ -205,7 +234,7 @@
                         <strong class="block text-head4 sm:my-12 my-5">Chị gái hehehe</strong>
                         <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Sinh nhật</span>
                     </li>
-                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl">
+                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 3">
                         <div class="flex justify-between gap-12">
                             <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 10 tháng 8</span>
                             <div class="flex gap-6">
@@ -222,7 +251,7 @@
                         <strong class="block text-head4 sm:my-12 my-5">Cháu trai</strong>
                         <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Tiệc đầy tháng</span>
                     </li>
-                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl">
+                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 4">
                         <div class="flex justify-between gap-12">
                             <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 7 tháng 12</span>
                             <div class="flex gap-6">
@@ -361,22 +390,22 @@
                     <div class="sub-nav-mobile pl-3">
                         <ul>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Hộp quà tặng</a>
+                                <a href="product-list.html" class="block px-2 py-3">Hộp quà tặng</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Làm đẹp & Chăm sóc cá nhân</a>
+                                <a href="product-list.html" class="block px-2 py-3">Làm đẹp & Chăm sóc cá nhân</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Phụ kiện cá nhân</a>
+                                <a href="product-list.html" class="block px-2 py-3">Phụ kiện cá nhân</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Đồ trang trí & Kỷ niệm</a>
+                                <a href="product-list.html" class="block px-2 py-3">Đồ trang trí & Kỷ niệm</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Văn phòng phẩm</a>
+                                <a href="product-list.html" class="block px-2 py-3">Văn phòng phẩm</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Đồ dùng tiện ích</a>
+                                <a href="product-list.html" class="block px-2 py-3">Đồ dùng tiện ích</a>
                             </li>
                         </ul>
                     </div>
@@ -404,40 +433,40 @@
                     <div class="sub-nav-mobile pl-3">
                         <ul>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Tết Dương lịch (1/1)</a>
+                                <a href="product-list.html" class="block px-2 py-3">Tết Dương lịch (1/1)</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Tết Nguyên Đán</a>
+                                <a href="product-list.html" class="block px-2 py-3">Tết Nguyên Đán</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Ngày Valentine (14/2)</a>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Valentine (14/2)</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Ngày Thầy thuốc Việt Nam (27/2)</a>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Thầy thuốc Việt Nam (27/2)</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Ngày Quốc tế Phụ nữ (8/3)</a>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Phụ nữ (8/3)</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Ngày Quốc tế Hạnh phúc (20/3)</a>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Hạnh phúc (20/3)</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Ngày Quốc tế Thiếu nhi (1/6)</a>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Thiếu nhi (1/6)</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Tết Trung thu</a>
+                                <a href="product-list.html" class="block px-2 py-3">Tết Trung thu</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Ngày Phụ nữ Việt Nam (20/10)</a>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Phụ nữ Việt Nam (20/10)</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Ngày Quốc tế Nam giới (19/11)</a>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Nam giới (19/11)</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Ngày Nhà giáo Việt Nam (20/11)</a>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Nhà giáo Việt Nam (20/11)</a>
                             </li>
                             <li>
-                                <a href="index.html" class="block px-2 py-3">Lễ Giáng Sinh (25/12)</a>
+                                <a href="product-list.html" class="block px-2 py-3">Lễ Giáng Sinh (25/12)</a>
                             </li>
                         </ul>
                     </div>
