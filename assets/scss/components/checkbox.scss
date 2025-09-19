@@ -1,4 +1,4 @@
-.checkbox-block {
+.form-checkbox {
     position: relative;
 
     .checkbox {
@@ -27,6 +27,7 @@
         display: block;
         position: relative;
         z-index: 1;
+        cursor: pointer;
         user-select: none;
 
         &::before {
@@ -34,8 +35,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             border: 2px solid var(--neutral);
             border-radius: 5px;
             transition: 0.4s;

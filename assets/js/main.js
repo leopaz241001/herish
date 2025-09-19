@@ -27,6 +27,7 @@
 // --- Select ---
 // --- Active Wishlist icon ---
 // --- Toggle button ---
+// --- Control form input ---
 // --- Show hide password ---
 
 // Animation
@@ -363,7 +364,7 @@
     // Add filter to screen when click
     const handleAddFilter = function () {
         const optionItems = $('.select-block .list-option li');
-        const checkboxItems = $('.filter-section .checkbox-block .checkbox');
+        const checkboxItems = $('.filter-section .form-checkbox .checkbox');
 
         optionItems.on('click', function () {
             let dataItem = $(this).attr('data-item');
@@ -427,7 +428,7 @@
         // Remove all item
         $(document).on('click', '.clear-all-btn', function () {
             $('.list-filtered .list').text('');
-            $('.checkbox-block .checkbox').prop('checked', false);
+            $('.form-checkbox .checkbox').prop('checked', false);
             handleOpenListFiltered()
         });
 
@@ -593,7 +594,6 @@
         const selectBlock = $('.select-block');
         const menu = $('.select-block .menu');
         const optionItems = $('.select-block .menu li');
-        const formInput = $('.select-block .form-input');
 
         if (selectBlock.length > 0) {
             selectBlock.on('click', function () {
@@ -622,10 +622,6 @@
                 if(dataItem) $(this).closest('.select-block').find('.selected').text(dataItem)
             })
 
-            formInput.on('click', function (e) {
-                e.stopPropagation()
-            })
-
             $(window).on('click', function (e) {
                 if (!$(e.target).closest('.select-block').length) {
                     menu.removeClass('open');
@@ -641,6 +637,21 @@
                 $(this).toggleClass('active');
             }
         });
+    }
+
+    // Control form input
+    const controlFormInput = function () {
+        $('.form-control-input .input-control').on('input', function () {
+            $(this).closest('.form-control').removeClass('error')
+            $(this).closest('.form-control').find('.text-guide').removeClass('hidden')
+            $(this).closest('.form-control').find('.text-control').addClass('hidden')
+
+            if($(this).val() !== '') {
+                $(this).closest('.form-control-input').find('.btn-control').removeClass('disabled')
+            } else {
+                $(this).closest('.form-control-input').find('.btn-control').addClass('disabled')
+            }
+        })
     }
 
     // Show hide password
@@ -767,6 +778,7 @@
         handleNumberDeliveryPopupApply()
         handleSelectBlock()
         handleToggleButton()
+        controlFormInput()
         handleShowPassword()
         handleRate()
         handleToastify()
