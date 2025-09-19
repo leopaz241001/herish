@@ -22,7 +22,8 @@ textarea:focus {
                 display: none;
             }
 
-            .text-control {
+            .text-control,
+            &~.text-control {
                 display: block;
             }
         }

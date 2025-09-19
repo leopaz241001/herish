@@ -10,7 +10,7 @@
         .progress {
             position: absolute;
             height: 5px;
-            background: var(--black);
+            background: var(--neutral-txt-high);
             left: 1px;
             right: 1px;
         }
@@ -37,7 +37,7 @@
                 outline: none;
                 pointer-events: auto;
                 -webkit-appearance: none;
-                background: var(--black);
+                background: var(--neutral-txt-high);
             }
         }
     }

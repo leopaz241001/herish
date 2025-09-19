@@ -13,7 +13,8 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  color: var(--black);
+  color: var(--neutral-txt-high);
+  background-color: var(--white);
   scroll-behavior: smooth;
 }
 
@@ -320,8 +321,8 @@ input::-webkit-inner-spin-button {
 .line-before.line-white::before {
   background-color: var(--white);
 }
-.line-before.line-black::before {
-  background-color: var(--black);
+.line-before.line-neutral-txt-high::before {
+  background-color: var(--neutral-txt-high);
 }
 .line-before.line-2px::before {
   height: 2px;
@@ -551,7 +552,7 @@ textarea:focus {
 .form-control-input .form-control.error .text-guide {
   display: none;
 }
-.form-control-input .form-control.error .text-control {
+.form-control-input .form-control.error .text-control, .form-control-input .form-control.error ~ .text-control {
   display: block;
 }
 
@@ -632,7 +633,7 @@ textarea:focus {
 .filter-radius .tow-bar-block .progress {
   position: absolute;
   height: 5px;
-  background: var(--black);
+  background: var(--neutral-txt-high);
   left: 1px;
   right: 1px;
 }
@@ -663,7 +664,7 @@ textarea:focus {
   outline: none;
   pointer-events: auto;
   -webkit-appearance: none;
-  background: var(--black);
+  background: var(--neutral-txt-high);
 }
 
 .tag {
@@ -810,8 +811,8 @@ textarea:focus {
   width: 100%;
 }
 .menu-tab .tab-btn.-fill.active {
-  border-color: var(--black);
-  background-color: var(--black);
+  border-color: var(--neutral-txt-high);
+  background-color: var(--neutral-txt-high);
   color: var(--white);
 }
 .menu-tab .tab-btn.-fill.-fill-primary.active {
@@ -921,21 +922,21 @@ textarea:focus {
 
 /* list_social */
 .list_social .list > a:hover span::before {
-  color: var(--black);
+  color: var(--neutral-txt-high);
 }
 .list_social .list label span::before,
-.list_social .list a.text-black span::before {
-  color: var(--black);
+.list_social .list a.text-neutral-txt-high span::before {
+  color: var(--neutral-txt-high);
   transition: 0.3s;
 }
 .list_social .list label:hover span::before,
-.list_social .list a.text-black:hover span::before {
+.list_social .list a.text-neutral-txt-high:hover span::before {
   color: var(--white);
 }
 
-[class^=icon-].text-black::before,
-[class*=" icon-"].text-black::before {
-  color: var(--black);
+[class^=icon-].text-neutral-txt-high::before,
+[class*=" icon-"].text-neutral-txt-high::before {
+  color: var(--neutral-txt-high);
   transition: 0.3s;
 }
 
@@ -1001,7 +1002,7 @@ textarea:focus {
   border: 1px solid transparent;
 }
 .swiper .swiper-slide-thumb-active {
-  border: 1px solid var(--black);
+  border: 1px solid var(--neutral-txt-high);
 }
 
 .scroll-to-top-btn {
@@ -1250,12 +1251,12 @@ textarea:focus {
   transition: 0.5s;
 }
 .slick-dots li.slick-active {
-  border: 1px solid var(--black);
+  border: 1px solid var(--neutral-txt-high);
   background-color: #fff;
 }
 .slick-dots li.slick-active::after {
-  background-color: var(--black);
-  border: 1px solid var(--black);
+  background-color: var(--neutral-txt-high);
+  border: 1px solid var(--neutral-txt-high);
 }
 
 .slick-list-location .slick-list {

@@ -5,17 +5,17 @@
             &:hover {
                 span {
                     &::before {
-                        color: var(--black);
+                        color: var(--neutral-txt-high);
                     }
                 }
             }
         }
 
         label,
-        a.text-black {
+        a.text-neutral-txt-high {
             span {
                 &::before {
-                    color: var(--black);
+                    color: var(--neutral-txt-high);
                     transition: 0.3s;
                 }
             }
@@ -31,10 +31,10 @@
     }
 }
 
-[class^="icon-"].text-black,
-[class*=" icon-"].text-black {
+[class^="icon-"].text-neutral-txt-high,
+[class*=" icon-"].text-neutral-txt-high {
     &::before {
-        color: var(--black);
+        color: var(--neutral-txt-high);
         transition: 0.3s;
     }
 }

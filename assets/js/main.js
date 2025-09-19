@@ -643,8 +643,6 @@
     const controlFormInput = function () {
         $('.form-control-input .input-control').on('input', function () {
             $(this).closest('.form-control').removeClass('error')
-            $(this).closest('.form-control').find('.text-guide').removeClass('hidden')
-            $(this).closest('.form-control').find('.text-control').addClass('hidden')
 
             if($(this).val() !== '') {
                 $(this).closest('.form-control-input').find('.btn-control').removeClass('disabled')
