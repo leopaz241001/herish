@@ -16,6 +16,18 @@
     cursor: pointer;
     transition: all ease-out 0.5s;
 
+    &.p-0 {
+        padding: 0;
+    }
+
+    &.whitespace-normal {
+        white-space: unset;
+    }
+
+    &.small {
+        padding: 0.5rem 1rem;
+    }
+
     &.disabled {
         background-color: var(--neutral-ui);
         color: var(--neutral-txt-low);

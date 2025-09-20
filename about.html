@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="FreelanHub - Job Board & Freelance Marketplace" />
-        <title>FreelanHub - Job Board & Freelance Marketplace</title>
+        <meta name="description" content="Herish - Gợi ý những món quà phù hợp nhất cho người đặc biệt của bạn." />
+        <title>Herish</title>
         <link rel="shortcut icon" href="./assets/images/fav.png" type="image/x-icon" />
         <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="./assets/css/leaflet.css" />
+        <link rel="stylesheet" href="./assets/css/icons.css" />
         <link rel="stylesheet" href="./assets/css/slick.css" />
         <link rel="stylesheet" href="./assets/css/style.css" />
         <link rel="stylesheet" href="./dist/output-tailwind.css" />
@@ -16,1679 +16,641 @@
 
     <body>
         <!-- Header -->
-        <header id="header" class="header -style-white relative">
-            <div class="header_inner absolute flex items-center justify-between top-0 left-0 right-0 z-[1] w-full sm:h-20 h-16 min-[1600px]:px-15 lg:px-9 px-4 border-b border-light">
-                <div class="left flex items-center gap-15 h-full max-[1600px]:gap-6">
+        <header id="header" class="header absolute top-0 left-0 w-full z-[10]">
+            <div class="container relative">
+                <div class="header-inner flex items-center justify-between z-[1] lg:h-24 h-18 lg:py-4 py-2">
                     <h1>
                         <a href="index.html">
-                            <img src="./assets/images/logo-white.svg" alt="logo-white" class="logo-white md:h-[42px] h-8 w-auto" />
-                            <img src="./assets/images/logo.svg" alt="logo" class="logo-black md:h-[42px] h-8 w-auto hidden" />
+                            <img src="./assets/images/logo-white.svg" alt="logo-white" class="logo-white xl:h-[42px] h-8 w-auto" />
                         </a>
                     </h1>
-                    <div class="category_block flex items-center relative h-full">
-                        <button class="category_btn max-2xl:hidden flex items-center gap-1 px-3 py-2 rounded-lg bg-light text-white duration-300">
-                            <span class="ph ph-stack text-2xl text-primary"></span>
-                            <span>Categories</span>
+                    <div class="navigator h-full max-lg:hidden xl:px-6 px-4 rounded-full">
+                        <ul class="list flex items-center gap-8 max-[1180px]:gap-3 h-full">
+                            <li class="h-full relative">
+                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                    <span>Sản phẩm</span>
+                                    <i class="hgi hgi-stroke hgi-arrow-down-01"></i>
+                                </a>
+                                <div class="sub-menu absolute mt-2 p-2 w-max bg-white rounded-xl">
+                                    <ul>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Hộp quà tặng</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Làm đẹp & Chăm sóc cá nhân</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Phụ kiện cá nhân</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Đồ trang trí & Kỷ niệm</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Văn phòng phẩm</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Đồ dùng tiện ích</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="h-full relative">
+                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                    <span>Cá nhân hóa</span>
+                                </a>
+                            </li>
+                            <li class="h-full relative">
+                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                    <span>Sinh nhật</span>
+                                </a>
+                            </li>
+                            <li class="h-full relative">
+                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                    <span>Ngày kỷ niệm</span>
+                                </a>
+                            </li>
+                            <li class="h-full relative">
+                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                    <span>Dịp đặc biệt</span>
+                                    <i class="hgi hgi-stroke hgi-arrow-down-01"></i>
+                                </a>
+                                <div class="sub-menu absolute mt-2 p-2 w-max bg-white rounded-xl">
+                                    <ul>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300"> Tết Dương lịch (1/1)</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Tết Nguyên Đán</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Ngày Valentine (14/2)</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Ngày Thầy thuốc Việt Nam (27/2)</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Ngày Quốc tế Phụ nữ (8/3)</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Ngày Quốc tế Hạnh phúc (20/3)</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Ngày Quốc tế Thiếu nhi (1/6)</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Tết Trung thu</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Ngày Phụ nữ Việt Nam (20/10)</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Ngày Quốc tế Nam giới (19/11)</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Ngày Nhà giáo Việt Nam (20/11)</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-list.html" class="link block w-full py-4 px-2 text-body2 duration-300">Lễ Giáng Sinh (25/12)</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-action flex items-center gap-1">
+                        <button type="button" class="btn-open-popup flex items-center justify-center lg:w-14 w-11 h-14 text-xl text-white" data-type="modal-search">
+                            <i class="icon-search"></i>
+                            <span class="blind">button open modal search</span>
                         </button>
-                        <div class="category_nav flex">
-                            <ul class="category_list flex-shrink-0 w-[300px] h-full py-5 border-r border-line" role="tablist">
-                                <li class="category_item w-full">
-                                    <button class="category_link tab_btn flex items-center gap-3 w-full px-7 py-4 duration-300 active" id="category_tab01" role="tab" aria-controls="category_01" aria-selected="true">
-                                        <span class="ph-fill ph-desktop text-2xl"></span>
-                                        <strong class="category_name text-title">Graphic & Design</strong>
-                                    </button>
-                                </li>
-                                <li class="category_item w-full">
-                                    <button class="category_link tab_btn flex items-center gap-3 w-full px-7 py-4 duration-300" id="category_tab02" role="tab" aria-controls="category_02" aria-selected="false">
-                                        <span class="ph-fill ph-megaphone-simple text-2xl"></span>
-                                        <strong class="category_name text-title">Digital Marketing</strong>
-                                    </button>
-                                </li>
-                                <li class="category_item w-full">
-                                    <button class="category_link tab_btn flex items-center gap-3 w-full px-7 py-4 duration-300" id="category_tab03" role="tab" aria-controls="category_03" aria-selected="false">
-                                        <span class="ph-fill ph-brackets-angle text-2xl"></span>
-                                        <strong class="category_name text-title">Programming & Tech</strong>
-                                    </button>
-                                </li>
-                                <li class="category_item w-full">
-                                    <button class="category_link tab_btn flex items-center gap-3 w-full px-7 py-4 duration-300" id="category_tab04" role="tab" aria-controls="category_04" aria-selected="false">
-                                        <span class="ph-fill ph-pencil-simple-line text-2xl"></span>
-                                        <strong class="category_name text-title">Wrting & Translation</strong>
-                                    </button>
-                                </li>
-                                <li class="category_item w-full">
-                                    <button class="category_link tab_btn flex items-center gap-3 w-full px-7 py-4 duration-300" id="category_tab05" role="tab" aria-controls="category_05" aria-selected="false">
-                                        <span class="ph-fill ph-video text-2xl"></span>
-                                        <strong class="category_name text-title">Videos & Animation</strong>
-                                    </button>
-                                </li>
-                                <li class="category_item w-full">
-                                    <button class="category_link tab_btn flex items-center gap-3 w-full px-7 py-4 duration-300" id="category_tab06" role="tab" aria-controls="category_06" aria-selected="false">
-                                        <span class="ph-fill ph-music-notes text-2xl"></span>
-                                        <strong class="category_name text-title">Mussic & Audio</strong>
-                                    </button>
-                                </li>
-                                <li class="category_item w-full">
-                                    <button class="category_link tab_btn flex items-center gap-3 w-full px-7 py-4 duration-300" id="category_tab07" role="tab" aria-controls="category_07" aria-selected="false">
-                                        <span class="ph-fill ph-head-circuit text-2xl"></span>
-                                        <strong class="category_name text-title">AI Services</strong>
-                                    </button>
-                                </li>
-                                <li class="category_item w-full">
-                                    <button class="category_link tab_btn flex items-center gap-3 w-full px-7 py-4 duration-300" id="category_tab08" role="tab" aria-controls="category_08" aria-selected="false">
-                                        <span class="ph-fill ph-camera text-2xl"></span>
-                                        <strong class="category_name text-title">Photography</strong>
-                                    </button>
-                                </li>
-                            </ul>
-                            <div id="category_01" class="category_list_detail tab_list grid grid-cols-4 gap-y-10 w-full h-fit py-8 px-10 active" role="tabpanel" aria-labelledby="category_tab01" aria-hidden="false">
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Websites</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Website Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Website Maintenance</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">WordPress</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Shopify</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Application</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Web Applications</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Game Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Chatbot Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Desktop Applications</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Software</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Software Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">APIs & Integrations</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">AI Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Plugins Development</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Mobile Apps</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Mobile App Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Cross-platform Apps</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Android App Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">IOS App Development</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Website Platforms</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Wix</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Webflow</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">GoDaddy</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">WooCommerce</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">cybersecurity</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Support & IT</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Cloud Computing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">DevOps Engineering</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Cybersecurity</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Miscellaneous</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Blockchain & Solutions</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Cryptocurrencies</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Electronics Engineering</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Online Coding Lessons</a>
-                                </div>
-                            </div>
-                            <div id="category_02" class="category_list_detail tab_list grid grid-cols-4 gap-y-10 w-full h-fit py-8 px-10" role="tabpanel" aria-labelledby="category_tab02" aria-hidden="true">
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">SEO</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">On-Page SEO</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Off-Page SEO</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Technical SEO</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Local SEO</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Content Marketing</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Content Strategy</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Blog Writing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Video Content</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Infographic Design</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Social Media Marketing</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Facebook Marketing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Instagram Marketing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">LinkedIn Marketing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Twitter Marketing</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Email Marketing</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Email Campaigns</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Newsletter Design</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Automation</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Drip Campaigns</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Paid Advertising</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Google Ads</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Facebook Ads</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Instagram Ads</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">LinkedIn Ads</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Analytics</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Google Analytics</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Conversion Tracking</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Data Analysis</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Reporting</a>
-                                </div>
-                            </div>
-                            <div id="category_03" class="category_list_detail tab_list grid grid-cols-4 gap-y-10 w-full h-fit py-8 px-10" role="tabpanel" aria-labelledby="category_tab03" aria-hidden="true">
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Web Development</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Website Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Website Maintenance</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">WordPress</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Shopify</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Mobile Development</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Mobile App Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Cross-platform Apps</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Android App Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">iOS App Development</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Software Development</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Software Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">APIs & Integrations</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">AI Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Plugins Development</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Game Development</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Game Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Game Design</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">AR/VR Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Mobile Game Development</a>
-                                </div>
-                            </div>
-                            <div id="category_04" class="category_list_detail tab_list grid grid-cols-4 gap-y-10 w-full h-fit py-8 px-10" role="tabpanel" aria-labelledby="category_tab04" aria-hidden="true">
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Articles & Blog Posts</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">SEO Writing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Blog Posts</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Website Content</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Article Writing</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Technical Writing</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">User Manuals</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Technical Documentation</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Research Papers</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">White Papers</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Translation Services</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Document Translation</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Website Translation</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Legal Translation</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Medical Translation</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Creative Writing</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Scriptwriting</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Storytelling</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Poetry</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Ghostwriting</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Editing & Proofreading</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Proofreading</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Copy Editing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Content Editing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Editorial Feedback</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Business Writing</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Business Plans</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Proposals</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Reports</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Presentations</a>
-                                </div>
-                            </div>
-                            <div id="category_05" class="category_list_detail tab_list grid grid-cols-4 gap-y-10 w-full h-fit py-8 px-10" role="tabpanel" aria-labelledby="category_tab05" aria-hidden="true">
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Video Editing</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Post-Production</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Color Correction</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Video Stitching</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Sound Design</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Animation</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">2D Animation</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">3D Animation</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Motion Graphics</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Stop Motion</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Video Production</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Filming</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Directing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Scriptwriting</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Storyboarding</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Music Videos</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Concept Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Filming & Editing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Special Effects</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Color Grading</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Intros & Outros</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">YouTube Intros</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Logo Animation</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">End Screens</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Channel Trailers</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Live Action</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Explainer Videos</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Commercials</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Product Demos</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Corporate Videos</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Visual Effects</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Compositing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Green Screen</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Rotoscoping</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">3D Tracking</a>
-                                </div>
-                            </div>
-                            <div id="category_06" class="category_list_detail tab_list grid grid-cols-4 gap-y-10 w-full h-fit py-8 px-10" role="tabpanel" aria-labelledby="category_tab06" aria-hidden="true">
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Music Production</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Beat Making</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Remixing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Songwriting</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Jingles & Intros</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Audio Engineering</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Mixing & Mastering</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Sound Design</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Audio Editing</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Restoration & Repair</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Voice Over</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Narration</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Character Voices</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Podcast Intros</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Commercials</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Music Lessons</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Instrumental Lessons</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Vocal Coaching</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Music Theory</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Songwriting Lessons</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Jingles & Drops</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Radio Jingles</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">DJ Drops</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Podcast Intros</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">TV & Film Jingles</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Sound Effects</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Custom Sound Effects</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Foley</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Game Sound Effects</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Podcast Sound Effects</a>
-                                </div>
-                            </div>
-                            <div id="category_07" class="category_list_detail tab_list grid grid-cols-4 gap-y-10 w-full h-fit py-8 px-10" role="tabpanel" aria-labelledby="category_tab07" aria-hidden="true">
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Machine Learning</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Model Training</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Data Analysis</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Predictive Analytics</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Natural Language Processing</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">AI Development</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Chatbot Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">AI Solutions</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Custom AI Applications</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Machine Learning Algorithms</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Data Science</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Data Visualization</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Data Engineering</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Big Data Solutions</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Data Mining</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Automation</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Process Automation</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">RPA Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Automation Tools</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Workflow Automation</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Computer Vision</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Image Recognition</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Object Detection</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Facial Recognition</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Video Analysis</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Speech Recognition</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Voice Assistants</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Speech to Text</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Text to Speech</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Voice Command Systems</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">AI Consulting</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Strategy Development</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Implementation Guidance</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">AI Roadmaps</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Technical Support</a>
-                                </div>
-                            </div>
-                            <div id="category_08" class="category_list_detail tab_list grid grid-cols-4 gap-y-10 w-full h-fit py-8 px-10" role="tabpanel" aria-labelledby="category_tab08" aria-hidden="true">
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Portrait Photography</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Headshots</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Family Portraits</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Event Photography</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Fashion Photography</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Commercial Photography</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Product Photography</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Food Photography</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Real Estate Photography</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Advertising Photography</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Travel Photography</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Landscape Photography</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Cityscape Photography</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Street Photography</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Adventure Photography</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Aerial Photography</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Drone Photography</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Aerial Videography</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Real Estate Aerials</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Event Aerials</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Wedding Photography</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Engagement Photos</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Wedding Day Photos</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Bridal Portraits</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Reception Photos</a>
-                                </div>
-                                <div class="item flex flex-col gap-2.5">
-                                    <strong class="text-button">Photo Editing</strong>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Retouching</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Color Correction</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Photo Restoration</a>
-                                    <a href="jobs-default.html" class="w-fit caption1 line-before line-black">Background Removal</a>
+                        <a href="wishlist.html" class="flex items-center justify-center w-14 h-14 text-xl text-white max-lg:hidden">
+                            <i class="icon-favourite"></i>
+                            <span class="blind">link to wishlist</span>
+                        </a>
+                        <a href="reminders.html" class="flex items-center justify-center w-14 h-14 text-xl text-white max-lg:hidden">
+                            <i class="icon-calendar-love-02"></i>
+                            <span class="blind">link to reminders</span>
+                        </a>
+                        <button class="humburger-btn flex items-center justify-center w-11 h-14 text-2xl text-white lg:hidden">
+                            <i class="hgi hgi-stroke hgi-menu-01"></i>
+                            <span class="blind">button open menu mobile</span>
+                        </button>
+                        <a href="profile.html" class="flex items-center justify-center w-14 h-14 max-lg:hidden">
+                            <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-9 h-9 rounded-full object-cover">
+                            <span class="blind">link to profile</span>
+                        </a>
+                        <div class="select-block select-profile flex items-center justify-end w-11 h-14 lg:hidden">
+                            <div class="select">
+                                <span>
+                                    <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-9 h-9 rounded-full object-cover">
+                                </span>
+                                <div class="menu">
+                                    <ul class="list-option">
+                                        <li>
+                                            <a href="profile.html" class="flex items-center gap-3 w-full">
+                                                <span class="icon-user-circle text-[24px]"></span>
+                                                <span>Tài khoản</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="wishlist.html" class="flex items-center gap-3 w-full">
+                                                <span class="icon-favourite text-[24px]"></span>
+                                                <span>Sản phẩm yêu thích</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="reminders.html" class="flex items-center gap-3 w-full">
+                                                <span class="icon-calendar-love-02 text-[24px]"></span>
+                                                <span>Lời nhắc</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="navigator h-full max-[1400px]:hidden">
-                    <ul class="list flex items-center gap-5 h-full">
-                        <li class="h-full relative">
-                            <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
-                                <span class="text-title relative">Homepages</span>
-                                <span class="ph-bold ph-caret-down"></span>
-                            </a>
-                            <div class="sub_menu absolute p-3 -left-10 w-max bg-white rounded-lg">
-                                <ul>
-                                    <li>
-                                        <a href="index.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> Home Freelancer 01 </a>
-                                    </li>
-                                    <li>
-                                        <a href="freelancer2.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> Home Freelancer 02 </a>
-                                    </li>
-                                    <li>
-                                        <a href="freelancer3.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> Home Freelancer 03 </a>
-                                    </li>
-                                    <li>
-                                        <a href="freelancer4.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> Home Freelancer 04 </a>
-                                    </li>
-                                    <li>
-                                        <a href="freelancer5.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> Home Freelancer 05 </a>
-                                    </li>
-                                    <li>
-                                        <a href="freelancer6.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> Home Freelancer 06 </a>
-                                    </li>
-                                    <li>
-                                        <a href="freelancer7.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> Home Freelancer 07 </a>
-                                    </li>
-                                    <li>
-                                        <a href="freelancer8.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300 active"> Home Freelancer 08 </a>
-                                    </li>
-                                    <li>
-                                        <a href="jobs9.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> Home Jobs 09 </a>
-                                    </li>
-                                    <li>
-                                        <a href="jobs10.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> Home Jobs 10 </a>
-                                    </li>
-                                    <li>
-                                        <a href="jobs11.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> Home Jobs 11 </a>
-                                    </li>
-                                    <li>
-                                        <a href="jobs12.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> Home Jobs 12 </a>
-                                    </li>
-                                    <li>
-                                        <a href="rtl13.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> Home RTL 13 </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="h-full relative">
-                            <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
-                                <span class="text-title relative">For Candidates</span>
-                                <span class="ph-bold ph-caret-down"></span>
-                            </a>
-                            <div class="sub_menu absolute p-3 -left-10 w-max bg-white rounded-lg">
-                                <ul>
-                                    <li>
-                                        <a href="#!" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300">
-                                            Browse jobs
-                                            <span class="ph-bold ph-caret-right"></span>
-                                        </a>
-                                        <div class="sub_menu_two absolute p-3 top-0 left-full z-[1] w-max bg-white rounded-lg">
-                                            <ul>
-                                                <li>
-                                                    <a href="jobs-default.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> jobs default </a>
-                                                </li>
-                                                <li>
-                                                    <a href="jobs-grid.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> jobs grid </a>
-                                                </li>
-                                                <li>
-                                                    <a href="jobs-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> jobs list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="jobs-top-map.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> jobs top map </a>
-                                                </li>
-                                                <li>
-                                                    <a href="jobs-half-map-grid1.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> jobs half map grid 1 </a>
-                                                </li>
-                                                <li>
-                                                    <a href="jobs-half-map-grid2.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> jobs half map grid 2 </a>
-                                                </li>
-                                                <li>
-                                                    <a href="jobs-fullwidth.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> jobs fullwidth </a>
-                                                </li>
-                                                <li>
-                                                    <a href="jobs-detail1.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> jobs detail 1 </a>
-                                                </li>
-                                                <li>
-                                                    <a href="jobs-detail2.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> jobs detail 2 </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#!" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300">
-                                            Browse Projects
-                                            <span class="ph-bold ph-caret-right"></span>
-                                        </a>
-                                        <div class="sub_menu_two absolute p-3 top-0 left-full z-[1] w-max bg-white rounded-lg">
-                                            <ul>
-                                                <li>
-                                                    <a href="project-default.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> project default </a>
-                                                </li>
-                                                <li>
-                                                    <a href="project-grid-3col.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> project grid 3 columns </a>
-                                                </li>
-                                                <li>
-                                                    <a href="project-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> project list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="project-top-map-grid.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> project top map grid </a>
-                                                </li>
-                                                <li>
-                                                    <a href="project-top-map-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> project top map list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="project-half-map-grid.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> project half map grid </a>
-                                                </li>
-                                                <li>
-                                                    <a href="project-half-map-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> project half map list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="project-fullwidth.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> project fullwidth </a>
-                                                </li>
-                                                <li>
-                                                    <a href="project-detail1.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> project detail 1 </a>
-                                                </li>
-                                                <li>
-                                                    <a href="project-detail2.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> project detail 2 </a>
-                                                </li>
-                                                <li>
-                                                    <a href="project-detail3.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> project detail 3 </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#!" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300">
-                                            Browse Employer
-                                            <span class="ph-bold ph-caret-right"></span>
-                                        </a>
-                                        <div class="sub_menu_two absolute p-3 top-0 left-full z-[1] w-max bg-white rounded-lg">
-                                            <ul>
-                                                <li>
-                                                    <a href="employers-default.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers default </a>
-                                                </li>
-                                                <li>
-                                                    <a href="employers-grid.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers grid </a>
-                                                </li>
-                                                <li>
-                                                    <a href="employers-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="employers-sidebar-grid-3cols.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers sidebar grid 3 cols </a>
-                                                </li>
-                                                <li>
-                                                    <a href="employers-sidebar-grid-2cols.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers sidebar grid 2 cols </a>
-                                                </li>
-                                                <li>
-                                                    <a href="employers-sidebar-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers sidebar list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="employers-top-map-grid.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers top map grid </a>
-                                                </li>
-                                                <li>
-                                                    <a href="employers-top-map-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers top map list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="employers-half-map-grid.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers half map grid </a>
-                                                </li>
-                                                <li>
-                                                    <a href="employers-half-map-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers half map list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="employers-fullwidth.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers fullwidth </a>
-                                                </li>
-                                                <li>
-                                                    <a href="employers-detail1.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers detail 1 </a>
-                                                </li>
-                                                <li>
-                                                    <a href="employers-detail2.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> employers detail 2 </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="become-seller.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Become a seller </a>
-                                    </li>
-                                    <li>
-                                        <a href="candidates-dashboard.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Candidates Dashboard </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="h-full relative">
-                            <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
-                                <span class="text-title relative">For Employers</span>
-                                <span class="ph-bold ph-caret-down"></span>
-                            </a>
-                            <div class="sub_menu absolute p-3 -left-10 w-max bg-white rounded-lg">
-                                <ul>
-                                    <li>
-                                        <a href="#!" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300">
-                                            Browse Services
-                                            <span class="ph-bold ph-caret-right"></span>
-                                        </a>
-                                        <div class="sub_menu_two absolute p-3 top-0 left-full z-[1] w-max bg-white rounded-lg">
-                                            <ul>
-                                                <li>
-                                                    <a href="services-default.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> services default </a>
-                                                </li>
-                                                <li>
-                                                    <a href="services-grid.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> services grid </a>
-                                                </li>
-                                                <li>
-                                                    <a href="services-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> services list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="services-sidebar-grid-3cols.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> services sidebar grid 3 cols </a>
-                                                </li>
-                                                <li>
-                                                    <a href="services-sidebar-grid-2cols.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> services sidebar grid 2 cols </a>
-                                                </li>
-                                                <li>
-                                                    <a href="services-sidebar-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> services sidebar list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="services-fullwidth-grid-5cols.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> services fullwidth grid 5 cols </a>
-                                                </li>
-                                                <li>
-                                                    <a href="services-fullwidth-grid-4cols.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> services fullwidth grid 4 cols </a>
-                                                </li>
-                                                <li>
-                                                    <a href="services-fullwidth-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> services fullwidth list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="services-detail1.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> services detail 1 </a>
-                                                </li>
-                                                <li>
-                                                    <a href="services-detail2.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> services detail 2 </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#!" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300">
-                                            Browse Candidates
-                                            <span class="ph-bold ph-caret-right"></span>
-                                        </a>
-                                        <div class="sub_menu_two absolute p-3 top-0 left-full z-[1] w-max bg-white rounded-lg">
-                                            <ul>
-                                                <li>
-                                                    <a href="candidates-default.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates default </a>
-                                                </li>
-                                                <li>
-                                                    <a href="candidates-grid.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates grid </a>
-                                                </li>
-                                                <li>
-                                                    <a href="candidates-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="candidates-sidebar-grid.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates sidebar grid </a>
-                                                </li>
-                                                <li>
-                                                    <a href="candidates-sidebar-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates sidebar list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="candidates-top-map-grid.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates top map grid </a>
-                                                </li>
-                                                <li>
-                                                    <a href="candidates-top-map-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates top map list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="candidates-half-map-grid.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates half map grid </a>
-                                                </li>
-                                                <li>
-                                                    <a href="candidates-half-map-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates half map list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="candidates-fullwidth-grid.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates fullwidth grid </a>
-                                                </li>
-                                                <li>
-                                                    <a href="candidates-fullwidth-list.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates fullwidth list </a>
-                                                </li>
-                                                <li>
-                                                    <a href="candidates-detail1.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates detail 1 </a>
-                                                </li>
-                                                <li>
-                                                    <a href="candidates-detail2.html" class="link block text-button py-[11px] pl-6 pr-[45px] rounded duration-300"> candidates detail 2 </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="become-buyer.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Become a buyer </a>
-                                    </li>
-                                    <li>
-                                        <a href="employers-dashboard.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Employer Dashboard </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="h-full relative">
-                            <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
-                                <span class="text-title relative">Blogs</span>
-                                <span class="ph-bold ph-caret-down"></span>
-                            </a>
-                            <div class="sub_menu absolute p-3 -left-10 w-max bg-white rounded-lg">
-                                <ul>
-                                    <li>
-                                        <a href="blog-default.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Blog default </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-grid.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Blog grid </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-list.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Blog list </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-detail1.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Blog detail 1 </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-detail2.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Blog detail 2 </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="h-full relative">
-                            <a href="#!" class="flex items-center gap-1 h-full text-white duration-300 active">
-                                <span class="text-title relative">Pages</span>
-                                <span class="ph-bold ph-caret-down"></span>
-                            </a>
-                            <div class="sub_menu absolute p-3 -left-10 w-max bg-white rounded-lg">
-                                <ul>
-                                    <li>
-                                        <a href="about1.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300 active"> About Us 1 </a>
-                                    </li>
-                                    <li>
-                                        <a href="about2.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> About Us 2 </a>
-                                    </li>
-                                    <li>
-                                        <a href="pricing.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Pricing Plan </a>
-                                    </li>
-                                    <li>
-                                        <a href="contact1.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Contact Us 1 </a>
-                                    </li>
-                                    <li>
-                                        <a href="contact2.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Contact Us 2 </a>
-                                    </li>
-                                    <li>
-                                        <a href="faqs.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Faqs </a>
-                                    </li>
-                                    <li>
-                                        <a href="term-of-use.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Terms of use </a>
-                                    </li>
-                                    <li>
-                                        <a href="error-404.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Error 404 </a>
-                                    </li>
-                                    <li>
-                                        <a href="login.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Login </a>
-                                    </li>
-                                    <li>
-                                        <a href="register.html" class="link flex items-center justify-between gap-2 w-full text-button py-[11px] px-6 rounded duration-300"> Register </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="list_action flex items-center gap-5">
-                    <div class="help_block max-sm:hidden">
-                        <button class="block">
-                            <span class="ph ph-question text-white text-2xl block"></span>
-                        </button>
-                    </div>
-                    <div class="notify_block max-sm:hidden">
-                        <button class="relative block">
-                            <span class="ph ph-bell text-white text-2xl block"></span>
-                            <span class="absolute -top-0.5 right-0.5 w-2 h-2 bg-primary rounded-full"></span>
-                        </button>
-                    </div>
-                    <a href="become-seller.html" class="button-main max-sm:hidden">Become A Seller</a>
-                    <div class="user_block max-sm:hidden">
-                        <button class="user_infor flex items-center gap-2 text-white">
-                            <img src="./assets/images/avatar/IMG-7.webp" alt="IMG-7" class="user_avatar flex-shrink-0 w-9 h-9 rounded-full" />
-                            <strong class="user_name text-title">Employer</strong>
-                            <span class="ph ph-caret-down"></span>
-                        </button>
-                    </div>
-                    <button class="humburger_btn min-[1400px]:hidden">
-                        <span class="ph-bold ph-list text-white text-2xl block"></span>
-                    </button>
                 </div>
             </div>
         </header>
 
         <!-- Slider -->
         <section class="slider">
-            <div class="slider_inner relative lg:h-[580px] sm:pt-20 pt-16 overflow-hidden bg-[#F1F6F2]">
-                <div class="container flex items-center justify-between h-full max-lg:py-16">
-                    <div class="slider_content lg:w-[430px] w-full">
-                        <h2 class="text-head2 animate animate_top" style="--i: 1">Welcome to the FreelanHub</h2>
-                        <p class="text-body2 mt-3 animate animate_top" style="--i: 2">Unlock the Power of Freelancers to Meet Your Business Needs and Propel Your Company Forward</p>
-                        <a href="contact1.html" class="button-main mt-7 animate animate_top" style="--i: 3">Contact Us</a>
+            <div class="slider-inner relative md:h-[612px] h-[436px] overflow-hidden">
+                <div class="slider-bg absolute top-0 left-0 w-full h-full" aria-hidden="true">
+                    <img src="./assets/images/slider/hero-about.jpg" alt="hero about" class="w-full h-full object-cover" />
+                </div>
+                <div class="container h-full">
+                    <div class="slider-content flex flex-col items-start justify-end sm:pb-[88px] pb-5 w-full h-full text-white">
+                        <div class="flex items-center gap-3 animate animate-top" style="--i: 1">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-[#d9d9d9]"></span>
+                            <strong class="text-body1 font-semibold">Về chúng tôi</strong>
+                            <span class="flex-shrink-0 w-8 h-0.5 bg-white"></span>
+                        </div>
+                        <h2 class="text-head1 sm:mt-9 mt-5 animate animate-top" style="--i: 2">Hành trình kết nối giá trị</h2>
+                        <p class="text-body2 sm:mt-7 mt-4 animate animate-top" style="--i: 3">Mang ý tưởng, sản phẩm và con người đến gần nhau hơn bằng sự sáng tạo và tận tâm.</p>
                     </div>
-                    <ul class="slider_bg grid grid-cols-3 w-7/12 h-full max-lg:hidden">
-                        <li class="h-full overflow-hidden">
-                            <img src="./assets/images/avatar/about1.webp" alt="avatar/about1" class="w-full h-full object-cover" />
-                        </li>
-                        <li class="h-full overflow-hidden">
-                            <img src="./assets/images/avatar/about2.webp" alt="avatar/about2" class="w-full h-full object-cover" />
-                        </li>
-                        <li class="h-full overflow-hidden">
-                            <img src="./assets/images/avatar/about3.webp" alt="avatar/about3" class="w-full h-full object-cover" />
-                        </li>
-                    </ul>
                 </div>
             </div>
         </section>
-
+        
         <!-- About -->
-        <section class="about lg:pt-20 sm:pt-14 pt-10">
-            <div class="container grid lg:grid-cols-2 gap-15 gap-y-8">
-                <div class="bg_img overflow-hidden h-fit rounded-lg">
-                    <img src="./assets/images/blog/3.webp" alt="blog/3" class="w-full h-full object-cover" />
-                </div>
-                <div class="overflow-hidden">
-                    <h3 class="text-head3">FreelanHub – Find Jobs / Hire Creatives</h3>
-                    <div class="content mt-5 border-b border-line">
-                        <div class="menu_tab">
-                            <ul class="menu flex gap-7" role="tablist">
-                                <li class="indicator absolute bottom-0 h-0.5 bg-primary rounded-full duration-300"></li>
-                                <li class="tab_item" role="presentation">
-                                    <button class="tab_btn -before py-1 text-button hover:text-primary duration-300 active" id="about_tab01" role="tab" aria-controls="about_01" aria-selected="true">Graphic & Design</button>
-                                </li>
-                                <li class="tab_item" role="presentation">
-                                    <button class="tab_btn -before py-1 text-button hover:text-primary duration-300" id="about_tab02" role="tab" aria-controls="about_02" aria-selected="false">Digital Marketing</button>
-                                </li>
-                                <li class="tab_item" role="presentation">
-                                    <button class="tab_btn -before py-1 text-button hover:text-primary duration-300" id="about_tab03" role="tab" aria-controls="about_03" aria-selected="false">Development</button>
-                                </li>
-                                <li class="tab_item" role="presentation">
-                                    <button class="tab_btn -before py-1 text-button hover:text-primary duration-300" id="about_tab04" role="tab" aria-controls="about_04" aria-selected="false">UI/UX Design</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="list_desc">
-                        <div id="about_01" class="tab_list mt-4 active" role="tabpanel" aria-labelledby="about_tab01" aria-hidden="false">
-                            <p class="text-secondary">
-                                At FreelanHub, we are dedicated to revolutionizing the way people connect with their dream careers. Our mission is to empower job seekers, freelancers and employers alike by providing a user-friendly and efficient platform for job searching and talent acquisition. With our innovative approach, we aim to bridge the gap between employers and job seekers, making the hiring process more straightforward, transparent, and rewarding for everyone involved.
-                            </p>
-                        </div>
-                        <div id="about_02" class="tab_list mt-4" role="tabpanel" aria-labelledby="about_tab02" aria-hidden="true">
-                            <p class="text-secondary">
-                                At FreelanHub, our vision is to revolutionize the freelance marketplace by creating a seamless, efficient, and trustworthy platform where talent meets opportunity. We aim to empower creatives by providing them with the resources and connections they need to thrive in their careers. By fostering a vibrant community of skilled professionals and forward-thinking companies, we envision a world where creativity and innovation are celebrated and rewarded.
-                            </p>
-                        </div>
-                        <div id="about_03" class="tab_list mt-4" role="tabpanel" aria-labelledby="about_tab03" aria-hidden="true">
-                            <p class="text-secondary">What makes FreelanHub stand out in a crowded marketplace? Our commitment to excellence, innovation, and user satisfaction. Here’s what sets us apart:</p>
-                            <ul class="flex flex-col gap-2 mt-3">
-                                <li class="text-secondary">Curated Talent Pool: We rigorously vet our freelancers to ensure only the best and most reliable professionals are available for hire.</li>
-                                <li class="text-secondary">User-Friendly Platform: Our intuitive interface makes it easy for both freelancers and employers to navigate, connect, and collaborate.</li>
-                            </ul>
-                        </div>
-                        <div id="about_04" class="tab_list mt-4" role="tabpanel" aria-labelledby="about_tab04" aria-hidden="true">
-                            <p class="text-secondary">At FreelanHub, we are committed to fostering a supportive for both freelancers and employers. Here’s how we demonstrate our commitment:</p>
-                            <ul class="flex flex-col gap-2 mt-3">
-                                <li class="text-secondary">Empowering Freelancers: We provide resources, tools, and support to help freelancers build their portfolios, enhance their skills, and grow their careers.</li>
-                                <li class="text-secondary">Supporting Employers: We offer personalized assistance to employers, helping them find the perfect match for their projects quickly and efficiently.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="about2.html" class="button-main mt-7">Read More</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- FreelanHub features -->
-        <section class="features lg:py-20 sm:py-14 py-10">
+        <section class="about sm:pt-32 pt-16">
             <div class="container">
-                <h3 class="text-head3 text-center animate animate_top" style="--i: 1">FreelanHub features</h3>
-                <p class="text-body2 text-secondary text-center mt-3 animate animate_top" style="--i: 2">Pellentesque quis lectus sagittis, gravida erat id, placerat tellus.</p>
-                <ul class="grid lg:grid-cols-3 gap-7.5 md:mt-10 mt-7">
-                    <li>
-                        <a href="login.html" class="flex flex-col items-center h-full p-10 bg-white border-2 border-transparent rounded-xl duration-500 shadow-md hover:border-primary animate animate_top" style="--i: 1">
-                            <span class="ph ph-envelope text-5xl"></span>
-                            <strong class="text-head5 mt-5">Simply Log in with Email</strong>
-                            <p class="desc text-center text-secondary mt-2">Streamline your login process by using your email or social media account</p>
-                            <strong class="inline-flex items-center gap-2 mt-5">
-                                <strong class="text-button line-before line-black line-2px">Start Now</strong>
-                                <span class="ph-bold ph-arrow-right"></span>
-                            </strong>
-                        </a>
+                <div class="grid md:grid-cols-12 sm:gap-6 gap-4">
+                    <strong class="flex items-center gap-3 md:col-span-4 h-fit animate animate-top" style="--i: 1">
+                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary"></span>
+                        <span class="text-body1 font-semibold">Câu chuyện thương hiệu</span>
+                    </strong>
+                    <div class="banner-content md:col-span-8">
+                        <h2 class="text-head2 animate animate-top" style="--i: 1">Kiến tạo kết nối, trao gửi yêu thương</h2>
+                        <p class="desc sm:mt-7 mt-3 animate animate-top" style="--i: 2">Từ ý tưởng đến khoảnh khắc mở quà, chúng tôi biến từng món quà thành chiếc cầu nối cảm xúc – giúp bạn nói điều trái tim muốn gửi.</p>
+                    </div>
+                </div>
+                <div class="grid sm:grid-cols-2 grid-cols-1 gap-6 sm:mt-13 mt-8">
+                    <div class="overflow-hidden rounded-xl aspect-square">
+                        <img src="./assets/images/components/about.jpg" alt="about" class="w-full h-full object-cover">
+                    </div>
+                    <div class="relative">
+                        <span class="icon-quote sm:absolute sm:-top-5 ml-6 text-[32px] text-secondary"></span>
+                        <h3 class="sm:text-head5 text-head3-mo sm:py-6 pt-1 text-secondary">“Một món quà đẹp có thể khiến ai đó mỉm cười, nhưng một món quà mang cảm xúc sẽ khiến họ nhớ mãi.”</h3>
+                        <p class="mt-4">Tại HERISH, chúng tôi tin rằng một món quà không chỉ là vật chất - nó là sợi dây kết nối giữa hai trái tim, là khoảnh khắc đong đầy ý nghĩa khi người trao và người nhận cùng chạm đến cảm xúc chân thật nhất.</p>
+                        <p class="sm:mt-10 mt-9">Ra đời với sứ mệnh mang đến <strong class="font-semibold">giải pháp quà tặng cá nhân hóa</strong>, HERISH đồng hành cùng bạn từ khâu <strong class="font-semibold">lên ý tưởng, thiết kế, đóng gói,</strong> cho đến khoảnh khắc đặc biệt khi người ấy mở món quà.</p>
+                        <p class="sm:mt-10 mt-9">Chúng tôi không bán những vật phẩm đơn thuần - chúng tôi <strong class="font-semibold">kiến tạo những trải nghiệm, những câu chuyện và những kỷ niệm khó quên.</strong> Mỗi sản phẩm chúng tôi tạo ra là sự kết hợp giữa <strong class="font-semibold">cảm xúc, thẩm mỹ và cá tính,</strong> giúp bạn bày tỏ điều khó nói bằng cách tinh tế và trọn vẹn nhất.</p>
+                        <p class="sm:mt-10 mt-9">Chúng tôi tin rằng, một món quà đúng lúc, đúng cách có thể nói thay nghìn lời, xóa tan khoảng cách, và hâm nóng những mối quan hệ. Đó là lý do mỗi ngày tại HERISH, chúng tôi không ngừng sáng tạo, lắng nghe và chăm chút từng chi tiết - để mỗi món quà trở thành <strong class="font-semibold">hành trình kết nối giá trị.</strong></p>
+                    </div>
+                </div>
+                <ul class="grid xl:grid-cols-4 sm:grid-cols-2 sm:gap-6 gap-4 mt-6">
+                    <li class="overflow-hidden rounded-xl max-sm:h-[252px] animate animate-top" style="--i: 1">
+                        <img src="./assets/images/components/about2.jpg" alt="about2" class="w-full h-full object-cover">
                     </li>
-                    <li>
-                        <a href="login.html" class="flex flex-col items-center h-full p-10 bg-white border-2 border-transparent rounded-xl duration-500 shadow-md hover:border-primary animate animate_top" style="--i: 2">
-                            <span class="ph ph-user text-5xl"></span>
-                            <strong class="text-head5 mt-5">Register / Signup</strong>
-                            <p class="desc text-center text-secondary mt-2">Sign up with ease to access our platform's full range of features and opportunities</p>
-                            <strong class="inline-flex items-center gap-2 mt-5">
-                                <strong class="text-button line-before line-black line-2px">Start Now</strong>
-                                <span class="ph-bold ph-arrow-right"></span>
-                            </strong>
-                        </a>
+                    <li class="overflow-hidden rounded-xl flex flex-col justify-between gap-6 py-8 px-6 bg-secondary text-white animate animate-top" style="--i: 2">
+                        <div class="flex items-center justify-between gap-5">
+                            <div>
+                                <span class="sm:text-head4 max-sm:text-head4">1000+</span>
+                                <p class="sm:text-body1 text-[18px] font-semibold mt-2">Đơn hàng mỗi tháng</p>
+                            </div>
+                            <div class="flex items-center justify-center w-14 h-14 rounded-full bg-secondary-hover-ui text-3xl text-neutral-txt-high">
+                                <i class="icon-gift"></i>
+                            </div>
+                        </div>
+                        <p class="text-body2">Từ những món nhỏ xinh đến các combo quà chỉn chu, chúng tôi luôn sẵn sàng đồng hành cùng bạn gửi gắm yêu thương - đúng người, đúng lúc.</p>
                     </li>
-                    <li>
-                        <a href="login.html" class="flex flex-col items-center h-full p-10 bg-white border-2 border-transparent rounded-xl duration-500 shadow-md hover:border-primary animate animate_top" style="--i: 3">
-                            <span class="ph ph-info text-5xl"></span>
-                            <strong class="text-head5 mt-5">Subscribe & Apply Jobs</strong>
-                            <p class="desc text-center text-secondary mt-2">Seize Opportunities: Start applying for your desired jobs with just a few clicks.</p>
-                            <strong class="inline-flex items-center gap-2 mt-5">
-                                <strong class="text-button line-before line-black line-2px">Start Now</strong>
-                                <span class="ph-bold ph-arrow-right"></span>
-                            </strong>
-                        </a>
+                    <li class="overflow-hidden rounded-xl max-sm:h-[252px] animate animate-top" style="--i: 3">
+                        <img src="./assets/images/components/about4.jpg" alt="about4" class="w-full h-full object-cover">
+                    </li>
+                    <li class="overflow-hidden rounded-xl flex flex-col justify-between gap-6 py-8 px-6 bg-primary text-white animate animate-top" style="--i: 4">
+                        <div class="flex items-center justify-between gap-5">
+                            <div>
+                                <span class="sm:text-head4 max-sm:text-head4">5+</span>
+                                <p class="sm:text-body1 text-[18px] font-semibold mt-2">Năm kinh nghiệm</p>
+                            </div>
+                            <div class="flex items-center justify-center w-14 h-14 rounded-full bg-primary-hover-ui text-3xl text-neutral-txt-high">
+                                <i class="icon-award-04"></i>
+                            </div>
+                        </div>
+                        <p class="text-body2">GENNERY tự tin đồng hành cùng các cá nhân, doanh nghiệp và tổ chức trong các chiến dịch: tri ân khách hàng, quà Tết, kỷ niệm thương hiệu, sinh nhật, tỏ tình,…</p>
                     </li>
                 </ul>
             </div>
         </section>
-
-        <!-- Testimonials -->
-        <section class="testimonials lg:py-20 sm:py-14 py-10 bg-surface">
+        
+        <!-- About -->
+        <section class="about overflow-hidden sm:py-32 py-16">
             <div class="container">
-                <h3 class="text-head3 text-center animate animate_top" style="--i: 1">Testimonials</h3>
-                <p class="text-body2 text-secondary text-center mt-3 animate animate_top" style="--i: 2">Discover exceptional experiences through testimonials from our satisfied customers.</p>
-                <div class="swiper -section swiper-list-testimonials style-3 md:pt-10 pt-7">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="testimonials_item h-full p-7.5 bg-white rounded-lg duration-300 shadow-md animate animate_top" style="--i: 1">
-                                <span class="ph-fill ph-quotes text-4xl text-primary"></span>
-                                <p class="text-title mt-3">Choosing FreelanHub was the best decision we made for our business. Their expertise in SEO and digital marketing has significantly boosted our traffic.</p>
-                                <div class="testimonials_info flex items-center gap-5 mt-5">
-                                    <div class="testimonials_avatar w-15 h-15 rounded-full overflow-hidden">
-                                        <img src="./assets/images/avatar/IMG-1.webp" alt="IMG-1" class="w-full h-full object-cover" />
-                                    </div>
-                                    <div class="testimonials_user">
-                                        <h6 class="testimonials_name text-head6">Liam Anderson</h6>
-                                        <span class="caption1 text-secondary">Head of Recruitment</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonials_item h-full p-7.5 bg-white rounded-lg duration-300 shadow-md animate animate_top" style="--i: 2">
-                                <span class="ph-fill ph-quotes text-4xl text-primary"></span>
-                                <p class="text-title mt-3">I'm truly impressed by the results delivered by FreelanHub. Their team's professionalism and dedication shine through in every project in your eyes.</p>
-                                <div class="testimonials_info flex items-center gap-5 mt-5">
-                                    <div class="testimonials_avatar w-15 h-15 rounded-full overflow-hidden">
-                                        <img src="./assets/images/avatar/IMG-2.webp" alt="IMG-2" class="w-full h-full object-cover" />
-                                    </div>
-                                    <div class="testimonials_user">
-                                        <h6 class="testimonials_name text-head6">Emily Johnson</h6>
-                                        <span class="caption1 text-secondary">Head of Recruitment</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonials_item h-full p-7.5 bg-white rounded-lg duration-300 shadow-md animate animate_top" style="--i: 3">
-                                <span class="ph-fill ph-quotes text-4xl text-primary"></span>
-                                <p class="text-title mt-3">I'm truly impressed by the results delivered by fivero. Their team's professionalism and dedication shine through in every project and conversions.</p>
-                                <div class="testimonials_info flex items-center gap-5 mt-5">
-                                    <div class="testimonials_avatar w-15 h-15 rounded-full overflow-hidden">
-                                        <img src="./assets/images/avatar/IMG-3.webp" alt="IMG-3" class="w-full h-full object-cover" />
-                                    </div>
-                                    <div class="testimonials_user">
-                                        <h6 class="testimonials_name text-head6">Alexander Peter</h6>
-                                        <span class="caption1 text-secondary">Head of Recruitment</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonials_item h-full p-7.5 bg-white rounded-lg duration-300 shadow-md animate animate_top" style="--i: 4">
-                                <span class="ph-fill ph-quotes text-4xl text-primary"></span>
-                                <p class="text-title mt-3">Working with fivero has been an absolute game-changer for our online presence. Their innovative strategies and creative approach have taken our brand!</p>
-                                <div class="testimonials_info flex items-center gap-5 mt-5">
-                                    <div class="testimonials_avatar w-15 h-15 rounded-full overflow-hidden">
-                                        <img src="./assets/images/avatar/IMG-4.webp" alt="IMG-4" class="w-full h-full object-cover" />
-                                    </div>
-                                    <div class="testimonials_user">
-                                        <h6 class="testimonials_name text-head6">Emily Johnson</h6>
-                                        <span class="caption1 text-secondary">Head of Recruitment</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="grid md:grid-cols-12 sm:gap-6 gap-4">
+                    <strong class="flex items-center gap-3 md:col-span-4 h-fit animate animate-top" style="--i: 1">
+                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary"></span>
+                        <span class="text-body1 font-semibold">Thành tựu</span>
+                    </strong>
+                    <div class="banner-content md:col-span-8">
+                        <h2 class="text-head2 animate animate-top" style="--i: 1">Dấu ấn tự hào</h2>
+                        <p class="desc sm:mt-7 mt-3 animate animate-top" style="--i: 2">Mỗi con số, mỗi cột mốc là minh chứng cho hành trình không ngừng kiến tạo giá trị.</p>
                     </div>
-                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="grid lg:grid-cols-4 sm:grid-cols-2 lg:gap-[84px] gap-15 max-lg:flex-wrap max-lg:gap-y-5 sm:py-13 py-8">
+                    <div class="item max-lg:pb-5 animate animate-top" style="--i: 1">
+                        <h2 class="text-head2 sm:pb-7 pb-3">20,000+</h2>
+                        <span class="text-body2">Lượt theo dõi trên mạng xã hội</span>
+                        <div class="line flex-shrink-0 absolute lg:top-1/2 lg:-right-[42px] lg:-translate-y-1/2 max-lg:bottom-0 lg:w-px lg:h-10 w-full h-px bg-primary-txt"></div>
+                    </div>
+                    <div class="item max-lg:pb-5 animate animate-top" style="--i: 2">
+                        <h2 class="text-head2 sm:pb-7 pb-3">3</h2>
+                        <span class="text-body2">Kênh bán hàng chính thức</span>
+                        <div class="line flex-shrink-0 absolute lg:top-1/2 lg:-right-[42px] lg:-translate-y-1/2 max-lg:bottom-0 lg:w-px lg:h-10 w-full h-px bg-primary-txt"></div>
+                    </div>
+                    <div class="item max-sm:pb-5 animate animate-top" style="--i: 3">
+                        <h2 class="text-head2 sm:pb-7 pb-3">12+</h2>
+                        <span class="text-body2">Dòng sản phẩm</span>
+                        <div class="line flex-shrink-0 absolute lg:top-1/2 lg:-right-[42px] lg:-translate-y-1/2 max-sm:bottom-0 lg:w-px lg:h-10 max-sm:w-full max-sm:h-px bg-primary-txt"></div>
+                    </div>
+                    <div class="item animate animate-top" style="--i: 4">
+                        <h2 class="text-head2 sm:pb-7 pb-3">98%</h2>
+                        <span class="text-body2">Khách hàng hài lòng</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 sm:gap-6 gap-2 2xl:h-[540px] sm:h-[39.68vw] h-[42.27vw] max-sm:-mr-10">
+                    <div class="col-span-4 overflow-hidden rounded-xl bg-[url(../assets/images/components/about5.jpg)] bg-left bg-cover bg-no-repeat"></div>
+                    <div class="col-span-8 overflow-hidden rounded-xl bg-[url(../assets/images/components/about5.jpg)] bg-right bg-cover bg-no-repeat"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Explore -->
-        <section class="explore lg:py-20 sm:py-14 py-10">
-            <div class="container">
-                <div class="explore_inner flex max-lg:flex-col-reverse items-center justify-between gap-y-8">
-                    <div class="explore_content xl:w-[430px] lg:w-5/12 w-full">
-                        <h3 class="text-head3 animate animate_top" style="--i: 1">Explore our global network of freelancers</h3>
-                        <p class="text-body2 text-secondary mt-3 animate animate_top" style="--i: 2">Tap into a diverse pool of freelance talent spanning the globe.</p>
-                        <div class="lg:mt-8 mt-5 animate animate_top" style="--i: 3">
-                            <a href="become-buyer.html" class="button-main">Join Us Now</a>
-                        </div>
-                    </div>
-                    <div class="benefit_bg relative xl:w-[776px] lg:w-[55%] sm:w-[75%] w-full">
-                        <img src="./assets/images/components/graphic8.png" alt="graphic8" class="w-full" />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Banner -->
-        <section class="banner">
-            <div class="container">
-                <div class="banner_inner relative lg:p-20 sm:p-14 p-10 rounded-lg bg-[#F7F2EE]">
-                    <div class="benefit_bg absolute top-0 right-0 bottom-0 max-sm:hidden">
-                        <img src="./assets/images/components/banner8.png" alt="banner8" class="h-full w-auto object-cover" />
-                    </div>
-                    <div class="banner_content xl:w-[544px] md:w-8/12 w-full">
-                        <h3 class="text-head3 animate animate_top" style="--i: 1">Download our freelancer & employer app now!</h3>
-                        <p class="text-body2 text-secondary mt-2 animate animate_top" style="--i: 2">Seamlessly connect to endless job opportunities and talent pool, anywhere, anytime.</p>
-                        <div class="list_download flex flex-wrap items-center gap-4 lg:mt-8 mt-5 animate animate_top" style="--i: 3">
-                            <a href="https://play.google.com/" target="_blank">
-                                <img src="./assets/images/download/gg_play.png" alt="gg_play" class="bg-feature rounded" />
-                            </a>
-                            <a href="https://www.apple.com/" target="_blank">
-                                <img src="./assets/images/download/app_store.png" alt="app_store" class="bg-feature rounded" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Benefit Second -->
-        <section class="benefit lg:py-20 sm:py-14 py-10">
-            <div class="container">
-                <ul class="list grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-7.5">
-                    <li class="item animate animate_top" style="--i: 1">
-                        <span class="ph-duotone ph-wallet text-4xl text-primary"></span>
-                        <h6 class="text-head6 mt-3">Post Your Job</h6>
-                        <p class="mt-1">Create a job listing with details like requirements and budget.</p>
-                    </li>
-                    <li class="item animate animate_top" style="--i: 2">
-                        <span class="ph-duotone ph-shield-check text-4xl text-primary"></span>
-                        <h6 class="text-head6 mt-3">Review Applicants</h6>
-                        <p class="mt-1">Receive and evaluate applications from freelancers.</p>
-                    </li>
-                    <li class="item animate animate_top" style="--i: 3">
-                        <span class="ph-duotone ph-certificate text-4xl text-primary"></span>
-                        <h6 class="text-head6 mt-3">Choose a Freelancer</h6>
-                        <p class="mt-1">Conduct interviews or discussions to choose the best candidate.</p>
-                    </li>
-                    <li class="item animate animate_top" style="--i: 4">
-                        <span class="ph-duotone ph-phone-call text-4xl text-primary"></span>
-                        <h6 class="text-head6 mt-3">Manage the Project</h6>
-                        <p class="mt-1">Collaborate with the selected freelancer to complete the project.</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Scroll to top -->
-        <a class="scroll-to-top-btn" href="#header"><span class="ph-bold ph-caret-up"></span></a>
+        <!-- List contact -->
+        <ul class="contact-list flex flex-col sm:gap-5 gap-4 fixed sm:bottom-8 bottom-4 sm:right-8 right-4 z-[10]">
+            <li class="contact-item">
+                <a href="https://www.messenger.com/" target="_blank" class="contact-link button-main sm:w-17 w-12 sm:h-17 h-12 p-0">
+                    <span class="icon-messenger sm:text-[1.75rem] text-2xl"></span>
+                    <span class="blind">link to messenger</span>
+                </a>
+            </li>
+            <li class="contact-item">
+                <a href="https://chat.zalo.me/" target="_blank" class="contact-link button-main sm:w-17 w-12 sm:h-17 h-12 p-0">
+                    <span class="icon-zalo sm:text-[1.75rem] text-2xl flex items-center justify-center">
+                        <span class="path1 absolute"></span>
+                        <span class="path2 absolute"></span>
+                        <span class="path3 absolute"></span>
+                    </span>
+                    <span class="blind">link to zalo</span>
+                </a>
+            </li>
+            <li class="contact-item">
+                <a href="tel:+84123456789" target="_blank" class="contact-link button-main sm:w-17 w-12 sm:h-17 h-12 p-0">
+                    <span class="icon-call sm:text-[1.75rem] text-2xl"></span>
+                    <span class="blind">link to call</span>
+                </a>
+            </li>
+        </ul>
 
         <!-- Footer -->
-        <footer class="footer">
-            <div class="footer_inner bg-feature">
+        <footer class="footer bg-neutral-txt-high text-white">
+            <div class="footer-top">
                 <div class="container">
-                    <div class="footer_heading flex flex-wrap items-center justify-between gap-4 w-full md:pt-10 pt-7 md:pb-5 pb-4 border-b border-light">
-                        <a href="index.html" class="footer_logo">
-                            <img src="./assets/images/logo-white.svg" alt="logo-white" class="h-[42px] w-auto" />
-                        </a>
-                        <div class="list_social flex flex-wrap items-center gap-4">
-                            <span class="text-subtitle text-white">Follow Us:</span>
-                            <div class="list flex flex-wrap items-center gap-3">
-                                <a href="https://www.facebook.com/" target="_blank" class="w-10 h-10 flex items-center justify-center border border-light text-white rounded-full duration-300 hover:bg-white hover:text-black">
-                                    <span class="icon-facebook text-lg"></span>
-                                </a>
-                                <a href="https://www.linkedin.com/" target="_blank" class="w-10 h-10 flex items-center justify-center border border-light text-white rounded-full duration-300 hover:bg-white hover:text-black">
-                                    <span class="icon-linkedin text-lg"></span>
-                                </a>
-                                <a href="https://www.twitter.com/" target="_blank" class="w-10 h-10 flex items-center justify-center border border-light text-white rounded-full duration-300 hover:bg-white hover:text-black">
-                                    <span class="icon-twitter text-lg"></span>
-                                </a>
-                                <a href="https://www.instagram.com/" target="_blank" class="w-10 h-10 flex items-center justify-center border border-light text-white rounded-full duration-300 hover:bg-white hover:text-black">
-                                    <span class="icon-instagram text-lg"></span>
-                                </a>
-                                <a href="https://www.pinterest.com/" target="_blank" class="w-10 h-10 flex items-center justify-center border border-light text-white rounded-full duration-300 hover:bg-white hover:text-black">
-                                    <span class="icon-pinterest text-lg"></span>
-                                </a>
-                                <a href="https://www.youtube.com/" target="_blank" class="w-10 h-10 flex items-center justify-center border border-light text-white rounded-full duration-300 hover:bg-white hover:text-black">
-                                    <span class="icon-youtube text-lg"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer_content flex max-xl:flex-wrap items-start justify-between gap-y-8 md:py-10 py-7">
-                        <div class="footer_nav max-md:w-1/2">
-                            <strong class="nav_heading text-button-sm text-white">Categories</strong>
-                            <ul class="list_nav flex flex-col gap-3 mt-4">
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="jobs-default.html">Graphics & Design</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="jobs-default.html">Digital Marketing</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="jobs-default.html">Writing & Translation</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="jobs-default.html">Video & Animation</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="jobs-default.html">Music & Audio</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="jobs-default.html">Programming & Tech</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer_nav max-md:w-1/2">
-                            <strong class="nav_heading text-button-sm text-white">For Candidates</strong>
-                            <ul class="list_nav flex flex-col gap-3 mt-4">
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="candidates-dashboard.html">Candidate Dashboard</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="jobs-default.html">Browse jobs</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="employers-default.html">Browse employers</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="candidates-proposals.html">My Proposals</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="candidates-my-services.html">My Services</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="candidates-jobs-alerts.html">Job Alerts</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer_nav max-md:w-1/2">
-                            <strong class="nav_heading text-button-sm text-white">For Employer</strong>
-                            <ul class="list_nav flex flex-col gap-3 mt-4">
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="employers-dashboard.html">Employer Dashboard</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="candidates-default.html">Browse Candidates</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="services-default.html">Browse services</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="employers-submit-jobs.html">Submit jobs</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="employers-jobs.html">My Jobs</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="employers-applicants-jobs.html">Applicants jobs</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer_nav max-md:w-1/2">
-                            <strong class="nav_heading text-button-sm text-white">Support</strong>
-                            <ul class="list_nav flex flex-col gap-3 mt-4">
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="term-of-use.html">Help & Support</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="become-seller.html">Selling On FreelanHub</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="become-buyer.html">Buying On FreelanHub</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="about1.html">Services</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="faqs.html">FAQs</a></li>
-                                <li><a class="caption1 capitalize line-before line-white text-placehover hover:text-white duration-300" href="contact1.html">Contact Us</a></li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0 max-xl:w-full">
-                            <div class="company-contact sm:w-[340px]">
-                                <strong class="heading block text-button-sm text-white">Subscribe</strong>
-                                <form class="send-block mt-4 flex items-center h-[46px] rounded-lg overflow-hidden">
-                                    <input class="caption1 text-secondary h-full w-full pr-4 pl-3" type="email" placeholder="Your email address" required />
-                                    <button class="flex items-center justify-center w-[46px] h-[46px] bg-primary flex-shrink-0">
-                                        <span class="ph ph-paper-plane-tilt text-white"></span>
+                    <div class="w-full lg:grid lg:grid-cols-5 flex flex-wrap justify-between gap-6 gap-y-9 sm:py-[88px] py-8">
+                        <div class="flex flex-col lg:col-span-2 w-full sm:w-[88%]">
+                            <a href="index.html" class="footer-logo">
+                                <img src="./assets/images/logo-white.svg" alt="logo-white" class="h-[42px] w-auto" />
+                            </a>
+                            <div class="company-contact mt-6">
+                                <p class="text-body3 font-semibold opacity-[0.64]">Đăng ký nhận thông tin mới qua email</p>
+                                <form class="flex items-center gap-3 w-full h-14 mt-2 p-4 rounded-lg bg-white bg-opacity-[0.12]">
+                                    <input class="h-full w-full bg-transparent border-none" type="email" name="email" placeholder="Email" required />
+                                    <button class="flex flex-shrink-0 items-center gap-2">
+                                        <span>Đăng ký</span>
+                                        <span class="icon-arrow-right-02-round text-xl"></span>
                                     </button>
                                 </form>
-                                <strong class="heading block text-button-sm text-white mt-5">Download App</strong>
-                                <div class="list-download flex items-start gap-3 mt-4">
-                                    <a href="https://play.google.com/" target="_blank">
-                                        <img src="./assets/images/download/gg_play.png" alt="gg_play" />
-                                    </a>
-                                    <a href="https://www.apple.com/" target="_blank">
-                                        <img src="./assets/images/download/app_store.png" alt="app_store" />
-                                    </a>
-                                </div>
+                                <p class="text-body3 mt-2 opacity-[0.64]">Khách hàng mới đăng ký nhận thông tin qua email sẽ nhận được một mã giảm giá 10% giá trị đơn hàng.</p>
+                            </div>
+                            <div class="list-social flex flex-wrap items-center gap-5 mt-auto pt-6">
+                                <span>Theo dõi chúng tôi tại:</span>
+                                <ul class="list flex flex-wrap items-center gap-5">
+                                    <li class="item">
+                                        <a href="https://www.tiktok.com/" target="_blank">
+                                            <span class="icon-tiktok block text-[36px]"></span>
+                                            <span class="blind">link to tiktok</span>
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="https://www.facebook.com/" target="_blank">
+                                            <span class="icon-facebook block text-[36px]"></span>
+                                            <span class="blind">link to facebook</span>
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="https://www.shopee.vn/" target="_blank">
+                                            <span class="icon-shopee block text-[36px]"></span>
+                                            <span class="blind">link to shopee</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="lg:grid lg:grid-cols-3 lg:col-span-3 flex justify-between sm:gap-6 gap-4 w-full">
+                            <div class="footer-nav max-lg:order-1 whitespace-nowrap">
+                                <strong class="sm:text-head6 text-head5-mo">Giới thiệu</strong>
+                                <ul class="list-nav flex flex-col sm:gap-4 gap-3 sm:mt-6 mt-4">
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="about.html">Về chúng tôi</a></li>
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="recruitment.html">Tuyển dụng</a></li>
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="blog-list.html">Blog</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-nav">
+                                <strong class="sm:text-head6 text-head5-mo">Sản phẩm</strong>
+                                <ul class="list-nav flex flex-col sm:gap-4 gap-3 sm:mt-6 mt-4">
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Hộp quà tặng</a></li>
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Làm đẹp & Chăm sóc cá nhân</a></li>
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Phụ kiện cá nhân</a></li>
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Đồ trang trí & Kỷ niệm</a></li>
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Văn phòng phẩm</a></li>
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Đồ dùng tiện ích</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-nav">
+                                <strong class="sm:text-head6 text-head5-mo">Hỗ trợ</strong>
+                                <ul class="list-nav flex flex-col sm:gap-4 gap-3 sm:mt-6 mt-4">
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="faq.html">Trung tâm trợ giúp</a></li>
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="contact.html">Liên hệ</a></li>
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="#!">Chính sách KH thành viên</a></li>
+                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="#!">Chính sách ưu đãi</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="footer_bottom flex items-center justify-between max-sm:flex-col gap-2 py-2 border-t border-light">
-                        <div class="left-block flex items-center">
-                            <div class="copyright text-placehover caption1">©2024 FreelanHub. All Rights Reserved.</div>
-                        </div>
-                        <div class="nav-link flex items-center gap-2.5">
-                            <a class="text-placehover caption1 hover-underline" href="#!">Terms Of Services</a>
-                            <span class="text-placehover caption1">|</span>
-                            <a class="text-placehover caption1 hover-underline" href="#!">Privacy Policy</a>
-                        </div>
-                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom bg-[#000] bg-opacity-[0.12]">
+                <div class="container flex lg:items-center justify-between max-lg:flex-col gap-2 gap-y-4 lg:py-4 py-8">
+                    <p class="copyright max-sm:text-body3">&copy; 2025 HERISH. All Rights Reserved.</p>
+                    <ul class="flex flex-wrap gap-6 gap-y-2">
+                        <li>
+                            <a href="#!" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách &amp; Quy định</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách bảo mật</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách cookie</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Cài đặt cookie</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </footer>
 
         <!-- Menu mobile -->
-        <div class="menu_mobile">
-            <button class="menu_mobile_close flex items-center justify-center absolute top-5 left-5 w-8 h-8 rounded-full bg-surface">
-                <span class="ph-bold ph-x"></span>
-            </button>
-            <div class="heading flex items-center justify-center mt-5">
+        <div class="menu-mobile">
+            <div class="heading flex justify-between w-full h-18 pt-4 px-2">
                 <a href="index.html" class="logo">
-                    <img src="./assets/images/logo.svg" alt="logo" class="h-8" />
+                    <img src="./assets/images/logo-white.svg" alt="logo-white" class="block h-8" />
                 </a>
-            </div>
-            <form class="form-search relative mt-4 mx-5">
-                <button class="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer">
-                    <i class="ph ph-magnifying-glass text-xl block"></i>
+                <button type="button" class="menu-mobile-close h-fit">
+                    <i class="hgi hgi-stroke block hgi-cancel-01 text-[24px] text-neutral-txt-low"></i>
+                    <span class="blind">button close menu mobile</span>
                 </button>
-                <input type="text" placeholder="What are you looking for?" class="h-12 rounded-lg border border-line text-sm w-full pl-10 pr-4" required />
-            </form>
-            <div class="mt-4">
-                <ul class="nav_mobile">
-                    <li class="nav_item py-2">
-                        <a href="#!" class="text-xl font-semibold flex items-center justify-between">
-                            Homepages
-                            <span class="text-right">
-                                <i class="ph ph-caret-right text-xl"></i>
-                            </span>
-                        </a>
-                        <div class="sub_nav_mobile">
-                            <button class="back_btn flex items-center gap-3">
-                                <i class="ph ph-caret-left text-xl"></i>
-                                Back
-                            </button>
-                            <div class="list-nav-item w-full pt-2 pb-6">
-                                <ul>
-                                    <li class="nav_item">
-                                        <a href="index.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home Freelancer 01 </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="freelancer2.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home Freelancer 02 </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="freelancer3.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home Freelancer 03 </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="freelancer4.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home Freelancer 04 </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="freelancer5.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home Freelancer 05 </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="freelancer6.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home Freelancer 06 </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="freelancer7.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home Freelancer 07 </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="freelancer8.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home Freelancer 08 </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="jobs9.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home Jobs 09 </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="jobs10.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home Jobs 10 </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="jobs11.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home Jobs 11 </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="jobs12.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home Jobs 12 </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="rtl13.html" class="inline-block text-xl font-semibold py-2 capitalize"> Home RTL 13 </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav_item py-2">
-                        <a href="#!" class="text-xl font-semibold flex items-center justify-between">
-                            For Candidates
-                            <span class="text-right">
-                                <i class="ph ph-caret-right text-xl"></i>
-                            </span>
-                        </a>
-                        <div class="sub_nav_mobile">
-                            <button class="back_btn flex items-center gap-3">
-                                <i class="ph ph-caret-left text-xl"></i>
-                                Back
-                            </button>
-                            <div class="list-nav-item w-full pt-2 pb-6">
-                                <ul>
-                                    <li class="nav_item">
-                                        <a href="#!" class="link flex items-center justify-between w-full py-2 text-xl font-semibold capitalize">
-                                            Browse jobs
-                                            <span class="text-right">
-                                                <i class="ph ph-caret-right text-xl"></i>
-                                            </span>
-                                        </a>
-                                        <div class="sub_nav_mobile2">
-                                            <button class="back_btn flex items-center gap-3">
-                                                <i class="ph ph-caret-left text-xl"></i>
-                                                Back
-                                            </button>
-                                            <div class="list-nav-item w-full pt-2 pb-6">
-                                                <ul>
-                                                    <li class="nav_item">
-                                                        <a href="jobs-default.html" class="inline-block text-xl font-semibold py-2 capitalize"> jobs default </a>
-                                                    </li>
-                                                    <li class="nav_item">
-                                                        <a href="jobs-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> jobs grid </a>
-                                                    </li>
-                                                    <li class="nav_item">
-                                                        <a href="jobs-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> jobs list </a>
-                                                    </li>
-                                                    <li class="nav_item">
-                                                        <a href="jobs-top-map.html" class="inline-block text-xl font-semibold py-2 capitalize"> jobs top map </a>
-                                                    </li>
-                                                    <li class="nav_item">
-                                                        <a href="jobs-half-map-grid1.html" class="inline-block text-xl font-semibold py-2 capitalize"> jobs half map grid 1 </a>
-                                                    </li>
-                                                    <li class="nav_item">
-                                                        <a href="jobs-half-map-grid2.html" class="inline-block text-xl font-semibold py-2 capitalize"> jobs half map grid 2 </a>
-                                                    </li>
-                                                    <li class="nav_item">
-                                                        <a href="jobs-fullwidth.html" class="inline-block text-xl font-semibold py-2 capitalize"> jobs fullwidth </a>
-                                                    </li>
-                                                    <li class="nav_item">
-                                                        <a href="jobs-detail1.html" class="inline-block text-xl font-semibold py-2 capitalize"> jobs detail 1 </a>
-                                                    </li>
-                                                    <li class="nav_item">
-                                                        <a href="jobs-detail2.html" class="inline-block text-xl font-semibold py-2 capitalize"> jobs detail 2 </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="#!" class="link flex items-center justify-between w-full py-2 text-xl font-semibold capitalize">
-                                            Browse Projects
-                                            <span class="text-right">
-                                                <i class="ph ph-caret-right text-xl"></i>
-                                            </span>
-                                        </a>
-                                        <div class="sub_nav_mobile2">
-                                            <button class="back_btn flex items-center gap-3">
-                                                <i class="ph ph-caret-left text-xl"></i>
-                                                Back
-                                            </button>
-                                            <div class="list-nav-item w-full pt-2 pb-6">
-                                                <ul>
-                                                    <li>
-                                                        <a href="project-default.html" class="inline-block text-xl font-semibold py-2 capitalize"> project default </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="project-grid-3col.html" class="inline-block text-xl font-semibold py-2 capitalize"> project grid 3 columns </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="project-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> project list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="project-top-map-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> project top map grid </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="project-top-map-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> project top map list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="project-half-map-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> project half map grid </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="project-half-map-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> project half map list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="project-fullwidth.html" class="inline-block text-xl font-semibold py-2 capitalize"> project fullwidth </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="project-detail1.html" class="inline-block text-xl font-semibold py-2 capitalize"> project detail 1 </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="project-detail2.html" class="inline-block text-xl font-semibold py-2 capitalize"> project detail 2 </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="project-detail3.html" class="inline-block text-xl font-semibold py-2 capitalize"> project detail 3 </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="#!" class="link flex items-center justify-between w-full py-2 text-xl font-semibold capitalize">
-                                            Browse Employer
-                                            <span class="text-right">
-                                                <i class="ph ph-caret-right text-xl"></i>
-                                            </span>
-                                        </a>
-                                        <div class="sub_nav_mobile2">
-                                            <button class="back_btn flex items-center gap-3">
-                                                <i class="ph ph-caret-left text-xl"></i>
-                                                Back
-                                            </button>
-                                            <div class="list-nav-item w-full pt-2 pb-6">
-                                                <ul>
-                                                    <li>
-                                                        <a href="employers-default.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers default </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="employers-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers grid </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="employers-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="employers-sidebar-grid-3cols.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers sidebar grid 3 cols </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="employers-sidebar-grid-2cols.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers sidebar grid 2 cols </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="employers-sidebar-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers sidebar list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="employers-top-map-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers top map grid </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="employers-top-map-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers top map list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="employers-half-map-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers half map grid </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="employers-half-map-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers half map list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="employers-fullwidth.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers fullwidth </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="employers-detail1.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers detail 1 </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="employers-detail2.html" class="inline-block text-xl font-semibold py-2 capitalize"> employers detail 2 </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="become-seller.html" class="link flex items-center justify-between w-full py-2 text-xl font-semibold capitalize"> Become a seller </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="candidates-dashboard.html" class="link flex items-center justify-between w-full py-2 text-xl font-semibold capitalize"> Candidates Dashboard </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav_item py-2">
-                        <a href="#!" class="text-xl font-semibold flex items-center justify-between">
-                            For Employers
-                            <span class="text-right">
-                                <i class="ph ph-caret-right text-xl"></i>
-                            </span>
-                        </a>
-                        <div class="sub_nav_mobile">
-                            <button class="back_btn flex items-center gap-3">
-                                <i class="ph ph-caret-left text-xl"></i>
-                                Back
-                            </button>
-                            <div class="list-nav-item w-full pt-2 pb-6">
-                                <ul>
-                                    <li class="nav_item">
-                                        <a href="#!" class="link flex items-center justify-between w-full py-2 text-xl font-semibold capitalize">
-                                            Browse services
-                                            <span class="text-right">
-                                                <i class="ph ph-caret-right text-xl"></i>
-                                            </span>
-                                        </a>
-                                        <div class="sub_nav_mobile2">
-                                            <button class="back_btn flex items-center gap-3">
-                                                <i class="ph ph-caret-left text-xl"></i>
-                                                Back
-                                            </button>
-                                            <div class="list-nav-item w-full pt-2 pb-6">
-                                                <ul>
-                                                    <li>
-                                                        <a href="services-default.html" class="inline-block text-xl font-semibold py-2 capitalize"> services default </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="services-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> services grid </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="services-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> services list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="services-sidebar-grid-3cols.html" class="inline-block text-xl font-semibold py-2 capitalize"> services sidebar grid 3 cols </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="services-sidebar-grid-2cols.html" class="inline-block text-xl font-semibold py-2 capitalize"> services sidebar grid 2 cols </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="services-sidebar-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> services sidebar list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="services-fullwidth-grid-5cols.html" class="inline-block text-xl font-semibold py-2 capitalize"> services fullwidth grid 5 cols </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="services-fullwidth-grid-4cols.html" class="inline-block text-xl font-semibold py-2 capitalize"> services fullwidth grid 4 cols </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="services-fullwidth-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> services fullwidth list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="services-detail1.html" class="inline-block text-xl font-semibold py-2 capitalize"> services detail 1 </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="services-detail2.html" class="inline-block text-xl font-semibold py-2 capitalize"> services detail 2 </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="#!" class="link flex items-center justify-between w-full py-2 text-xl font-semibold capitalize">
-                                            Browse candidates
-                                            <span class="text-right">
-                                                <i class="ph ph-caret-right text-xl"></i>
-                                            </span>
-                                        </a>
-                                        <div class="sub_nav_mobile2">
-                                            <button class="back_btn flex items-center gap-3">
-                                                <i class="ph ph-caret-left text-xl"></i>
-                                                Back
-                                            </button>
-                                            <div class="list-nav-item w-full pt-2 pb-6">
-                                                <ul>
-                                                    <li>
-                                                        <a href="candidates-default.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates default </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="candidates-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates grid </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="candidates-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="candidates-sidebar-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates sidebar grid </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="candidates-sidebar-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates sidebar list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="candidates-top-map-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates top map grid </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="candidates-top-map-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates top map list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="candidates-half-map-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates half map grid </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="candidates-half-map-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates half map list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="candidates-fullwidth-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates fullwidth grid </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="candidates-fullwidth-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates fullwidth list </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="candidates-detail1.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates detail 1 </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="candidates-detail2.html" class="inline-block text-xl font-semibold py-2 capitalize"> candidates detail 2 </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="become-buyer.html" class="link flex items-center justify-between w-full py-2 text-xl font-semibold capitalize"> Become a buyer </a>
-                                    </li>
-                                    <li class="nav_item">
-                                        <a href="employers-dashboard.html" class="link flex items-center justify-between w-full py-2 text-xl font-semibold capitalize"> employer Dashboard </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav_item py-2">
-                        <a href="#!" class="text-xl font-semibold flex items-center justify-between">
-                            Blogs
-                            <span class="text-right">
-                                <i class="ph ph-caret-right text-xl"></i>
-                            </span>
-                        </a>
-                        <div class="sub_nav_mobile">
-                            <button class="back_btn flex items-center gap-3">
-                                <i class="ph ph-caret-left text-xl"></i>
-                                Back
-                            </button>
-                            <div class="list-nav-item w-full pt-2 pb-6">
-                                <ul>
-                                    <li>
-                                        <a href="blog-default.html" class="inline-block text-xl font-semibold py-2 capitalize"> Blog default </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-grid.html" class="inline-block text-xl font-semibold py-2 capitalize"> Blog grid </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-list.html" class="inline-block text-xl font-semibold py-2 capitalize"> Blog list </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-detail1.html" class="inline-block text-xl font-semibold py-2 capitalize"> Blog detail 1 </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-detail2.html" class="inline-block text-xl font-semibold py-2 capitalize"> Blog detail 2 </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav_item py-2">
-                        <a href="#!" class="text-xl font-semibold flex items-center justify-between">
-                            Pages
-                            <span class="text-right">
-                                <i class="ph ph-caret-right text-xl"></i>
-                            </span>
-                        </a>
-                        <div class="sub_nav_mobile">
-                            <button class="back_btn flex items-center gap-3">
-                                <i class="ph ph-caret-left text-xl"></i>
-                                Back
-                            </button>
-                            <div class="list-nav-item w-full pt-2 pb-6">
-                                <ul>
-                                    <li>
-                                        <a href="about1.html" class="inline-block text-xl font-semibold py-2 capitalize active"> About Us 1 </a>
-                                    </li>
-                                    <li>
-                                        <a href="about2.html" class="inline-block text-xl font-semibold py-2 capitalize"> About Us 2 </a>
-                                    </li>
-                                    <li>
-                                        <a href="pricing.html" class="inline-block text-xl font-semibold py-2 capitalize"> Pricing Plan </a>
-                                    </li>
-                                    <li>
-                                        <a href="contact1.html" class="inline-block text-xl font-semibold py-2 capitalize"> Contact Us 1 </a>
-                                    </li>
-                                    <li>
-                                        <a href="contact2.html" class="inline-block text-xl font-semibold py-2 capitalize"> Contact Us 2 </a>
-                                    </li>
-                                    <li>
-                                        <a href="faqs.html" class="inline-block text-xl font-semibold py-2 capitalize"> Faqs </a>
-                                    </li>
-                                    <li>
-                                        <a href="term-of-use.html" class="inline-block text-xl font-semibold py-2 capitalize"> Terms of use </a>
-                                    </li>
-                                    <li>
-                                        <a href="error-404.html" class="inline-block text-xl font-semibold py-2 capitalize"> Error 404 </a>
-                                    </li>
-                                    <li>
-                                        <a href="login.html" class="inline-block text-xl font-semibold py-2 capitalize"> Login </a>
-                                    </li>
-                                    <li>
-                                        <a href="register.html" class="inline-block text-xl font-semibold py-2 capitalize"> Register </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+            </div>
+            <ul class="nav-mobile text-white">
+                <li class="nav-item">
+                    <a href="#!" class="flex items-center justify-between gap-3 px-2 py-4 border-b border-white border-opacity-[0.1]">
+                        <span>Sản phẩm</span>
+                        <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low"></i>
+                    </a>
+                    <div class="sub-nav-mobile pl-3">
+                        <ul>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Hộp quà tặng</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Làm đẹp & Chăm sóc cá nhân</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Phụ kiện cá nhân</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Đồ trang trí & Kỷ niệm</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Văn phòng phẩm</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Đồ dùng tiện ích</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#!" class="flex items-center justify-between gap-3 px-2 py-4 border-b border-white border-opacity-[0.1]">
+                        <span>Cá nhân hóa</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!" class="flex items-center justify-between gap-3 px-2 py-4 border-b border-white border-opacity-[0.1]">
+                        <span>Sinh nhật</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!" class="flex items-center justify-between gap-3 px-2 py-4 border-b border-white border-opacity-[0.1]">
+                        <span>Ngày kỷ niệm</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!" class="flex items-center justify-between gap-3 px-2 py-4 border-b border-white border-opacity-[0.1]">
+                        <span>Dịp đặc biệt</span>
+                        <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low"></i>
+                    </a>
+                    <div class="sub-nav-mobile pl-3">
+                        <ul>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Tết Dương lịch (1/1)</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Tết Nguyên Đán</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Valentine (14/2)</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Thầy thuốc Việt Nam (27/2)</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Phụ nữ (8/3)</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Hạnh phúc (20/3)</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Thiếu nhi (1/6)</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Tết Trung thu</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Phụ nữ Việt Nam (20/10)</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Nam giới (19/11)</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Ngày Nhà giáo Việt Nam (20/11)</a>
+                            </li>
+                            <li>
+                                <a href="product-list.html" class="block px-2 py-3">Lễ Giáng Sinh (25/12)</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal">
+            <div class="modal-item modal-search overflow-hidden md:w-[720px] w-[90vw] p-6 rounded-20 bg-white" data-type="modal-search">
+                <span class="text-body3 font-semibold text-neutral-txt-low">Tìm kiếm</span>
+                <form class="relative w-full h-14 mt-2">
+                    <button type="submit" class="absolute top-1/2 left-4 -translate-y-1/2">
+                        <i class="icon-search block text-2xl"></i>
+                        <span class="blind">button search</span>
+                    </button>
+                    <input class="w-full h-full p-4 pl-13 rounded-lg bg-neutral-ui" type="text" name="search" placeholder="Bạn muốn tặng món quà gì?" required />
+                </form>
+                <div class="keyword mt-10">
+                    <div class="flex items-center gap-2">
+                        <span class="icon-fire text-[1.75rem]"></span>
+                        <strong class="text-head5">Được tìm kiếm nhiều nhất</strong>
+                    </div>
+                    <ul class="flex flex-wrap gap-4 mt-6">
+                        <li>
+                            <a href="search-result.html" class="button-main font-normal bg-secondary-ui">Gấu bông tốt nghiệp</a>
+                        </li>
+                        <li>
+                            <a href="search-result.html" class="button-main font-normal bg-secondary-ui">Quà tặng bạn gái</a>
+                        </li>
+                        <li>
+                            <a href="search-result.html" class="button-main font-normal bg-secondary-ui">Mỹ phẩm</a>
+                        </li>
+                        <li>
+                            <a href="search-result.html" class="button-main font-normal bg-secondary-ui">Cốc</a>
+                        </li>
+                        <li>
+                            <a href="search-result.html" class="button-main font-normal bg-secondary-ui">Đồ lưu niệm</a>
+                        </li>
+                        <li>
+                            <a href="search-result.html" class="button-main font-normal bg-secondary-ui">Đồ trang trí bàn học</a>
+                        </li>
+                        <li>
+                            <a href="search-result.html" class="button-main font-normal bg-secondary-ui">Phụ kiện tóc</a>
+                        </li>
+                        <li>
+                            <a href="search-result.html" class="button-main font-normal bg-secondary-ui">Quà 20/10</a>
+                        </li>
+                        <li>
+                            <a href="search-result.html" class="button-main font-normal bg-secondary-ui">Quà tặng thầy cô</a>
+                        </li>
+                        <li>
+                            <a href="search-result.html" class="button-main font-normal bg-secondary-ui">Hộp quà</a>
+                        </li>
+                        <li>
+                            <a href="search-result.html" class="button-main font-normal bg-secondary-ui">Móc khóa</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="result mt-10 hidden">
+                    <strong class="text-head5 mb-3">Danh mục</strong>
+                    <span class="text-head6">Đồ trang trí & Kỷ niệm</span>
+                    <strong class="text-head5 mt-4 mb-5">Sản phẩm</strong>
+                    <ul class="flex flex-col gap-5 max-h-[500px] overflow-x-hidden">
+                        <li>
+                            <a href="product-detail.html" class="flex items-center gap-4 group">
+                                <div class="flex-shrink-0 overflow-hidden w-[4.5rem] h-18 rounded-lg">
+                                    <img src="./assets/images/product/6.jpg" alt="Quà tặng đồ trang trí Giáng Sinh - Nốt nhạc đêm Noel" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <strong class="text-head6 line-clamp-1 duration-300 group-hover:text-primary">Quà tặng đồ trang trí Giáng Sinh - Nốt nhạc đêm Noel</strong>
+                                    <div class="flex items-center gap-2 mt-2">
+                                        <strong class="text-head6 text-secondary-txt">₫1.750.000</strong>
+                                        <span class="font-semibold text-neutral-txt-low line-through">₫2.101.000</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-detail.html" class="flex items-center gap-4 group">
+                                <div class="flex-shrink-0 overflow-hidden w-[4.5rem] h-18 rounded-lg">
+                                    <img src="./assets/images/product/7.jpg" alt="[20/10] Quà trang trí để bàn kỷ niệm - Tượng bán thân thần Vệ Nữ trắng đính ngọc trai" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <strong class="text-head6 line-clamp-1 duration-300 group-hover:text-primary">[20/10] Quà trang trí để bàn kỷ niệm - Tượng bán thân thần Vệ Nữ trắng đính ngọc trai</strong>
+                                    <div class="flex items-center gap-2 mt-2">
+                                        <strong class="text-head6 text-secondary-txt">₫899.000</strong>
+                                        <span class="font-semibold text-neutral-txt-low line-through">₫1.101.000</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-detail.html" class="flex items-center gap-4 group">
+                                <div class="flex-shrink-0 overflow-hidden w-[4.5rem] h-18 rounded-lg">
+                                    <img src="./assets/images/product/8.jpg" alt="Hộp quà tặng đồ trang trí - Lấp lánh vì tinh tú" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <strong class="text-head6 line-clamp-1 duration-300 group-hover:text-primary">Hộp quà tặng đồ trang trí - Lấp lánh vì tinh tú</strong>
+                                    <div class="flex items-center gap-2 mt-2">
+                                        <strong class="text-head6 text-secondary-txt">₫1.800.000</strong>
+                                        <span class="font-semibold text-neutral-txt-low line-through">₫2.599.000</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-detail.html" class="flex items-center gap-4 group">
+                                <div class="flex-shrink-0 overflow-hidden w-[4.5rem] h-18 rounded-lg">
+                                    <img src="./assets/images/product/9.jpg" alt="Quà tặng đồ trang trí Giáng Sinh - Dấu thời gian" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <strong class="text-head6 line-clamp-1 duration-300 group-hover:text-primary">Quà tặng đồ trang trí Giáng Sinh - Dấu thời gian</strong>
+                                    <div class="flex items-center gap-2 mt-2">
+                                        <strong class="text-head6 text-secondary-txt">₫361.000</strong>
+                                        <span class="font-semibold text-neutral-txt-low line-through">₫401.000</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-detail.html" class="flex items-center gap-4 group">
+                                <div class="flex-shrink-0 overflow-hidden w-[4.5rem] h-18 rounded-lg">
+                                    <img src="./assets/images/product/15.jpg" alt="[20/10] Lồng hoa trang trí nghệ thuật - Giữ lại một mùa xanh" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <strong class="text-head6 line-clamp-1 duration-300 group-hover:text-primary">[20/10] Lồng hoa trang trí nghệ thuật - Giữ lại một mùa xanh</strong>
+                                    <div class="flex items-center gap-2 mt-2">
+                                        <strong class="text-head6 text-secondary-txt">₫361.000</strong>
+                                        <span class="font-semibold text-neutral-txt-low line-through">₫401.000</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -1700,3 +662,4 @@
         <script src="./assets/js/main.js"></script>
     </body>
 </html>
+

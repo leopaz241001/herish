@@ -250,13 +250,17 @@
     // List thumb images
     var swiperListServiceDetail = new Swiper('.swiper-list-images', {
         loop: true,
-        spaceBetween: 12,
-        slidesPerView: 3,
+        spaceBetween: 8,
+        slidesPerView: 4,
         watchSlidesProgress: true,
         breakpoints: {
             640: {
                 slidesPerView: 4,
-                spaceBetween: 16,
+                spaceBetween: 12,
+            },
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 12,
             },
         },
     });
@@ -264,10 +268,6 @@
     var swiperThumbServiceDetail = new Swiper('.swiper-thumb-images', {
         loop: true,
         spaceBetween: 10,
-        navigation: {
-            nextEl: '.custom-button-next',
-            prevEl: '.custom-button-prev',
-        },
         thumbs: {
             swiper: swiperListServiceDetail,
         },
