@@ -30,11 +30,7 @@
             border-radius: 50%;
             transition: all ease 0.5s;
     
-            &.-border {
-                border: 1px solid var(--line);
-            }
-    
-            &.-relative {
+            &.relative {
                 position: relative !important;
                 top: unset !important;
                 left: unset !important;
@@ -57,6 +53,25 @@
             @media (max-width: 767.98px) {
                 width: 40px;
                 height: 40px;
+            }
+        }
+    }
+
+    &.bg-neutral-ui {
+        .custom-button {
+            &-prev,
+            &-next {
+                background-color: var(--primary-hover-ui);
+
+                &:hover {
+                    background-color: var(--primary);
+                    color: var(--white);
+                }
+        
+                &.swiper-button-disabled {
+                    color: var(--neutral-txt-low);
+                    background-color: var(--neutral-hover-ui);
+                }
             }
         }
     }

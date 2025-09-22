@@ -985,10 +985,7 @@ textarea:focus {
   border-radius: 50%;
   transition: all ease 0.5s;
 }
-.section-swiper-navigation .custom-button-prev.-border, .section-swiper-navigation .custom-button-next.-border, .section-swiper-navigation .custom-button-prev-two.-border, .section-swiper-navigation .custom-button-next-two.-border {
-  border: 1px solid var(--line);
-}
-.section-swiper-navigation .custom-button-prev.-relative, .section-swiper-navigation .custom-button-next.-relative, .section-swiper-navigation .custom-button-prev-two.-relative, .section-swiper-navigation .custom-button-next-two.-relative {
+.section-swiper-navigation .custom-button-prev.relative, .section-swiper-navigation .custom-button-next.relative, .section-swiper-navigation .custom-button-prev-two.relative, .section-swiper-navigation .custom-button-next-two.relative {
   position: relative !important;
   top: unset !important;
   left: unset !important;
@@ -1010,6 +1007,17 @@ textarea:focus {
     width: 40px;
     height: 40px;
   }
+}
+.section-swiper-navigation.bg-neutral-ui .custom-button-prev, .section-swiper-navigation.bg-neutral-ui .custom-button-next {
+  background-color: var(--primary-hover-ui);
+}
+.section-swiper-navigation.bg-neutral-ui .custom-button-prev:hover, .section-swiper-navigation.bg-neutral-ui .custom-button-next:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.section-swiper-navigation.bg-neutral-ui .custom-button-prev.swiper-button-disabled, .section-swiper-navigation.bg-neutral-ui .custom-button-next.swiper-button-disabled {
+  color: var(--neutral-txt-low);
+  background-color: var(--neutral-hover-ui);
 }
 
 /* Swiper Thumb */

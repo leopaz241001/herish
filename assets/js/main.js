@@ -274,30 +274,30 @@
     });
 
     // List testimonials active
-    const handleActiveAvatar6 = function (swiper) {
+    const handleActiveAvatarTestimonial = function (swiper) {
         const currentSlideIndex = swiper.activeIndex;
         $('.testimonials-avatar').each(function () {
             if (Number($(this).attr('data-item')) === (currentSlideIndex + 1)) {
-                $(this).fadeIn(250);
+                $(this).fadeIn(600);
             } else {
-                $(this).fadeOut(250);
+                $(this).fadeOut(300);
             }
         })
     }
 
-    var swiperListTestimonials6 = new Swiper('.swiper-list-testimonials6', {
+    var swiperTestimonialsFilter = new Swiper('.swiper-testimonials-filter', {
         navigation: {
-            prevEl: '.custom-button-testimonials-prev',
-            nextEl: '.custom-button-testimonials-next',
+            prevEl: '.custom-button-prev',
+            nextEl: '.custom-button-next',
         },
         slidesPerView: 1,
         spaceBetween: 24,
         on: {
             init: function () {
-                handleActiveAvatar6(this)
+                handleActiveAvatarTestimonial(this)
             },
             slideChange: function () {
-                handleActiveAvatar6(this)
+                handleActiveAvatarTestimonial(this)
             }
         }
     });
@@ -306,8 +306,8 @@
     const handleFaq = function () {
         $('.faq-item .heading, .toggle-item .heading').on('click', function () {
             $(this).closest('.faq-item, .toggle-item').toggleClass('active').siblings('.faq-item, .toggle-item').removeClass('active');
-            $(this).closest('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideToggle(300)
-            $(this).closest('.faq-item, .toggle-item').siblings('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideUp(300);
+            $(this).closest('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideToggle(400)
+            $(this).closest('.faq-item, .toggle-item').siblings('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideUp(400);
         })
     }
 
