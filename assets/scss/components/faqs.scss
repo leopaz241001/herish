@@ -1,0 +1,16 @@
+/* faqs */
+.faq-item {
+    .answer {
+        display: none;
+    }
+
+    &.active {
+        .heading {
+            color: var(--primary);
+        }
+
+        .ic-down {
+            transform: rotate(-180deg);
+        }
+    }
+}

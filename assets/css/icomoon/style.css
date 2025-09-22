@@ -87,7 +87,6 @@
 }
 .icon-call:before {
   content: "\e90f";
-  color: #fff;
 }
 .icon-check:before {
   content: "\e910";
@@ -150,7 +149,6 @@
 }
 .icon-messenger:before {
   content: "\e923";
-  color: #fff;
 }
 .icon-pine:before {
   content: "\e924";
@@ -197,6 +195,10 @@
   content: "\e931";
   color: rgb(255, 255, 255);
   opacity: 0.28;
+}
+.icon-zalo.text-secondary .path1:before {
+  color: rgb(175, 108, 155);
+  opacity: 1;
 }
 .icon-zalo .path2:before {
   content: "\e932";
