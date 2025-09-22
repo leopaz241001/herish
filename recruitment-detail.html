@@ -14,20 +14,20 @@
         <link rel="stylesheet" href="./dist/output-scss.css" />
     </head>
 
-    <body class="lg:overflow-unset">
+    <body>
         <!-- Header -->
-        <header id="header" class="header absolute top-0 left-0 w-full z-[10]">
+        <header id="header" class="header relative w-full z-[10]">
             <div class="container relative">
                 <div class="header-inner flex items-center justify-between z-[1] lg:h-24 h-18 lg:py-4 py-2">
                     <h1>
                         <a href="index.html">
-                            <img src="./assets/images/logo-white.svg" alt="logo-white" class="logo-white xl:h-10 h-8 w-auto" />
+                            <img src="./assets/images/logo.svg" alt="logo" class="logo xl:h-10 h-8 w-auto" />
                         </a>
                     </h1>
-                    <div class="navigator h-full max-lg:hidden xl:px-6 px-4 rounded-full">
+                    <div class="navigator h-full max-lg:hidden xl:px-6 px-4 rounded-full bg-transparent">
                         <ul class="list flex items-center gap-8 max-[1180px]:gap-3 h-full">
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Sản phẩm</span>
                                     <i class="hgi hgi-stroke hgi-arrow-down-01"></i>
                                 </a>
@@ -55,22 +55,22 @@
                                 </div>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Cá nhân hóa</span>
                                 </a>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Sinh nhật</span>
                                 </a>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Ngày kỷ niệm</span>
                                 </a>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Dịp đặc biệt</span>
                                     <i class="hgi hgi-stroke hgi-arrow-down-01"></i>
                                 </a>
@@ -118,19 +118,19 @@
                         </ul>
                     </div>
                     <div class="list-action flex items-center gap-1">
-                        <button type="button" class="btn-open-popup flex items-center justify-center lg:w-14 w-11 h-14 text-xl text-white" data-type="modal-search">
+                        <button type="button" class="btn-open-popup flex items-center justify-center lg:w-14 w-11 h-14 text-xl" data-type="modal-search">
                             <i class="icon-search"></i>
                             <span class="blind">button open modal search</span>
                         </button>
-                        <a href="wishlist.html" class="flex items-center justify-center w-14 h-14 text-xl text-white max-lg:hidden">
+                        <a href="wishlist.html" class="flex items-center justify-center w-14 h-14 text-xl max-lg:hidden">
                             <i class="icon-favourite"></i>
                             <span class="blind">link to wishlist</span>
                         </a>
-                        <a href="reminders.html" class="flex items-center justify-center w-14 h-14 text-xl text-white max-lg:hidden">
+                        <a href="reminders.html" class="flex items-center justify-center w-14 h-14 text-xl max-lg:hidden">
                             <i class="icon-calendar-love-02"></i>
                             <span class="blind">link to reminders</span>
                         </a>
-                        <button class="humburger-btn flex items-center justify-center w-11 h-14 text-2xl text-white lg:hidden">
+                        <button class="humburger-btn flex items-center justify-center w-11 h-14 text-2xl lg:hidden">
                             <i class="hgi hgi-stroke hgi-menu-01"></i>
                             <span class="blind">button open menu mobile</span>
                         </button>
@@ -172,203 +172,78 @@
             </div>
         </header>
 
-        <!-- Slider -->
-        <section class="slider">
-            <div class="slider-inner relative md:h-[612px] h-[436px] overflow-hidden">
-                <div class="slider-bg absolute top-0 left-0 w-full h-full" aria-hidden="true">
-                    <img src="./assets/images/slider/hero-blog.jpg" alt="hero blog" class="w-full h-full object-cover" />
-                </div>
-                <div class="container h-full">
-                    <div class="slider-content flex flex-col items-start justify-end sm:pb-[88px] pb-5 w-full h-full text-white">
-                        <div class="flex items-center gap-3 animate animate-top" style="--i: 1">
-                            <span class="flex-shrink-0 icon-grass text-[32px]"></span>
-                            <strong class="text-body1 font-semibold">Blog</strong>
-                            <span class="flex-shrink-0 w-8 h-0.5 bg-white"></span>
-                        </div>
-                        <h2 class="text-head1 sm:mt-9 mt-5 animate animate-top" style="--i: 2">Góc chia sẻ</h2>
-                        <p class="text-body2 sm:mt-7 mt-4 animate animate-top" style="--i: 3">Những xu hướng mới, bí quyết nhỏ và câu chuyện phía sau từng món quà.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Blog -->
-        <section class="blog sm:pt-32 pt-16">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb py-2">
             <div class="container">
-                <div class="grid lg:grid-cols-3 sm:grid-cols-2 lg:gap-6 gap-8">
-                    <ul class="grid grid-cols-2 col-span-2 sm:gap-6 gap-4 gap-y-6">
-                        <li class="blog-item animate animate-top" style="--i: 1">
-                            <a href="blog-detail.html" class="blog-link block">
-                                <div class="relative overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/15.jpg" alt="Xu hướng quà tặng 2025: cá nhân hóa lên ngôi" class="blog_img w-full h-full object-cover" />
-                                    <span class="button-main small absolute sm:top-6 sm:right-6 top-1.5 right-1.5 bg-secondary">Xu hướng</span>
-                                </div>
-                                <div class="date flex items-center gap-3 sm:mt-6 mt-4 text-neutral-txt-low">
-                                    <i class="hgi hgi-stroke hgi-calendar-03 sm:text-[24px] text-[20px]"></i>
-                                    <span class="max-sm:text-body3-mo">07/08/2025</span>
-                                </div>
-                                <strong class="text-head5 sm:mt-4 mt-2">Xu hướng quà tặng 2025: cá nhân hóa lên ngôi</strong>
-                            </a>
-                        </li>
-                        <li class="blog-item animate animate-top" style="--i: 2">
-                            <a href="blog-detail.html" class="blog-link block">
-                                <div class="relative overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/14.jpg" alt="Cách chọn quà theo tính cách: Người hướng nội – hướng ngoại" class="blog_img w-full h-full object-cover" />
-                                    <span class="button-main small absolute sm:top-6 sm:right-6 top-1.5 right-1.5 bg-secondary">Ý tưởng</span>
-                                </div>
-                                <div class="date flex items-center gap-3 sm:mt-6 mt-4 text-neutral-txt-low">
-                                    <i class="hgi hgi-stroke hgi-calendar-03 sm:text-[24px] text-[20px]"></i>
-                                    <span class="max-sm:text-body3-mo">07/08/2025</span>
-                                </div>
-                                <strong class="text-head5 sm:mt-4 mt-2">Cách chọn quà theo tính cách: Người hướng nội – hướng ngoại</strong>
-                            </a>
-                        </li>
-                        <li class="blog-item animate animate-top" style="--i: 1">
-                            <a href="blog-detail.html" class="blog-link block">
-                                <div class="relative overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/13.jpg" alt="Top 7 món quà sinh nhật khiến bạn bè bất ngờ thích mê" class="blog_img w-full h-full object-cover" />
-                                    <span class="button-main small absolute sm:top-6 sm:right-6 top-1.5 right-1.5 bg-secondary">Dịp tặng quà</span>
-                                </div>
-                                <div class="date flex items-center gap-3 sm:mt-6 mt-4 text-neutral-txt-low">
-                                    <i class="hgi hgi-stroke hgi-calendar-03 sm:text-[24px] text-[20px]"></i>
-                                    <span class="max-sm:text-body3-mo">07/08/2025</span>
-                                </div>
-                                <strong class="text-head5 sm:mt-4 mt-2">Top 7 món quà sinh nhật khiến bạn bè bất ngờ thích mê</strong>
-                            </a>
-                        </li>
-                        <li class="blog-item animate animate-top" style="--i: 1">
-                            <a href="blog-detail.html" class="blog-link block">
-                                <div class="relative overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/12.jpg" alt="3 cách gói quà đơn giản nhưng siêu đẹp" class="blog_img w-full h-full object-cover" />
-                                    <span class="button-main small absolute sm:top-6 sm:right-6 top-1.5 right-1.5 bg-secondary">Tips gói quà</span>
-                                </div>
-                                <div class="date flex items-center gap-3 sm:mt-6 mt-4 text-neutral-txt-low">
-                                    <i class="hgi hgi-stroke hgi-calendar-03 sm:text-[24px] text-[20px]"></i>
-                                    <span class="max-sm:text-body3-mo">07/08/2025</span>
-                                </div>
-                                <strong class="text-head5 sm:mt-4 mt-2">3 cách gói quà đơn giản nhưng siêu đẹp</strong>
-                            </a>
-                        </li>
-                        <li class="blog-item animate animate-top" style="--i: 1">
-                            <a href="blog-detail.html" class="blog-link block">
-                                <div class="relative overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/11.jpg" alt="10 ý tưởng quà tặng cá nhân hóa cực độc đáo" class="blog_img w-full h-full object-cover" />
-                                    <span class="button-main small absolute sm:top-6 sm:right-6 top-1.5 right-1.5 bg-secondary">Ý tưởng</span>
-                                </div>
-                                <div class="date flex items-center gap-3 sm:mt-6 mt-4 text-neutral-txt-low">
-                                    <i class="hgi hgi-stroke hgi-calendar-03 sm:text-[24px] text-[20px]"></i>
-                                    <span class="max-sm:text-body3-mo">07/08/2025</span>
-                                </div>
-                                <strong class="text-head5 sm:mt-4 mt-2">10 ý tưởng quà tặng cá nhân hóa cực độc đáo</strong>
-                            </a>
-                        </li>
-                        <li class="blog-item animate animate-top" style="--i: 1">
-                            <a href="blog-detail.html" class="blog-link block">
-                                <div class="relative overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/10.jpg" alt="Review set quà HIM2HER hot nhất tháng 8: Có gì đặc biệt?" class="blog_img w-full h-full object-cover" />
-                                    <span class="button-main small absolute sm:top-6 sm:right-6 top-1.5 right-1.5 bg-secondary">Review</span>
-                                </div>
-                                <div class="date flex items-center gap-3 sm:mt-6 mt-4 text-neutral-txt-low">
-                                    <i class="hgi hgi-stroke hgi-calendar-03 sm:text-[24px] text-[20px]"></i>
-                                    <span class="max-sm:text-body3-mo">07/08/2025</span>
-                                </div>
-                                <strong class="text-head5 sm:mt-4 mt-2">Review set quà HIM2HER hot nhất tháng 8: Có gì đặc biệt?</strong>
-                            </a>
-                        </li>
-                        <li class="blog-item animate animate-top" style="--i: 1">
-                            <a href="blog-detail.html" class="blog-link block">
-                                <div class="relative overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/9.jpg" alt="5 món quà nhỏ, ý nghĩa lớn cho ngày Phụ nữ Việt Nam" class="blog_img w-full h-full object-cover" />
-                                    <span class="button-main small absolute sm:top-6 sm:right-6 top-1.5 right-1.5 bg-secondary">Dịp tặng quà</span>
-                                </div>
-                                <div class="date flex items-center gap-3 sm:mt-6 mt-4 text-neutral-txt-low">
-                                    <i class="hgi hgi-stroke hgi-calendar-03 sm:text-[24px] text-[20px]"></i>
-                                    <span class="max-sm:text-body3-mo">07/08/2025</span>
-                                </div>
-                                <strong class="text-head5 sm:mt-4 mt-2">5 món quà nhỏ, ý nghĩa lớn cho ngày Phụ nữ Việt Nam</strong>
-                            </a>
-                        </li>
-                        <li class="blog-item animate animate-top" style="--i: 1">
-                            <a href="blog-detail.html" class="blog-link block">
-                                <div class="relative overflow-hidden rounded-xl">
-                                    <img src="./assets/images/product/8.jpg" alt="Valentine tặng gì để ‘ghi điểm’ trong mắt người ấy?" class="blog_img w-full h-full object-cover" />
-                                    <span class="button-main small absolute sm:top-6 sm:right-6 top-1.5 right-1.5 bg-secondary">Dịp tặng quà</span>
-                                </div>
-                                <div class="date flex items-center gap-3 sm:mt-6 mt-4 text-neutral-txt-low">
-                                    <i class="hgi hgi-stroke hgi-calendar-03 sm:text-[24px] text-[20px]"></i>
-                                    <span class="max-sm:text-body3-mo">07/08/2025</span>
-                                </div>
-                                <strong class="text-head5 sm:mt-4 mt-2">Valentine tặng gì để ‘ghi điểm’ trong mắt người ấy?</strong>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="lg:col-span-1 col-span-2 lg:sticky lg:top-5 h-fit">
-                        <div class="p-6 rounded-xl bg-neutral-ui">
-                            <strong class="text-head4">Bài viết gần đây</strong>
-                            <ul>
-                                <li class="mt-6">
-                                    <a href="blog-detail.html" class="flex items-center gap-4">
-                                        <div class="flex-shrink-0 overflow-hidden w-[88px] h-[88px] rounded-xl">
-                                            <img src="./assets/images/product/1.jpg" alt="5 món quà nhỏ, ý nghĩa lớn cho ngày Phụ nữ Việt Nam" class="w-full h-full object-cover">
-                                        </div>
-                                        <div>
-                                            <strong class="sm:text-head6 text-head5-mo">5 món quà nhỏ, ý nghĩa lớn cho ngày Phụ nữ Việt Nam</strong>
-                                            <p class="sm:mt-2 mt-1 text-neutral-txt-low">07/08/2025</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="mt-6">
-                                    <a href="blog-detail.html" class="flex items-center gap-4">
-                                        <div class="flex-shrink-0 overflow-hidden w-[88px] h-[88px] rounded-xl">
-                                            <img src="./assets/images/product/2.jpg" alt="5 món quà nhỏ, ý nghĩa lớn cho ngày Phụ nữ Việt Nam" class="w-full h-full object-cover">
-                                        </div>
-                                        <div>
-                                            <strong class="sm:text-head6 text-head5-mo">5 món quà nhỏ, ý nghĩa lớn cho ngày Phụ nữ Việt Nam</strong>
-                                            <p class="sm:mt-2 mt-1 text-neutral-txt-low">07/08/2025</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-6 p-6 rounded-xl bg-neutral-ui">
-                            <strong class="text-head4">Phân loại</strong>
-                            <ul class="flex flex-wrap gap-3 mt-6">
-                                <li>
-                                    <a href="blog-list.html" class="button-main small bg-secondary">Dịp tặng quà</a>
-                                </li>
-                                <li>
-                                    <a href="blog-list.html" class="button-main small bg-secondary">Ý tưởng</a>
-                                </li>
-                                <li>
-                                    <a href="blog-list.html" class="button-main small bg-secondary">Review</a>
-                                </li>
-                                <li>
-                                    <a href="blog-list.html" class="button-main small bg-secondary">Tips gói quà</a>
-                                </li>
-                                <li>
-                                    <a href="blog-list.html" class="button-main small bg-secondary">Xu hướng</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="flex flex-wrap items-center gap-2">
+                    <a href="index.html" class="text-body3 text-neutral-txt-low hover:underline">Trang chủ</a>
+                    <i class="hgi hgi-stroke hgi-arrow-right-01 text-xs"></i>
+                    <a href="recruitment.html" class="text-body3 text-neutral-txt-low hover:underline">Tuyển dụng</a>
+                    <i class="hgi hgi-stroke hgi-arrow-right-01 text-xs"></i>
+                    <strong class="text-body3 font-bold">Graphic Designer - Middle Level</strong>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Banner -->
-        <section class="banner sm:py-32 py-16">
+        <!-- Recruitment detail -->
+        <section class="recruitment-detail sm:pt-[88px] pt-4 sm:pb-32 pb-16">
             <div class="container">
-                <div class="banner-inner relative overflow-hidden rounded-xl bg-primary md:h-[476px] h-[503px]">
-                    <div class="banner-bg absolute top-0 left-0 w-full h-full">
-                        <img src="./assets/images/components/banner1.jpg" alt="banner1" class="w-full h-full object-cover max-md:hidden" />
-                        <img src="./assets/images/components/banner1-mo.jpg" alt="banner1-mo" class="w-full h-full object-cover md:hidden" />
+                <h2 class="text-head1">Graphic Designer - Middle Level</h2>
+                <div class="flex items-center gap-3 sm:mt-4 mt-3">
+                    <span class="icon-location text-[24px]"></span>
+                    <span>Hà Nội, Việt Nam</span>
+                </div>
+                <div class="thumbnail overflow-hidden md:h-[400px] max-md:aspect-[1.325] rounded-xl sm:mt-13 mt-8">
+                    <img src="./assets/images/components/recruitment-detail.jpg" alt="Graphic Designer - Middle Level" class="w-full h-full object-cover">
+                </div>
+                <div class="detail md:w-[68.125%] w-full mx-auto sm:mt-13 mt-8">
+                    <div class="para">
+                        <strong class="text-head4">Về HERISH</strong>
+                        <p class="sm:mt-5 mt-4">HERISH là thương hiệu quà tặng cá nhân hóa với sứ mệnh mang đến những trải nghiệm và cảm xúc trọn vẹn trong từng món quà. Mỗi sản phẩm là sự kết hợp giữa thẩm mỹ, cảm xúc và cá tính – giúp kết nối những trái tim và tạo nên kỷ niệm đáng nhớ. Với đội ngũ trẻ trung, sáng tạo và tận tâm, HERISH không ngừng đổi mới để mang đến những trải nghiệm trọn vẹn nhất cho khách hàng.</p>
                     </div>
-                    <div class="banner-content flex flex-col md:justify-center relative h-full md:px-10 px-4 max-md:py-8">
-                        <h2 class="sm:text-head2 text-head1-mo text-white animate animate-top" style="--i: 1">Kết nối với chúng tôi</h2>
-                        <p class="desc sm:mt-7 mt-3 text-white animate animate-top" style="--i: 2">Chúng tôi luôn sẵn sàng lắng nghe và đồng hành cùng bạn.</p>
-                        <div class="sm:mt-9 mt-5 animate animate-top" style="--i: 3">
-                            <a href="contact.html" class="button-main bg-white">Liên hệ với HERISH</a>
-                        </div>
+                    <div class="para sm:mt-8 mt-6">
+                        <strong class="text-head4">Mô tả công việc</strong>
+                        <ul class="flex flex-col gap-2 sm:mt-5 mt-4 pl-6">
+                            <li class="list-disc">Thiết kế ấn phẩm truyền thông online & offline (banner, poster, social media, POSM, packaging, v.v).</li>
+                            <li class="list-disc">Tham gia xây dựng và phát triển bộ nhận diện thương hiệu, đảm bảo tính đồng bộ và sáng tạo.</li>
+                            <li class="list-disc">Hỗ trợ thiết kế cho các chiến dịch marketing, sự kiện và các hoạt động nội bộ.</li>
+                            <li class="list-disc">Phối hợp cùng team Marketing, Content, và Developer để triển khai ý tưởng.</li>
+                            <li class="list-disc">Cập nhật xu hướng thiết kế mới, đề xuất cải tiến để nâng cao chất lượng sản phẩm.</li>
+                        </ul>
+                    </div>
+                    <div class="para sm:mt-8 mt-6">
+                        <strong class="text-head4">Yêu cầu</strong>
+                        <ul class="flex flex-col gap-2 sm:mt-5 mt-4 pl-6">
+                            <li class="list-disc">Có <strong class="font-semibold">2–3 năm kinh nghiệm</strong> trong lĩnh vực thiết kế đồ họa.</li>
+                            <li class="list-disc">Thành thạo Photoshop, Illustrator (biết Figma/After Effect là lợi thế).</li>
+                            <li class="list-disc">Có khả năng sáng tạo, tư duy thẩm mỹ tốt, bắt trend nhanh.</li>
+                            <li class="list-disc">Biết sắp xếp công việc, làm việc nhóm và quản lý thời gian hiệu quả.</li>
+                            <li class="list-disc">Có portfolio thể hiện phong cách thiết kế & các sản phẩm đã thực hiện.</li>
+                        </ul>
+                    </div>
+                    <div class="para sm:mt-8 mt-6">
+                        <strong class="text-head4">Quyền lợi</strong>
+                        <ul class="flex flex-col gap-2 sm:mt-5 mt-4 pl-6">
+                            <li class="list-disc">Lương cạnh tranh: <strong class="font-semibold">Up to 20M</strong> (theo năng lực).</li>
+                            <li class="list-disc">Thưởng hiệu suất và các chế độ phúc lợi khác theo quy định.</li>
+                            <li class="list-disc">Môi trường làm việc trẻ trung, sáng tạo, đồng nghiệp thân thiện.</li>
+                            <li class="list-disc">Cơ hội tham gia các dự án đa dạng, thử sức với nhiều phong cách thiết kế.</li>
+                            <li class="list-disc">Được đào tạo, nâng cao kỹ năng & định hướng phát triển nghề nghiệp.</li>
+                        </ul>
+                    </div>
+                    <div class="para sm:mt-8 mt-6">
+                        <strong class="text-head4">Thông tin liên hệ</strong>
+                        <ul class="flex flex-col gap-2 sm:mt-5 mt-4 pl-6">
+                            <li class="list-disc">Ứng viên quan tâm vui lòng gửi <strong class="font-semibold">CV + Portfolio</strong> về:
+                                <ul class="flex flex-col gap-2 mt-2 pl-6">
+                                    <li class="list-disc"><strong class="font-semibold">Email:</strong> hr@herish.vn</li>
+                                    <li class="list-disc"><strong class="font-semibold">Tiêu đề email:</strong> [Họ tên] – Graphic Designer (Middle)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="para sm:mt-8 mt-6">
+                        <strong class="text-head4">Hãy gia nhập HERISH để cùng nhau kiến tạo những thiết kế truyền cảm hứng!</strong>
                     </div>
                 </div>
             </div>

@@ -396,6 +396,12 @@ input::-webkit-inner-spin-button {
   background-color: var(--primary-hover);
   color: var(--white);
 }
+.button-main.bg-secondary {
+  background-color: var(--secondary);
+}
+.button-main.bg-secondary:hover {
+  background-color: var(--secondary-hover);
+}
 .button-main.bg-secondary-ui {
   background-color: var(--secondary-ui);
   color: var(--neutral-txt-high);
@@ -431,6 +437,13 @@ input::-webkit-inner-spin-button {
     padding: 8px 12px;
     font-size: 14px;
     line-height: 20px;
+  }
+}
+@media (max-width: 639.98px) {
+  .button-main.small {
+    padding: 0.25rem 0.5rem;
+    font-size: 12px;
+    line-height: 16px;
   }
 }
 

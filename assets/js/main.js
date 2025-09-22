@@ -322,7 +322,9 @@
             $('.modal-item').each(function (e) {
                 if ($(this).data('type') === popupType) {
                     $(this).addClass('open')
-                    $('body').addClass('scroll-locked')
+                    setTimeout(() => {
+                        $('body').addClass('scroll-locked')
+                    }, 50);
                 }
             })
         })
