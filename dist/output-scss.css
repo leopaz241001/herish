@@ -50,6 +50,12 @@ legend {
   clip: rect(0, 0, 0, 0);
 }
 
+ol,
+ul,
+li {
+  list-style: none;
+}
+
 select {
   appearance: none;
   outline: none;
