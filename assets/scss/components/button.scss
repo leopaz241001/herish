@@ -13,7 +13,6 @@
     color: var(--white);
     text-align: center;
     white-space: nowrap;
-    cursor: pointer;
     transition: all ease-out 0.5s;
 
     &.p-0 {
@@ -88,6 +87,7 @@
     &.select-block,
     &.chip {
         font-weight: 400;
+        cursor: pointer;
         
         @media (max-width: 639.98px) {
             gap: 12px;
@@ -102,6 +102,35 @@
             padding: 0.25rem 0.5rem;
             font-size: 12px;
             line-height: 16px;
+        }
+    }
+}
+
+.btn-toggle {
+    position: relative;
+    width: 40px;
+    height: 24px;
+    border-radius: 100px;
+    background-color: var(--neutral-txt-low);
+    transition: all ease 0.4s;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: var(--white);
+        transition: all ease 0.3s;
+    }
+
+    &.active {
+        background-color: var(--primary);
+
+        &::before {
+            transform: translateX(calc(100% - 2px));
         }
     }
 }

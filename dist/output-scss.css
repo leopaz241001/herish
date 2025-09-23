@@ -371,7 +371,6 @@ input::-webkit-inner-spin-button {
   color: var(--white);
   text-align: center;
   white-space: nowrap;
-  cursor: pointer;
   transition: all ease-out 0.5s;
 }
 .button-main.p-0 {
@@ -430,6 +429,7 @@ input::-webkit-inner-spin-button {
 }
 .button-main.select-block, .button-main.chip {
   font-weight: 400;
+  cursor: pointer;
 }
 @media (max-width: 639.98px) {
   .button-main.select-block, .button-main.chip {
@@ -445,6 +445,32 @@ input::-webkit-inner-spin-button {
     font-size: 12px;
     line-height: 16px;
   }
+}
+
+.btn-toggle {
+  position: relative;
+  width: 40px;
+  height: 24px;
+  border-radius: 100px;
+  background-color: var(--neutral-txt-low);
+  transition: all ease 0.4s;
+}
+.btn-toggle::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--white);
+  transition: all ease 0.3s;
+}
+.btn-toggle.active {
+  background-color: var(--primary);
+}
+.btn-toggle.active::before {
+  transform: translateX(calc(100% - 2px));
 }
 
 .select-block {
@@ -917,6 +943,11 @@ textarea:focus {
 @media (max-width: 639.98px) {
   .modal-content {
     max-height: calc(100vh - 40px - 162px);
+  }
+}
+@media (max-width: 639.98px) {
+  .modal .modal-cookie-setting .modal-content {
+    max-height: calc(100vh - 40px - 306px);
   }
 }
 

@@ -313,6 +313,11 @@
 
     // Open popup
     const handleOpenPopup = function () {
+        setTimeout(() => {
+            $('.modal-cookie').addClass('open')
+            $('body').addClass('scroll-locked')
+        }, 1000);
+
         const btnOpenPopup = $('.btn-open-popup')
 
         btnOpenPopup.on('click', function (e) {

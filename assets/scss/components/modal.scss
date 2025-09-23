@@ -47,4 +47,12 @@
             max-height: calc(100vh - 40px - 162px);
         }
     }
+
+    .modal-cookie-setting {
+        .modal-content {
+            @media (max-width: 639.98px) {
+                max-height: calc(100vh - 40px - 306px);
+            }
+        }
+    }
 }

@@ -16,18 +16,18 @@
 
     <body>
         <!-- Header -->
-        <header id="header" class="header absolute top-0 left-0 w-full z-[10]">
+        <header id="header" class="header relative w-full z-[10]">
             <div class="container relative">
                 <div class="header-inner flex items-center justify-between z-[1] lg:h-24 h-18 lg:py-4 py-2">
                     <h1>
                         <a href="index.html">
-                            <img src="./assets/images/logo-white.svg" alt="logo-white" class="logo-white xl:h-10 h-8 w-auto" />
+                            <img src="./assets/images/logo.svg" alt="logo" class="logo xl:h-10 h-8 w-auto" />
                         </a>
                     </h1>
-                    <div class="navigator h-full max-lg:hidden xl:px-6 px-4 rounded-full">
+                    <div class="navigator h-full max-lg:hidden xl:px-6 px-4 rounded-full bg-transparent">
                         <ul class="list flex items-center gap-8 max-[1180px]:gap-3 h-full">
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Sản phẩm</span>
                                     <i class="hgi hgi-stroke hgi-arrow-down-01"></i>
                                 </a>
@@ -55,22 +55,22 @@
                                 </div>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Cá nhân hóa</span>
                                 </a>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Sinh nhật</span>
                                 </a>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Ngày kỷ niệm</span>
                                 </a>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                <a href="#!" class="flex items-center gap-1 h-full duration-300">
                                     <span>Dịp đặc biệt</span>
                                     <i class="hgi hgi-stroke hgi-arrow-down-01"></i>
                                 </a>
@@ -118,19 +118,19 @@
                         </ul>
                     </div>
                     <div class="list-action flex items-center gap-1">
-                        <button type="button" class="btn-open-popup flex items-center justify-center lg:w-14 w-11 h-14 text-xl text-white" data-type="modal-search">
+                        <button type="button" class="btn-open-popup flex items-center justify-center lg:w-14 w-11 h-14 text-xl" data-type="modal-search">
                             <i class="icon-search"></i>
                             <span class="blind">button open modal search</span>
                         </button>
-                        <a href="wishlist.html" class="flex items-center justify-center w-14 h-14 text-xl text-white max-lg:hidden">
+                        <a href="wishlist.html" class="flex items-center justify-center w-14 h-14 text-xl max-lg:hidden">
                             <i class="icon-favourite"></i>
                             <span class="blind">link to wishlist</span>
                         </a>
-                        <a href="reminders.html" class="flex items-center justify-center w-14 h-14 text-xl text-white max-lg:hidden">
+                        <a href="reminders.html" class="flex items-center justify-center w-14 h-14 text-xl max-lg:hidden">
                             <i class="icon-calendar-love-02"></i>
                             <span class="blind">link to reminders</span>
                         </a>
-                        <button class="humburger-btn flex items-center justify-center w-11 h-14 text-2xl text-white lg:hidden">
+                        <button class="humburger-btn flex items-center justify-center w-11 h-14 text-2xl lg:hidden">
                             <i class="hgi hgi-stroke hgi-menu-01"></i>
                             <span class="blind">button open menu mobile</span>
                         </button>
@@ -172,105 +172,107 @@
             </div>
         </header>
 
-        <!-- Slider -->
-        <section class="slider">
-            <div class="slider-inner relative md:h-[612px] h-[436px] overflow-hidden">
-                <div class="slider-bg absolute top-0 left-0 w-full h-full" aria-hidden="true">
-                    <img src="./assets/images/slider/hero-reminders.jpg" alt="hero reminders" class="w-full h-full object-cover" />
-                </div>
-                <div class="container h-full">
-                    <div class="slider-content flex flex-col items-start justify-end sm:pb-[88px] pb-5 w-full h-full text-white">
-                        <div class="flex items-center gap-3 animate animate-top" style="--i: 1">
-                            <span class="flex-shrink-0 icon-grass text-[32px]"></span>
-                            <strong class="text-body1 font-semibold">Lời nhắc</strong>
-                            <span class="flex-shrink-0 w-8 h-0.5 bg-white"></span>
-                        </div>
-                        <h2 class="text-head1 sm:mt-9 mt-5 animate animate-top" style="--i: 2">Nhớ giúp bạn, tặng đúng lúc</h2>
-                        <p class="text-body2 sm:mt-7 mt-4 animate animate-top" style="--i: 3">Thêm ngày sinh, kỷ niệm hay bất kỳ dịp đặc biệt nào - chúng tôi sẽ nhắc bạn trước, để yêu thương không đến muộn.</p>
-                        <div class="group-btn flex gap-5 sm:mt-12 mt-9 animate animate-top" style="--i: 4">
-                            <button type="button" class="btn-open-popup button-main bg-white" data-type="modal-reminders">Thêm lời nhắc</button>
-                        </div>
+        <!-- Policy -->
+        <section class="policy sm:pt-[88px] pt-8 sm:pb-32 pb-16">
+            <div class="container">
+                <h2 class="text-head1">Chính sách bảo mật thông tin cá nhân</h2>
+                <div class="thumbnail overflow-hidden w-full md:h-[400px] max-md:aspect-[1.325] sm:mt-13 mt-8 rounded-xl bg-[url(../assets/images/slider/hero-policy4.jpg)] bg-cover bg-right-center bg-no-repeat" aria-hidden="true"></div>
+                <div class="detail md:w-[68.125%] w-full mx-auto sm:mt-13 mt-8">
+                    <div class="para">
+                        <p>HERISH cam kết bảo mật và tôn trọng quyền riêng tư của khách hàng. Chính sách này quy định cách chúng tôi thu thập, sử dụng, lưu trữ và bảo vệ thông tin cá nhân của khách hàng khi đăng ký tài khoản hoặc sử dụng dịch vụ tại website herish.com.vn.</p>
+                        <p class="mt-1">Việc bạn đăng ký tài khoản hoặc tiếp tục sử dụng dịch vụ của HERISH đồng nghĩa với việc bạn đã đọc, hiểu và đồng ý với các điều khoản trong Chính sách bảo mật này.</p>
+                    </div>
+                    <div class="para sm:mt-8 mt-6">
+                        <strong class="text-head4">1. Mục đích thu thập thông tin cá nhân</strong>
+                        <p class="sm:mt-5 mt-4">Thông tin cá nhân của khách hàng được thu thập nhằm phục vụ cho các mục đích:</p>
+                        <ul class="flex flex-col gap-2 mt-2 pl-6">
+                            <li class="list-disc">Quản lý tài khoản thành viên trên website.</li>
+                            <li class="list-disc">Gửi thông tin khuyến mãi, ưu đãi dành cho thành viên (voucher sinh nhật, voucher dịp lễ, voucher chào mừng khi đăng ký).</li>
+                            <li class="list-disc">Hỗ trợ chăm sóc khách hàng, giải đáp thắc mắc, xử lý khiếu nại.</li>
+                            <li class="list-disc">Gửi thông tin cập nhật về chương trình, sự kiện, sản phẩm mới.</li>
+                            <li class="list-disc">Đảm bảo an ninh, phòng chống gian lận và tuân thủ yêu cầu của cơ quan quản lý nhà nước (nếu có).</li>
+                        </ul>
+                    </div>
+                    <div class="para sm:mt-8 mt-6">
+                        <strong class="text-head4">2. Phạm vi thu thập</strong>
+                        <p class="sm:mt-5 mt-4">Khi đăng ký tài khoản tại herish.com.vn, khách hàng cần cung cấp các thông tin sau:</p>
+                        <ul class="flex flex-col gap-2 mt-2 pl-6">
+                            <li class="list-disc">Họ và tên</li>
+                            <li class="list-disc">Ngày sinh</li>
+                            <li class="list-disc">Email</li>
+                            <li class="list-disc">Số điện thoại</li>
+                            <li class="list-disc">Mật khẩu</li>
+                        </ul>
+                    </div>
+                    <div class="para sm:mt-8 mt-6">
+                        <strong class="text-head4">3. Thời gian lưu trữ</strong>
+                        <ul class="flex flex-col gap-2 sm:mt-5 mt-4 pl-6">
+                            <li class="list-disc">Thông tin cá nhân sẽ được lưu trữ cho đến khi khách hàng yêu cầu hủy bỏ hoặc tự đăng nhập và hủy tài khoản.</li>
+                            <li class="list-disc">Trong mọi trường hợp, dữ liệu cá nhân sẽ được bảo mật trên hệ thống của HERISH theo quy định pháp luật Việt Nam.</li>
+                        </ul>
+                    </div>
+                    <div class="para sm:mt-8 mt-6">
+                        <strong class="text-head4">4. Không chia sẻ thông tin cá nhân khách hàng</strong>
+                        <p class="sm:mt-5 mt-4">HERISH cam kết không bán, không trao đổi hay tiết lộ thông tin cá nhân của khách hàng cho bên thứ ba, ngoại trừ các trường hợp sau:</p>
+                        <ul class="flex flex-col gap-2 mt-2 pl-6">
+                            <li class="list-disc">Khi có sự đồng ý của khách hàng.</li>
+                            <li class="list-disc">Theo yêu cầu của cơ quan nhà nước có thẩm quyền.</li>
+                            <li class="list-disc">Trong trường hợp cần thiết để bảo vệ quyền lợi hợp pháp của HERISH trước pháp luật.</li>
+                        </ul>
+                    </div>
+                    <div class="para sm:mt-8 mt-6">
+                        <strong class="text-head4">5. Quyền của khách hàng đối với thông tin cá nhân</strong>
+                        <p class="sm:mt-5 mt-4">Khách hàng có quyền:</p>
+                        <ul class="flex flex-col gap-2 mt-2 pl-6">
+                            <li class="list-disc">Kiểm tra, cập nhật, điều chỉnh thông tin cá nhân của mình bất cứ lúc nào bằng cách đăng nhập tài khoản.</li>
+                            <li class="list-disc">Yêu cầu HERISH ngừng sử dụng hoặc xóa dữ liệu cá nhân, trừ khi việc lưu trữ đó là bắt buộc theo quy định pháp luật.</li>
+                            <li class="list-disc">Khiếu nại về việc rò rỉ, mất mát dữ liệu cá nhân; HERISH sẽ tiếp nhận, xử lý và phản hồi theo quy định của pháp luật.</li>
+                        </ul>
+                    </div>
+                    <div class="para sm:mt-8 mt-6">
+                        <strong class="text-head4">6. Cam kết bảo mật thông tin cá nhân</strong>
+                        <ul class="flex flex-col gap-2 sm:mt-5 mt-4 pl-6">
+                            <li class="list-disc">HERISH áp dụng các biện pháp kỹ thuật và an ninh cần thiết để bảo vệ dữ liệu cá nhân khỏi việc truy cập, sử dụng, tiết lộ trái phép.</li>
+                            <li class="list-disc">Trong trường hợp hệ thống bị tấn công dẫn đến mất mát dữ liệu, HERISH sẽ thông báo ngay cho cơ quan có thẩm quyền và khách hàng liên quan theo đúng quy định pháp luật.</li>
+                        </ul>
+                    </div>
+                    <div class="para sm:mt-8 mt-6">
+                        <strong class="text-head4">7. Thông tin liên hệ</strong>
+                        <p class="sm:mt-5 mt-4">Nếu có bất kỳ câu hỏi hoặc khiếu nại nào liên quan đến Chính sách bảo mật, vui lòng liên hệ:</p>
+                        <ul class="flex flex-col gap-2 mt-2 pl-6">
+                            <li class="list-disc"><strong class="font-semibold">Email:</strong> support@herish.vn</li>
+                            <li class="list-disc"><strong class="font-semibold">Hotline:</strong> 09xx.xxx.xxx (giờ hành chính)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Reminders -->
-        <section class="reminders overflow-hidden sm:py-32 pt-8 pb-11 border-b border-primary-txt">
-            <div class="container">
-                <h2 class="text-head3">Lời nhắc đã lưu (4)</h2>
-                <ul class="grid lg:grid-cols-3 sm:grid-cols-2 sm:gap-6 gap-4 sm:mt-10 mt-6">
-                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 1">
-                        <div class="flex justify-between gap-12">
-                            <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 6 tháng 8</span>
-                            <div class="flex gap-6">
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-edit-02 block text-[24px]"></i>
-                                    <span class="blind">button edit</span>
-                                </button>
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-delete-03 block text-[24px] text-error"></i>
-                                    <span class="blind">button delete</span>
-                                </button>
-                            </div>
-                        </div>
-                        <strong class="block text-head4 sm:my-12 my-5">Bạn A</strong>
-                        <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Ngày kỷ niệm</span>
-                    </li>
-                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 2">
-                        <div class="flex justify-between gap-12">
-                            <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 7 tháng 8</span>
-                            <div class="flex gap-6">
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-edit-02 block text-[24px]"></i>
-                                    <span class="blind">button edit</span>
-                                </button>
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-delete-03 block text-[24px] text-error"></i>
-                                    <span class="blind">button delete</span>
-                                </button>
-                            </div>
-                        </div>
-                        <strong class="block text-head4 sm:my-12 my-5">Chị gái hehehe</strong>
-                        <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Sinh nhật</span>
-                    </li>
-                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 3">
-                        <div class="flex justify-between gap-12">
-                            <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 10 tháng 8</span>
-                            <div class="flex gap-6">
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-edit-02 block text-[24px]"></i>
-                                    <span class="blind">button edit</span>
-                                </button>
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-delete-03 block text-[24px] text-error"></i>
-                                    <span class="blind">button delete</span>
-                                </button>
-                            </div>
-                        </div>
-                        <strong class="block text-head4 sm:my-12 my-5">Cháu trai</strong>
-                        <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Tiệc đầy tháng</span>
-                    </li>
-                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 4">
-                        <div class="flex justify-between gap-12">
-                            <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 7 tháng 12</span>
-                            <div class="flex gap-6">
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-edit-02 block text-[24px]"></i>
-                                    <span class="blind">button edit</span>
-                                </button>
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-delete-03 block text-[24px] text-error"></i>
-                                    <span class="blind">button delete</span>
-                                </button>
-                            </div>
-                        </div>
-                        <strong class="block text-head4 sm:my-12 my-5">Louis Ramsay</strong>
-                        <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Lễ tốt nghiệp</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
+        <!-- List contact -->
+        <ul class="contact-list flex flex-col sm:gap-5 gap-4 fixed sm:bottom-8 bottom-4 sm:right-8 right-4 z-[10]">
+            <li class="contact-item">
+                <a href="https://www.messenger.com/" target="_blank" class="contact-link button-main sm:w-17 w-12 sm:h-17 h-12 p-0">
+                    <span class="icon-messenger sm:text-[1.75rem] text-2xl"></span>
+                    <span class="blind">link to messenger</span>
+                </a>
+            </li>
+            <li class="contact-item">
+                <a href="https://chat.zalo.me/" target="_blank" class="contact-link button-main sm:w-17 w-12 sm:h-17 h-12 p-0">
+                    <span class="icon-zalo sm:text-[1.75rem] text-2xl flex items-center justify-center">
+                        <span class="path1 absolute"></span>
+                        <span class="path2 absolute"></span>
+                        <span class="path3 absolute"></span>
+                    </span>
+                    <span class="blind">link to zalo</span>
+                </a>
+            </li>
+            <li class="contact-item">
+                <a href="tel:+84123456789" target="_blank" class="contact-link button-main sm:w-17 w-12 sm:h-17 h-12 p-0">
+                    <span class="icon-call sm:text-[1.75rem] text-2xl"></span>
+                    <span class="blind">link to call</span>
+                </a>
+            </li>
+        </ul>
 
         <!-- Footer -->
         <footer class="footer bg-neutral-txt-high text-white">
@@ -357,7 +359,7 @@
                             <a href="policy.html" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách &amp; Quy định</a>
                         </li>
                         <li>
-                            <a href="#!" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách bảo mật</a>
+                            <a href="policy-privacy.html" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách bảo mật</a>
                         </li>
                         <li>
                             <a href="policy-cookie.html" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách cookie</a>
@@ -604,170 +606,14 @@
                     </ul>
                 </div>
             </div>
-            <div class="modal-item modal-reminders overflow-hidden md:w-[628px] w-[90vw] rounded-20 bg-white" data-type="modal-reminders">
-                <div class="modal-header sm:py-8 py-5 sm:px-6 px-4 border-b border-neutral-ui">
-                    <strong class="text-head5">Thêm lời nhắc</strong>
-                </div>
-                <form>
-                    <div class="modal-content sm:p-6 py-5 px-4">
-                        <div class="form-control">
-                            <label for="name" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Tên của người ấy<span class="text-error ml-0.5">*</span></label>
-                            <input id="name" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="name" placeholder="Tên người nhận" required />
-                        </div>
-                        <div class="form-control form-radio sm:mt-5 mt-4">
-                            <label class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày đặc biệt<span class="text-error ml-0.5">*</span></label>
-                            <ul class="list flex flex-wrap gap-4">
-                                <li class="relative">
-                                    <input id="birthday" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0" required>
-                                    <label for="birthday" class="chip button-main border border-transparent bg-secondary-ui">
-                                        <span class="icon-birthday-cake sm:text-[24px] text-[20px]"></span>
-                                        <span>Sinh nhật</span>
-                                    </label>
-                                </li>
-                                <li class="relative">
-                                    <input id="anniversary" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="anniversary" class="chip button-main border border-transparent bg-secondary-ui">
-                                        <span class="icon-calendar-love-02 sm:text-[24px] text-[20px]"></span>
-                                        <span>Ngày kỷ niệm</span>
-                                    </label>
-                                </li>
-                                <li class="relative">
-                                    <input id="valentine" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="valentine" class="chip button-main border border-transparent bg-secondary-ui">
-                                        <span class="icon-favourite sm:text-[24px] text-[20px]"></span>
-                                        <span>Ngày Valentine</span>
-                                    </label>
-                                </li>
-                                <li class="relative">
-                                    <input id="womenDay" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="womenDay" class="chip button-main border border-transparent bg-secondary-ui">
-                                        <span class="icon-female sm:text-[24px] text-[20px]"></span>
-                                        <span>Ngày Quốc tế Phụ nữ</span>
-                                    </label>
-                                </li>
-                                <li class="relative">
-                                    <input id="menDay" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="menDay" class="chip button-main border border-transparent bg-secondary-ui">
-                                        <span class="icon-male sm:text-[24px] text-[20px]"></span>
-                                        <span>Ngày Quốc tế Nam giới</span>
-                                    </label>
-                                </li>
-                                <li class="relative">
-                                    <input id="womenVietnam" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="womenVietnam" class="chip button-main border border-transparent bg-secondary-ui">
-                                        <span class="icon-flower-pot sm:text-[24px] text-[20px]"></span>
-                                        <span>Ngày Phụ nữ Việt Nam</span>
-                                    </label>
-                                </li>
-                                <li class="relative">
-                                    <input id="christmas" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="christmas" class="chip button-main border border-transparent bg-secondary-ui">
-                                        <span class="icon-pine sm:text-[24px] text-[20px]"></span>
-                                        <span>Lễ Giáng sinh</span>
-                                    </label>
-                                </li>
-                                <li class="relative">
-                                    <input id="other" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="other" class="chip button-main border border-transparent bg-secondary-ui">
-                                        <i class="hgi hgi-stroke hgi-add-01 sm:text-[24px] text-[20px]"></i>
-                                        <span>Khác</span>
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="form-control sm:mt-5 mt-4 hidden">
-                            <label for="otherDate" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày khác<span class="text-error ml-0.5">*</span></label>
-                            <input id="otherDate" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="otherDate" placeholder="Lễ tốt nghiệp, Tiệc đầy tháng, v.v..." />
-                        </div>
-                        <div class="form-control sm:mt-5 mt-4">
-                            <label for="date" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày<span class="text-error ml-0.5">*</span></label>
-                            <div class="form-date relative">
-                                <input id="date" class="w-full p-4 rounded-lg bg-neutral-ui" type="date" name="date" required />
-                                <i class="hgi hgi-stroke hgi-calendar-03 absolute top-1/2 -translate-y-1/2 right-4 text-2xl pointer-events-none"></i>
-                            </div>
-                            <p class="text-body3 mt-2 text-neutral-txt-low">HERISH sẽ gửi lời nhắc đến bạn trước 15 ngày.</p>
-                        </div>
-                    </div>
-                    <div class="modal-footer sm:py-8 py-5 sm:px-6 px-4 border-t border-neutral-ui">
-                        <ul class="group-btn flex flex-wrap justify-end gap-4 w-full">
-                            <li>
-                                <button type="button" class="btn-close-popup button-main bg-primary-ui">Hủy</button>
-                            </li>
-                            <li>
-                                <button type="submit" class="button-main">Thêm lời nhắc</button>
-                            </li>
-                        </ul>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Toastify -->
-        <div class="toastify success">
-            <div class="toastify-inner flex justify-between gap-3 md:min-w-[628px] p-4 border border-success-hover-ui rounded-lg bg-success-ui text-success-txt">
-                <div class="toastify-icon flex-shrink-0">
-                    <span class="icon-checkmark-circle text-[24px] text-success"></span>
-                </div>
-                <div class="toastify-message w-full">
-                    <strong class="block font-bold">Tạo lời nhắc thành công</strong>
-                    <p class="mt-1 text-body3">Chúng tôi sẽ thông báo đến bạn 15 ngày trước khi ngày đặc biệt tới.</p>
-                </div>
-                <button class="toastify-close-btn flex-shrink-0 h-fit">
-                    <i class="hgi hgi-stroke hgi-multiplication-sign text-[20px] text-success-txt-head"></i>
-                    <span class="blind">button close toastify</span>
-                </button>
-            </div>
-        </div>
-        <div class="toastify error">
-            <div class="toastify-inner flex justify-between gap-3 md:min-w-[628px] p-4 border border-error-hover-ui rounded-lg bg-error-ui text-error-txt">
-                <div class="toastify-icon flex-shrink-0">
-                    <span class="icon-alert text-[24px] text-error"></span>
-                </div>
-                <div class="toastify-message w-full">
-                    <strong class="block font-bold">Tạo lời nhắc thất bại</strong>
-                    <p class="mt-1 text-body3">Đã có lỗi xảy ra. Vui lòng thử lại.</p>
-                </div>
-                <button class="toastify-close-btn flex-shrink-0 h-fit">
-                    <i class="hgi hgi-stroke hgi-multiplication-sign text-[20px] text-error-txt-head"></i>
-                    <span class="blind">button close toastify</span>
-                </button>
-            </div>
         </div>
 
         <script src="./assets/js/jquery.min.js"></script>
-        <sc src="./assets/js/phosphor-icons.js"></sc>
+        <script src="./assets/js/phosphor-icons.js"></script>
         <script src="./assets/js/slick.min.js"></script>
         <script src="./assets/js/leaflet.js"></script>
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="./assets/js/main.js"></script>
-
-        <!-- [D] Case view -->
-        <style>
-            .caseview{position:fixed;max-height: 300px;overflow: auto;bottom:200px;left:5px;padding:5px;background:rgba(0, 0, 0, 0.7);z-index:99999;font-family:'NotoSans',sans-serif;}
-            .btn-open-caseview, .caseview p{padding:0 5px 3px 5px;color:yellow}
-            .caseview a{display:block;padding:5px;color:#fff}
-            .caseview .item{display: block;font-size: 16px;color:#fff}
-        </style>
-        <div class="caseview">
-            <button type="button" class="btn-open-caseview" onclick="$('.caseview_lst').toggle();">CaseView Toggle</button>
-            <div class="caseview_lst" style="display: none;">
-                <button type="button" class="item" onclick="case1()">1. Show/hide ngày khác</button>
-                <button type="button" class="item" onclick="case2()">2. Show/hide Tạo lời nhắc thành công</button>
-                <button type="button" class="item" onclick="case3()">3. Show/hide Tạo lời nhắc thất bại</button>
-            </div>
-        </div>
-        <script>
-            function case1() {
-                $(".modal-reminders .form-control").eq(2).toggleClass("hidden")
-            }
-            function case2() {
-                $(".toastify").removeClass("active").siblings(".success").addClass("active")
-            }
-            function case3() {
-                $(".toastify").removeClass("active").siblings(".error").addClass("active")
-            }
-        </script>
-        <!-- [D] Case view -->
     </body>
 </html>
 
