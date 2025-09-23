@@ -447,7 +447,7 @@ input::-webkit-inner-spin-button {
   }
 }
 
-.btn-toggle {
+.button-toggle {
   position: relative;
   width: 40px;
   height: 24px;
@@ -455,7 +455,7 @@ input::-webkit-inner-spin-button {
   background-color: var(--neutral-txt-low);
   transition: all ease 0.4s;
 }
-.btn-toggle::before {
+.button-toggle::before {
   content: "";
   position: absolute;
   top: 3px;
@@ -466,10 +466,10 @@ input::-webkit-inner-spin-button {
   background-color: var(--white);
   transition: all ease 0.3s;
 }
-.btn-toggle.active {
+.button-toggle.active {
   background-color: var(--primary);
 }
-.btn-toggle.active::before {
+.button-toggle.active::before {
   transform: translateX(calc(100% - 2px));
 }
 
@@ -676,74 +676,6 @@ textarea:focus {
 }
 .form-checkbox .checkbox:checked ~ .label::before {
   display: none;
-}
-
-.filter-price .tow-bar-block,
-.filter-age .tow-bar-block,
-.filter-radius .tow-bar-block {
-  position: relative;
-  background: #ECECEC;
-  height: 5px;
-  border-radius: 5px;
-}
-.filter-price .tow-bar-block .progress,
-.filter-age .tow-bar-block .progress,
-.filter-radius .tow-bar-block .progress {
-  position: absolute;
-  height: 5px;
-  background: var(--neutral-txt-high);
-  left: 1px;
-  right: 1px;
-}
-.filter-price .range-input,
-.filter-age .range-input,
-.filter-radius .range-input {
-  position: relative;
-}
-.filter-price .range-input .input,
-.filter-age .range-input .input,
-.filter-radius .range-input .input {
-  position: absolute;
-  top: -5px;
-  height: 5px;
-  width: 100%;
-  background: none;
-  outline: none;
-  border: none;
-  pointer-events: none;
-  appearance: none;
-}
-.filter-price .range-input .input::-webkit-slider-thumb,
-.filter-age .range-input .input::-webkit-slider-thumb,
-.filter-radius .range-input .input::-webkit-slider-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  outline: none;
-  pointer-events: auto;
-  -webkit-appearance: none;
-  background: var(--neutral-txt-high);
-}
-
-.tag {
-  padding: 6px 12px;
-  transition: 0.3s;
-  border-radius: 100px;
-}
-.tag.-border {
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--line);
-}
-.tag.-large {
-  padding: 8.5px 16px;
-}
-.tag.-small {
-  padding: 2.5px 12px;
-  border-radius: 4px;
-}
-.tag.-rounded-sm {
-  border-radius: 6px;
 }
 
 /* animate when scroll */
@@ -971,43 +903,6 @@ textarea:focus {
   }
 }
 
-.scrollbar-custom {
-  overflow-x: hidden;
-}
-.scrollbar-custom::-webkit-scrollbar {
-  width: 6px;
-  background-color: #ececec;
-}
-.scrollbar-custom::-webkit-scrollbar-thumb {
-  background-color: #b9b9b9;
-  border-radius: 6px;
-}
-
-/* list_social */
-.list_social .list > a:hover span::before {
-  color: var(--neutral-txt-high);
-}
-.list_social .list label span::before,
-.list_social .list a.text-neutral-txt-high span::before {
-  color: var(--neutral-txt-high);
-  transition: 0.3s;
-}
-.list_social .list label:hover span::before,
-.list_social .list a.text-neutral-txt-high:hover span::before {
-  color: var(--white);
-}
-
-[class^=icon-].text-neutral-txt-high::before,
-[class*=" icon-"].text-neutral-txt-high::before {
-  color: var(--neutral-txt-high);
-  transition: 0.3s;
-}
-
-.hover\:text-white:hover [class^=icon-]::before,
-.hover\:text-white:hover [class*=" icon-"]::before {
-  color: var(--white);
-}
-
 /* Slider - Swiper Pagination */
 .swiper {
   cursor: grab;
@@ -1084,34 +979,6 @@ textarea:focus {
 }
 .swiper.swiper-list-images .swiper-slide-thumb-active::before {
   border: 4px solid var(--primary);
-}
-
-.scroll-to-top-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  bottom: 0px;
-  right: 30px;
-  z-index: 2;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: var(--white);
-  opacity: 0;
-  visibility: hidden;
-  cursor: pointer;
-  transition: all ease 0.3s;
-  box-shadow: 0px 5px 25px rgba(58, 64, 67, 0.2);
-}
-.scroll-to-top-btn:hover {
-  background-color: var(--primary);
-  color: var(--white);
-}
-.scroll-to-top-btn.active {
-  bottom: 30px;
-  opacity: 1;
-  visibility: visible;
 }
 
 /* faqs */

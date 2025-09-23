@@ -16,16 +16,9 @@
 // --- Modal ----
 // ------ Open popup ------
 // ------ Close popup ------
-// ------ Sidebar ------
-// ------ Add filter to screen when click ------
-// ------ Price range ------
-// ------ Age range ------
-// ------ Radius range ------
-// ------ Handle number delivery popup Apply ------
 
 // Components
 // --- Select ---
-// --- Active Wishlist icon ---
 // --- Toggle button ---
 // --- Control form input ---
 // --- Show hide password ---
@@ -36,20 +29,6 @@
 
 
 ; (function (win, $) {
-    // Header 
-    // Add fixed header
-    const handleFixedHeader = function () {
-        const header = $('.header')
-
-        // if (window.scrollY > 200) {
-        //     header.addClass('fixed');
-        //     $('.scroll-to-top-btn').addClass('active');
-        // } else {
-        //     header.removeClass('fixed');
-        //     $('.scroll-to-top-btn').removeClass('active');
-        // }
-    }
-
     // Open menu mobile
     const handleOpenHeaderMobile = function () {
         const menu = $('.menu-mobile')
@@ -314,8 +293,10 @@
     // Open popup
     const handleOpenPopup = function () {
         setTimeout(() => {
-            $('.modal-cookie').addClass('open')
-            $('body').addClass('scroll-locked')
+            if($('.modal-cookie').length > 0) {
+                $('.modal-cookie').addClass('open')
+                $('body').addClass('scroll-locked')
+            }
         }, 1000);
 
         const btnOpenPopup = $('.btn-open-popup')
@@ -351,248 +332,6 @@
         $('.btn-close-popup').on('click', function () {
             modal.find('>.open').removeClass('open')
             $('body').removeClass('scroll-locked')
-        })
-    }
-
-    // Sidebar
-    const handleOpenSidebar = function () {
-        const sidebar = $('.sidebar')
-
-        $('.filter-btn').on('click', function () {
-            sidebar.toggleClass('open')
-            $('body').addClass('scroll-locked')
-        })
-
-        sidebar.on('click', function (e) {
-            e.stopPropagation()
-        })
-    }
-
-    // Add filter to screen when click
-    const handleAddFilter = function () {
-        const optionItems = $('.select-block .list-option li');
-        const checkboxItems = $('.filter-section .form-checkbox .checkbox');
-
-        optionItems.on('click', function () {
-            let dataItem = $(this).attr('data-item');
-            const filterSection = $(this).closest('.filter-section');
-
-            if (filterSection.length > 0) {
-                const filterType = filterSection.attr('class').split(' ')[1];
-
-                // Check and remove old items in $('.list-filtered .list') for current filter-section
-                $(`.list-filtered .list .selected-item[data-type='${filterType}']`).remove();
-
-                // Create new item and add to $('.list-filtered .list')
-                const selectedItem = `
-                    <button class='selected-item inline-flex items-center gap-1 py-1 px-2 border border-line rounded-full capitalize duration-300 hover:border-black' data-type='${filterType}'>
-                        <span class='ph ph-x text-sm'></span>
-                        <span class='caption1'>${dataItem}</span>
-                    </button>
-                `
-
-                // Add item to $('.list-filtered .list')
-                $('.list-filtered .list').append(selectedItem)
-
-                handleOpenListFiltered()
-            }
-        })
-
-        checkboxItems.change(function () {
-            var selectedId = $(this).attr('id');
-            var selectedLabel = $(this).data('label');
-
-            if ($(this).is(':checked')) {
-                // Create new item and add to $('.list-filtered .list')
-                const selectedItem = `
-                    <button class='selected-item inline-flex items-center gap-1 py-1 px-2 border border-line rounded-full capitalize duration-300 hover:border-black' data-id='${selectedId}'>
-                        <span class='ph ph-x text-sm'></span>
-                        <span class='caption1'>${selectedLabel}</span>
-                    </button>
-                `
-
-                // Add item to $('.list-filtered .list')
-                $('.list-filtered .list').append(selectedItem)
-            } else {
-                // Remove selected item
-                $('.list-filtered .list').find(`.selected-item[data-id='${selectedId}']`).remove();
-            }
-
-            handleOpenListFiltered()
-        })
-
-        // Remove item
-        $(document).on('click', '.selected-item', function () {
-            $(this).remove();
-
-            // checkbox
-            var itemId = $(this).data('id');
-            $('#' + itemId).prop('checked', false);
-
-            handleOpenListFiltered()
-        });
-
-        // Remove all item
-        $(document).on('click', '.clear-all-btn', function () {
-            $('.list-filtered .list').text('');
-            $('.form-checkbox .checkbox').prop('checked', false);
-            handleOpenListFiltered()
-        });
-
-        // Toggle list-filtered
-        const handleOpenListFiltered = function () {
-            if ($('.list-filtered .list .selected-item').length < 1) {
-                $('.list-filtered').removeClass('open')
-            } else {
-                $('.list-filtered').addClass('open')
-            }
-        }
-    }
-
-    // Price range
-    const handlePriceRange = function () {
-        const rangeInput = $('.filter-price .range-input .input')
-        const progress = $('.filter-price .tow-bar-block .progress')
-        const minPrice = $('.filter-price .price-min input')
-        const maxPrice = $('.filter-price .price-max input')
-        let priceGap = 200
-
-        rangeInput.on('input', function () {
-            let minValue = parseInt(rangeInput.eq(0).val())
-            let maxValue = parseInt(rangeInput.eq(1).val())
-
-            if (maxValue - minValue <= priceGap) {
-                if ($(this).hasClass('range-min')) {
-                    rangeInput.eq(0).val(maxValue - priceGap)
-                    minValue = maxValue - priceGap
-                } else {
-                    rangeInput.eq(1).val(minValue + priceGap)
-                    maxValue = minValue + priceGap
-                }
-            } else {
-                progress.css({
-                    'left': (minValue / rangeInput.eq(0).attr('max')) * 100 + '%',
-                    'right': 100 - (maxValue / rangeInput.eq(1).attr('max')) * 100 + '%'
-                });
-            }
-
-            minPrice.val(minValue)
-            maxPrice.val(maxValue)
-        })
-
-        minPrice.on('change', function () {
-            let maxValue = parseInt(rangeInput.eq(1).val())
-
-            if ($(this).val() < 0) {
-                $(this).val(0)
-                rangeInput.eq(0).val(0)
-                progress.css({ 'left': '0%' });
-            } else if ($(this).val() < maxValue - priceGap) {
-                rangeInput.eq(0).val($(this).val())
-                progress.css({ 'left': ($(this).val() / rangeInput.eq(0).attr('max')) * 100 + '%' });
-            } else if ($(this).val() >= maxValue - priceGap) {
-                $(this).val(maxValue - priceGap)
-                rangeInput.eq(0).val(maxValue - priceGap)
-                progress.css({ 'left': ((maxValue - priceGap) / rangeInput.eq(0).attr('max')) * 100 + '%' });
-            }
-        })
-
-        minPrice.on('keydown', function (e) {
-            if (e.key === 'Enter') {
-                e.preventDefault()
-                maxPrice.focus()
-            }
-        })
-
-        maxPrice.on('change', function () {
-            let minValue = parseInt(rangeInput.eq(0).val())
-
-            if (parseInt($(this).val()) > rangeInput.eq(1).attr('max')) {
-                $(this).val(rangeInput.eq(1).attr('max'))
-                rangeInput.eq(1).val(rangeInput.eq(1).attr('max'))
-                progress.css({ 'right': '0%' });
-            } else if (parseInt($(this).val()) > minValue + priceGap && parseInt($(this).val()) <= rangeInput.eq(1).attr('max')) {
-                rangeInput.eq(1).val($(this).val())
-                progress.css({ 'right': 100 - ($(this).val() / rangeInput.eq(1).attr('max')) * 100 + '%' });
-            } else if (parseInt($(this).val()) <= minValue + priceGap) {
-                $(this).val(minValue + priceGap)
-                rangeInput.eq(1).val(minValue + priceGap)
-                progress.css({ 'right': 100 - ((minValue + priceGap) / rangeInput.eq(1).attr('max')) * 100 + '%' });
-            }
-        })
-
-        maxPrice.on('keydown', function (e) {
-            if (e.key === 'Enter') {
-                e.preventDefault()
-                $(this).blur()
-            }
-        })
-    }
-
-    // Age range
-    const handleAgeRange = function () {
-        const rangeInput = $('.filter-age .range-input .input')
-        const progress = $('.filter-age .tow-bar-block .progress')
-        const minAge = $('.filter-age .age-min')
-        const maxAge = $('.filter-age .age-max')
-        let ageGap = 5
-
-        rangeInput.on('input', function () {
-            let minValue = parseInt(rangeInput.eq(0).val())
-            let maxValue = parseInt(rangeInput.eq(1).val())
-
-            if (maxValue - minValue <= ageGap) {
-                if ($(this).hasClass('range-min')) {
-                    rangeInput.eq(0).val(maxValue - ageGap)
-                    minValue = maxValue - ageGap
-                } else {
-                    rangeInput.eq(1).val(minValue + ageGap)
-                    maxValue = minValue + ageGap
-                }
-            } else {
-                progress.css({
-                    'left': (minValue / rangeInput.eq(0).attr('max')) * 100 + '%',
-                    'right': 100 - (maxValue / rangeInput.eq(1).attr('max')) * 100 + '%'
-                });
-            }
-
-            minAge.text(minValue)
-            maxAge.text(maxValue)
-        })
-    }
-
-    // Radius range
-    const handleRadius = function () {
-        const rangeInput = $('.filter-radius .range-input .input')
-        const progress = $('.filter-radius .tow-bar-block .progress')
-
-        rangeInput.on('input', function () {
-            let radiusValue = parseInt(rangeInput.val());
-            progress.css({ 'right': 100 - (radiusValue / rangeInput.attr('max')) * 100 + '%' });
-            $('.filter-radius .radius').text(radiusValue + 'km');
-        })
-    }
-
-    // Handle number delivery popup Apply
-    const handleNumberDeliveryPopupApply = function () {
-        $('.delivery .minus-btn').on('click', function (e) {
-            e.preventDefault()
-            let currentValue = parseInt($('.delivery input').val())
-            $('.delivery input').val(currentValue - 1)
-
-            if (parseInt($('.delivery input').val()) < 2) {
-                $(this).addClass('disabled')
-            }
-        })
-
-        $('.delivery .plus-btn').on('click', function (e) {
-            e.preventDefault()
-            let currentValue = parseInt($('.delivery input').val())
-            $('.delivery input').val(currentValue + 1)
-
-            if (parseInt($('.delivery input').val()) > 1) {
-                $('.delivery .minus-btn').removeClass('disabled')
-            }
         })
     }
 
@@ -680,50 +419,6 @@
         });
     }
 
-    // Rate
-    const handleRate = function () {
-        var selectedRating = 0;
-
-        // Handle mouse enter (hover) event
-        $('.user-rating .star').on('mouseenter', function () {
-            var rating = $(this).data('value');
-            highlightStars(rating);
-        });
-
-        // Handle mouse leave event
-        $('.user-rating .list-rate').on('mouseleave', function () {
-            highlightStars(selectedRating);
-        });
-
-        // Handle click event
-        $('.user-rating .star').on('click', function () {
-            selectedRating = $(this).data('value');
-            highlightStars(selectedRating);
-        });
-
-        // Function to highlight stars
-        function highlightStars(rating) {
-            $('.user-rating .star').each(function () {
-                var starValue = $(this).data('value');
-                if (starValue <= rating) {
-                    $(this).css('color', 'var(--yellow)');
-                } else {
-                    $(this).css('color', 'var(--line)');
-                }
-            });
-        }
-
-        // Handle form submission
-        $('#form-review .form').on('submit', function (e) {
-            if (selectedRating === 0) {
-                e.preventDefault(); // Prevent form submission
-                alert('Please select your rating before submit the comment.');
-            } else {
-                $('#form-review .form').append(`<input type='hidden' name='rating' value='${selectedRating}'>`);
-            }
-        });
-    }
-
     // Toastify
     const handleToastify = function () {
         $('.toastify').each(function () {
@@ -764,7 +459,6 @@
     }
 
     $(win).scroll(function () {
-        handleFixedHeader()
         handleReveal()
     }).scroll();
 
@@ -775,17 +469,10 @@
         handleFaq()
         handleClosePopup()
         handleOpenPopup()
-        handleOpenSidebar()
-        handleAddFilter()
-        handlePriceRange()
-        handleAgeRange()
-        handleRadius()
-        handleNumberDeliveryPopupApply()
         handleSelectBlock()
         handleToggleButton()
         controlFormInput()
         handleShowPassword()
-        handleRate()
         handleToastify()
     });
 })(window, window.jQuery);
