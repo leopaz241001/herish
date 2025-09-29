@@ -867,6 +867,13 @@ video {
   -webkit-line-clamp: 2;
 }
 
+.line-clamp-6 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+}
+
 .block {
   display: block;
 }
@@ -1919,6 +1926,11 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-\[\#FC595B\] {
+  --tw-text-opacity: 1;
+  color: rgb(252 89 91 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -2239,6 +2251,10 @@ video {
     height: 1px;
   }
 
+  .max-sm\:max-h-\[144px\] {
+    max-height: 144px;
+  }
+
   .max-sm\:w-full {
     width: 100%;
   }
@@ -2259,8 +2275,16 @@ video {
     justify-content: space-between;
   }
 
+  .max-sm\:overflow-hidden {
+    overflow: hidden;
+  }
+
   .max-sm\:overflow-visible {
     overflow: visible;
+  }
+
+  .max-sm\:overflow-x-hidden {
+    overflow-x: hidden;
   }
 
   .max-sm\:rounded-t-20 {

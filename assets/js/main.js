@@ -365,7 +365,7 @@
                 e.stopPropagation()
                 menu.removeClass('open');
                 let dataItem = $(this).attr('data-item')
-                if(dataItem) $(this).closest('.select-block').find('.selected').text(dataItem)
+                if(dataItem) $(this).closest('.select-block').addClass('filtered').find('.selected').text(dataItem)
             })
 
             $(window).on('click', function (e) {
@@ -443,6 +443,46 @@
         })
     }
 
+    // Button back to top
+    const handleBackToTop = function () {
+        const $btn = $(".button-top");
+        const $circle = $(".button-top .circle");
+
+        $(window).on("scroll", function () {
+            const scrollTop = $(window).scrollTop();
+            const docHeight = $(document).height() - $(window).height() - 10;
+            const progress = Math.min(scrollTop / docHeight, 1) * 100;
+
+            // update conic-gradient theo % cuộn
+            $circle.css("background", `conic-gradient(#6a5acd ${progress}%, #eee ${progress}%)`);
+
+            // hiện/ẩn button
+            if (scrollTop > 100) {
+                $btn.addClass('show')
+            } else {
+                $btn.removeClass('show')
+            }
+        });
+
+        // click để scroll top
+        $btn.on("click", function () {
+            $("html, body").animate({ scrollTop: 0 }, 500);
+        });
+    }
+
+    // Button back to top
+    const handleContentHide = function () {
+        $(".btn-view-more").on("click", function () {
+            if($(this).closest(".content-hide").hasClass("show")) {
+                $(this).closest(".content-hide").removeClass("show")
+                $(this).text("... Xem thêm")
+            } else {
+                $(this).closest(".content-hide").addClass("show")
+                $(this).text("Ẩn bớt")
+            }
+        });
+    }
+
     // Scroll reveal
     const handleReveal = function () {
         var reveal = $('.animate');
@@ -474,5 +514,7 @@
         controlFormInput()
         handleShowPassword()
         handleToastify()
+        handleBackToTop()
+        handleContentHide()
     });
 })(window, window.jQuery);

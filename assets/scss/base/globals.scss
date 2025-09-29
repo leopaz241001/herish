@@ -62,6 +62,16 @@
   display: block;
 }
 
+.content-hide {
+  &.show {
+    max-height: unset;
+    
+    .btn-view-more {
+      position: relative;
+    }
+  }
+}
+
 @media (max-width: 1023.98px) {
   .text-head1 {
     font-size: 52px;

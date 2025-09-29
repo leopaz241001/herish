@@ -2,8 +2,23 @@
     position: relative;
     cursor: pointer;
 
-    .selected {
-        position: relative;
+    &.filtered {
+        border: 1px solid var(--secondary);
+        background-color: var(--secondary-hover-ui);
+
+        .select {
+            padding-left: 36px;
+
+            &::before {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 1.5rem;
+                font-family: "hugeicons-stroke-rounded";
+                font-size: 24px;
+                content: "\5A25";
+            }
+        }
     }
 
     .menu {
@@ -14,11 +29,10 @@
         left: 0;
         z-index: 2;
         min-width: 280px;
-        border: 1px solid var(--secondary);
+        border: 1px solid var(--primary);
         border-radius: 0.5rem;
         background-color: var(--white);
         opacity: 0;
-        // transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease, left 0s 0.5s, right 0s 0.5s;
         transform: translateY(20px);
         transform-origin: top center;
 
@@ -52,7 +66,7 @@
             }
 
             &:hover {
-                background: var(--secondary-ui);
+                background: var(--primary-hover-ui);
             }
         }
 
@@ -60,7 +74,6 @@
             transform: translateY(0);
             opacity: 1;
             visibility: visible;
-            // transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 
             &.center {
                 left: 50%;
@@ -93,7 +106,7 @@
     &.select-profile {
         .menu {
             border-color: var(--primary);
-            
+
             li {
                 &:hover {
                     background: var(--primary-hover-ui);
