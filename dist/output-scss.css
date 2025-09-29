@@ -549,13 +549,10 @@ input::-webkit-inner-spin-button {
   border-radius: 6px;
 }
 .select-block.select-profile .menu {
-  min-width: 220px;
-  top: calc(100% - 4px);
+  border-color: var(--primary);
 }
-.select-block.select-profile .menu.open {
-  right: -10px;
-  left: auto;
-  transform: none;
+.select-block.select-profile .menu li:hover {
+  background: var(--primary-hover-ui);
 }
 
 .category-selector input {

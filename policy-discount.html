@@ -117,7 +117,7 @@
                         </ul>
                     </div>
                     <div class="list-action flex items-center gap-1">
-                        <button type="button" class="btn-open-popup flex items-center justify-center lg:w-14 w-11 h-14 text-xl" data-type="modal-search">
+                        <button type="button" class="btn-open-popup flex items-center justify-center lg:w-14 w-12 h-14 text-xl" data-type="modal-search">
                             <i class="icon-search"></i>
                             <span class="blind">button open modal search</span>
                         </button>
@@ -129,15 +129,11 @@
                             <i class="icon-calendar-love-02"></i>
                             <span class="blind">link to reminders</span>
                         </a>
-                        <button class="humburger-btn flex items-center justify-center w-11 h-14 text-2xl lg:hidden">
+                        <button class="humburger-btn flex items-center justify-center lg:w-14 w-11 h-14 text-2xl lg:hidden">
                             <i class="hgi hgi-stroke hgi-menu-01"></i>
                             <span class="blind">button open menu mobile</span>
                         </button>
-                        <a href="profile.html" class="flex items-center justify-center w-14 h-14 max-lg:hidden">
-                            <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-9 h-9 rounded-full object-cover">
-                            <span class="blind">link to profile</span>
-                        </a>
-                        <div class="select-block select-profile flex items-center justify-end w-11 h-14 lg:hidden">
+                        <div class="select-block select-profile flex items-center lg:justify-center justify-end lg:w-14 w-11 h-14">
                             <div class="select">
                                 <span>
                                     <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-9 h-9 rounded-full object-cover">
@@ -146,20 +142,27 @@
                                     <ul class="list-option">
                                         <li>
                                             <a href="profile.html" class="flex items-center gap-3 w-full">
-                                                <span class="icon-user-circle text-[24px]"></span>
-                                                <span>Tài khoản</span>
+                                                <span class="icon-user-circle text-[22px]"></span>
+                                                <span class="max-lg:hidden">Thông tin tài khoản</span>
+                                                <span class="lg:hidden">Tài khoản</span>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="lg:hidden">
                                             <a href="wishlist.html" class="flex items-center gap-3 w-full">
-                                                <span class="icon-favourite text-[24px]"></span>
+                                                <span class="icon-favourite text-[22px]"></span>
                                                 <span>Sản phẩm yêu thích</span>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="lg:hidden">
                                             <a href="reminders.html" class="flex items-center gap-3 w-full">
-                                                <span class="icon-calendar-love-02 text-[24px]"></span>
+                                                <span class="icon-calendar-love-02 text-[22px]"></span>
                                                 <span>Lời nhắc</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="login.html" class="flex items-center gap-3 w-full text-error-txt">
+                                                <span class="hgi hgi-stroke hgi-logout-circle-01 text-[22px] text-error font-semibold -rotate-90"></span>
+                                                <span>Đăng xuất</span>
                                             </a>
                                         </li>
                                     </ul>

@@ -117,7 +117,7 @@
                         </ul>
                     </div>
                     <div class="list-action flex items-center gap-1">
-                        <button type="button" class="btn-open-popup flex items-center justify-center lg:w-14 w-11 h-14 text-xl" data-type="modal-search">
+                        <button type="button" class="btn-open-popup flex items-center justify-center lg:w-14 w-12 h-14 text-xl" data-type="modal-search">
                             <i class="icon-search"></i>
                             <span class="blind">button open modal search</span>
                         </button>
@@ -133,11 +133,7 @@
                             <i class="hgi hgi-stroke hgi-menu-01"></i>
                             <span class="blind">button open menu mobile</span>
                         </button>
-                        <a href="profile.html" class="flex items-center justify-center w-14 h-14 max-lg:hidden">
-                            <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-9 h-9 rounded-full object-cover">
-                            <span class="blind">link to profile</span>
-                        </a>
-                        <div class="select-block select-profile flex items-center justify-end lg:w-14 w-11 h-14 lg:hidden">
+                        <div class="select-block select-profile flex items-center lg:justify-center justify-end lg:w-14 w-11 h-14">
                             <div class="select">
                                 <span>
                                     <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-9 h-9 rounded-full object-cover">
@@ -146,20 +142,27 @@
                                     <ul class="list-option">
                                         <li>
                                             <a href="profile.html" class="flex items-center gap-3 w-full">
-                                                <span class="icon-user-circle text-[24px]"></span>
-                                                <span>Tài khoản</span>
+                                                <span class="icon-user-circle text-[22px]"></span>
+                                                <span class="max-lg:hidden">Thông tin tài khoản</span>
+                                                <span class="lg:hidden">Tài khoản</span>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="lg:hidden">
                                             <a href="wishlist.html" class="flex items-center gap-3 w-full">
-                                                <span class="icon-favourite text-[24px]"></span>
+                                                <span class="icon-favourite text-[22px]"></span>
                                                 <span>Sản phẩm yêu thích</span>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="lg:hidden">
                                             <a href="reminders.html" class="flex items-center gap-3 w-full">
-                                                <span class="icon-calendar-love-02 text-[24px]"></span>
+                                                <span class="icon-calendar-love-02 text-[22px]"></span>
                                                 <span>Lời nhắc</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="login.html" class="flex items-center gap-3 w-full text-error-txt">
+                                                <span class="hgi hgi-stroke hgi-logout-circle-01 text-[22px] text-error font-semibold -rotate-90"></span>
+                                                <span>Đăng xuất</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -172,7 +175,7 @@
         </header>
 
         <!-- Wishlist -->
-        <section class="wishlist sm:pt-[88px] pt-8 sm:pb-32">
+        <section class="wishlist sm:pt-[88px] pt-8">
             <div class="container">
                 <div class="flex flex-col items-center justify-center">
                     <div class="flex items-center gap-3 animate animate-top" style="--i: 1">
@@ -276,7 +279,7 @@
                     <!-- Nếu không có sản phẩm -->
                     <div class="product-list-blank flex flex-col items-center justify-center" style="display: none;">
                         <div class="flex-shrink-0 h-[200px] animate animate-top" style="--i: 3">
-                            <img src="./assets/images/components/cart-blank.png" alt="cart blank" class="h-full">
+                            <img src="./assets/images/components/cart-blank.svg" alt="cart blank" class="h-full">
                         </div>
                         <strong class="text-head4 mt-8 text-center animate animate-top" style="--i: 4">Bạn chưa lưu sản phẩm nào vào danh sách yêu thích</strong>
                         <p class="text-body2 mt-2 text-center animate animate-top" style="--i: 5">Hãy khám phá ngay để tìm ra những món đồ bạn ưng ý và lưu lại để dễ dàng tìm lại sau.</p>
@@ -716,7 +719,7 @@
                 </div>
                 <div class="result mt-10 hidden">
                     <strong class="text-head5 mb-3">Danh mục</strong>
-                    <span class="text-head6">Đồ trang trí & Kỷ niệm</span>
+                    <a href="product-list.html" class="text-head6 w-fit duration-300 hover:text-primary-txt">Đồ trang trí & Kỷ niệm</a>
                     <strong class="text-head5 mt-4 mb-5">Sản phẩm</strong>
                     <ul class="flex flex-col gap-5 max-h-[500px] overflow-x-hidden">
                         <li>

@@ -117,7 +117,7 @@
                         </ul>
                     </div>
                     <div class="list-action flex items-center gap-1">
-                        <button type="button" class="btn-open-popup flex items-center justify-center lg:w-14 w-11 h-14 text-xl text-white" data-type="modal-search">
+                        <button type="button" class="btn-open-popup flex items-center justify-center lg:w-14 w-12 h-14 text-xl text-white" data-type="modal-search">
                             <i class="icon-search"></i>
                             <span class="blind">button open modal search</span>
                         </button>
@@ -129,16 +129,12 @@
                             <i class="icon-calendar-love-02"></i>
                             <span class="blind">link to reminders</span>
                         </a>
-                        <button class="humburger-btn flex items-center justify-center w-11 h-14 text-2xl text-white lg:hidden">
+                        <button class="humburger-btn flex items-center justify-center w-12 h-14 text-2xl text-white lg:hidden">
                             <i class="hgi hgi-stroke hgi-menu-01"></i>
                             <span class="blind">button open menu mobile</span>
                         </button>
                         <!-- Nếu đã login -->
-                        <a href="profile.html" class="btn-profile flex items-center justify-center w-14 h-14 max-lg:hidden">
-                            <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-9 h-9 rounded-full object-cover">
-                            <span class="blind">link to profile</span>
-                        </a>
-                        <div class="select-block select-profile flex items-center justify-end w-11 h-14 lg:hidden">
+                        <div class="select-block select-profile flex items-center lg:justify-center justify-end lg:w-14 w-11 h-14">
                             <div class="select">
                                 <span>
                                     <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-9 h-9 rounded-full object-cover">
@@ -147,20 +143,27 @@
                                     <ul class="list-option">
                                         <li>
                                             <a href="profile.html" class="flex items-center gap-3 w-full">
-                                                <span class="icon-user-circle text-[24px]"></span>
-                                                <span>Tài khoản</span>
+                                                <span class="icon-user-circle text-[22px]"></span>
+                                                <span class="max-lg:hidden">Thông tin tài khoản</span>
+                                                <span class="lg:hidden">Tài khoản</span>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="lg:hidden">
                                             <a href="wishlist.html" class="flex items-center gap-3 w-full">
-                                                <span class="icon-favourite text-[24px]"></span>
+                                                <span class="icon-favourite text-[22px]"></span>
                                                 <span>Sản phẩm yêu thích</span>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="lg:hidden">
                                             <a href="reminders.html" class="flex items-center gap-3 w-full">
-                                                <span class="icon-calendar-love-02 text-[24px]"></span>
+                                                <span class="icon-calendar-love-02 text-[22px]"></span>
                                                 <span>Lời nhắc</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="login.html" class="flex items-center gap-3 w-full text-error-txt">
+                                                <span class="hgi hgi-stroke hgi-logout-circle-01 text-[22px] text-error font-semibold -rotate-90"></span>
+                                                <span>Đăng xuất</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -202,6 +205,9 @@
             <div class="container">
                 <div class="avatar overflow-hidden sm:w-35 w-25 sm:h-35 h-25 rounded-full">
                     <img src="./assets/images/avatar/IMG-6.webp" alt="w-full h-full object-cover">
+                </div>
+                <div class="avatar overflow-hidden flex items-center justify-center sm:w-35 w-25 sm:h-35 h-25 rounded-full bg-primary text-white" style="display: none;">
+                    <span class="text-head2">H</span>
                 </div>
                 <div class="info sm:mt-14 mt-9">
                     <div class="flex flex-wrap items-center justify-between gap-2">
@@ -786,7 +792,8 @@
             <button type="button" class="btn-open-caseview" onclick="$('.caseview_lst').toggle();">CaseView Toggle</button>
             <div class="caseview_lst" style="display: none;">
                 <button type="button" class="item" onclick="case1()">1. Nếu chưa đăng nhập</button>
-                <button type="button" class="item" onclick="case2()">2. Nếu đã đăng nhập</button>
+                <button type="button" class="item" onclick="case21()">2-1. Nếu đã đăng nhập và có avatar</button>
+                <button type="button" class="item" onclick="case22()">2-2. Nếu đã đăng nhập và chưa có avatar</button>
                 <button type="button" class="item" onclick="case3()">3. [Toast] Lưu thay đổi thành công</button>
                 <button type="button" class="item" onclick="case4()">4. [Toast] Lưu thay đổi thất bại</button>
                 <button type="button" class="item" onclick="case5()">5. [Toast] Đổi mật khẩu thành công</button>
@@ -798,9 +805,17 @@
                 $(".header .btn-profile, .header .select-block").css("display", "none")
                 $(".header .btn-login").removeAttr("style")
             }
-            function case2() {
+            function case21() {
                 $(".header .btn-profile, .header .select-block").removeAttr("style")
                 $(".header .btn-login").css("display", "none")
+                $(".profile .avatar").eq(0).removeAttr("style")
+                $(".profile .avatar").eq(1).css("display", "none")
+            }
+            function case22() {
+                $(".header .btn-profile, .header .select-block").removeAttr("style")
+                $(".header .btn-login").css("display", "none")
+                $(".profile .avatar").eq(0).css("display", "none")
+                $(".profile .avatar").eq(1).removeAttr("style")
             }
             function case3() {
                 $(".toastify").removeClass("active").siblings(".success").eq(0).addClass("active")
