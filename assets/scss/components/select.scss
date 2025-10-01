@@ -108,6 +108,12 @@
             border-color: var(--primary);
 
             li {
+                padding: 0;
+                
+                a {
+                    padding: 1rem 0.5rem;
+                }
+
                 &:hover {
                     background: var(--primary-hover-ui);
                 }

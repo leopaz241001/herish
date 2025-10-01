@@ -617,6 +617,12 @@ input::-webkit-inner-spin-button {
 .select-block.select-profile .menu {
   border-color: var(--primary);
 }
+.select-block.select-profile .menu li {
+  padding: 0;
+}
+.select-block.select-profile .menu li a {
+  padding: 1rem 0.5rem;
+}
 .select-block.select-profile .menu li:hover {
   background: var(--primary-hover-ui);
 }
