@@ -266,30 +266,32 @@
                         <p class="desc sm:mt-7 mt-3 animate animate-top" style="--i: 2">Mỗi con số, mỗi cột mốc là minh chứng cho hành trình không ngừng kiến tạo giá trị.</p>
                     </div>
                 </div>
-                <div class="grid lg:grid-cols-4 sm:grid-cols-2 lg:gap-[84px] gap-15 max-lg:flex-wrap max-lg:gap-y-5 sm:py-13 py-8">
-                    <div class="item max-lg:pb-5 animate animate-top" style="--i: 1">
+                <div class="grid lg:grid-cols-4 grid-cols-2 lg:gap-[84px] gap-15 max-lg:flex-wrap max-lg:gap-y-5 sm:py-13 py-8">
+                    <div class="item animate animate-top" style="--i: 1">
                         <h2 class="text-head2 sm:pb-7 pb-3">20,000+</h2>
                         <span class="text-body2">Lượt theo dõi trên mạng xã hội</span>
-                        <div class="line flex-shrink-0 absolute lg:top-1/2 lg:-right-[42px] lg:-translate-y-1/2 max-lg:bottom-0 lg:w-px lg:h-10 w-full h-px bg-primary-txt"></div>
+                        <div class="line absolute top-1/2 lg:-right-[42px] -right-7 -translate-y-1/2 w-px h-10 bg-primary-txt"></div>
                     </div>
-                    <div class="item max-lg:pb-5 animate animate-top" style="--i: 2">
+                    <div class="item animate animate-top" style="--i: 2">
                         <h2 class="text-head2 sm:pb-7 pb-3">3</h2>
                         <span class="text-body2">Kênh bán hàng chính thức</span>
-                        <div class="line flex-shrink-0 absolute lg:top-1/2 lg:-right-[42px] lg:-translate-y-1/2 max-lg:bottom-0 lg:w-px lg:h-10 w-full h-px bg-primary-txt"></div>
+                        <div class="line absolute top-1/2 lg:-right-[42px] -right-7 -translate-y-1/2 w-px h-10 bg-primary-txt max-lg:hidden"></div>
                     </div>
-                    <div class="item max-sm:pb-5 animate animate-top" style="--i: 3">
+                    <div class="item animate animate-top" style="--i: 3">
                         <h2 class="text-head2 sm:pb-7 pb-3">12+</h2>
                         <span class="text-body2">Dòng sản phẩm</span>
-                        <div class="line flex-shrink-0 absolute lg:top-1/2 lg:-right-[42px] lg:-translate-y-1/2 max-sm:bottom-0 lg:w-px lg:h-10 max-sm:w-full max-sm:h-px bg-primary-txt"></div>
+                        <div class="line absolute top-1/2 lg:-right-[42px] -right-7 -translate-y-1/2 w-px h-10 bg-primary-txt"></div>
                     </div>
                     <div class="item animate animate-top" style="--i: 4">
                         <h2 class="text-head2 sm:pb-7 pb-3">98%</h2>
                         <span class="text-body2">Khách hàng hài lòng</span>
                     </div>
                 </div>
-                <div class="grid grid-cols-12 sm:gap-6 gap-2 min-[1350px]:h-[540px] sm:h-[39.68vw] h-[42.27vw] max-sm:-mr-10">
-                    <div class="col-span-4 overflow-hidden rounded-xl bg-[url(../assets/images/components/about5.jpg)] bg-left bg-cover bg-no-repeat animate animate-right" style="--i: 1"></div>
-                    <div class="col-span-8 overflow-hidden rounded-xl bg-[url(../assets/images/components/about5.jpg)] bg-right bg-cover bg-no-repeat animate animate-left" style="--i: 1"></div>
+                <div class="clip-thumb relative w-full min-[1350px]:h-[540px] h-[39vw]">
+                    <div class="absolute w-full h-full bg-[url(../assets/images/components/about5.jpg)] bg-cover bg-no-repeat animate animate-right" style="--i: 1">
+                    </div>
+                    <div class="absolute w-full h-full bg-[url(../assets/images/components/about5.jpg)] bg-cover bg-no-repeat animate animate-left" style="--i: 2">
+                    </div>
                 </div>
             </div>
         </section>
@@ -668,7 +670,7 @@
                             <a href="policy-cookie.html" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách cookie</a>
                         </li>
                         <li>
-                            <a href="#!" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Cài đặt cookie</a>
+                            <a href="#!" class="btn-open-popup max-sm:text-body3 line-before line-white max-xl:before:hidden" data-type="modal-cookie-setting">Cài đặt cookie</a>
                         </li>
                     </ul>
                 </div>

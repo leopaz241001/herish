@@ -1067,6 +1067,21 @@ textarea:focus {
   transform: rotate(-180deg);
 }
 
+.clip-thumb > div:first-child {
+  clip-path: rect(0 calc(33.33% - 12px) 100% 0 round 20px);
+}
+.clip-thumb > div:last-child {
+  clip-path: rect(0 100% 100% calc(33.33% + 12px) round 20px);
+}
+@media (max-width: 640px) {
+  .clip-thumb > div:first-child {
+    clip-path: rect(0 calc(33.33% - 6px) 100% 0 round 12px);
+  }
+  .clip-thumb > div:last-child {
+    clip-path: rect(0 100% 100% calc(33.33% + 6px) round 12px);
+  }
+}
+
 /* header */
 .navigator {
   background: rgba(252, 246, 236, 0.2);
