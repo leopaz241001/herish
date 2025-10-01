@@ -86,6 +86,26 @@
         })
     }
 
+    // List slider swiper
+    var swiperSlider = new Swiper('.slider-swiper', {
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        effect: 'fade',
+        on: {
+            slideChange: function () {
+                let index = this.activeIndex
+                $('.slider-content').find('.animate').removeClass('animate-active')
+                $('.slider-content').eq(index).find('.text-head1').addClass('animate animate-active')
+                $('.slider-content').eq(index).find('.text-body2').addClass('animate animate-active')
+                $('.slider-content').eq(index).find('.group-btn').addClass('animate animate-active')
+            }
+        }
+    });
+
     // List product swiper
     var swiperBestseller = new Swiper('.product-swiper', {
         navigation: {

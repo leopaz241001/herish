@@ -1,0 +1,53 @@
+.clip-thumb {
+    >div {
+        &:first-child {
+            clip-path: rect(0 calc(33.33% - 12px) 100% 0 round 20px);
+        }
+
+        &:last-child {
+            clip-path: rect(0 100% 100% calc(33.33% + 12px) round 20px);
+        }
+
+        @media (max-width: 640px) {
+            &:first-child {
+                clip-path: rect(0 calc(33.33% - 6px) 100% 0 round 12px);
+            }
+
+            &:last-child {
+                clip-path: rect(0 100% 100% calc(33.33% + 6px) round 12px);
+            }
+        }
+    }
+}
+
+.policy {
+    .bg-right-center {
+        background-position: 45% center;
+    }
+    
+    @media (max-width: 992px) {
+        &.member {
+            .bg-right-center {
+                background-position: 85% center;
+            }
+        }
+
+        &.discount {
+            .bg-right-center {
+                background: url(../assets/images/slider/hero-policy2-mo.jpg) center / cover no-repeat;
+            }
+        }
+
+        &.privacy {
+            .bg-right-center {
+                background-position: 49% center;
+            }
+        }
+
+        &.cookie {
+            .bg-right-center {
+                background-position: 52% center;
+            }
+        }
+    }
+}

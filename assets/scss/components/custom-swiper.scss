@@ -1,4 +1,4 @@
-/* Slider - Swiper Pagination */
+/* Swiper */
 .swiper {
     cursor: grab;
     user-select: none;
@@ -100,5 +100,38 @@
                 }
             }
         }
+    }
+}
+
+/* Swiper pagination */
+.slider-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: 88px !important;
+    width: 100%;
+    max-width: 1350px;
+    padding: 0 35px;
+
+    .swiper-pagination-bullet {
+        width: 6px;
+        height: 6px;
+        border-radius: 100px;
+        background: #FCF6EC;
+        backdrop-filter: blur(28px);
+        opacity: 0.32;
+        transition: width .3s ease, opacity .3s ease;
+
+        &-active {
+            width: 56px;
+            opacity: 0.8;
+        }
+    }
+
+    @media (max-width: 639px) {
+        justify-content: center;
+        bottom: 20px !important;
     }
 }

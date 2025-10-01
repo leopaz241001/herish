@@ -21,14 +21,6 @@ body {
 html {
     &:has(body.scroll-locked) {
         overflow: hidden;
-
-        @media (min-width: 1024px) {
-            padding-right: 15px;
-
-            .fixed {
-                margin-right: 15px;
-            }
-        }
     }
 }
 
@@ -82,8 +74,4 @@ input[type=number] {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
-}
-
-.bg-right-center {
-    background-position: 75% center;
 }

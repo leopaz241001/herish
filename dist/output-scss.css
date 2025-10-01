@@ -22,14 +22,6 @@ body {
 html:has(body.scroll-locked) {
   overflow: hidden;
 }
-@media (min-width: 1024px) {
-  html:has(body.scroll-locked) {
-    padding-right: 15px;
-  }
-  html:has(body.scroll-locked) .fixed {
-    margin-right: 15px;
-  }
-}
 
 body.overflow-unset {
   overflow-x: unset;
@@ -77,10 +69,6 @@ input[type=number] {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-}
-
-.bg-right-center {
-  background-position: 75% center;
 }
 
 /* cyrillic-ext */
@@ -756,7 +744,7 @@ textarea:focus {
 /* animate when scroll */
 .animate {
   opacity: 0;
-  transition: all 0.5s, opacity 0.8s ease-out calc(var(--i) * 0.15s), transform 0.8s ease-out calc(var(--i) * 0.15s);
+  transition: all 0.5s, opacity 0.8s ease-out calc(var(--i) * 0.15s), transform 0.8s ease-out calc(var(--i) * 0.15s), width 1s ease calc(var(--i) * 0.1s);
 }
 .animate-top {
   transform: translateY(80px);
@@ -767,9 +755,15 @@ textarea:focus {
 .animate-right {
   transform: translateX(-80px);
 }
+.animate-line {
+  width: 0;
+}
 .animate-active {
   opacity: 1;
   transform: translate(0);
+}
+.animate-active.animate-line {
+  width: 100%;
 }
 
 /* animate translate */
@@ -978,7 +972,7 @@ textarea:focus {
   }
 }
 
-/* Slider - Swiper Pagination */
+/* Swiper */
 .swiper {
   cursor: grab;
   user-select: none;
@@ -1056,6 +1050,38 @@ textarea:focus {
   border: 4px solid var(--primary);
 }
 
+/* Swiper pagination */
+.slider-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  left: 50% !important;
+  transform: translateX(-50%);
+  bottom: 88px !important;
+  width: 100%;
+  max-width: 1350px;
+  padding: 0 35px;
+}
+.slider-pagination .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 100px;
+  background: #FCF6EC;
+  backdrop-filter: blur(28px);
+  opacity: 0.32;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+.slider-pagination .swiper-pagination-bullet-active {
+  width: 56px;
+  opacity: 0.8;
+}
+@media (max-width: 639px) {
+  .slider-pagination {
+    justify-content: center;
+    bottom: 20px !important;
+  }
+}
+
 /* faqs */
 .faq-item .answer {
   display: none;
@@ -1079,6 +1105,24 @@ textarea:focus {
   }
   .clip-thumb > div:last-child {
     clip-path: rect(0 100% 100% calc(33.33% + 6px) round 12px);
+  }
+}
+
+.policy .bg-right-center {
+  background-position: 45% center;
+}
+@media (max-width: 992px) {
+  .policy.member .bg-right-center {
+    background-position: 85% center;
+  }
+  .policy.discount .bg-right-center {
+    background: url(../assets/images/slider/hero-policy2-mo.jpg) center/cover no-repeat;
+  }
+  .policy.privacy .bg-right-center {
+    background-position: 49% center;
+  }
+  .policy.cookie .bg-right-center {
+    background-position: 52% center;
   }
 }
 
