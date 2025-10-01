@@ -95,6 +95,9 @@
         spaceBetween: 0,
         loop: true,
         effect: 'fade',
+        autoplay: true,
+        speed: 500,
+        delay: 3000,
         on: {
             slideChange: function () {
                 let index = this.activeIndex

@@ -55,4 +55,12 @@
             }
         }
     }
+
+    .modal-search {
+        .modal-content {
+            max-height: calc(100vh - 40px - 176px);
+            @media (max-width: 639.98px) {
+            }
+        }
+    }
 }

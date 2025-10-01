@@ -951,7 +951,9 @@ textarea:focus {
     max-height: calc(100vh - 40px - 306px);
   }
 }
-
+.modal .modal-search .modal-content {
+  max-height: calc(100vh - 40px - 176px);
+}
 .toastify {
   position: fixed;
   bottom: 40px;
