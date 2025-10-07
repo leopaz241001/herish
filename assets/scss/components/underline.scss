@@ -49,6 +49,20 @@
     }
 }
 
+.product-item {
+    .content {
+        .text-head5 {
+            font-weight: 500;
+        }
+    }
+}
+
+.product-search-item {
+    .text-head6.line-clamp-1 {
+        font-weight: 500;
+    }
+}
+
 .category-item {
     .icon {
         &.line-before {
