@@ -18,6 +18,7 @@
 // ------ Close popup ------
 
 // Components
+// --- Datepicker ---
 // --- Select ---
 // --- Toggle button ---
 // --- Control form input ---
@@ -35,7 +36,7 @@
         const navItem = $('.nav-mobile .nav-item')
         const subNav = $('.sub-nav-mobile')
 
-        function closeMenu () {
+        function closeMenu() {
             menu.removeClass('open')
             $('body').removeClass('scroll-locked')
             navItem.removeClass('open')
@@ -43,7 +44,7 @@
         }
 
         $('.humburger-btn').on('click', function () {
-            if(!menu.hasClass('open')) {
+            if (!menu.hasClass('open')) {
                 menu.toggleClass('open')
                 $('body').addClass('scroll-locked')
             } else {
@@ -75,7 +76,7 @@
     const showResultWhenTyping = function () {
         $('.modal-search input').on('input', function (e) {
             setTimeout(function () {
-                if(e.target.value !== '') {
+                if (e.target.value !== '') {
                     $('.modal-search .keyword').addClass('hidden')
                     $('.modal-search .result').removeClass('hidden')
                 } else {
@@ -316,7 +317,7 @@
     // Open popup
     const handleOpenPopup = function () {
         setTimeout(() => {
-            if($('.modal-cookie').length > 0) {
+            if ($('.modal-cookie').length > 0) {
                 $('.modal-cookie').addClass('open')
                 $('body').addClass('scroll-locked')
             }
@@ -343,6 +344,7 @@
         })
     }
 
+
     // Close popup
     const handleClosePopup = function () {
         const modal = $('.modal')
@@ -358,6 +360,129 @@
         })
     }
 
+    // --- Datepicker ---
+    const handleDatepicker = function () {
+        const $input = $('#dateInput');
+        const $picker = $('#datepicker');
+        const $days = $picker.find('.days');
+        const $years = $picker.find('.years');
+        const $month = $picker.find('.month');
+        const $year = $picker.find('.year');
+        const monthNames = [
+            'Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6',
+            'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'
+        ];
+
+        let selectedDate = new Date();
+        let currentYear = selectedDate.getFullYear();
+        let currentMonth = selectedDate.getMonth();
+
+        function renderCalendar() {
+            $month.text(monthNames[currentMonth]);
+            $year.text(currentYear);
+
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            $days.empty();
+            for (let i = 0; i < firstDay; i++) $days.append('<span></span>');
+            for (let d = 1; d <= daysInMonth; d++) {
+                const active =
+                    d === selectedDate.getDate() &&
+                        currentMonth === selectedDate.getMonth() &&
+                        currentYear === selectedDate.getFullYear()
+                        ? 'active'
+                        : '';
+                $days.append(`<span class="${active}">${d}</span>`);
+            }
+        }
+
+        function renderYears() {
+            $years.empty();
+            for (let y = 1900; y <= 2100; y++) {
+                const active = y === currentYear ? 'active' : '';
+                $years.append(`<span class="${active}">${y}</span>`);
+            }
+        }
+
+        // Open / position picker
+        $input.on('click', function (e) {
+            e.stopPropagation(); // ngăn event lên document (đóng popup)
+            renderCalendar();
+            $picker.toggleClass('hidden');
+            // position nếu cần
+            // const offset = $(this).offset();
+            // $picker.css({ top: offset.top + $(this).outerHeight(), left: offset.left });
+        });
+
+        // Prevent close when clicking inside picker
+        $picker.on('click', function (e) {
+            e.stopPropagation();
+        });
+
+        // Close when clicking outside
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('#datepicker, #dateInput').length) {
+                $picker.addClass('hidden');
+            }
+        });
+
+        // Switch to year view (use picker's scoped selector)
+        $picker.find('.month-year').on('click', function () {
+            $picker.find('.date-view').addClass('hidden');
+            renderYears();
+            $picker.find('.year-view').removeClass('hidden');
+        });
+
+        // --- IMPORTANT: bind delegated handlers ON $picker (NOT on document)
+        // Click year (delegated on picker)
+        $picker.on('click', '.years span', function () {
+            currentYear = parseInt($(this).text(), 10);
+            $picker.find('.year-view').addClass('hidden');
+            $picker.find('.date-view').removeClass('hidden');
+            renderCalendar();
+        });
+
+        // Prev / Next month
+        $picker.find('.prev').on('click', function () {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            renderCalendar();
+        });
+
+        $picker.find('.next').on('click', function () {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            renderCalendar();
+        });
+
+        // Select date (delegated on picker)
+        $picker.on('click', '.days span', function () {
+            const txt = $(this).text().trim();
+            if (!txt) return;
+            const day = parseInt(txt, 10);
+            selectedDate = new Date(currentYear, currentMonth, day);
+
+            const yyyy = selectedDate.getFullYear();
+            const mm = String(selectedDate.getMonth() + 1).padStart(2, '0');
+            const dd = String(selectedDate.getDate()).padStart(2, '0');
+
+            $input.val(`${dd}/${mm}/${yyyy}`);
+            $picker.addClass('hidden');
+        });
+
+        // initial render
+        renderCalendar();
+    };
+
+
+
     // Select
     const handleSelectBlock = function () {
         const selectBlock = $('.select-block');
@@ -371,9 +496,9 @@
 
                 $('.menu').removeClass('open left right center');
                 if (!isOpen) {
-                    if(list[0].getBoundingClientRect().left + list.innerWidth() > window.innerWidth) {
+                    if (list[0].getBoundingClientRect().left + list.innerWidth() > window.innerWidth) {
                         list.addClass('open');
-                        if(list[0].getBoundingClientRect().left + $(this).innerWidth() < list.innerWidth()) {
+                        if (list[0].getBoundingClientRect().left + $(this).innerWidth() < list.innerWidth()) {
                             list.addClass('center')
                         } else {
                             list.addClass('right')
@@ -388,7 +513,7 @@
                 e.stopPropagation()
                 menu.removeClass('open');
                 let dataItem = $(this).attr('data-item')
-                if(dataItem) $(this).closest('.select-block').addClass('filtered').find('.selected').text(dataItem)
+                if (dataItem) $(this).closest('.select-block').addClass('filtered').find('.selected').text(dataItem)
             })
 
             $(window).on('click', function (e) {
@@ -402,7 +527,7 @@
     // Toggle button
     const handleToggleButton = function () {
         $('.btn-toggle').on('click', function () {
-            if(!$(this).hasClass('disabled')) {
+            if (!$(this).hasClass('disabled')) {
                 $(this).toggleClass('active');
             }
         });
@@ -413,7 +538,7 @@
         $('.form-control-input .input-control').on('input', function () {
             $(this).closest('.form-control').removeClass('error')
 
-            if($(this).val() !== '') {
+            if ($(this).val() !== '') {
                 $(this).closest('.form-control-input').find('.btn-control').removeClass('disabled')
             } else {
                 $(this).closest('.form-control-input').find('.btn-control').addClass('disabled')
@@ -424,7 +549,7 @@
     // Show hide password
     const handleShowPassword = function () {
         $('.form-password input').on('input', function () {
-            if($(this).val() !== '') {
+            if ($(this).val() !== '') {
                 // ẩn button mắt và chuyển type input thành text mỗi lần value bằng rỗng
                 $(this).closest('.form-password').find('.btn-show-password').removeClass('hidden active')
                 $(this).attr('type', 'password')
@@ -434,7 +559,7 @@
         })
 
         $('.btn-show-password').on('click', function () {
-            if(!$(this).hasClass('active')) {
+            if (!$(this).hasClass('active')) {
                 $(this).closest('.form-password').find('input').attr('type', 'password')
             } else {
                 $(this).closest('.form-password').find('input').attr('type', 'text')
@@ -496,7 +621,7 @@
     // Button back to top
     const handleContentHide = function () {
         $(".btn-view-more").on("click", function () {
-            if($(this).closest(".content-hide").hasClass("show")) {
+            if ($(this).closest(".content-hide").hasClass("show")) {
                 $(this).closest(".content-hide").removeClass("show")
                 $(this).text("... Xem thêm")
             } else {
@@ -532,6 +657,7 @@
         handleFaq()
         handleClosePopup()
         handleOpenPopup()
+        handleDatepicker()
         handleSelectBlock()
         handleToggleButton()
         controlFormInput()

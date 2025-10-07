@@ -684,10 +684,42 @@
                             <input id="otherDate" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="otherDate" placeholder="Lễ tốt nghiệp, Tiệc đầy tháng, v.v..." />
                         </div>
                         <div class="form-control sm:mt-5 mt-4">
-                            <label for="date" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày<span class="text-error ml-0.5">*</span></label>
+                            <label for="dateInput" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày<span class="text-error ml-0.5">*</span></label>
                             <div class="form-date relative">
-                                <input id="date" class="w-full p-4 rounded-lg bg-neutral-ui" type="date" name="date" required />
                                 <i class="hgi hgi-stroke hgi-calendar-03 absolute top-1/2 -translate-y-1/2 right-4 text-2xl pointer-events-none"></i>
+                                <input id="dateInput" class="datepicker-input w-full p-4 rounded-lg bg-neutral-ui" type="text" name="dateInput" placeholder="04/08/2025" readonly required />
+                                <div class="datepicker bottom-full hidden" id="datepicker">
+                                    <div class="datepicker-header">
+                                        <div class="month-year">
+                                            <span class="month">Tháng 10</span>
+                                            <span class="year">2025</span>
+                                            <i class="hgi hgi-stroke hgi-arrow-down-01"></i>
+                                        </div>
+                                        <button type="button" class="prev">
+                                            <span class="blind">prev month</span>
+                                            <i class="hgi hgi-stroke hgi-arrow-left-01"></i>
+                                        </button>
+                                        <button type="button" class="next">
+                                            <span class="blind">next month</span>
+                                            <i class="hgi hgi-stroke hgi-arrow-right-01"></i>
+                                        </button>
+                                    </div>
+                                    <div class="datepicker-body date-view">
+                                        <div class="day-names">
+                                            <span class="day text-neutral-txt-low">S</span>
+                                            <span class="day text-neutral-txt-low">M</span>
+                                            <span class="day text-neutral-txt-low">T</span>
+                                            <span class="day text-neutral-txt-low">W</span>
+                                            <span class="day text-neutral-txt-low">T</span>
+                                            <span class="day text-neutral-txt-low">F</span>
+                                            <span class="day text-neutral-txt-low">S</span>
+                                        </div>
+                                        <div class="days"></div>
+                                    </div>
+                                    <div class="datepicker-body year-view hidden">
+                                        <div class="years"></div>
+                                    </div>
+                                </div>
                             </div>
                             <p class="text-body3 mt-2 text-neutral-txt-low">HERISH sẽ gửi lời nhắc đến bạn trước 15 ngày.</p>
                         </div>

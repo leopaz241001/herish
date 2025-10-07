@@ -1,0 +1,123 @@
+.datepicker {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 2;
+    width: 332px;
+    margin: 4px 0 0;
+    padding: 11px;
+    border-radius: 16px;
+    background: #fff;
+    transform-origin: top;
+    border: 1px solid var(--neutral-txt-low);
+
+    &.bottom-full {
+        top: unset;
+        margin: 0 0 4px;
+    }
+
+    &-header {
+        display: flex;
+        align-items: center;
+        padding: 4px 0;
+        font-weight: 600;
+    
+        .month-year {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px;
+            cursor: pointer;
+    
+            .year {
+                margin-right: 10px;
+            }
+        }
+    
+        .prev,
+        .next {
+            width: 44px;
+            height: 44px;
+        }
+    
+        .prev {
+          margin-left: auto;
+        }
+    }
+
+    &-body {
+        height: 312px;
+        margin-top: 4px;
+
+        .day {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1 / 1;
+        }
+    }
+
+    .day-names, 
+    .days, 
+    .years {
+        display: grid;
+    }
+
+    .day-names {
+        grid-template-columns: repeat(7, 1fr);
+        margin-bottom: 4px;
+        font-size: 13px;
+    }
+
+    .days {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+    }
+    
+    .days,
+    .years {
+        span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            aspect-ratio: 1 / 1;
+            transition: border-color 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                border-color: var(--primary);
+            }
+
+            &.active {
+                background: var(--primary);
+                color: white;
+            }
+        }
+    }
+    
+    .years {
+        overflow-y: auto;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-height: 100%;
+        padding: 0 24px;
+
+        span {
+            padding: 4px 12px;
+            border-radius: 100px;
+            aspect-ratio: unset;
+        }
+    }
+    
+    .fade-enter {
+        opacity: 0;
+        transform: translateY(10px);
+
+        &-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
