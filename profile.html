@@ -136,7 +136,7 @@
                         <div class="select-block select-profile flex items-center lg:justify-center justify-end lg:w-14 w-11 h-14" style="display: none;">
                             <div class="select">
                                 <span>
-                                    <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-9 h-9 rounded-full object-cover">
+                                    <img src="./assets/images/avatar/avatar.jpeg" alt="avatar" class="avatar w-9 h-9 rounded-full object-cover">
                                 </span>
                                 <div class="menu">
                                     <ul class="list-option">
@@ -160,7 +160,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="login.html" class="flex items-center gap-3 w-full text-error-txt">
+                                            <a href="login.html" class="btn-logout flex items-center gap-3 w-full text-error-txt">
                                                 <span class="hgi hgi-stroke hgi-logout-circle-01 text-[22px] text-error font-semibold -rotate-90"></span>
                                                 <span>Đăng xuất</span>
                                             </a>
@@ -169,7 +169,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="login.html" class="btn-login flex items-center lg:justify-center justify-end lg:w-14 w-9 h-14 text-2xl text-white" style="display: none;">
+                        <a href="login.html" class="btn-login flex items-center lg:justify-center justify-end lg:w-14 w-9 h-14 text-2xl text-white">
                             <i class="icon-user-circle"></i>
                             <span class="blind">link to login</span>
                         </a>
@@ -201,10 +201,10 @@
         <!-- Profile -->
         <section class="profile sm:py-13 pt-8 pb-15 border-b border-primary-txt">
             <div class="container">
-                <div class="avatar overflow-hidden sm:w-35 w-25 sm:h-35 h-25 rounded-full">
-                    <img src="./assets/images/avatar/IMG-6.webp" alt="w-full h-full object-cover">
+                <div class="avatar-block overflow-hidden sm:w-35 w-25 sm:h-35 h-25 rounded-full" style="display: none;">
+                    <img src="./assets/images/avatar/avatar.jpeg" alt="avatar" class="user-avatar w-full h-full object-cover">
                 </div>
-                <div class="avatar overflow-hidden flex items-center justify-center sm:w-35 w-25 sm:h-35 h-25 rounded-full bg-primary text-white" style="display: none;">
+                <div class="avatar-noimage overflow-hidden flex items-center justify-center sm:w-35 w-25 sm:h-35 h-25 rounded-full bg-primary text-white">
                     <span class="text-head2">H</span>
                 </div>
                 <div class="info sm:mt-14 mt-9">
@@ -218,19 +218,19 @@
                     <ul class="mt-4 pt-2 border-t border-neutral-ui">
                         <li class="flex items-center gap-6 py-4 border-b border-neutral-ui">
                             <span class="text-neutral-txt-low min-w-[104px]">Họ và tên</span>
-                            <strong class="font-semibold">Chúc Linh Huyền</strong>
+                            <strong class="user-name font-semibold">Chưa có dữ liệu</strong>
                         </li>
                         <li class="flex items-center gap-6 py-4 border-b border-neutral-ui">
                             <span class="text-neutral-txt-low min-w-[104px]">Ngày sinh</span>
-                            <strong class="font-semibold">04/08/2000</strong>
+                            <strong class="user-birthday font-semibold">Chưa có dữ liệu</strong>
                         </li>
                         <li class="flex items-center gap-6 py-4 border-b border-neutral-ui">
                             <span class="text-neutral-txt-low min-w-[104px]">Email</span>
-                            <strong class="font-semibold">huyen123@gmail.com</strong>
+                            <strong class="user-email font-semibold">Chưa có dữ liệu</strong>
                         </li>
                         <li class="flex items-center gap-6 py-4 border-b border-neutral-ui">
                             <span class="text-neutral-txt-low min-w-[104px]">Số điện thoại</span>
-                            <strong class="font-semibold">0123 456 789</strong>
+                            <strong class="user-phone font-semibold">Chưa có dữ liệu</strong>
                         </li>
                     </ul>
                 </div>
@@ -600,8 +600,8 @@
                 <form>
                     <div class="modal-content sm:p-6 py-5 px-4">
                         <div class="flex items-center gap-4">
-                            <div class="avatar flex-shrink-0 overflow-hidden relative sm:w-35 w-25 sm:h-35 h-25 rounded-full before:absolute before:w-full before:h-full before:bg-[#2D2F30] before:bg-opacity-80">
-                                <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-full h-full object-cover">
+                            <div class="avatar-block flex-shrink-0 overflow-hidden relative sm:w-35 w-25 sm:h-35 h-25 rounded-full before:absolute before:w-full before:h-full before:bg-[#2D2F30] before:bg-opacity-80">
+                                <img src="./assets/images/avatar/avatar.jpeg" alt="avatar" class="user-avatar w-full h-full object-cover">
                                 <ul class="flex items-center justify-center gap-3 absolute top-0 left-0 right-0 bottom-0">
                                     <li class="flex-shrink-0">
                                         <input id="avatar" type="file" accept="image/*" name="avatar" class="absolute w-0 h-0 opacity-0">
@@ -622,13 +622,13 @@
                         </div>
                         <div class="form-control sm:mt-8 mt-6">
                             <label for="name" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Họ và tên<span class="text-error ml-0.5">*</span></label>
-                            <input id="name" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="name" value="Chúc Linh Huyền" placeholder="Họ và tên" required />
+                            <input id="name" class="input-user-name w-full p-4 rounded-lg bg-neutral-ui" type="text" name="name" placeholder="Họ và tên" required />
                         </div>
                         <div class="form-control sm:mt-5 mt-4">
                             <label for="dateInput" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày sinh<span class="text-error ml-0.5">*</span></label>
                             <div class="form-date relative">
                                 <i class="hgi hgi-stroke hgi-calendar-03 absolute top-1/2 -translate-y-1/2 right-4 text-2xl pointer-events-none"></i>
-                                <input id="dateInput" class="datepicker-input w-full p-4 rounded-lg bg-neutral-ui" type="text" name="dateInput" placeholder="04/08/2025" readonly required />
+                                <input id="dateInput" class="datepicker-input input-user-birthday w-full p-4 rounded-lg bg-neutral-ui" type="text" name="dateInput" placeholder="01/01/2000" readonly required />
                                 <div class="datepicker hidden" id="datepicker">
                                     <div class="datepicker-header">
                                         <div class="month-year">
@@ -665,11 +665,11 @@
                         </div>
                         <div class="form-control sm:mt-5 mt-4">
                             <label for="email" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Email<span class="text-error ml-0.5">*</span></label>
-                            <input id="email" class="w-full p-4 rounded-lg bg-neutral-ui" type="email" name="email" value="huyen123@gmail.com" placeholder="abc@gmail.com" required />
+                            <input id="email" class="input-user-email w-full p-4 rounded-lg bg-neutral-ui" type="email" name="email" placeholder="abc@gmail.com" required />
                         </div>
                         <div class="form-control sm:mt-5 mt-4">
                             <label for="phone" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Số điện thoại<span class="text-error ml-0.5">*</span></label>
-                            <input id="phone" class="w-full p-4 rounded-lg bg-neutral-ui" type="tel" name="phone" value="0123456789" placeholder="0123456789" required />
+                            <input id="phone" class="input-user-phone w-full p-4 rounded-lg bg-neutral-ui" type="tel" name="phone" placeholder="0123456789" required />
                         </div>
                         <div class="form-checkbox mt-8">
                             <input id="noti" type="checkbox" name="noti" class="checkbox">
