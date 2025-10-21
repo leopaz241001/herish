@@ -10,14 +10,22 @@ async function getProfile() {
     if(res.ok) {
       const data = await res.json();
       // header
-      $('.header .avatar').attr('src', data.user.avatar);
+      if(data.user.avatar) {
+        $('.header .avatar').attr('src', data.user.avatar).on('error', function () {
+          $(this).attr('src', './assets/images/avatar/avatar.jpeg');
+        });
+      }
       $('.header .select-profile').removeAttr('style');
       $('.header .btn-login').hide();
 
       // profile page
-      $('.avatar-block').removeAttr('style');
-      $('.avatar-block .user-avatar').attr('src', data.user.avatar);
-      $('.avatar-noimage').hide();
+      if(data.user.avatar) {
+        $('.avatar-block').removeAttr('style');
+        $('.avatar-block .user-avatar').attr('src', data.user.avatar).on('error', function () {
+          $(this).attr('src', './assets/images/avatar/avatar.jpeg');
+        });
+        $('.avatar-noimage').hide();
+      }
       if(data.user.name) {
         $('.user-name').text(data.user.name);
         $('.input-user-name').val(data.user.name);
