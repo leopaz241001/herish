@@ -133,7 +133,7 @@
                             <i class="hgi hgi-stroke hgi-menu-01"></i>
                             <span class="blind">button open menu mobile</span>
                         </button>
-                        <div class="select-block select-profile flex items-center lg:justify-center justify-end lg:w-14 w-11 h-14">
+                        <div class="select-block select-profile flex items-center lg:justify-center justify-end lg:w-14 w-11 h-14" style="display: none;">
                             <div class="select">
                                 <span>
                                     <img src="./assets/images/avatar/IMG-6.webp" alt="avatar" class="w-9 h-9 rounded-full object-cover">
@@ -169,6 +169,10 @@
                                 </div>
                             </div>
                         </div>
+                        <a href="login.html" class="btn-login flex items-center lg:justify-center justify-end lg:w-14 w-9 h-14 text-2xl">
+                            <i class="icon-user-circle"></i>
+                            <span class="blind">link to login</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -270,13 +274,26 @@
                             </div>
                             <span class="badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-ui font-semibold max-sm:text-xs">-20%</span>
                         </div>
-                        <div class="flex gap-4 sm:mt-9 mt-6">
+                        <div class="flex max-lg:flex-col max-sm:flex-row sm:gap-4 gap-3 sm:mt-9 mt-6">
                             <button type="button" class="btn-toggle button-wishlist button-main flex-shrink-0 w-14 h-14 p-0 bg-primary-ui">
-                                <span class="hgi hgi-stroke hgi-favourite text-2xl text-primary font-normal"></span>
-                                <span class="icon-favourite text-2xl text-[#FC595B] hidden"></span>
+                                <span class="hgi hgi-stroke hgi-favourite text-[24px] text-primary font-normal"></span>
+                                <span class="icon-favourite text-[24px] text-[#FC595B] hidden"></span>
                                 <span class="blind">button add to wishlist</span>
                             </button>
-                            <button type="button" class="button-main w-full">Mua hàng</button>
+                            <div class="flex flex-col gap-4 w-full">
+                                <a href="https://shopee.vn/" class="button-main w-full max-sm:px-3" target="_blank">
+                                    <span class="icon-shopee block sm:text-[24px] text-[20px]"></span>
+                                    <span>Mua hàng qua Shopee</span>
+                                </a>
+                                <a href="https://www.tiktok.com/" class="button-main w-full max-sm:px-3" target="_blank">
+                                    <span class="icon-tiktok block sm:text-[24px] text-[20px]"></span>
+                                    <span>Mua hàng qua TikTok Shop</span>
+                                </a>
+                                <a href="https://www.facebook.com/" class="button-main w-full max-sm:px-3" target="_blank">
+                                    <span class="icon-facebook block sm:text-[24px] text-[20px]"></span>
+                                    <span>Nhận tư vấn qua Facebook</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -910,6 +927,7 @@
 
         <script src="./assets/js/jquery.min.js"></script>
         <script src="./assets/js/swiper-bundle.min.js"></script>
+        <script src="./assets/js/user.js"></script>
         <script src="./assets/js/main.js"></script>
     </body>
 </html>
