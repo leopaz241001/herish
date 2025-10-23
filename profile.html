@@ -597,7 +597,7 @@
                 <div class="modal-header sm:py-8 py-5 sm:px-6 px-4 border-b border-neutral-ui">
                     <strong class="text-head5">Chỉnh sửa thông tin cá nhân</strong>
                 </div>
-                <form>
+                <form id="formUpdateProfile">
                     <div class="modal-content sm:p-6 py-5 px-4">
                         <div class="flex items-center gap-4">
                             <div class="avatar-block flex-shrink-0 overflow-hidden relative sm:w-35 w-25 sm:h-35 h-25 rounded-full before:absolute before:w-full before:h-full before:bg-[#2D2F30] before:bg-opacity-80">
@@ -611,7 +611,7 @@
                                         </label>
                                     </li>
                                     <li class="flex-shrink-0">
-                                        <button type="button" class="flex items-center justify-center sm:w-10 w-9 sm:h-10 h-9 rounded-full cursor-pointer bg-white bg-opacity-[0.32] duration-300 group hover:bg-opacity-100">
+                                        <button type="button" class="btn-delete-avatar flex items-center justify-center sm:w-10 w-9 sm:h-10 h-9 rounded-full cursor-pointer bg-white bg-opacity-[0.32] duration-300 group hover:bg-opacity-100">
                                             <span class="blind">button delete</span>
                                             <span class="icon-trash sm:text-xl text-lg text-white duration-300 group-hover:text-neutral-txt-high"></span>
                                         </button>
@@ -696,7 +696,7 @@
                 <div class="modal-header sm:py-8 py-5 sm:px-6 px-4 border-b border-neutral-ui">
                     <strong class="text-head5">Đổi mật khẩu</strong>
                 </div>
-                <form>
+                <form id="formChangePassword">
                     <div class="modal-content sm:p-6 py-5 px-4">
                         <div class="form-control">
                             <label for="currentPassword" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Mật khẩu hiện tại<span class="text-error ml-0.5">*</span></label>
@@ -722,14 +722,14 @@
                             <p class="text-body3 mt-2 text-neutral-txt-low">Hãy sử dụng ít nhất 8 ký tự. Trong đó có ít nhất 1 chữ hoa, 1 chữ thường, 1 số và 1 ký tự đặc biệt (Ví dụ: @, #, !...)</p>
                         </div>
                         <div class="form-control sm:mt-5 mt-4">
-                            <label for="rePassword" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Nhập lại mật khẩu<span class="text-error ml-0.5">*</span></label>
+                            <label for="confirmPassword" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Nhập lại mật khẩu<span class="text-error ml-0.5">*</span></label>
                             <div class="form-password relative">
                                 <button type="button" class="btn-show-password btn-toggle hidden absolute top-1/2 -translate-y-1/2 right-4">
                                     <i class="ic-view hgi hgi-stroke hgi-view text-[24px] block"></i>
                                     <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] hidden"></i>
                                     <span class="blind">button show hide password</span>
                                 </button>
-                                <input id="rePassword" class="w-full p-4 pr-14 rounded-lg bg-neutral-ui" type="password" name="rePassword" required />
+                                <input id="confirmPassword" class="w-full p-4 pr-14 rounded-lg bg-neutral-ui" type="password" name="confirmPassword" required />
                             </div>
                         </div>
                     </div>

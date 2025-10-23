@@ -25,6 +25,8 @@ async function getProfile() {
           $(this).attr('src', './assets/images/avatar/avatar.jpeg');
         });
         $('.avatar-noimage').hide();
+      } else {
+        $('.avatar-noimage span').text(data.user.name.trim().charAt(0));
       }
       if(data.user.name) {
         $('.user-name').text(data.user.name);
@@ -46,6 +48,102 @@ async function getProfile() {
   } catch (err) {
     console.error(err);
   }
+}
+
+function updateProfile() {
+  const formUpdate = $('#formUpdateProfile');
+  const formChangePassword = $('#formChangePassword');
+  const inputAvatar = $('#avatar');
+  const imgPreview = $('#formUpdateProfile .user-avatar');
+  const btnDeleteAvatar = $('.btn-delete-avatar');
+
+  let avatarFile = null;
+
+  // Preview ảnh khi chọn
+  inputAvatar.on('change', function (e) {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        imgPreview.attr('src', e.target.result);
+      };
+      reader.readAsDataURL(file);
+      avatarFile = file;
+    }
+  });
+
+  // Xóa avatar (set về mặc định)
+  btnDeleteAvatar.on('click', function (e) {
+    e.preventDefault();
+    imgPreview.attr('src', './assets/images/avatar/avatar.jpeg');
+    inputAvatar.val('');
+    avatarFile = null;
+  });
+
+  // Gửi form cập nhật user
+  formUpdate.on('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('name', $('#name').val());
+    formData.append('birthday', $('#dateInput').val());
+    formData.append('email', $('#email').val());
+    formData.append('phone', $('#phone').val());
+
+    if (avatarFile) {
+      formData.append('avatar', avatarFile);
+    }
+
+    try {
+      const res = await fetch('https://realhome-be-dpc0.onrender.com/api/profile/update', {
+        method: 'PUT',
+        body: formData,
+        credentials: 'include'
+      });
+
+      if (res.ok) {
+        $('.toastify.success').eq(0).addClass('active');
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      } else {
+        $('.toastify.error').eq(0).addClass('active');
+      }
+    } catch (err) {
+      console.error(err);
+      $('.toastify.error').eq(0).addClass('active');
+    }
+  });
+
+  // Gửi form cập nhật user
+  formChangePassword.on('submit', async function (e) {
+    e.preventDefault();
+
+    const currentPassword = $('#currentPassword').val();
+    const newPassword = $('#newPassword').val();
+    const confirmPassword = $('#confirmPassword').val();
+
+    try {
+      const res = await fetch('https://realhome-be-dpc0.onrender.com/api/profile/change-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ currentPassword, newPassword, confirmPassword }),
+        credentials: 'include'
+      });
+
+      if (res.ok) {
+        $('.toastify.success').eq(1).addClass('active');
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      } else {
+        $('.toastify.error').eq(1).addClass('active');
+      }
+    } catch (err) {
+      console.error(err);
+      $('.toastify.error').eq(1).addClass('active');
+    }
+  });
 }
 
 function logout() {
@@ -70,4 +168,5 @@ function logout() {
 }
 
 getProfile();
+updateProfile();
 logout();
