@@ -1253,6 +1253,37 @@ textarea:focus {
   }
 }
 
+.product-list {
+  position: relative;
+}
+.product-list::before, .product-list::after {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  content: "";
+}
+.product-list::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: all 0.5s ease;
+}
+.product-list::after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: url(../assets/images/components/loading.gif) center center/contain no-repeat;
+  transition: all 0.2s ease;
+}
+.product-list.loading::before, .product-list.loading::after {
+  z-index: 1;
+  opacity: 1;
+}
+
 /* header */
 .navigator {
   background: rgba(252, 246, 236, 0.2);

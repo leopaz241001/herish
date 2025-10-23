@@ -312,7 +312,7 @@
                     </div>
                 </div>
                 <div class="product sm:mt-13 mt-8">
-                    <ul class="product-list grid xl:grid-cols-3 grid-cols-2 sm:gap-6 gap-4 sm:gap-y-8 gap-y-5">
+                    <ul id="productList" class="product-list grid xl:grid-cols-3 grid-cols-2 sm:gap-6 gap-4 sm:gap-y-8 gap-y-5">
                         <li class="product-item animate animate-top" style="--i: 1">
                             <a href="product-detail.html" class="product-link block group">
                                 <div class="image relative overflow-hidden rounded-xl max-sm:aspect-square">
@@ -494,7 +494,7 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="w-fit mx-auto mt-13 animate animate-top" style="--i: 3">
+                    <div id="btnLoadMore" class="w-fit mx-auto mt-13">
                         <a href="#!" class="button-main bg-primary-ui text-primary-txt-head">Xem thêm sản phẩm</a>
                     </div>
                 </div>
@@ -789,10 +789,6 @@
 
         <!-- Back to top -->
         <button type="button" class="button-top">
-            <!-- <svg class="progress-circle" width="92" height="92">
-                <circle class="bg" cx="46" cy="46" r="44"></circle>
-                <circle class="progress" cx="46" cy="46" r="44"></circle>
-            </svg> -->
             <div class="circle">
                 <div class="content">
                     <span class="icon-arrow-up-02-round text-[20px]"></span>
@@ -1204,6 +1200,7 @@
         <script src="./assets/js/jquery.min.js"></script>
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="./assets/js/user.js"></script>
+        <script src="./assets/js/product.js"></script>
         <script src="./assets/js/main.js"></script>
     </body>
 </html>

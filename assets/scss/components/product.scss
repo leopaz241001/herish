@@ -1,0 +1,40 @@
+.product {
+  &-list {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      content: "";
+    }
+    
+    &::before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.7);
+      transition: all 0.5s ease;
+    }
+
+    &::after {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background: url(../assets/images/components/loading.gif) center center / contain no-repeat;
+      transition: all 0.2s ease;
+    }
+
+    &.loading {
+      &::before,
+      &::after {
+        z-index: 1;
+        opacity: 1;
+      }
+    }
+  }
+}
