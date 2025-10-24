@@ -649,14 +649,14 @@ input::-webkit-inner-spin-button {
   position: relative;
   cursor: pointer;
 }
-.select-block.filtered {
+.select-block.filtered:not(.select-sort) {
   border: 1px solid var(--secondary);
   background-color: var(--secondary-hover-ui);
 }
-.select-block.filtered .select {
+.select-block.filtered:not(.select-sort) .select {
   padding-left: 36px;
 }
-.select-block.filtered .select::before {
+.select-block.filtered:not(.select-sort) .select::before {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -664,6 +664,9 @@ input::-webkit-inner-spin-button {
   font-family: "hugeicons-stroke-rounded";
   font-size: 24px;
   content: "娥";
+}
+.select-block .select:has(.menu.open) + .ic-down {
+  transform: rotate(180deg);
 }
 .select-block .menu {
   visibility: hidden;
@@ -732,6 +735,9 @@ input::-webkit-inner-spin-button {
 .select-block .menu .list-result::-webkit-scrollbar-thumb {
   background-color: #c5c5c5;
   border-radius: 6px;
+}
+.select-block .ic-down {
+  transition: 0.3s ease;
 }
 .select-block.select-profile .menu {
   border-color: var(--primary);

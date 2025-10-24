@@ -44,6 +44,11 @@ async function getProfile() {
         $('.user-phone').text(data.user.phone);
         $('.input-user-phone').val(data.user.phone);
       }
+
+      // show recent product
+      if($('.recent-product').length) {
+        $('.recent-product').show();
+      }
     }
   } catch (err) {
     console.error(err);

@@ -3,20 +3,30 @@
     cursor: pointer;
 
     &.filtered {
-        border: 1px solid var(--secondary);
-        background-color: var(--secondary-hover-ui);
+        &:not(.select-sort) {
+            border: 1px solid var(--secondary);
+            background-color: var(--secondary-hover-ui);
+    
+            .select {
+                padding-left: 36px;
+    
+                &::before {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 1.5rem;
+                    font-family: "hugeicons-stroke-rounded";
+                    font-size: 24px;
+                    content: "\5A25";
+                }
+            }
+        }
+    }
 
-        .select {
-            padding-left: 36px;
-
-            &::before {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 1.5rem;
-                font-family: "hugeicons-stroke-rounded";
-                font-size: 24px;
-                content: "\5A25";
+    .select {
+        &:has(.menu.open) {
+            & + .ic-down {
+                transform: rotate(180deg);
             }
         }
     }
@@ -101,6 +111,10 @@
                 border-radius: 6px;
             }
         }
+    }
+
+    .ic-down {
+        transition: .3s ease;
     }
 
     &.select-profile {

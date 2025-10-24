@@ -85,6 +85,20 @@
                 }
             }, 500);
         })
+        
+        $(".modal-search form").on("submit", function (e) {
+            e.preventDefault();
+            const search = $(".modal-search form input").val().trim();
+            if (search) {
+                window.location.href = `search-result.html?search=${encodeURIComponent(search)}`;
+            }
+        });
+
+        $(".modal-search .keyword .button-main").on("click", function (e) {
+            e.preventDefault();
+            const search = $(this).text().trim();
+            window.location.href = `search-result.html?search=${encodeURIComponent(search)}`;
+        });
     }
 
     // List slider swiper
@@ -111,7 +125,7 @@
     });
 
     // List product swiper
-    var swiperBestseller = new Swiper('.product-swiper', {
+    var swiperProduct = new Swiper('.product-swiper', {
         navigation: {
             prevEl: '.custom-button-prev',
             nextEl: '.custom-button-next',
@@ -131,7 +145,7 @@
     });
 
     // List product swiper section 2 in page
-    var swiperBestseller = new Swiper('.product-swiper-two', {
+    var swiperProductTwo = new Swiper('.product-swiper-two', {
         navigation: {
             prevEl: '.custom-button-prev-two',
             nextEl: '.custom-button-next-two',
@@ -316,7 +330,7 @@
 
     // Open popup
     const handleOpenPopup = function () {
-        setTimeout(() => {
+        setTimeout(function () {
             if ($('.modal-cookie').length > 0) {
                 $('.modal-cookie').addClass('open')
                 $('body').addClass('scroll-locked')
@@ -332,7 +346,7 @@
             $('.modal-item').each(function (e) {
                 if ($(this).data('type') === popupType) {
                     $(this).addClass('open')
-                    setTimeout(() => {
+                    setTimeout(function () {
                         $('body').addClass('scroll-locked')
                     }, 50);
                 }
@@ -343,7 +357,6 @@
             e.stopPropagation()
         })
     }
-
 
     // Close popup
     const handleClosePopup = function () {
@@ -360,7 +373,7 @@
         })
     }
 
-    // --- Datepicker ---
+    // Datepicker
     const handleDatepicker = function () {
         const $input = $('#dateInput');
         const $picker = $('#datepicker');
@@ -480,8 +493,6 @@
         // initial render
         renderCalendar();
     };
-
-
 
     // Select
     const handleSelectBlock = function () {
