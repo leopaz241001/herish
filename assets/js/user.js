@@ -89,21 +89,39 @@ function updateProfile() {
   formUpdate.on('submit', async function (e) {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append('name', $('#name').val());
-    formData.append('birthday', $('#dateInput').val());
-    formData.append('email', $('#email').val());
-    formData.append('phone', $('#phone').val());
+    const full_name = document.getElementById('name').value;
+    const dateInput = document.getElementById('dateInput').value;
+    const [day, month, year] = dateInput.split("/");
+    const birth_date = `${year}-${month}-${day}`;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
 
-    if (avatarFile) {
-      formData.append('avatar', avatarFile);
-    }
+    // const formData = new FormData();
+    // formData.append('full_name', $('#name').val());
+    
+    // const dateInput = $('#dateInput').val();
+    // const [day, month, year] = dateInput.split("/");
+    // const birth_date = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+    // formData.append('birth_date', birth_date);
+
+    // formData.append('email', $('#email').val());
+    // formData.append('phone', $('#phone').val());
+
+    // if (avatarFile) {
+    //   formData.append('avatar', avatarFile);
+    // }
 
     try {
-      const res = await fetch('https://realhome-be-dpc0.onrender.com/api/profile/update', {
+      const access_token = localStorage.getItem('access_token');
+      const res = await fetch('http://160.250.5.249:5001/api/user/update-info', {
         method: 'PUT',
-        body: formData,
-        credentials: 'include'
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${access_token}`
+        },
+        body: JSON.stringify({ full_name, birth_date, email, phone }),
+        // body: formData,
+        // credentials: 'include'
       });
 
       if (res.ok) {
@@ -124,16 +142,20 @@ function updateProfile() {
   formChangePassword.on('submit', async function (e) {
     e.preventDefault();
 
-    const currentPassword = $('#currentPassword').val();
-    const newPassword = $('#newPassword').val();
+    const old_password = $('#currentPassword').val();
+    const new_password = $('#newPassword').val();
     const confirmPassword = $('#confirmPassword').val();
 
     try {
-      const res = await fetch('https://realhome-be-dpc0.onrender.com/api/profile/change-password', {
+      const access_token = localStorage.getItem('access_token');
+      const res = await fetch('http://160.250.5.249:5001/api/auth/change-password', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ currentPassword, newPassword, confirmPassword }),
-        credentials: 'include'
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${access_token}`
+        },
+        body: JSON.stringify({ old_password, new_password }),
+        // credentials: 'include'
       });
 
       if (res.ok) {

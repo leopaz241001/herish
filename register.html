@@ -15,13 +15,13 @@
 
     <body>
         <!-- Register -->
-        <section class="register flex items-center w-screen h-screen">
+        <section id="register" class="register flex items-center w-screen h-screen">
             <div class="content flex sm:items-center justify-center sm:w-1/2 w-full h-full">
                 <div class="sm:max-w-[564px] w-full sm:pt-12 pt-15 sm:px-6 px-5 max-sm:flex flex-col items-center">
                     <div class="icon-grass sm:hidden flex-shrink-0 text-[64px] text-primary"></div>
                     <h1 class="text-head3 max-sm:mt-13 max-sm:text-center">Đăng ký tài khoản</h1>
                     <!-- Đăng ký/SĐT -->
-                    <form class="form-control-input form-phone flex flex-col w-full h-full sm:mt-12 mt-8">
+                    <form id="formPhone" class="form-control-input form-phone flex flex-col w-full h-full sm:mt-12 mt-8">
                         <div class="form-control">
                             <label for="phone" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Số điện thoại<span class="text-error ml-0.5">*</span></label>
                             <input id="phone" class="input-control w-full p-4 rounded-lg bg-neutral-ui" type="tel" name="phone" placeholder="(+84) 123 456 789" required />
@@ -32,7 +32,7 @@
                         </div>
                     </form>
                     <!-- Đăng ký/Nhập mã xác thực -->
-                    <form class="form-control-input form-verify flex flex-col w-full h-full sm:mt-12 mt-8" style="display: none;">
+                    <form id="formVerify" class="form-control-input form-verify flex flex-col w-full h-full sm:mt-12 mt-8" style="display: none;">
                         <div class="form-control">
                             <label for="verify" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Mã xác thực<span class="text-error ml-0.5">*</span></label>
                             <input id="verify" class="input-control w-full p-4 rounded-lg bg-neutral-ui" type="number" name="verify" placeholder="XXX XXX" required />
@@ -45,7 +45,7 @@
                         </div>
                     </form>
                     <!-- Đăng ký/Đăng ký thông tin -->
-                    <form class="form-control-input form-info flex flex-col w-full h-full sm:mt-12 mt-8" style="display: none;">
+                    <form id="formInfo" class="form-control-input form-info flex flex-col w-full h-full sm:mt-12 mt-8" style="display: none;">
                         <div class="form-control">
                             <label for="name" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Họ và tên<span class="text-error ml-0.5">*</span></label>
                             <input id="name" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="name" placeholder="Nguyễn Văn A" required />
@@ -106,14 +106,14 @@
                             <p class="text-body3 mt-2 text-neutral-txt-low">Hãy sử dụng ít nhất 8 ký tự. Trong đó có ít nhất 1 chữ hoa, 1 chữ thường, 1 số và 1 ký tự đặc biệt (Ví dụ: @, #, !...)</p>
                         </div>
                         <div class="form-control form-control-repass sm:mt-5 mt-4">
-                            <label for="rePassword" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Nhập lại mật khẩu<span class="text-error ml-0.5">*</span></label>
+                            <label for="confirmPassword" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Nhập lại mật khẩu<span class="text-error ml-0.5">*</span></label>
                             <div class="form-password relative">
                                 <button type="button" class="btn-show-password btn-toggle hidden absolute top-1/2 -translate-y-1/2 right-4">
                                     <i class="ic-view hgi hgi-stroke hgi-view text-[24px] block"></i>
                                     <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] hidden"></i>
                                     <span class="blind">button show hide password</span>
                                 </button>
-                                <input id="rePassword" class="input-control w-full p-4 pr-14 rounded-lg bg-neutral-ui" type="password" name="rePassword" required />
+                                <input id="confirmPassword" class="input-control w-full p-4 pr-14 rounded-lg bg-neutral-ui" type="password" name="confirmPassword" required />
                             </div>
                             <p class="text-control text-body3 mt-2 text-error-txt hidden">Mật khẩu nhập lại không khớp. Vui lòng thử lại.</p>
                         </div>
@@ -146,6 +146,7 @@
 
         <script src="./assets/js/jquery.min.js"></script>
         <script src="./assets/js/swiper-bundle.min.js"></script>
+        <script src="./assets/js/auth.js"></script>
         <script src="./assets/js/main.js"></script>
 
         <!-- [D] Case view -->
