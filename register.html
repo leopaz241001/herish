@@ -16,36 +16,12 @@
     <body>
         <!-- Register -->
         <section id="register" class="register flex items-center w-screen h-screen">
-            <div class="content flex sm:items-center justify-center sm:w-1/2 w-full h-full">
-                <div class="sm:max-w-[564px] w-full sm:pt-12 pt-15 sm:px-6 px-5 max-sm:flex flex-col items-center">
+            <div class="content flex justify-center sm:w-1/2 w-full h-full">
+                <div class="sm:max-w-[564px] w-full max-h-full sm:pt-12 pt-15 sm:px-6 px-5 max-sm:flex flex-col items-center">
                     <div class="icon-grass sm:hidden flex-shrink-0 text-[64px] text-primary"></div>
                     <h1 class="text-head3 max-sm:mt-13 max-sm:text-center">Đăng ký tài khoản</h1>
-                    <!-- Đăng ký/SĐT -->
-                    <form id="formPhone" class="form-control-input form-phone flex flex-col w-full h-full sm:mt-12 mt-8">
-                        <div class="form-control">
-                            <label for="phone" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Số điện thoại<span class="text-error ml-0.5">*</span></label>
-                            <input id="phone" class="input-control w-full p-4 rounded-lg bg-neutral-ui" type="tel" name="phone" placeholder="(+84) 123 456 789" required />
-                            <p class="text-control text-body3 mt-2 text-error-txt hidden">Số điện thoại đã được liên kết với tài khoản khác.</p>
-                        </div>
-                        <div class="form-btn sm:mt-12 mt-auto max-sm:pt-4 pb-12">
-                            <button type="submit" class="btn-control button-main w-full disabled">Tiếp tục</button>
-                        </div>
-                    </form>
-                    <!-- Đăng ký/Nhập mã xác thực -->
-                    <form id="formVerify" class="form-control-input form-verify flex flex-col w-full h-full sm:mt-12 mt-8" style="display: none;">
-                        <div class="form-control">
-                            <label for="verify" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Mã xác thực<span class="text-error ml-0.5">*</span></label>
-                            <input id="verify" class="input-control w-full p-4 rounded-lg bg-neutral-ui" type="number" name="verify" placeholder="XXX XXX" required />
-                            <p class="text-guide text-body3 mt-2 text-neutral-txt-low">Nhập mã xác thực gồm 6 chữ số đã được gửi về số điện thoại của bạn. Mã có hiệu lực trong <span class="text-primary-txt font-bold">4:59</span>.</p>
-                            <p class="text-control text-body3 mt-2 text-error-txt hidden">Mã xác thực không chính xác. Vui lòng thử lại.</p>
-                        </div>
-                        <div class="form-btn sm:mt-12 mt-auto max-sm:pt-4 pb-12">
-                            <button type="submit" class="btn-control button-main w-full disabled">Tiếp tục</button>
-                            <button type="button" class="button-main bg-primary-ui w-full sm:mt-5 mt-4">Gửi lại mã xác thực</button>
-                        </div>
-                    </form>
                     <!-- Đăng ký/Đăng ký thông tin -->
-                    <form id="formInfo" class="form-control-input form-info flex flex-col w-full h-full sm:mt-12 mt-8" style="display: none;">
+                    <form id="formInfo" class="form-control-input form-info flex flex-col w-full h-full sm:mt-12 mt-8">
                         <div class="form-control">
                             <label for="name" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Họ và tên<span class="text-error ml-0.5">*</span></label>
                             <input id="name" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="name" placeholder="Nguyễn Văn A" required />
@@ -88,6 +64,11 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-control sm:mt-5 mt-4">
+                            <label for="phone" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Số điện thoại<span class="text-error ml-0.5">*</span></label>
+                            <input id="phone" class="input-control w-full p-4 rounded-lg bg-neutral-ui" type="tel" name="phone" placeholder="(+84) 123 456 789" required />
+                            <p class="text-control text-body3 mt-2 text-error-txt hidden">Số điện thoại đã được liên kết với tài khoản khác.</p>
                         </div>
                         <div class="form-control sm:mt-5 mt-4">
                             <label for="email" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Email<span class="text-error ml-0.5">*</span></label>
@@ -159,32 +140,32 @@
         <div class="caseview">
             <button type="button" class="btn-open-caseview" onclick="$('.caseview_lst').toggle();">CaseView Toggle</button>
             <div class="caseview_lst" style="display: none;">
-                <button type="button" class="item" onclick="case1()">1. Đăng ký/SĐT</button>
+                <!-- <button type="button" class="item" onclick="case1()">1. Đăng ký/SĐT</button>
                 <button type="button" class="item" onclick="case2()">2. Lỗi SDT đã được liên kết</button>
                 <button type="button" class="item" onclick="case3()">3. Đăng ký/Nhập mã xác thực</button>
                 <button type="button" class="item" onclick="case4()">4. Lỗi mã xác thực</button>
-                <button type="button" class="item" onclick="case5()">5. Đăng ký/Đăng ký thông tin</button>
+                <button type="button" class="item" onclick="case5()">5. Đăng ký/Đăng ký thông tin</button> -->
                 <button type="button" class="item" onclick="case6()">6. Lỗi mật khẩu không khớp</button>
             </div>
         </div>
         <script>
-            function case1() {
-                $(".form-control-input").hide().siblings(".form-phone").removeAttr("style")
-            }
-            function case2() {
-                $(".form-phone .form-control").addClass("error")
-                $(".form-phone .btn-control").addClass("disabled")
-            }
-            function case3() {
-                $(".form-control-input").hide().siblings(".form-verify").removeAttr("style")
-            }
-            function case4() {
-                $(".form-verify .form-control").addClass("error")
-                $(".form-verify .btn-control").addClass("disabled")
-            }
-            function case5() {
-                $(".form-control-input").hide().siblings(".form-info").removeAttr("style")
-            }
+            // function case1() {
+            //     $(".form-control-input").hide().siblings(".form-phone").removeAttr("style")
+            // }
+            // function case2() {
+            //     $(".form-phone .form-control").addClass("error")
+            //     $(".form-phone .btn-control").addClass("disabled")
+            // }
+            // function case3() {
+            //     $(".form-control-input").hide().siblings(".form-verify").removeAttr("style")
+            // }
+            // function case4() {
+            //     $(".form-verify .form-control").addClass("error")
+            //     $(".form-verify .btn-control").addClass("disabled")
+            // }
+            // function case5() {
+            //     $(".form-control-input").hide().siblings(".form-info").removeAttr("style")
+            // }
             function case6() {
                 $(".form-info .form-control-repass").addClass("error")
                 $(".form-info .btn-control").addClass("disabled")

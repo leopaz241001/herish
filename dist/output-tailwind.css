@@ -1004,6 +1004,10 @@ video {
   max-height: 500px;
 }
 
+.max-h-full {
+  max-height: 100%;
+}
+
 .w-0 {
   width: 0px;
 }
@@ -2283,6 +2287,11 @@ video {
     padding-right: 0.625rem;
   }
 
+  .max-sm\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
   .max-sm\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -2291,21 +2300,6 @@ video {
   .max-sm\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
-  }
-
-  .max-sm\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .max-sm\:px-6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .max-sm\:px-3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
   }
 
   .max-sm\:pt-4 {

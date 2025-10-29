@@ -89,12 +89,12 @@ function updateProfile() {
   formUpdate.on('submit', async function (e) {
     e.preventDefault();
 
-    const full_name = document.getElementById('name').value;
-    const dateInput = document.getElementById('dateInput').value;
+    const full_name = $('#name').val();
+    const dateInput = $('#dateInput').val();
     const [day, month, year] = dateInput.split("/");
     const birth_date = `${year}-${month}-${day}`;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
+    const email = $('#email').val();
+    const phone = $('#phone').val();
 
     // const formData = new FormData();
     // formData.append('full_name', $('#name').val());
@@ -144,31 +144,35 @@ function updateProfile() {
 
     const old_password = $('#currentPassword').val();
     const new_password = $('#newPassword').val();
-    const confirmPassword = $('#confirmPassword').val();
+    const confirm_password = $('#confirmPassword').val();
 
-    try {
-      const access_token = localStorage.getItem('access_token');
-      const res = await fetch('http://160.250.5.249:5001/api/auth/change-password', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${access_token}`
-        },
-        body: JSON.stringify({ old_password, new_password }),
-        // credentials: 'include'
-      });
-
-      if (res.ok) {
-        $('.toastify.success').eq(1).addClass('active');
-        setTimeout(() => {
-          window.location.reload();
-        }, 3000);
-      } else {
+    if(new_password !== confirm_password) {
+      $('.toastify.error').eq(1).addClass('active');
+    } else {
+      try {
+        const access_token = localStorage.getItem('access_token');
+        const res = await fetch('http://160.250.5.249:5001/api/auth/change-password', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${access_token}`
+          },
+          body: JSON.stringify({ old_password, new_password }),
+          // credentials: 'include'
+        });
+  
+        if (res.ok) {
+          $('.toastify.success').eq(1).addClass('active');
+          setTimeout(() => {
+            window.location.reload();
+          }, 3000);
+        } else {
+          $('.toastify.error').eq(1).addClass('active');
+        }
+      } catch (err) {
+        console.error(err);
         $('.toastify.error').eq(1).addClass('active');
       }
-    } catch (err) {
-      console.error(err);
-      $('.toastify.error').eq(1).addClass('active');
     }
   });
 }
