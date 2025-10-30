@@ -1,10 +1,5 @@
 const register = function () {
-  const formPhone = document.querySelector('#formPhone');
-  const formVerify = document.querySelector('#formVerify');
   const formInfo = document.querySelector('#formInfo');
-  const phoneIpt = document.querySelector('#phone');
-  const msg = document.querySelector('#formMessage');
-  const formControl = $('.form-control');
   
   formInfo.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -17,7 +12,6 @@ const register = function () {
     const email = $('#email').val();
     const password = $('#password').val();
     const confirmPassword = $('#confirmPassword').val();
-    const username = $('#username').val();
     const age = Number($('#age').val());
   
     if(password !== confirmPassword) {
@@ -28,14 +22,17 @@ const register = function () {
         const res = await fetch('http://160.250.5.249:5001/api/auth/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ full_name, birth_date, email, phone, username, age, password }),
+          body: JSON.stringify({ full_name, birth_date, email, phone, age, password }),
           // credentials: "include", // gửi và nhận cookie
         });
         const data = await res.json();
-    
+        console.log(data);
+        
         if(res.ok) {
           alert('Đăng ký thành công!');
           window.location.href = 'login.html';
+        } else {
+          alert(data.message);
         }
       } catch (err) {
         console.error(err);
@@ -52,15 +49,14 @@ const login = function () {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
   
-    // const phone = $('#phone').val();
-    const email = $('#email').val();
+    const identifier = $('#identifier').val();
     const password = $('#password').val();
   
     try {
       const res = await fetch('http://160.250.5.249:5001/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ identifier, password }),
         // credentials: "include", // gửi và nhận cookie
       });
       const data = await res.json();

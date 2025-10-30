@@ -25,8 +25,8 @@
                     <h1 class="text-head3 max-sm:text-center">Đăng nhập</h1>
                     <form id="formLogin" class="form-control-input flex flex-col w-full h-full sm:mt-12 mt-8">
                         <div class="form-control">
-                            <label for="email" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Email<span class="text-error ml-0.5">*</span></label>
-                            <input id="email" class="input-control w-full p-4 rounded-lg bg-neutral-ui" type="email" name="email" required />
+                            <label for="identifier" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Email hoặc số điện thoại<span class="text-error ml-0.5">*</span></label>
+                            <input id="identifier" class="input-control w-full p-4 rounded-lg bg-neutral-ui" type="text" name="identifier" required />
                         </div>
                         <div class="form-control form-control-repass sm:mt-5 mt-4">
                             <label for="password" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Mật khẩu<span class="text-error ml-0.5">*</span></label>
@@ -68,26 +68,5 @@
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="./assets/js/auth.js"></script>
         <script src="./assets/js/main.js"></script>
-
-        <!-- [D] Case view -->
-        <style>
-            .caseview{position:fixed;max-height: 300px;overflow: auto;bottom:150px;left:5px;padding:5px;background:rgba(0, 0, 0, 0.7);z-index:99999;font-family:'NotoSans',sans-serif;}
-            .btn-open-caseview, .caseview p{padding:0 5px 3px 5px;color:yellow}
-            .caseview a{display:block;padding:5px;color:#fff}
-            .caseview .item{display: block;font-size: 16px;color:#fff}
-        </style>
-        <div class="caseview">
-            <button type="button" class="btn-open-caseview" onclick="$('.caseview_lst').toggle();">CaseView Toggle</button>
-            <div class="caseview_lst" style="display: none;">
-                <button type="button" class="item" onclick="case1()">1. Lỗi đăng nhập</button>
-            </div>
-        </div>
-        <script>
-            function case1() {
-                $(".form-control-input .form-control").addClass("error")
-                $(".form-control-input .btn-control").addClass("disabled")
-            }
-        </script>
-        <!-- [D] Case view -->
     </body>
 </html>

@@ -2,16 +2,20 @@ const btnLogout = $('.btn-logout');
 
 async function getProfile() {
   try {
-    const res = await fetch('https://realhome-be-dpc0.onrender.com/api/profile', {
+    const access_token = localStorage.getItem('access_token');
+    const res = await fetch('http://160.250.5.249:5001/api/user/me', {
       method: 'GET',
-      credentials: "include",
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${access_token}`
+      },
     });
     
     if(res.ok) {
       const data = await res.json();
       // header
-      if(data.user.avatar) {
-        $('.header .avatar').attr('src', data.user.avatar).on('error', function () {
+      if(data.data.avatar) {
+        $('.header .avatar').attr('src', data.data.avatar).on('error', function () {
           $(this).attr('src', './assets/images/avatar/avatar.jpeg');
         });
       }
@@ -19,30 +23,31 @@ async function getProfile() {
       $('.header .btn-login').hide();
 
       // profile page
-      if(data.user.avatar) {
+      if(data.data.avatar) {
         $('.avatar-block').removeAttr('style');
-        $('.avatar-block .user-avatar').attr('src', data.user.avatar).on('error', function () {
+        $('.avatar-block .user-avatar').attr('src', data.data.avatar).on('error', function () {
           $(this).attr('src', './assets/images/avatar/avatar.jpeg');
         });
         $('.avatar-noimage').hide();
       } else {
-        $('.avatar-noimage span').text(data.user.name.trim().charAt(0));
+        $('.avatar-noimage span').text(data.data.full_name.trim().charAt(0));
       }
-      if(data.user.name) {
-        $('.user-name').text(data.user.name);
-        $('.input-user-name').val(data.user.name);
+      if(data.data.full_name) {
+        $('.user-name').text(data.data.full_name);
+        $('.input-user-name').val(data.data.full_name);
       }
-      if(data.user.birthday) {
-        $('.user-birthday').text(data.user.birthday);
-        $('.input-user-birthday').val(data.user.birthday);
+      if(data.data.birth_date) {
+        const date = new Date(data.data.birth_date).toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+        $('.user-birthday').text(date);
+        $('.input-user-birthday').val(date);
       }
-      if(data.user.email) {
-        $('.user-email').text(data.user.email);
-        $('.input-user-email').val(data.user.email);
+      if(data.data.email) {
+        $('.user-email').text(data.data.email);
+        $('.input-user-email').val(data.data.email);
       }
-      if(data.user.phone) {
-        $('.user-phone').text(data.user.phone);
-        $('.input-user-phone').val(data.user.phone);
+      if(data.data.phone) {
+        $('.user-phone').text(data.data.phone);
+        $('.input-user-phone').val(data.data.phone);
       }
 
       // show recent product

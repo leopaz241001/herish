@@ -676,5 +676,6 @@
         handleToastify()
         handleBackToTop()
         handleContentHide()
+        $('#page-loader').fadeOut(500)
     });
 })(window, window.jQuery);

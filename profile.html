@@ -14,6 +14,8 @@
     </head>
 
     <body>
+        <div id="page-loader" class="page-loader"></div>
+
         <!-- Header -->
         <header id="header" class="header absolute top-0 left-0 w-full z-[10]">
             <div class="container relative">
@@ -813,57 +815,6 @@
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="./assets/js/user.js"></script>
         <script src="./assets/js/main.js"></script>
-
-        <!-- [D] Case view -->
-        <style>
-            .caseview{position:fixed;max-height: 300px;overflow: auto;bottom:200px;left:5px;padding:5px;background:rgba(0, 0, 0, 0.7);z-index:99999;font-family:'NotoSans',sans-serif;}
-            .btn-open-caseview, .caseview p{padding:0 5px 3px 5px;color:yellow}
-            .caseview a{display:block;padding:5px;color:#fff}
-            .caseview .item{display: block;font-size: 16px;color:#fff}
-        </style>
-        <div class="caseview">
-            <button type="button" class="btn-open-caseview" onclick="$('.caseview_lst').toggle();">CaseView Toggle</button>
-            <div class="caseview_lst" style="display: none;">
-                <button type="button" class="item" onclick="case1()">1. Nếu chưa đăng nhập</button>
-                <button type="button" class="item" onclick="case21()">2-1. Nếu đã đăng nhập và có avatar</button>
-                <button type="button" class="item" onclick="case22()">2-2. Nếu đã đăng nhập và chưa có avatar</button>
-                <button type="button" class="item" onclick="case3()">3. [Toast] Lưu thay đổi thành công</button>
-                <button type="button" class="item" onclick="case4()">4. [Toast] Lưu thay đổi thất bại</button>
-                <button type="button" class="item" onclick="case5()">5. [Toast] Đổi mật khẩu thành công</button>
-                <button type="button" class="item" onclick="case6()">6. [Toast] Đổi mật khẩu thất bại</button>
-            </div>
-        </div>
-        <script>
-            function case1() {
-                $(".header .btn-profile, .header .select-block").css("display", "none")
-                $(".header .btn-login").removeAttr("style")
-            }
-            function case21() {
-                $(".header .btn-profile, .header .select-block").removeAttr("style")
-                $(".header .btn-login").css("display", "none")
-                $(".profile .avatar").eq(0).removeAttr("style")
-                $(".profile .avatar").eq(1).css("display", "none")
-            }
-            function case22() {
-                $(".header .btn-profile, .header .select-block").removeAttr("style")
-                $(".header .btn-login").css("display", "none")
-                $(".profile .avatar").eq(0).css("display", "none")
-                $(".profile .avatar").eq(1).removeAttr("style")
-            }
-            function case3() {
-                $(".toastify").removeClass("active").siblings(".success").eq(0).addClass("active")
-            }
-            function case4() {
-                $(".toastify").removeClass("active").siblings(".error").eq(0).addClass("active")
-            }
-            function case5() {
-                $(".toastify").removeClass("active").siblings(".success").eq(1).addClass("active")
-            }
-            function case6() {
-                $(".toastify").removeClass("active").siblings(".error").eq(1).addClass("active")
-            }
-        </script>
-        <!-- [D] Case view -->
     </body>
 </html>
 
