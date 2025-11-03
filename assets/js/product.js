@@ -72,16 +72,8 @@ async function renderProductList(page = 1, page_size = 6, search = "") {
   }
 }
 
-// Hàm render dạng swiper cho từng section
-async function renderProductSection({selector, page_size = 6, type}) {
-  let featured = false, sort_by = "", order = "";
-  if(type === "best-seller") {
-    sort_by = "sold_count"
-    order = "asc"
-  }
-  if(type === "recent") {
-    featured = true
-  }
+// Hàm render dạng swiper cho section Best seller
+async function renderProductSection({selector, page_size=6, featured=false, sort_by="", order=""}) {
   try {
     const list = await fetchProducts({page: 1, page_size: page_size, featured: featured, sort_by: sort_by, order: order});
     const html = list.map(item => renderProduct(item, true)).join("");
@@ -92,6 +84,66 @@ async function renderProductSection({selector, page_size = 6, type}) {
   } catch (err) {
     console.error(`Lỗi khi tải ${type}:`, err);
     $(`${selector} .swiper-wrapper`).html(`<li class="error">Lỗi tải sản phẩm</li>`);
+  }
+}
+
+// Hàm render sản phẩm gợi ý dựa trên sản phẩm hiện tại
+async function renderProductSuggestion() {
+  try {
+    let url = `${API_URL}/suggestions`
+    
+    const res = await fetch(url);
+    const data = await res.json();
+    if (res.ok) {
+      const list = data.data.items;
+      if(list.length > 0) {
+        const html = list.map(item => renderProduct(item, true)).join("");
+        $(`.related-product .swiper-wrapper`).html(html);
+    
+        const swiper = $(`.related-product .product-swiper`)[0]?.swiper;
+        if (swiper) swiper.update();
+      } else {
+        $(`.related-product .swiper-wrapper`).html(`<li class="error">Không tìm thấy sản phẩm nào phù hợp.</li>`);
+      }
+    } else {
+      $(`.related-product .swiper-wrapper`).html(`<li class="error">Lỗi tải sản phẩm</li>`);
+    }
+  } catch (err) {
+    console.error("Fetch product failed:", err);
+    $(`.related-product .swiper-wrapper`).html(`<li class="error">Lỗi tải sản phẩm</li>`);
+  }
+}
+
+// Hàm render chi tiết sản phẩm
+async function renderProductDetail() {
+  const params = new URLSearchParams(window.location.search);
+  const product_code = params.get("product_code") || "";
+  
+  try {
+    let url = `${API_URL}/${product_code}`
+    
+    const res = await fetch(url);
+    const data = await res.json();
+    if (res.ok) {
+      const detail = data.data;
+      console.log(detail);
+      
+      $('.breadcrumb .title, .product-detail .title').html(detail.product_name_full);
+      $('.product-detail .short-desc').html(detail.short_description);
+      const tags = detail.tags.map(item => `<li><a href="product-list.html" class="button-main small bg-secondary-ui">${item}</a></li>`).join("");
+      $('.product-detail .tags-list').html(tags);
+      $('.product-detail .sale-price').html(detail.sale_price ? "₫" + detail.sale_price : "₫" + detail.price);
+      $('.product-detail .price').html(detail.sale_price ? "₫" + detail.price : '');
+      const discount = detail.sale_price ? Number(detail.sale_price / detail.price * 100) : null;
+      if(discount) {
+        $('.product-detail .discount').html('-' + discount + '%');
+      } else {
+        $('.product-detail .discount').hide();
+      }
+      $('.product-detail .desc').html(`${detail.detailed_info.introduction}<br>${detail.detailed_info.meaning}<br>${detail.detailed_info.suitableFor}`);
+    }
+  } catch (err) {
+    console.error("Fetch product failed:", err);
   }
 }
 
@@ -118,10 +170,18 @@ $(document).ready(async function() {
   }
 
   if ($(".product-swiper").length) {
-    renderProductSection(".product-swiper", 6, "best-seller");
+    renderProductSection({selector:".product-swiper", page_size:6, sort_by:"sold_count", order:"asc"});
   }
 
   if ($(".product-swiper-two").length) {
-    renderProductSection(".product-swiper-two", 6, "recent");
+    renderProductSection({selector:".product-swiper-two", page_size:6, featured:true});
+  }
+
+  if ($(".related-product").length) {
+    renderProductSuggestion();
+  }
+
+  if ($(".product-detail").length) {
+    renderProductDetail();
   }
 });

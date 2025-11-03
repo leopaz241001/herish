@@ -204,10 +204,10 @@
         </section>
 
         <!-- Reminders -->
-        <section class="reminders overflow-hidden sm:py-32 pt-8 pb-11 border-b border-primary-txt">
+        <section id="reminders" class="reminders overflow-hidden sm:py-32 pt-8 pb-11 border-b border-primary-txt">
             <div class="container">
-                <h2 class="text-head3">Lời nhắc đã lưu (4)</h2>
-                <ul class="grid lg:grid-cols-3 sm:grid-cols-2 sm:gap-6 gap-4 sm:mt-10 mt-6">
+                <h2 class="text-head3">Lời nhắc đã lưu (<span class="reminders-quantity">4</span>)</h2>
+                <ul class="reminders-list grid lg:grid-cols-3 sm:grid-cols-2 sm:gap-6 gap-4 sm:mt-10 mt-6">
                     <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 1">
                         <div class="flex justify-between gap-12">
                             <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 6 tháng 8</span>
@@ -618,76 +618,75 @@
                 <div class="modal-header sm:py-8 py-5 sm:px-6 px-4 border-b border-neutral-ui">
                     <strong class="text-head5">Thêm lời nhắc</strong>
                 </div>
-                <form>
+                <form id="formReminder">
                     <div class="modal-content sm:p-6 py-5 px-4">
                         <div class="form-control">
-                            <label for="name" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Tên của người ấy<span class="text-error ml-0.5">*</span></label>
-                            <input id="name" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="name" placeholder="Tên người nhận" required />
+                            <label for="recipientName" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Tên của người ấy<span class="text-error ml-0.5">*</span></label>
+                            <input id="recipientName" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="recipientName" placeholder="Tên người nhận" required />
                         </div>
                         <div class="form-control form-radio sm:mt-5 mt-4">
                             <label class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày đặc biệt<span class="text-error ml-0.5">*</span></label>
-                            <ul class="list flex flex-wrap gap-4">
+                            <ul class="event-list flex flex-wrap gap-4">
                                 <li class="relative">
-                                    <input id="birthday" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0" required>
+                                    <input id="birthday" type="radio" name="event" class="absolute bottom-0 right-0 opacity-0" required>
                                     <label for="birthday" class="chip button-main border border-transparent bg-secondary-ui">
                                         <span class="icon-birthday-cake sm:text-[24px] text-[20px]"></span>
-                                        <span>Sinh nhật</span>
+                                        <span class="event-name">Sinh nhật</span>
                                     </label>
                                 </li>
                                 <li class="relative">
-                                    <input id="anniversary" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
+                                    <input id="anniversary" type="radio" name="event" class="absolute bottom-0 right-0 opacity-0">
                                     <label for="anniversary" class="chip button-main border border-transparent bg-secondary-ui">
                                         <span class="icon-calendar-love-02 sm:text-[24px] text-[20px]"></span>
-                                        <span>Ngày kỷ niệm</span>
+                                        <span class="event-name">Ngày kỷ niệm</span>
                                     </label>
                                 </li>
                                 <li class="relative">
-                                    <input id="valentine" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
+                                    <input id="valentine" type="radio" name="event" class="absolute bottom-0 right-0 opacity-0">
                                     <label for="valentine" class="chip button-main border border-transparent bg-secondary-ui">
                                         <span class="icon-favourite sm:text-[24px] text-[20px]"></span>
-                                        <span>Ngày Valentine</span>
+                                        <span class="event-name">Ngày Valentine</span>
                                     </label>
                                 </li>
                                 <li class="relative">
-                                    <input id="womenDay" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
+                                    <input id="womenDay" type="radio" name="event" class="absolute bottom-0 right-0 opacity-0">
                                     <label for="womenDay" class="chip button-main border border-transparent bg-secondary-ui">
                                         <span class="icon-female sm:text-[24px] text-[20px]"></span>
-                                        <span>Ngày Quốc tế Phụ nữ</span>
+                                        <span class="event-name">Ngày Quốc tế Phụ nữ</span>
                                     </label>
                                 </li>
                                 <li class="relative">
-                                    <input id="menDay" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
+                                    <input id="menDay" type="radio" name="event" class="absolute bottom-0 right-0 opacity-0">
                                     <label for="menDay" class="chip button-main border border-transparent bg-secondary-ui">
                                         <span class="icon-male sm:text-[24px] text-[20px]"></span>
-                                        <span>Ngày Quốc tế Nam giới</span>
+                                        <span class="event-name">Ngày Quốc tế Nam giới</span>
                                     </label>
                                 </li>
                                 <li class="relative">
-                                    <input id="womenVietnam" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
+                                    <input id="womenVietnam" type="radio" name="event" class="absolute bottom-0 right-0 opacity-0">
                                     <label for="womenVietnam" class="chip button-main border border-transparent bg-secondary-ui">
                                         <span class="icon-flower-pot sm:text-[24px] text-[20px]"></span>
-                                        <span>Ngày Phụ nữ Việt Nam</span>
+                                        <span class="event-name">Ngày Phụ nữ Việt Nam</span>
                                     </label>
                                 </li>
                                 <li class="relative">
-                                    <input id="christmas" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
+                                    <input id="christmas" type="radio" name="event" class="absolute bottom-0 right-0 opacity-0">
                                     <label for="christmas" class="chip button-main border border-transparent bg-secondary-ui">
                                         <span class="icon-pine sm:text-[24px] text-[20px]"></span>
-                                        <span>Lễ Giáng sinh</span>
+                                        <span class="event-name">Lễ Giáng sinh</span>
                                     </label>
                                 </li>
                                 <li class="relative">
-                                    <input id="other" type="radio" name="special" class="absolute bottom-0 right-0 opacity-0">
-                                    <label for="other" class="chip button-main border border-transparent bg-secondary-ui">
+                                    <button type="button" class="chip button-main border border-transparent bg-secondary-ui" onclick="showOtherDate();">
                                         <i class="hgi hgi-stroke hgi-add-01 sm:text-[24px] text-[20px]"></i>
                                         <span>Khác</span>
-                                    </label>
+                                    </button>
                                 </li>
                             </ul>
                         </div>
                         <div class="form-control sm:mt-5 mt-4 hidden">
-                            <label for="otherDate" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày khác<span class="text-error ml-0.5">*</span></label>
-                            <input id="otherDate" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="otherDate" placeholder="Lễ tốt nghiệp, Tiệc đầy tháng, v.v..." />
+                            <label for="eventName" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày khác<span class="text-error ml-0.5">*</span></label>
+                            <input id="eventName" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="eventName" placeholder="Lễ tốt nghiệp, Tiệc đầy tháng, v.v..." />
                         </div>
                         <div class="form-control sm:mt-5 mt-4">
                             <label for="dateInput" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày<span class="text-error ml-0.5">*</span></label>
@@ -779,32 +778,11 @@
         <script src="./assets/js/jquery.min.js"></script>
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="./assets/js/user.js"></script>
+        <script src="./assets/js/reminder.js"></script>
         <script src="./assets/js/main.js"></script>
-
-        <!-- [D] Case view -->
-        <style>
-            .caseview{position:fixed;max-height: 300px;overflow: auto;bottom:200px;left:5px;padding:5px;background:rgba(0, 0, 0, 0.7);z-index:99999;font-family:'NotoSans',sans-serif;}
-            .btn-open-caseview, .caseview p{padding:0 5px 3px 5px;color:yellow}
-            .caseview a{display:block;padding:5px;color:#fff}
-            .caseview .item{display: block;font-size: 16px;color:#fff}
-        </style>
-        <div class="caseview">
-            <button type="button" class="btn-open-caseview" onclick="$('.caseview_lst').toggle();">CaseView Toggle</button>
-            <div class="caseview_lst" style="display: none;">
-                <button type="button" class="item" onclick="case1()">1. Show/hide ngày khác</button>
-                <button type="button" class="item" onclick="case2()">2. Show/hide Tạo lời nhắc thành công</button>
-                <button type="button" class="item" onclick="case3()">3. Show/hide Tạo lời nhắc thất bại</button>
-            </div>
-        </div>
         <script>
-            function case1() {
-                $(".modal-reminders .form-control").eq(2).toggleClass("hidden")
-            }
-            function case2() {
-                $(".toastify").removeClass("active").siblings(".success").addClass("active")
-            }
-            function case3() {
-                $(".toastify").removeClass("active").siblings(".error").addClass("active")
+            function showOtherDate () {
+                $(".modal-reminders .form-control").eq(2).removeClass("hidden");
             }
         </script>
         <!-- [D] Case view -->
