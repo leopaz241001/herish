@@ -22,20 +22,44 @@ function renderProduct(product, isSlide = false) {
   `;
 }
 
+function appendArrayParams(url, key, values) {
+  if (!values) return url;
+  if (Array.isArray(values)) {
+    values.forEach(v => url += `&${key}=${encodeURIComponent(v)}`);
+  } else {
+    url += `&${key}=${encodeURIComponent(values)}`;
+  }
+  return url;
+}
+
+function getFiltersFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    occasion: params.getAll("occasion"),
+    min_price: params.get("min_price"),
+    max_price: params.get("max_price"),
+    search: params.get("search"),
+  };
+}
+
 // Hàm fetch danh sách product
-async function fetchProducts({page=1,page_size=6,search="",tags,color_theme,occasion,target_audience,status,featured,min_price,max_price,sort_by,order}) {
+async function fetchProducts({page=1,page_size,search,tags,color_theme,occasion,target_audience,status,featured,min_price,max_price,sort_by,order}) {
   try {
-    let url = `${API_URL}?page=${page}&page_size=${page_size}`
+    let url = `${API_URL}?page=${page}`
+    if(page_size) url+= `&page_size=${page_size}`
     if(search) url+= `&search=${encodeURIComponent(search)}`
     if(featured) url+= `&featured=${featured}`
     if(sort_by) url+= `&sort_by=${sort_by}`
     if(order) url+= `&order=${order}`
+    url = appendArrayParams(url, "tags", tags);
+    url = appendArrayParams(url, "occasion", occasion);
+    url = appendArrayParams(url, "target_audience", target_audience);
     
     const res = await fetch(url);
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || "Không thể tải sản phẩm");
 
-    return data.data.items || [];
+    return data.data || [];
   } catch (err) {
     console.error("Fetch product failed:", err);
     return []; // tránh lỗi undefined khi map()
@@ -43,29 +67,43 @@ async function fetchProducts({page=1,page_size=6,search="",tags,color_theme,occa
 }
 
 // Hàm render dạng danh sách
-async function renderProductList(page = 1, page_size = 6, search = "") {
+async function renderProductList({page=1, page_size, search, occasion, target_audience, tags, min_price, max_price, sort_by, order}) {
   try {
-    const list = await fetchProducts({page, page_size, search});
-    if(list.length > 0) {
-      const html = list.map(renderProduct).join("");
+    const { items, pagination } = await fetchProducts({
+      page:page,
+      page_size:page_size,
+      search:search,
+      occasion:occasion,
+      target_audience:target_audience,
+      tags:tags,
+      min_price:min_price,
+      max_price:max_price,
+      sort_by:sort_by,
+      order:order,
+    });
+    console.log(items);
+    
+    if(pagination.total_items > 0) {
+      $(".products-quantity").html(pagination.total_items);
+      const html = items.map(renderProduct).join("");
   
+      $("#productList").addClass("loading");
       if (page === 1) {
         $("#productList").html(html);
       } else {
-        $("#productList").addClass("loading");
-        setTimeout(() => {
-          $("#productList").append(html);
-          $("#productList").removeClass("loading");
-        }, 1000);
+        $("#productList").append(html);
       }
+      setTimeout(() => {
+        $("#productList").removeClass("loading");
+      }, 1000);
     } else {
       if (page === 1) {
         $("#productList").html(`<li class="error">Không tìm thấy sản phẩm nào phù hợp!</li>`);
       }
     }
 
-    if (list.length < page_size) $("#btnLoadMore").hide();
-    else $("#btnLoadMore").show();
+    $("#btnLoadMore").hide();
+    if (pagination.total_pages > page) $("#btnLoadMore").show();
   } catch (err) {
     console.error(err);
     $("#productList").html(`<li class="error">Lỗi khi tải sản phẩm!</li>`);
@@ -75,8 +113,8 @@ async function renderProductList(page = 1, page_size = 6, search = "") {
 // Hàm render dạng swiper cho section Best seller
 async function renderProductSection({selector, page_size=6, featured=false, sort_by="", order=""}) {
   try {
-    const list = await fetchProducts({page: 1, page_size: page_size, featured: featured, sort_by: sort_by, order: order});
-    const html = list.map(item => renderProduct(item, true)).join("");
+    const { items } = await fetchProducts({page: 1, page_size: page_size, featured: featured, sort_by: sort_by, order: order});
+    const html = items.map(item => renderProduct(item, true)).join("");
     $(`${selector} .swiper-wrapper`).html(html);
 
     const swiper = $(`${selector}`)[0]?.swiper;
@@ -89,8 +127,11 @@ async function renderProductSection({selector, page_size=6, featured=false, sort
 
 // Hàm render sản phẩm gợi ý dựa trên sản phẩm hiện tại
 async function renderProductSuggestion() {
+  const params = new URLSearchParams(window.location.search);
+  const product_code = params.get("product_code") || "";
+
   try {
-    let url = `${API_URL}/suggestions`
+    let url = `${API_URL}/suggestions?product_code=${product_code}`
     
     const res = await fetch(url);
     const data = await res.json();
@@ -147,13 +188,44 @@ async function renderProductDetail() {
   }
 }
 
+function filterProductByLink(type) {
+  $('.sub-menu .link').each(function() {
+    $(this).on('click', function (e) {
+      e.preventDefault();
+      const data = $(this).attr(`data-${type}`);
+      if (data) window.location.href = `product-list.html?${type}=${data}`;
+      else window.location.href = `product-list.html`
+    })
+  })
+}
+
+function filterProductBySelect() {
+  $('.filter .list-option li').each(function() {
+    $(this).on('click', function () {
+      const item = $(this);
+      let key = item.closest('.select-block').attr(`data-key`);
+      let value = item.attr(`data-value`);
+      if(key === "max_price") {
+        const min_price = item.attr(`data-min`);
+        const max_price = item.attr(`data-max`);
+        renderProductList({page:1, page_size: 6, min_price: min_price, max_price: max_price});
+      }
+    })
+  })
+}
+
 $(document).ready(async function() {
+  filterProductByLink("occasion");
+  filterProductBySelect();
+  
   if ($("#productList").length && !$(".search-result").length) {
-    renderProductList();
+    const params = new URLSearchParams(window.location.search);
+    const occasion = params.get("occasion") || "";
+    renderProductList({page:1, page_size:6, occasion:occasion});
 
     $("#btnLoadMore .button-main").on("click", () => {
       currentPage++;
-      renderProductList(currentPage);
+      renderProductList({page:currentPage, page_size:6, occasion:occasion});
     });
   }
 
@@ -161,20 +233,20 @@ $(document).ready(async function() {
     const params = new URLSearchParams(window.location.search);
     const search = params.get("search") || "";
     $('.search-result-keyword').text(search);
-    renderProductList(1, 6, search);
+    renderProductList({search: search});
 
     $("#btnLoadMore .button-main").on("click", () => {
       currentPage++;
-      renderProductList(currentPage, 6, search);
+      renderProductList({page:currentPage, search:search});
     });
   }
 
-  if ($(".product-swiper").length) {
-    renderProductSection({selector:".product-swiper", page_size:6, sort_by:"sold_count", order:"asc"});
+  if ($(".best-seller .product-swiper").length) {
+    renderProductSection({selector:".best-seller .product-swiper", page_size:6, sort_by:"sold_count", order:"asc"});
   }
 
-  if ($(".product-swiper-two").length) {
-    renderProductSection({selector:".product-swiper-two", page_size:6, featured:true});
+  if ($(".recent-product .product-swiper-two").length) {
+    renderProductSection({selector:".recent-product .product-swiper-two", page_size:6, featured:true});
   }
 
   if ($(".related-product").length) {

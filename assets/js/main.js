@@ -523,8 +523,8 @@
             optionItems.on('click', function (e) {
                 e.stopPropagation()
                 menu.removeClass('open');
-                let dataItem = $(this).attr('data-item')
-                if (dataItem) $(this).closest('.select-block').addClass('filtered').find('.selected').text(dataItem)
+                let dataName = $(this).text();
+                if (dataName) $(this).closest('.select-block').addClass('filtered').find('.selected').text(dataName)
             })
 
             $(window).on('click', function (e) {

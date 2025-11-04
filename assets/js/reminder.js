@@ -29,7 +29,7 @@ const createReminder = function () {
         $(".toastify").removeClass("active").siblings(".success").addClass("active");
         setTimeout(() => {
           window.location.reload();
-        }, 5000);
+        }, 3000);
       } else {
         $(".toastify").removeClass("active").siblings(".error").addClass("active");
         alert(data.message);
