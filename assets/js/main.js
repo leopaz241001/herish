@@ -337,12 +337,11 @@
             }
         }, 1000);
 
-        const btnOpenPopup = $('.btn-open-popup')
-
-        btnOpenPopup.on('click', function (e) {
+        $(document).on('click', '.btn-open-popup', function (e) {
             e.preventDefault()
-
+    
             const popupType = $(this).data('type')
+            
             $('.modal-item').each(function (e) {
                 if ($(this).data('type') === popupType) {
                     $(this).addClass('open')
@@ -351,7 +350,7 @@
                     }, 50);
                 }
             })
-        })
+        });
 
         $('.modal-item').on('click', function (e) {
             e.stopPropagation()

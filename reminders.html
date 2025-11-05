@@ -196,7 +196,7 @@
                         <h2 class="text-head1 sm:mt-9 mt-5 animate animate-top" style="--i: 2">Nhớ giúp bạn, tặng đúng lúc</h2>
                         <p class="text-body2 sm:mt-7 mt-4 animate animate-top" style="--i: 3">Thêm ngày sinh, kỷ niệm hay bất kỳ dịp đặc biệt nào - chúng tôi sẽ nhắc bạn trước, để yêu thương không đến muộn.</p>
                         <div class="group-btn flex gap-5 sm:mt-12 mt-9 animate animate-top" style="--i: 4">
-                            <button type="button" class="btn-open-popup button-main bg-white" data-type="modal-reminders">Thêm lời nhắc</button>
+                            <button type="button" class="btn-open-popup button-main bg-white" data-type="modal-reminders" aria-label="Thêm lời nhắc">Thêm lời nhắc</button>
                         </div>
                     </div>
                 </div>
@@ -206,7 +206,7 @@
         <!-- Reminders -->
         <section id="reminders" class="reminders overflow-hidden sm:py-32 pt-8 pb-11 border-b border-primary-txt">
             <div class="container">
-                <h2 class="text-head3">Lời nhắc đã lưu (<span class="reminders-quantity">4</span>)</h2>
+                <h2 class="text-head3">Lời nhắc đã lưu (<span class="reminders-quantity">0</span>)</h2>
                 <ul class="reminders-list grid lg:grid-cols-3 sm:grid-cols-2 sm:gap-6 gap-4 sm:mt-10 mt-6">
                     <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 1">
                         <div class="flex justify-between gap-12">
@@ -241,40 +241,6 @@
                         </div>
                         <strong class="block text-head4 sm:my-12 my-5">Chị gái hehehe</strong>
                         <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Sinh nhật</span>
-                    </li>
-                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 3">
-                        <div class="flex justify-between gap-12">
-                            <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 10 tháng 8</span>
-                            <div class="flex gap-6">
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-edit-02 block text-[24px]"></i>
-                                    <span class="blind">button edit</span>
-                                </button>
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-delete-03 block text-[24px] text-error"></i>
-                                    <span class="blind">button delete</span>
-                                </button>
-                            </div>
-                        </div>
-                        <strong class="block text-head4 sm:my-12 my-5">Cháu trai</strong>
-                        <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Tiệc đầy tháng</span>
-                    </li>
-                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 4">
-                        <div class="flex justify-between gap-12">
-                            <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 7 tháng 12</span>
-                            <div class="flex gap-6">
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-edit-02 block text-[24px]"></i>
-                                    <span class="blind">button edit</span>
-                                </button>
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-delete-03 block text-[24px] text-error"></i>
-                                    <span class="blind">button delete</span>
-                                </button>
-                            </div>
-                        </div>
-                        <strong class="block text-head4 sm:my-12 my-5">Louis Ramsay</strong>
-                        <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Lễ tốt nghiệp</span>
                     </li>
                 </ul>
             </div>
@@ -684,7 +650,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="form-control sm:mt-5 mt-4 hidden">
+                        <div class="form-control form-other-date sm:mt-5 mt-4 hidden">
                             <label for="eventName" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày khác<span class="text-error ml-0.5">*</span></label>
                             <input id="eventName" class="w-full p-4 rounded-lg bg-neutral-ui" type="text" name="eventName" placeholder="Lễ tốt nghiệp, Tiệc đầy tháng, v.v..." />
                         </div>
@@ -781,8 +747,14 @@
         <script src="./assets/js/reminder.js"></script>
         <script src="./assets/js/main.js"></script>
         <script>
-            function showOtherDate () {
-                $(".modal-reminders .form-control").eq(2).removeClass("hidden");
+            $(".event-list li input").on("change", function() {
+                $(".form-other-date").addClass("hidden");
+                $(".form-other-date").find("input").val("");
+            })
+
+            function showOtherDate() {
+                $(".form-other-date").removeClass("hidden");
+                $(".event-list li input").prop("checked", false);
             }
         </script>
         <!-- [D] Case view -->

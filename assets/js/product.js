@@ -1,5 +1,6 @@
 const API_URL = "http://160.250.5.249:5001/api/products";
 let currentPage = 1;
+let pageSize = 6;
 
 // Hàm render 1 sản phẩm
 function renderProduct(product, isSlide = false) {
@@ -32,14 +33,16 @@ function appendArrayParams(url, key, values) {
   return url;
 }
 
-function getFiltersFromURL() {
-  const params = new URLSearchParams(window.location.search);
-  return {
-    occasion: params.getAll("occasion"),
-    min_price: params.get("min_price"),
-    max_price: params.get("max_price"),
-    search: params.get("search"),
-  };
+function updateURLParams(newParams) {
+  const url = new URL(window.location.href);
+  Object.entries(newParams).forEach(([key, value]) => {
+    if (value === null || value === undefined || value === "") {
+      url.searchParams.delete(key);
+    } else {
+      url.searchParams.set(key, value);
+    }
+  });
+  window.history.replaceState({}, "", url);
 }
 
 // Hàm fetch danh sách product
@@ -49,6 +52,8 @@ async function fetchProducts({page=1,page_size,search,tags,color_theme,occasion,
     if(page_size) url+= `&page_size=${page_size}`
     if(search) url+= `&search=${encodeURIComponent(search)}`
     if(featured) url+= `&featured=${featured}`
+    if(min_price) url+= `&min_price=${min_price}`
+    if(max_price) url+= `&max_price=${max_price}`
     if(sort_by) url+= `&sort_by=${sort_by}`
     if(order) url+= `&order=${order}`
     url = appendArrayParams(url, "tags", tags);
@@ -59,7 +64,7 @@ async function fetchProducts({page=1,page_size,search,tags,color_theme,occasion,
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || "Không thể tải sản phẩm");
 
-    return data.data || [];
+    return data.data;
   } catch (err) {
     console.error("Fetch product failed:", err);
     return []; // tránh lỗi undefined khi map()
@@ -84,7 +89,6 @@ async function renderProductList({page=1, page_size, search, occasion, target_au
     console.log(items);
     
     if(pagination.total_items > 0) {
-      $(".products-quantity").html(pagination.total_items);
       const html = items.map(renderProduct).join("");
   
       $("#productList").addClass("loading");
@@ -102,16 +106,21 @@ async function renderProductList({page=1, page_size, search, occasion, target_au
       }
     }
 
-    $("#btnLoadMore").hide();
-    if (pagination.total_pages > page) $("#btnLoadMore").show();
+    $(".products-quantity").html(pagination.total_items);
+    $("#btnLoadMore").toggle(pagination.total_pages > page);
   } catch (err) {
     console.error(err);
     $("#productList").html(`<li class="error">Lỗi khi tải sản phẩm!</li>`);
   }
 }
 
+async function renderProductByParams(page=1, page_size) {
+  const params = Object.fromEntries(new URLSearchParams(window.location.search)); // { key: value }
+  renderProductList({page:page, page_size: page_size, ...params});
+}
+
 // Hàm render dạng swiper cho section Best seller
-async function renderProductSection({selector, page_size=6, featured=false, sort_by="", order=""}) {
+async function renderProductSection({selector, page_size=pageSize, featured=false, sort_by="", order=""}) {
   try {
     const { items } = await fetchProducts({page: 1, page_size: page_size, featured: featured, sort_by: sort_by, order: order});
     const html = items.map(item => renderProduct(item, true)).join("");
@@ -202,13 +211,38 @@ function filterProductByLink(type) {
 function filterProductBySelect() {
   $('.filter .list-option li').each(function() {
     $(this).on('click', function () {
+      currentPage = 1;
       const item = $(this);
       let key = item.closest('.select-block').attr(`data-key`);
       let value = item.attr(`data-value`);
       if(key === "max_price") {
         const min_price = item.attr(`data-min`);
         const max_price = item.attr(`data-max`);
-        renderProductList({page:1, page_size: 6, min_price: min_price, max_price: max_price});
+        updateURLParams({min_price: min_price, max_price: max_price}); // ?min_price=xxx&max_price=yyy
+        renderProductByParams(1, pageSize);
+      } else if(key) {
+        updateURLParams({[key]: value}); // { occasion: "birthday" }
+        renderProductByParams(1, pageSize);
+      }
+    })
+  })
+}
+
+function sortProductBySelect() {
+  $('.select-sort .list-option li').each(function() {
+    $(this).on('click', function () {
+      currentPage = 1;
+      const item = $(this);
+      let value = item.attr(`data-value`);
+      if(value !== "price_asc" && value !== "price_desc") {
+        updateURLParams({sort_by: value, order: "asc"});
+        renderProductByParams(1, pageSize);
+      } else if(value === "price_asc") {
+        updateURLParams({sort_by: "price", order: "asc"});
+        renderProductByParams(1, pageSize);
+      } else if(value === "price_desc") {
+        updateURLParams({sort_by: "price", order: "desc"});
+        renderProductByParams(1, pageSize);
       }
     })
   })
@@ -217,15 +251,14 @@ function filterProductBySelect() {
 $(document).ready(async function() {
   filterProductByLink("occasion");
   filterProductBySelect();
+  sortProductBySelect();
   
   if ($("#productList").length && !$(".search-result").length) {
-    const params = new URLSearchParams(window.location.search);
-    const occasion = params.get("occasion") || "";
-    renderProductList({page:1, page_size:6, occasion:occasion});
+    renderProductByParams(1, pageSize);
 
     $("#btnLoadMore .button-main").on("click", () => {
       currentPage++;
-      renderProductList({page:currentPage, page_size:6, occasion:occasion});
+      renderProductByParams(currentPage, pageSize);
     });
   }
 
@@ -233,20 +266,20 @@ $(document).ready(async function() {
     const params = new URLSearchParams(window.location.search);
     const search = params.get("search") || "";
     $('.search-result-keyword').text(search);
-    renderProductList({search: search});
+    renderProductByParams(1, pageSize);
 
     $("#btnLoadMore .button-main").on("click", () => {
       currentPage++;
-      renderProductList({page:currentPage, search:search});
+      renderProductByParams(currentPage, pageSize);
     });
   }
 
   if ($(".best-seller .product-swiper").length) {
-    renderProductSection({selector:".best-seller .product-swiper", page_size:6, sort_by:"sold_count", order:"asc"});
+    renderProductSection({selector:".best-seller .product-swiper", page_size:pageSize, sort_by:"sold_count", order:"asc"});
   }
 
   if ($(".recent-product .product-swiper-two").length) {
-    renderProductSection({selector:".recent-product .product-swiper-two", page_size:6, featured:true});
+    renderProductSection({selector:".recent-product .product-swiper-two", page_size:pageSize, featured:true});
   }
 
   if ($(".related-product").length) {
