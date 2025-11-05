@@ -185,21 +185,8 @@ function updateProfile() {
 function logout() {
   btnLogout.on('click', async function (e) {
     e.preventDefault();
-
-    try {
-      const res = await fetch('https://realhome-be-dpc0.onrender.com/api/logout', {
-        method: 'POST',
-        credentials: "include",
-      });
-      
-      if(res.ok) {
-        $('.header .select-profile').hide();
-        $('.header .btn-login').removeAttr('style');
-        window.location.href = 'login.html';
-      }
-    } catch (err) {
-      console.error(err);
-    }
+    localStorage.removeItem("access_token");
+    window.location.href = 'login.html';
   })
 }
 
