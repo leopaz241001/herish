@@ -1,6 +1,6 @@
 const API_URL = "http://160.250.5.249:5001/api/products";
 let currentPage = 1;
-let pageSize = 6;
+let pageSize = 12;
 
 // Hàm render 1 sản phẩm
 function renderProduct(product, isSlide = false) {
@@ -46,18 +46,19 @@ function updateURLParams(newParams) {
 }
 
 // Hàm fetch danh sách product
-async function fetchProducts({page=1,page_size,search,tags,color_theme,occasion,target_audience,status,featured,min_price,max_price,sort_by,order}) {
+async function fetchProducts({page=1,page_size,search,tags,color_theme,occasion,product_type,target_audience,status,featured,min_price,max_price,sort_by,order}) {
   try {
     let url = `${API_URL}?page=${page}`
     if(page_size) url+= `&page_size=${page_size}`
     if(search) url+= `&search=${encodeURIComponent(search)}`
+    if(occasion) url+= `&occasion=${occasion}`
+    if(product_type) url+= `&product_type=${product_type}`
     if(featured) url+= `&featured=${featured}`
     if(min_price) url+= `&min_price=${min_price}`
     if(max_price) url+= `&max_price=${max_price}`
     if(sort_by) url+= `&sort_by=${sort_by}`
     if(order) url+= `&order=${order}`
     url = appendArrayParams(url, "tags", tags);
-    url = appendArrayParams(url, "occasion", occasion);
     url = appendArrayParams(url, "target_audience", target_audience);
     
     const res = await fetch(url);
@@ -72,13 +73,14 @@ async function fetchProducts({page=1,page_size,search,tags,color_theme,occasion,
 }
 
 // Hàm render dạng danh sách
-async function renderProductList({page=1, page_size, search, occasion, target_audience, tags, min_price, max_price, sort_by, order}) {
+async function renderProductList({page=1, page_size, search, occasion, product_type, target_audience, tags, min_price, max_price, sort_by, order}) {
   try {
     const { items, pagination } = await fetchProducts({
       page:page,
       page_size:page_size,
       search:search,
       occasion:occasion,
+      product_type:product_type,
       target_audience:target_audience,
       tags:tags,
       min_price:min_price,
@@ -86,7 +88,6 @@ async function renderProductList({page=1, page_size, search, occasion, target_au
       sort_by:sort_by,
       order:order,
     });
-    console.log(items);
     
     if(pagination.total_items > 0) {
       const html = items.map(renderProduct).join("");
@@ -176,7 +177,6 @@ async function renderProductDetail() {
     const data = await res.json();
     if (res.ok) {
       const detail = data.data;
-      console.log(detail);
       
       $('.breadcrumb .title, .product-detail .title').html(detail.product_name_full);
       $('.product-detail .short-desc').html(detail.short_description);
@@ -197,12 +197,14 @@ async function renderProductDetail() {
   }
 }
 
-function filterProductByLink(type) {
-  $('.sub-menu .link').each(function() {
+function filterProductByLink() {
+  $('.btn-filter-product').each(function() {
     $(this).on('click', function (e) {
       e.preventDefault();
-      const data = $(this).attr(`data-${type}`);
-      if (data) window.location.href = `product-list.html?${type}=${data}`;
+      const key = $(this).attr(`data-key`);
+      const value = $(this).attr(`data-value`);
+      
+      if (key && value) window.location.href = `product-list.html?${key}=${encodeURIComponent(value)}`;
       else window.location.href = `product-list.html`
     })
   })
@@ -248,10 +250,30 @@ function sortProductBySelect() {
   })
 }
 
+async function fetchProductCategory() {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("occasion") || params.get("product_type") || "";
+
+  try {
+    const res = await fetch('assets/data/category.json');
+    const data = await res.json();
+    
+    const selectedCategory = data.find(item => item.name === category);
+    if(selectedCategory) {
+      $('.category-name').text(selectedCategory.name);
+      $('.category-title').text(selectedCategory.title);
+      $('.category-desc').text(selectedCategory.desc);
+    }
+  } catch(err) {
+    console.error(err);
+  }
+}
+
 $(document).ready(async function() {
-  filterProductByLink("occasion");
+  filterProductByLink();
   filterProductBySelect();
   sortProductBySelect();
+  fetchProductCategory();
   
   if ($("#productList").length && !$(".search-result").length) {
     renderProductByParams(1, pageSize);

@@ -441,9 +441,9 @@
 
         // Switch to year view (use picker's scoped selector)
         $picker.find('.month-year').on('click', function () {
-            $picker.find('.date-view').addClass('hidden');
+            $picker.find('.date-view').toggleClass('hidden');
             renderYears();
-            $picker.find('.year-view').removeClass('hidden');
+            $picker.find('.year-view').toggleClass('hidden');
         });
 
         // --- IMPORTANT: bind delegated handlers ON $picker (NOT on document)

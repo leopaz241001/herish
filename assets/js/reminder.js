@@ -1,7 +1,7 @@
 const createReminder = function () {
   const formReminder = document.querySelector('#formReminder');
   
-  formReminder.addEventListener('submit', async (e) => {
+  formReminder.addEventListener('submit', async function(e) {
     e.preventDefault();
   
     const otherEvt = $('#eventName').val();
@@ -31,11 +31,15 @@ const createReminder = function () {
       const data = await res.json();
       if(res.ok) {
         $(".toastify").removeClass("active").siblings(".success").addClass("active");
+        if(method === "POST") $(".toastify.success .toastify-title").text("Tạo lời nhắc thành công");
+        else $(".toastify.success .toastify-title").text("Cập nhật lời nhắc thành công");
         setTimeout(() => {
           window.location.reload();
         }, 3000);
       } else {
         $(".toastify").removeClass("active").siblings(".error").addClass("active");
+        if(method === "POST") $(".toastify.error .toastify-title").text("Tạo lời nhắc thất bại");
+        else $(".toastify.error .toastify-title").text("Cập nhật lời nhắc thất bại");
         alert(data.message);
       }
     } catch (err) {
@@ -99,7 +103,7 @@ async function fetchReminders() {
   }
 }
 
-async function fetchReminderDetail() {
+async function handleReminderAction() {
   $(document).on("click", ".btn-open-popup", async function () {
     const event_id = $(this).closest('.reminder-item').attr("data-id");
     const ariaLabel = $(this).attr('aria-label');
@@ -157,8 +161,45 @@ async function fetchReminderDetail() {
   })
 }
 
+async function deleteReminder() {
+  let event_id;
+  $(document).on("click", ".btn-open-popup", async function () {
+    event_id = $(this).closest('.reminder-item').attr("data-id");
+  })
+
+  $(".btn-delete-reminders").on("click", async function () {
+    try {
+      const access_token = localStorage.getItem('access_token');
+      const res = await fetch(`http://160.250.5.249:5001/api/special-days/${event_id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${access_token}`
+        },
+        // credentials: "include", // gửi và nhận cookie
+      });
+      const data = await res.json();
+      
+      if(res.ok) {
+        $(".toastify").removeClass("active").siblings(".success").addClass("active");
+        $(".toastify.success strong").text("Xóa lời nhắc thành công");
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      } else {
+        $(".toastify").removeClass("active").siblings(".error").addClass("active");
+        $(".toastify.success strong").text("Xóa lời nhắc thất bại");
+        alert(data.message);
+      }
+    } catch (err) {
+      console.error("Delete reminder failed:", err);
+    }
+  })
+}
+
 if($('#reminders').length) {
   createReminder();
   fetchReminders();
-  fetchReminderDetail();
+  handleReminderAction();
+  deleteReminder();
 }
