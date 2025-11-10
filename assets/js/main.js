@@ -341,9 +341,12 @@
             e.preventDefault()
     
             const popupType = $(this).data('type')
+            console.log(popupType);
             
-            $('.modal-item').each(function (e) {
+            $('.modal-item').each(function () {
                 if ($(this).data('type') === popupType) {
+                    
+                    $('.modal-item').removeClass('open')
                     $(this).addClass('open')
                     setTimeout(function () {
                         $('body').addClass('scroll-locked')
@@ -353,6 +356,7 @@
         });
 
         $('.modal-item').on('click', function (e) {
+            if ($(e.target).closest('.btn-open-popup').length) return;
             e.stopPropagation()
         })
     }

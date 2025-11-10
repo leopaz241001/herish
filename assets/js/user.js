@@ -56,7 +56,7 @@ async function getProfile() {
       }
     }
   } catch (err) {
-    console.error(err);
+    console.log(err);
   }
 }
 

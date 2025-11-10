@@ -853,32 +853,6 @@
         <script src="./assets/js/user.js"></script>
         <script src="./assets/js/product.js"></script>
         <script src="./assets/js/main.js"></script>
-
-        <!-- [D] Case view -->
-        <style>
-            .caseview{position:fixed;max-height: 300px;overflow: auto;bottom:200px;left:5px;padding:5px;background:rgba(0, 0, 0, 0.7);z-index:99999;font-family:'NotoSans',sans-serif;}
-            .btn-open-caseview, .caseview p{padding:0 5px 3px 5px;color:yellow}
-            .caseview a{display:block;padding:5px;color:#fff}
-            .caseview .item{display: block;font-size: 16px;color:#fff}
-        </style>
-        <div class="caseview">
-            <button type="button" class="btn-open-caseview" onclick="$('.caseview_lst').toggle();">CaseView Toggle</button>
-            <div class="caseview_lst" style="display: none;">
-                <button type="button" class="item" onclick="case1()">1. Nếu không có sản phẩm</button>
-                <button type="button" class="item" onclick="case2()">2. Nếu có sản phẩm</button>
-            </div>
-        </div>
-        <script>
-            function case1() {
-                $(".wishlist .product-list").css("display", "none")
-                $(".wishlist .product-list-blank").removeAttr("style")
-            }
-            function case2() {
-                $(".wishlist .product-list").removeAttr("style")
-                $(".wishlist .product-list-blank").css("display", "none")
-            }
-        </script>
-        <!-- [D] Case view -->
     </body>
 </html>
 

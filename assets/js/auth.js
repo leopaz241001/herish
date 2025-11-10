@@ -129,11 +129,8 @@ const resetPassword = async function () {
       
       if(res.ok) {
         localStorage.removeItem('email');
-        $('.toastify').removeClass('active').siblings('.success').addClass('active');
-        $('.toastify.success .toastify-title').text(data.message);
-        setTimeout(() => {
-          window.location.href = 'login.html';
-        }, 2000);
+        $(".form-control-input").hide().siblings(".form-success").removeAttr("style");
+        $(".text-heading").html("Khôi phục mật khẩu");
       } else {
         $('.toastify').removeClass('active').siblings('.error').addClass('active');
         $('.toastify.error .toastify-title').text(data.message);
