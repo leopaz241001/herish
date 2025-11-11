@@ -260,6 +260,8 @@ async function fetchProductCategory() {
     
     const selectedCategory = data.find(item => item.name === category);
     if(selectedCategory) {
+      $('.category-img').attr('src', selectedCategory.image);
+      $('.category-img').attr('alt', selectedCategory.name);
       $('.category-name').text(selectedCategory.name);
       $('.category-title').text(selectedCategory.title);
       $('.category-desc').text(selectedCategory.desc);

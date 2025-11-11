@@ -2,91 +2,109 @@
   {
     "name": "Hộp quà tặng",
     "title": "Tặng một hộp quà - Gửi một ngày vui",
-    "desc": "Mỗi hộp là một câu chuyện nhỏ được chăm chút - để bạn dễ dàng gửi lời chúc đúng lúc, đúng cách."
+    "desc": "Mỗi hộp là một câu chuyện nhỏ được chăm chút - để bạn dễ dàng gửi lời chúc đúng lúc, đúng cách.",
+    "image": "/assets/images/slider/category/hopqua.jpg"
   },
   {
     "name": "Làm đẹp & Chăm sóc cá nhân",
     "title": "Món quà thay bạn chăm sóc người ấy",
-    "desc": "Khi bạn không ở cạnh, món quà sẽ thay bạn nhắc rằng họ được quan tâm và trân trọng."
+    "desc": "Khi bạn không ở cạnh, món quà sẽ thay bạn nhắc rằng họ được quan tâm và trân trọng.",
+    "image": "/assets/images/slider/category/lamdep.jpg"
   },
   {
     "name": "Phụ kiện cá nhân",
     "title": "Phụ kiện tinh tế - Tạo điểm nhấn riêng",
-    "desc": "Thay lời muốn nói - người ấy xứng đáng rực rỡ theo cách của riêng mình."
+    "desc": "Thay lời muốn nói - người ấy xứng đáng rực rỡ theo cách của riêng mình.",
+    "image": "/assets/images/slider/category/phukien.jpg"
   },
   {
     "name": "Đồ trang trí & Kỷ niệm",
     "title": "Trang trí một góc nhỏ - Lưu giữ một kỷ niệm lớn",
-    "desc": "Mỗi món đồ là một lời nhắc dịu dàng: rằng ký ức giữa hai người luôn đáng được trân trọng."
+    "desc": "Mỗi món đồ là một lời nhắc dịu dàng: rằng ký ức giữa hai người luôn đáng được trân trọng.",
+    "image": "/assets/images/slider/category/trangtri.jpg"
   },
   {
     "name": "Văn phòng phẩm",
     "title": "Góc sáng tạo & tập trung - Một chút cảm hứng mỗi ngày",
-    "desc": "Dành tặng người luôn nỗ lực mỗi ngày, để bàn làm việc trở thành nơi nuôi dưỡng động lực."
+    "desc": "Dành tặng người luôn nỗ lực mỗi ngày, để bàn làm việc trở thành nơi nuôi dưỡng động lực.",
+    "image": "/assets/images/slider/category/vpp.jpg"
   },
   {
     "name": "Đồ dùng tiện ích",
     "title": "Đồ dùng hằng ngày - Sự quan tâm đến từ những điều nhỏ nhất",
-    "desc": "Gợi nhớ rằng bạn luôn ở đó, mang sự ấm áp len vào từng thói quen và khoảnh khắc thường nhật."
+    "desc": "Gợi nhớ rằng bạn luôn ở đó, mang sự ấm áp len vào từng thói quen và khoảnh khắc thường nhật.",
+    "image": "/assets/images/slider/category/dodung.jpg"
   },
   {
     "name": "Tết Dương lịch (1/1)",
     "title": "New Year - New Moments to Cherish",
-    "desc": "Trao nhau điều may mắn - để cùng bắt đầu một hành trình mới rực rỡ."
+    "desc": "Trao nhau điều may mắn - để cùng bắt đầu một hành trình mới rực rỡ.",
+    "image": "/assets/images/slider/category/tetduonglich.jpg"
   },
   {
     "name": "Tết Nguyên Đán",
     "title": "Tết đoàn viên - Chia sẻ niềm vui mới",
-    "desc": "Mỗi món quà là một lời chúc năm mới may mắn, bình an và đầy hy vọng."
+    "desc": "Mỗi món quà là một lời chúc năm mới may mắn, bình an và đầy hy vọng.",
+    "image": "/assets/images/slider/category/tetnguyendan.jpg"
   },
   {
     "name": "Ngày Valentine (14/2)",
     "title": "Gửi yêu thương, theo cách riêng của bạn",
-    "desc": "Gói ghém cảm xúc, trao đi dịu dàng, giữ lại ấm áp dài lâu."
+    "desc": "Gói ghém cảm xúc, trao đi dịu dàng, giữ lại ấm áp dài lâu.",
+    "image": "/assets/images/slider/category/valentine.jpg"
   },
   {
     "name": "Ngày Thầy thuốc Việt Nam (27/2)",
     "title": "Tri ân và tôn vinh những người làm trong ngành Y tế",
-    "desc": "Một món quà nhỏ, cho những cống hiến lớn lao."
+    "desc": "Một món quà nhỏ, cho những cống hiến lớn lao.",
+    "image": "/assets/images/slider/category/ngaythaythuoc.jpg"
   },
   {
     "name": "Ngày Quốc tế Phụ nữ (8/3)",
     "title": "Sự trân trọng dành tặng một nửa thế giới",
-    "desc": "Gửi món quà thay lời tôn vinh và trân trọng sự dịu dàng, mạnh mẽ và rực rỡ của phái đẹp."
+    "desc": "Gửi món quà thay lời tôn vinh và trân trọng sự dịu dàng, mạnh mẽ và rực rỡ của phái đẹp.",
+    "image": "/assets/images/slider/category/ngay83.jpg"
   },
   {
     "name": "Ngày Quốc tế Hạnh phúc (20/3)",
     "title": "Tôn vinh giá trị của sự hạnh phúc",
-    "desc": "Những món quà nhỏ để sẻ chia và lan tỏa giá trị của hạnh phúc - với người bạn trân quý, và cả chính bạn."
+    "desc": "Những món quà nhỏ để sẻ chia và lan tỏa giá trị của hạnh phúc - với người bạn trân quý, và cả chính bạn.",
+    "image": "/assets/images/slider/category/ngay203.jpg"
   },
   {
     "name": "Ngày Quốc tế Thiếu nhi (1/6)",
     "title": "Bé vui - bạn cũng vui",
-    "desc": "Gửi điều dễ thương nhất đến những thiên thần nhỏ - để tuổi thơ luôn đầy ắp niềm vui."
+    "desc": "Gửi điều dễ thương nhất đến những thiên thần nhỏ - để tuổi thơ luôn đầy ắp niềm vui.",
+    "image": "/assets/images/slider/category/ngay16.jpg"
   },
   {
     "name": "Tết Trung thu",
     "title": "Trung Thu - Trao tròn yêu thương",
-    "desc": "Gửi yêu thương đến người quan trọng - dù xa hay gần, lòng vẫn kề bên - để mùa trăng tròn hơn."
+    "desc": "Gửi yêu thương đến người quan trọng - dù xa hay gần, lòng vẫn kề bên - để mùa trăng tròn hơn.",
+    "image": "/assets/images/slider/category/tettrungthu.jpg"
   },
   {
     "name": "Ngày Phụ nữ Việt Nam (20/10)",
     "title": "Trao yêu thương - gửi trân trọng đến người phụ nữ tuyệt vời nhất",
-    "desc": "Một món quà nhỏ, để nói thay ngàn lời yêu thương và biết ơn dành cho những người phụ nữ quan trọng trong đời bạn."
+    "desc": "Một món quà nhỏ, để nói thay ngàn lời yêu thương và biết ơn dành cho những người phụ nữ quan trọng trong đời bạn.",
+    "image": "/assets/images/slider/category/ngay2010.jpg"
   },
   {
     "name": "Ngày Quốc tế Nam giới (19/11)",
     "title": "Tri ân một nửa còn lại của thế giới - Những bờ vai luôn là điểm tựa vững vàng",
-    "desc": "Món quà gửi đến những người luôn lặng lẽ yêu thương và che chở, bảo vệ và đồng hành bên bạn mỗi ngày."
+    "desc": "Món quà gửi đến những người luôn lặng lẽ yêu thương và che chở, bảo vệ và đồng hành bên bạn mỗi ngày.",
+    "image": "/assets/images/slider/category/ngay1911.jpg"
   },
   {
     "name": "Ngày Nhà giáo Việt Nam (20/11)",
     "title": "Lời tri ân tới những người lái đò thầm lặng",
-    "desc": "Tôn vinh những người thầy thắp sáng con đường tri thức, chắp cánh ước mơ cho bao thế hệ."
+    "desc": "Tôn vinh những người thầy thắp sáng con đường tri thức, chắp cánh ước mơ cho bao thế hệ.",
+    "image": "/assets/images/slider/category/ngay2011.jpg"
   },
   {
     "name": "Lễ Giáng Sinh (25/12)",
     "title": "Giáng Sinh lung linh, quà xinh trao gửi",
-    "desc": "Khám phá bộ sưu tập quà tặng để mùa lễ hội thêm trọn vẹn."
+    "desc": "Khám phá bộ sưu tập quà tặng để mùa lễ hội thêm trọn vẹn.",
+    "image": "/assets/images/slider/category/giangsinh.jpg"
   }
 ]
