@@ -147,8 +147,9 @@
         
         .icon-favourite {
             display: block;
+            animation: animateTop 0.3s ease;
         }
-    
+        
         .hgi {
             display: none;
         }
@@ -222,5 +223,19 @@
         bottom: 2px;
         background-color: var(--white);
         border-radius: 50%;
+    }
+}
+
+@keyframes animateTop {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }

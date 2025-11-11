@@ -165,6 +165,43 @@ async function renderProductSuggestion() {
   }
 }
 
+// Hàm render sản phẩm yêu thích
+async function renderProductWishlist() {
+  try {
+    const access_token = localStorage.getItem('access_token');
+    const res = await fetch('http://160.250.5.249:5001/api/wishlist', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${access_token}`
+      },
+    });
+
+    const data = await res.json();
+    console.log(data);
+    
+    if (res.ok) {
+      const list = data.data;
+      if(list.length > 0) {
+        const html = list.map(renderProduct).join("");
+    
+        $("#productWishlist").addClass("loading");
+        $("#productWishlist").html(html);
+        setTimeout(() => {
+          $("#productWishlist").removeClass("loading");
+        }, 1000);
+      } else {
+        $('#productWishlist').hide();
+        $('.product-list-blank').show();
+      }
+    }
+  } catch (err) {
+    console.error("Fetch product failed:", err);
+    $('#productWishlist').hide();
+    $('.product-list-blank').show();
+  }
+}
+
 // Hàm render chi tiết sản phẩm
 async function renderProductDetail() {
   const params = new URLSearchParams(window.location.search);
@@ -271,11 +308,55 @@ async function fetchProductCategory() {
   }
 }
 
+function addProductToWishlist() {
+  $(".button-wishlist").on("click", async function() {
+    const params = new URLSearchParams(window.location.search);
+    const product_code = params.get("product_code");
+    const access_token = localStorage.getItem('access_token');
+
+    if(!$(this).hasClass('active')) {
+      try {
+        const res = await fetch(`http://160.250.5.249:5001/api/wishlist/${product_code}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${access_token}`
+          },
+        });
+        const data = await res.json();
+        console.log(data);
+        
+      } catch(err) {
+        console.error(err);
+      }
+    } else {
+      try {
+        const res = await fetch(`http://160.250.5.249:5001/api/wishlist/${product_code}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${access_token}`
+          },
+        });
+        const data = await res.json();
+        console.log(data);
+      } catch(err) {
+        console.error(err);
+      }
+    }
+  });
+}
+
 $(document).ready(async function() {
   filterProductByLink();
   filterProductBySelect();
   sortProductBySelect();
   fetchProductCategory();
+  addProductToWishlist();
+
+  if ($("#productWishlist").length) {
+    renderProductWishlist();
+  }
   
   if ($("#productList").length && !$(".search-result").length) {
     renderProductByParams(1, pageSize);

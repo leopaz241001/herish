@@ -487,6 +487,7 @@ input::-webkit-inner-spin-button {
 }
 .button-wishlist.active .icon-favourite {
   display: block;
+  animation: animateTop 0.3s ease;
 }
 .button-wishlist.active .hgi {
   display: none;
@@ -539,6 +540,17 @@ input::-webkit-inner-spin-button {
   border-radius: 50%;
 }
 
+@keyframes animateTop {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .datepicker {
   position: absolute;
   top: 100%;
