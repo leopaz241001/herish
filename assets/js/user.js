@@ -54,6 +54,8 @@ async function getProfile() {
       if($('.recent-product').length) {
         $('.recent-product').show();
       }
+    } else {
+      localStorage.getItem('access_token');
     }
   } catch (err) {
     console.log(err);

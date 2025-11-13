@@ -165,11 +165,11 @@ async function renderProductSuggestion() {
   }
 }
 
-// Hàm render sản phẩm yêu thích
-async function renderProductWishlist() {
+// Hàm render sản phẩm đã xem
+async function renderProductRecent() {
   try {
     const access_token = localStorage.getItem('access_token');
-    const res = await fetch('http://160.250.5.249:5001/api/wishlist', {
+    const res = await fetch(`http://160.250.5.249:5001/api/user/viewed-products`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -178,25 +178,67 @@ async function renderProductWishlist() {
     });
 
     const data = await res.json();
-    console.log(data);
-    
     if (res.ok) {
-      const list = data.data;
+      const list = data.data.items;
       if(list.length > 0) {
-        const html = list.map(renderProduct).join("");
+        const html = list.map(item => renderProduct(item, true)).join("");
+        $(`.recent-product .swiper-wrapper`).html(html);
     
-        $("#productWishlist").addClass("loading");
-        $("#productWishlist").html(html);
-        setTimeout(() => {
-          $("#productWishlist").removeClass("loading");
-        }, 1000);
+        const swiper = $(`.recent-product .product-swiper-two`)[0]?.swiper;
+        if (swiper) swiper.update();
       } else {
-        $('#productWishlist').hide();
-        $('.product-list-blank').show();
+        $(`.recent-product .swiper-wrapper`).html(`<li class="error">Không tìm thấy sản phẩm nào đã xem.</li>`);
       }
+    } else {
+      $(`.recent-product .swiper-wrapper`).html(`<li class="error">Lỗi tải sản phẩm</li>`);
     }
   } catch (err) {
     console.error("Fetch product failed:", err);
+    $(`.recent-product .swiper-wrapper`).html(`<li class="error">Lỗi tải sản phẩm</li>`);
+  }
+}
+
+// Hàm render sản phẩm yêu thích
+async function fetchProductWishlist() {
+  try {
+    const access_token = localStorage.getItem('access_token');
+    const res = await fetch('http://160.250.5.249:5001/api/user/favorites', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${access_token}`
+      },
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+      return data.data.items;
+    } else {
+      return [];
+    }
+  } catch(err) {
+    console.error("Fetch product failed:", err);
+    return [];
+  }
+}
+
+async function renderProductWishlist() {
+  const access_token = localStorage.getItem('access_token');
+  if (!access_token) {
+    alert('Vui lòng đăng nhập để xem danh sách yêu thích');
+    window.location.href = "login.html"
+    return;
+  }
+  const list = await fetchProductWishlist();
+  
+  if(list.length > 0) {
+    const html = list.map(renderProduct).join("");
+    $("#productWishlist").addClass("loading");
+    $("#productWishlist").html(html);
+    setTimeout(() => {
+      $("#productWishlist").removeClass("loading");
+    }, 1000);
+  } else {
     $('#productWishlist').hide();
     $('.product-list-blank').show();
   }
@@ -206,11 +248,23 @@ async function renderProductWishlist() {
 async function renderProductDetail() {
   const params = new URLSearchParams(window.location.search);
   const product_code = params.get("product_code") || "";
+  const access_token = localStorage.getItem('access_token');
   
   try {
     let url = `${API_URL}/${product_code}`
+    let res;
+
+    if(access_token) {
+      res = await fetch(url, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${access_token}`
+        },
+      })
+    } else {
+      res = await fetch(url);
+    }
     
-    const res = await fetch(url);
     const data = await res.json();
     if (res.ok) {
       const detail = data.data;
@@ -308,41 +362,48 @@ async function fetchProductCategory() {
   }
 }
 
-function addProductToWishlist() {
-  $(".button-wishlist").on("click", async function() {
-    const params = new URLSearchParams(window.location.search);
-    const product_code = params.get("product_code");
-    const access_token = localStorage.getItem('access_token');
+async function addProductToWishlist() {
+  const params = new URLSearchParams(window.location.search);
+  const product_code = params.get("product_code");
+  const access_token = localStorage.getItem('access_token');
 
-    if(!$(this).hasClass('active')) {
-      try {
-        const res = await fetch(`http://160.250.5.249:5001/api/wishlist/${product_code}`, {
+  if (!$(".button-wishlist").length) return;
+
+  const list = await fetchProductWishlist();
+  const isInWishlist = list.some(item => item.product_code === product_code);
+  $(".button-wishlist").toggleClass("active", isInWishlist);
+
+  $(".button-wishlist").on("click", async function() {
+    if (!access_token) {
+      alert('Vui lòng đăng nhập để thêm vào danh sách yêu thích');
+      window.location.href = "login.html"
+      return;
+    }
+
+    const isActive = $(this).hasClass("active");
+    try {
+      if(!isActive) {
+        const res = await fetch(`http://160.250.5.249:5001/api/user/favorites`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${access_token}`
           },
+          body: JSON.stringify({ product_code }),
         });
-        const data = await res.json();
-        console.log(data);
-        
-      } catch(err) {
-        console.error(err);
-      }
-    } else {
-      try {
-        const res = await fetch(`http://160.250.5.249:5001/api/wishlist/${product_code}`, {
+        if(res.ok) $(".button-wishlist").addClass("active");
+      } else {
+        const res = await fetch(`http://160.250.5.249:5001/api/user/favorites/${product_code}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${access_token}`
           },
         });
-        const data = await res.json();
-        console.log(data);
-      } catch(err) {
-        console.error(err);
+        if(res.ok) $(".button-wishlist").removeClass("active");
       }
+    } catch(err) {
+      console.error(err);
     }
   });
 }
@@ -384,7 +445,7 @@ $(document).ready(async function() {
   }
 
   if ($(".recent-product .product-swiper-two").length) {
-    renderProductSection({selector:".recent-product .product-swiper-two", page_size:pageSize, featured:true});
+    renderProductRecent();
   }
 
   if ($(".related-product").length) {
