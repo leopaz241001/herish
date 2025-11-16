@@ -19,7 +19,7 @@ const register = function () {
       $(".form-info .btn-control").addClass("disabled");
     } else {
       try {
-        const res = await fetch('http://160.250.5.249:5001/api/auth/register', {
+        const res = await fetch('http://herish.id.vn/api/auth/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ full_name, birth_date, email, phone, age, password }),
@@ -52,7 +52,7 @@ const login = function () {
     const password = $('#password').val();
   
     try {
-      const res = await fetch('http://160.250.5.249:5001/api/auth/login', {
+      const res = await fetch('http://herish.id.vn/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ identifier, password }),
@@ -79,7 +79,7 @@ const sendEmail = async function () {
   const email = $('#email').val() || localStorage.getItem('email');
   
   try {
-    const res = await fetch('http://160.250.5.249:5001/api/auth/forgot-password', {
+    const res = await fetch('http://herish.id.vn/api/auth/forgot-password', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
@@ -119,7 +119,7 @@ const resetPassword = async function () {
     const new_password = $('#password').val();
 
     try {
-      const res = await fetch('http://160.250.5.249:5001/api/auth/reset-password', {
+      const res = await fetch('http://herish.id.vn/api/auth/reset-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, code, new_password }),

@@ -1,4 +1,4 @@
-const API_URL = "http://160.250.5.249:5001/api/products";
+const API_URL = "http://herish.id.vn/api/products";
 let currentPage = 1;
 let pageSize = 12;
 
@@ -169,7 +169,7 @@ async function renderProductSuggestion() {
 async function renderProductRecent() {
   try {
     const access_token = localStorage.getItem('access_token');
-    const res = await fetch(`http://160.250.5.249:5001/api/user/viewed-products`, {
+    const res = await fetch(`http://herish.id.vn/api/user/viewed-products`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -202,7 +202,7 @@ async function renderProductRecent() {
 async function fetchProductWishlist() {
   try {
     const access_token = localStorage.getItem('access_token');
-    const res = await fetch('http://160.250.5.249:5001/api/user/favorites', {
+    const res = await fetch('http://herish.id.vn/api/user/favorites', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -383,7 +383,7 @@ async function addProductToWishlist() {
     const isActive = $(this).hasClass("active");
     try {
       if(!isActive) {
-        const res = await fetch(`http://160.250.5.249:5001/api/user/favorites`, {
+        const res = await fetch(`http://herish.id.vn/api/user/favorites`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -393,7 +393,7 @@ async function addProductToWishlist() {
         });
         if(res.ok) $(".button-wishlist").addClass("active");
       } else {
-        const res = await fetch(`http://160.250.5.249:5001/api/user/favorites/${product_code}`, {
+        const res = await fetch(`http://herish.id.vn/api/user/favorites/${product_code}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',

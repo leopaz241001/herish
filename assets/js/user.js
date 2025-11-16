@@ -3,7 +3,7 @@ const btnLogout = $('.btn-logout');
 async function getProfile() {
   try {
     const access_token = localStorage.getItem('access_token');
-    const res = await fetch('http://160.250.5.249:5001/api/user/me', {
+    const res = await fetch('http://herish.id.vn/api/user/me', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ function updateProfile() {
 
     try {
       const access_token = localStorage.getItem('access_token');
-      const res = await fetch('http://160.250.5.249:5001/api/user/update-info', {
+      const res = await fetch('http://herish.id.vn/api/user/update-info', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -158,7 +158,7 @@ function updateProfile() {
     } else {
       try {
         const access_token = localStorage.getItem('access_token');
-        const res = await fetch('http://160.250.5.249:5001/api/auth/change-password', {
+        const res = await fetch('http://herish.id.vn/api/auth/change-password', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
