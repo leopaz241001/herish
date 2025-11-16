@@ -15,7 +15,7 @@ const createReminder = function () {
 
     const idReminder = $(this).attr('data-id');
     const method = idReminder ? 'PUT' : 'POST';
-    const url = idReminder ? `http://herish.id.vn/api/special-days/${idReminder}` : 'http://herish.id.vn/api/special-days';
+    const url = idReminder ? `/api/special-days/${idReminder}` : '/api/special-days';
   
     try {
       const access_token = localStorage.getItem('access_token');
@@ -76,7 +76,7 @@ function renderReminder(reminder) {
 // Hàm fetch danh sách reminder
 async function fetchReminders() {
   try {
-    let url = `http://herish.id.vn/api/special-days`;
+    let url = `/api/special-days`;
     const access_token = localStorage.getItem('access_token');
     const res = await fetch(url, {
       method: 'GET',
@@ -114,7 +114,7 @@ async function handleReminderAction() {
       $("#formReminder").attr("data-id", event_id);
 
       try {
-        let url = `http://herish.id.vn/api/special-days/${event_id}`;
+        let url = `/api/special-days/${event_id}`;
         const access_token = localStorage.getItem('access_token');
         const res = await fetch(url, {
           method: 'GET',
@@ -170,7 +170,7 @@ async function deleteReminder() {
   $(".btn-delete-reminders").on("click", async function () {
     try {
       const access_token = localStorage.getItem('access_token');
-      const res = await fetch(`http://herish.id.vn/api/special-days/${event_id}`, {
+      const res = await fetch(`/api/special-days/${event_id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
