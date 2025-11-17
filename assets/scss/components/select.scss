@@ -3,8 +3,7 @@
     cursor: pointer;
 
     &.filtered {
-        &:not(.select-sort),
-        &:not(.select-profile) {
+        &:not(.select-sort):not(.select-profile) {
             border: 1px solid var(--secondary);
             background-color: var(--secondary-hover-ui);
     
