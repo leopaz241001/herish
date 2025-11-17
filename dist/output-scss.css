@@ -661,14 +661,14 @@ input::-webkit-inner-spin-button {
   position: relative;
   cursor: pointer;
 }
-.select-block.filtered:not(.select-sort) {
+.select-block.filtered:not(.select-sort), .select-block.filtered:not(.select-profile) {
   border: 1px solid var(--secondary);
   background-color: var(--secondary-hover-ui);
 }
-.select-block.filtered:not(.select-sort) .select {
+.select-block.filtered:not(.select-sort) .select, .select-block.filtered:not(.select-profile) .select {
   padding-left: 36px;
 }
-.select-block.filtered:not(.select-sort) .select::before {
+.select-block.filtered:not(.select-sort) .select::before, .select-block.filtered:not(.select-profile) .select::before {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
