@@ -4,23 +4,40 @@ let pageSize = 12;
 
 // Hàm render 1 sản phẩm
 function renderProduct(product, isSlide = false) {
+  const percentDiscount = product.sale_price ? parseInt((1 - Number(product.sale_price) / Number(product.price)) * 100) : null;
+
   return `
     <li class="product-item${isSlide ? " swiper-slide" : ""}">
       <a href="product-detail.html?product_code=${product.product_code}" class="product-link block group">
         <div class="image relative overflow-hidden rounded-xl max-sm:aspect-square">
           <img src="./assets/images/product/1.jpg" alt="${product.product_name}" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
-          <span class="badge absolute top-1.5 left-1.5 w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-ui font-semibold max-sm:text-xs">-20%</span>
+          ${percentDiscount ? `<span class="badge absolute top-1.5 left-1.5 w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-ui font-semibold max-sm:text-xs">-${percentDiscount}%</span>` : ""}
         </div>
         <div class="content sm:mt-5 mt-3">
           <strong class="text-head5 line-clamp-2">${product.product_name}</strong>
           <div class="flex items-end sm:gap-2 gap-1 sm:mt-3 mt-1">
-            <span class="sm:text-head4 text-head5-mo text-secondary-txt">₫${Number(product.price).toLocaleString('vi-VN')}</span>
-            <span class="text-head6 mb-px text-neutral-txt-low">₫${Number(product.price).toLocaleString('vi-VN')}</span>
+          ${percentDiscount ? `
+              <span class="sm:text-head4 text-head5-mo text-secondary-txt">₫${Number(product.sale_price).toLocaleString('vi-VN')}</span>
+              <span class="text-head6 mb-px text-neutral-txt-low">₫${Number(product.price).toLocaleString('vi-VN')}</span>
+            ` : `
+              <span class="sm:text-head4 text-head5-mo text-secondary-txt">₫${Number(product.price).toLocaleString('vi-VN')}</span>
+            `
+          }
           </div>
         </div>
       </a>
     </li>
   `;
+}
+
+function toggleClearFilterBtn() {
+  const hasQuery = window.location.search.length > 1;
+
+  if (hasQuery) {
+    $(".btn-clear-filter").closest("li").removeClass("hidden");
+  } else {
+    $(".btn-clear-filter").closest("li").addClass("hidden");
+  }
 }
 
 function appendArrayParams(url, key, values) {
@@ -43,6 +60,7 @@ function updateURLParams(newParams) {
     }
   });
   window.history.replaceState({}, "", url);
+  toggleClearFilterBtn();
 }
 
 // Hàm fetch danh sách product
@@ -62,7 +80,7 @@ async function fetchProducts({page=1,page_size,search,tags,color_theme,occasion,
     url = appendArrayParams(url, "target_audience", target_audience);
     
     const res = await fetch(url);
-    const data = await res.json();
+    const data = await res.json();    
     if (!res.ok) throw new Error(data.error || "Không thể tải sản phẩm");
 
     return data.data;
@@ -130,7 +148,7 @@ async function renderProductSection({selector, page_size=pageSize, featured=fals
     const swiper = $(`${selector}`)[0]?.swiper;
     if (swiper) swiper.update();
   } catch (err) {
-    console.error(`Lỗi khi tải ${type}:`, err);
+    console.error(`Lỗi khi tải: `, err);
     $(`${selector} .swiper-wrapper`).html(`<li class="error">Lỗi tải sản phẩm</li>`);
   }
 }
@@ -271,11 +289,11 @@ async function renderProductDetail() {
       
       $('.breadcrumb .title, .product-detail .title').html(detail.product_name_full);
       $('.product-detail .short-desc').html(detail.short_description);
-      const tags = detail.tags.map(item => `<li><a href="product-list.html" class="button-main small bg-secondary-ui">${item}</a></li>`).join("");
+      const tags = detail.tags.map(item => `<li><a href="product-list.html?tags=${item}" class="button-main small bg-secondary-ui">${item}</a></li>`).join("");
       $('.product-detail .tags-list').html(tags);
-      $('.product-detail .sale-price').html(detail.sale_price ? "₫" + detail.sale_price : "₫" + detail.price);
-      $('.product-detail .price').html(detail.sale_price ? "₫" + detail.price : '');
-      const discount = detail.sale_price ? Number(detail.sale_price / detail.price * 100) : null;
+      $('.product-detail .sale-price').html(detail.sale_price ? "₫" + Number(detail.sale_price).toLocaleString('vi-VN') : "₫" + detail.price);
+      $('.product-detail .price').html(detail.sale_price ? "₫" + Number(detail.price).toLocaleString('vi-VN') : '');
+      const discount = detail.sale_price ? parseInt((1 - Number(detail.sale_price) / Number(detail.price)) * 100) : null;
       if(discount) {
         $('.product-detail .discount').html('-' + discount + '%');
       } else {
@@ -328,7 +346,7 @@ function sortProductBySelect() {
       const item = $(this);
       let value = item.attr(`data-value`);
       if(value !== "price_asc" && value !== "price_desc") {
-        updateURLParams({sort_by: value, order: "asc"});
+        updateURLParams({sort_by: value, order: "desc"});
         renderProductByParams(1, pageSize);
       } else if(value === "price_asc") {
         updateURLParams({sort_by: "price", order: "asc"});
@@ -408,12 +426,20 @@ async function addProductToWishlist() {
   });
 }
 
+function clearFilterProduct() {
+  $('.btn-clear-filter').on('click', function() {
+    window.location.href = window.location.pathname;
+  })
+}
+
 $(document).ready(async function() {
   filterProductByLink();
   filterProductBySelect();
   sortProductBySelect();
   fetchProductCategory();
   addProductToWishlist();
+  clearFilterProduct();
+  toggleClearFilterBtn();
 
   if ($("#productWishlist").length) {
     renderProductWishlist();
