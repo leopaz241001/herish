@@ -431,12 +431,12 @@ input::-webkit-inner-spin-button {
   background-color: var(--primary-hover);
   color: var(--white);
 }
-.button-main.select-block, .button-main.chip {
+.button-main.select-block, .button-main.btn-clear-filter, .button-main.chip {
   font-weight: 400;
   cursor: pointer;
 }
 @media (max-width: 639.98px) {
-  .button-main.select-block, .button-main.chip {
+  .button-main.select-block, .button-main.btn-clear-filter, .button-main.chip {
     gap: 12px;
     padding: 8px 12px;
     font-size: 14px;
@@ -676,6 +676,11 @@ input::-webkit-inner-spin-button {
   font-family: "hugeicons-stroke-rounded";
   font-size: 24px;
   content: "娥";
+}
+@media (max-width: 639.98px) {
+  .select-block.filtered:not(.select-sort):not(.select-profile) .select::before {
+    left: 0.75rem;
+  }
 }
 .select-block .select:has(.menu.open) + .ic-down {
   transform: rotate(180deg);
@@ -1320,6 +1325,9 @@ textarea:focus {
 .product-list.loading::before, .product-list.loading::after {
   z-index: 1;
   opacity: 1;
+}
+.product-item .image {
+  aspect-ratio: 1.3689;
 }
 
 /* header */

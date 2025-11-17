@@ -264,32 +264,6 @@
         })
     }
 
-    // List thumb images
-    var swiperListServiceDetail = new Swiper('.swiper-list-images', {
-        loop: true,
-        spaceBetween: 8,
-        slidesPerView: 4,
-        watchSlidesProgress: true,
-        breakpoints: {
-            640: {
-                slidesPerView: 4,
-                spaceBetween: 12,
-            },
-            1024: {
-                slidesPerView: 5,
-                spaceBetween: 12,
-            },
-        },
-    });
-
-    var swiperThumbServiceDetail = new Swiper('.swiper-thumb-images', {
-        loop: true,
-        spaceBetween: 10,
-        thumbs: {
-            swiper: swiperListServiceDetail,
-        },
-    });
-
     // List testimonials active
     const handleActiveAvatarTestimonial = function (swiper) {
         const currentSlideIndex = swiper.activeIndex;
@@ -323,8 +297,8 @@
     const handleFaq = function () {
         $('.faq-item .heading, .toggle-item .heading').on('click', function () {
             $(this).closest('.faq-item, .toggle-item').toggleClass('active').siblings('.faq-item, .toggle-item').removeClass('active');
-            $(this).closest('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideToggle(400)
-            $(this).closest('.faq-item, .toggle-item').siblings('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideUp(400);
+            $(this).closest('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideToggle(300)
+            $(this).closest('.faq-item, .toggle-item').siblings('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideUp(300);
         })
     }
 

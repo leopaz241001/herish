@@ -201,7 +201,7 @@
         <!-- Faq -->
         <section class="faq sm:pt-32 pt-16">
             <div class="container">
-                <ul class="grid sm:grid-cols-2 sm:gap-6 gap-4">
+                <ul id="faqList" class="grid sm:grid-cols-2 sm:gap-6 gap-4">
                     <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 1">
                         <button type="button" class="heading flex items-center justify-between gap-6 w-full">
                             <strong class="title sm:text-head6 text-body1 font-semibold text-left">Làm sao để mua hàng trên HERISH</strong>
@@ -216,68 +216,12 @@
                         </button>
                         <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
                     </li>
-                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 2">
-                        <button type="button" class="heading flex items-center justify-between gap-6 w-full">
-                            <strong class="title sm:text-head6 text-body1 font-semibold text-left">Có thể đặt hàng trực tiếp trên website không?</strong>
-                            <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low duration-300"></i>
-                        </button>
-                        <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
-                    </li>
-                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 2">
-                        <button type="button" class="heading flex items-center justify-between gap-6 w-full">
-                            <strong class="title sm:text-head6 text-body1 font-semibold text-left">Phí vận chuyển tính như thế nào?</strong>
-                            <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low duration-300"></i>
-                        </button>
-                        <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
-                    </li>
-                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 2">
-                        <button type="button" class="heading flex items-center justify-between gap-6 w-full">
-                            <strong class="title sm:text-head6 text-body1 font-semibold text-left">Bao lâu thì nhận được hàng?</strong>
-                            <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low duration-300"></i>
-                        </button>
-                        <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
-                    </li>
-                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 2">
-                        <button type="button" class="heading flex items-center justify-between gap-6 w-full">
-                            <strong class="title sm:text-head6 text-body1 font-semibold text-left">Có được đổi/trả hàng không?</strong>
-                            <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low duration-300"></i>
-                        </button>
-                        <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
-                    </li>
-                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 2">
-                        <button type="button" class="heading flex items-center justify-between gap-6 w-full">
-                            <strong class="title sm:text-head6 text-body1 font-semibold text-left">HERISH có hỗ trợ gói quà không?</strong>
-                            <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low duration-300"></i>
-                        </button>
-                        <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
-                    </li>
-                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 2">
-                        <button type="button" class="heading flex items-center justify-between gap-6 w-full">
-                            <strong class="title sm:text-head6 text-body1 font-semibold text-left">Nếu sản phẩm bị lỗi thì làm thế nào?</strong>
-                            <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low duration-300"></i>
-                        </button>
-                        <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
-                    </li>
-                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 2">
-                        <button type="button" class="heading flex items-center justify-between gap-6 w-full">
-                            <strong class="title sm:text-head6 text-body1 font-semibold text-left">Có thể đặt làm quà tặng cho người khác không?</strong>
-                            <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low duration-300"></i>
-                        </button>
-                        <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
-                    </li>
-                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 2">
-                        <button type="button" class="heading flex items-center justify-between gap-6 w-full">
-                            <strong class="title sm:text-head6 text-body1 font-semibold text-left">Làm sao để liên hệ HERISH khi cần hỗ trợ?</strong>
-                            <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low duration-300"></i>
-                        </button>
-                        <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
-                    </li>
                 </ul>
             </div>
         </section>
 
         <!-- Banner -->
-        <section class="faq sm:py-32 py-16">
+        <section class="banner sm:py-32 py-16">
             <div class="container">
                 <div class="grid md:grid-cols-12 sm:gap-6 gap-4">
                     <strong class="flex items-center gap-3 md:col-span-4 h-fit animate animate-top" style="--i: 1">
@@ -387,12 +331,12 @@
                             <div class="footer-nav">
                                 <strong class="sm:text-head6 text-head5-mo">Sản phẩm</strong>
                                 <ul class="list-nav flex flex-col sm:gap-4 gap-3 sm:mt-6 mt-4">
-                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Hộp quà tặng</a></li>
-                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Làm đẹp & Chăm sóc cá nhân</a></li>
-                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Phụ kiện cá nhân</a></li>
-                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Đồ trang trí & Kỷ niệm</a></li>
-                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Văn phòng phẩm</a></li>
-                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Đồ dùng tiện ích</a></li>
+                                    <li><a href="product-list.html" class="btn-filter-product max-sm:text-body3 line-before line-white max-xl:before:hidden" data-key="product_type" data-value="Hộp quà tặng">Hộp quà tặng</a></li>
+                                    <li><a href="product-list.html" class="btn-filter-product max-sm:text-body3 line-before line-white max-xl:before:hidden" data-key="product_type" data-value="Làm đẹp & Chăm sóc cá nhân">Làm đẹp & Chăm sóc cá nhân</a></li>
+                                    <li><a href="product-list.html" class="btn-filter-product max-sm:text-body3 line-before line-white max-xl:before:hidden" data-key="product_type" data-value="Phụ kiện cá nhân">Phụ kiện cá nhân</a></li>
+                                    <li><a href="product-list.html" class="btn-filter-product max-sm:text-body3 line-before line-white max-xl:before:hidden" data-key="product_type" data-value="Đồ trang trí & Kỷ niệm">Đồ trang trí & Kỷ niệm</a></li>
+                                    <li><a href="product-list.html" class="btn-filter-product max-sm:text-body3 line-before line-white max-xl:before:hidden" data-key="product_type" data-value="Văn phòng phẩm">Văn phòng phẩm</a></li>
+                                    <li><a href="product-list.html" class="btn-filter-product max-sm:text-body3 line-before line-white max-xl:before:hidden" data-key="product_type" data-value="Đồ dùng tiện ích">Đồ dùng tiện ích</a></li>
                                 </ul>
                             </div>
                             <div class="footer-nav">
@@ -416,7 +360,7 @@
                             <a href="policy.html" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách &amp; Quy định</a>
                         </li>
                         <li>
-                            <a href="#!" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách bảo mật</a>
+                            <a href="policy-privacy.html" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách bảo mật</a>
                         </li>
                         <li>
                             <a href="policy-cookie.html" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách cookie</a>
@@ -454,22 +398,22 @@
                     <div class="sub-nav-mobile pl-3">
                         <ul>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Hộp quà tặng</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="product_type" data-value="Hộp quà tặng">Hộp quà tặng</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Làm đẹp & Chăm sóc cá nhân</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="product_type" data-value="Làm đẹp & Chăm sóc cá nhân">Làm đẹp & Chăm sóc cá nhân</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Phụ kiện cá nhân</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="product_type" data-value="Phụ kiện cá nhân">Phụ kiện cá nhân</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Đồ trang trí & Kỷ niệm</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="product_type" data-value="Đồ trang trí & Kỷ niệm">Đồ trang trí & Kỷ niệm</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Văn phòng phẩm</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="product_type" data-value="Văn phòng phẩm">Văn phòng phẩm</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Đồ dùng tiện ích</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="product_type" data-value="Đồ dùng tiện ích">Đồ dùng tiện ích</a>
                             </li>
                         </ul>
                     </div>
@@ -487,40 +431,40 @@
                     <div class="sub-nav-mobile pl-3">
                         <ul>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Tết Dương lịch (1/1)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Tết Dương lịch (1/1)">Tết Dương lịch (1/1)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Tết Nguyên Đán</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Tết Nguyên Đán">Tết Nguyên Đán</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Valentine (14/2)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Valentine (14/2)">Ngày Valentine (14/2)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Thầy thuốc Việt Nam (27/2)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Thầy thuốc Việt Nam (27/2)">Ngày Thầy thuốc Việt Nam (27/2)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Phụ nữ (8/3)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Quốc tế Phụ nữ (8/3)">Ngày Quốc tế Phụ nữ (8/3)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Hạnh phúc (20/3)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Quốc tế Hạnh phúc (20/3)">Ngày Quốc tế Hạnh phúc (20/3)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Thiếu nhi (1/6)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Quốc tế Thiếu nhi (1/6)">Ngày Quốc tế Thiếu nhi (1/6)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Tết Trung thu</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Tết Trung thu">Tết Trung thu</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Phụ nữ Việt Nam (20/10)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Phụ nữ Việt Nam (20/10)">Ngày Phụ nữ Việt Nam (20/10)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Nam giới (19/11)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Quốc tế Nam giới (19/11)">Ngày Quốc tế Nam giới (19/11)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Nhà giáo Việt Nam (20/11)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Nhà giáo Việt Nam (20/11)">Ngày Nhà giáo Việt Nam (20/11)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Lễ Giáng Sinh (25/12)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Lễ Giáng Sinh (25/12)">Lễ Giáng Sinh (25/12)</a>
                             </li>
                         </ul>
                     </div>
@@ -734,6 +678,7 @@
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="./assets/js/user.js"></script>
         <script src="./assets/js/product.js"></script>
+        <script src="./assets/js/faq.js"></script>
         <script src="./assets/js/main.js"></script>
     </body>
 </html>

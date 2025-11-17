@@ -1,6 +1,8 @@
-const API_URL = "/api/products";
+const API_URL = "http://herish.id.vn/api/products";
 let currentPage = 1;
 let pageSize = 12;
+let swiperListServiceDetail = null;
+let swiperThumbServiceDetail = null;
 
 // Hàm render 1 sản phẩm
 function renderProduct(product, isSlide = false) {
@@ -10,7 +12,7 @@ function renderProduct(product, isSlide = false) {
     <li class="product-item${isSlide ? " swiper-slide" : ""}">
       <a href="product-detail.html?product_code=${product.product_code}" class="product-link block group">
         <div class="image relative overflow-hidden rounded-xl max-sm:aspect-square">
-          <img src="./assets/images/product/1.jpg" alt="${product.product_name}" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
+          <img src="${product.images.thumbnail}" alt="${product.product_name}" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
           ${percentDiscount ? `<span class="badge absolute top-1.5 left-1.5 w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-ui font-semibold max-sm:text-xs">-${percentDiscount}%</span>` : ""}
         </div>
         <div class="content sm:mt-5 mt-3">
@@ -108,6 +110,8 @@ async function renderProductList({page=1, page_size, search, occasion, product_t
     });
     
     if(pagination.total_items > 0) {
+      console.log(items);
+      
       const html = items.map(renderProduct).join("");
   
       $("#productList").addClass("loading");
@@ -187,7 +191,7 @@ async function renderProductSuggestion() {
 async function renderProductRecent() {
   try {
     const access_token = localStorage.getItem('access_token');
-    const res = await fetch(`/api/user/viewed-products`, {
+    const res = await fetch(`http://herish.id.vn/api/user/viewed-products`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -220,7 +224,7 @@ async function renderProductRecent() {
 async function fetchProductWishlist() {
   try {
     const access_token = localStorage.getItem('access_token');
-    const res = await fetch('/api/user/favorites', {
+    const res = await fetch('http://herish.id.vn/api/user/favorites', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -262,6 +266,37 @@ async function renderProductWishlist() {
   }
 }
 
+function initDetailImgSwipers() {
+  // Destroy nếu có (phòng trường hợp gọi nhiều lần)
+  if (swiperThumbServiceDetail) {
+    try { swiperThumbServiceDetail.destroy(true, true); } catch(e) { /* ignore */ }
+  }
+  if (swiperListServiceDetail) {
+    try { swiperListServiceDetail.destroy(true, true); } catch(e) { /* ignore */ }
+  }
+
+  // Init thumb (the smaller one that will be controller)
+  swiperListServiceDetail = new Swiper('.swiper-list-images', {
+    loop: true,
+    spaceBetween: 8,
+    slidesPerView: 4,
+    watchSlidesProgress: true,
+    breakpoints: {
+      640: { slidesPerView: 4, spaceBetween: 12 },
+      1024: { slidesPerView: 5, spaceBetween: 12 },
+    },
+  });
+
+  // Init main image slider and attach thumbs
+  swiperThumbServiceDetail = new Swiper('.swiper-thumb-images', {
+    loop: true,
+    spaceBetween: 10,
+    thumbs: {
+      swiper: swiperListServiceDetail,
+    },
+  });
+}
+
 // Hàm render chi tiết sản phẩm
 async function renderProductDetail() {
   const params = new URLSearchParams(window.location.search);
@@ -287,6 +322,22 @@ async function renderProductDetail() {
     if (res.ok) {
       const detail = data.data;
       
+      const slideThumbImg = detail.image_urls.map((img, index) => `
+        <div class="swiper-slide">
+          <img src="${img}" alt="${detail.product_code}-${index}" class="w-full h-full object-cover" />
+        </div>
+      `).join("");
+      
+      const slideListImg = detail.image_urls.map((img, index) => `
+      <div class="swiper-slide overflow-hidden rounded-xl">
+      <img src="${img}" alt="${detail.product_code}-${index}" class="w-full h-full object-cover" />
+      </div>
+      `).join("");
+
+      $('.product-detail .swiper-thumb-images .swiper-wrapper').html(slideThumbImg);
+      $('.product-detail .swiper-list-images .swiper-wrapper').html(slideListImg);
+      initDetailImgSwipers();
+
       $('.breadcrumb .title, .product-detail .title').html(detail.product_name_full);
       $('.product-detail .short-desc').html(detail.short_description);
       const tags = detail.tags.map(item => `<li><a href="product-list.html?tags=${item}" class="button-main small bg-secondary-ui">${item}</a></li>`).join("");
@@ -300,6 +351,9 @@ async function renderProductDetail() {
         $('.product-detail .discount').hide();
       }
       $('.product-detail .desc').html(`${detail.detailed_info.introduction}<br>${detail.detailed_info.meaning}<br>${detail.detailed_info.suitableFor}`);
+      $('.product-detail .btn-shopee-link').attr('href', detail.shopee_url);
+      $('.product-detail .btn-tiktok-link').attr('href', detail.tiktok_url);
+      $('.product-detail .btn-facebook-link').attr('href', detail.facebook_contact);
     }
   } catch (err) {
     console.error("Fetch product failed:", err);
@@ -401,7 +455,7 @@ async function addProductToWishlist() {
     const isActive = $(this).hasClass("active");
     try {
       if(!isActive) {
-        const res = await fetch(`/api/user/favorites`, {
+        const res = await fetch(`http://herish.id.vn/api/user/favorites`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -411,7 +465,7 @@ async function addProductToWishlist() {
         });
         if(res.ok) $(".button-wishlist").addClass("active");
       } else {
-        const res = await fetch(`/api/user/favorites/${product_code}`, {
+        const res = await fetch(`http://herish.id.vn/api/user/favorites/${product_code}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -428,7 +482,16 @@ async function addProductToWishlist() {
 
 function clearFilterProduct() {
   $('.btn-clear-filter').on('click', function() {
-    window.location.href = window.location.pathname;
+    const url = new URL(window.location.href);
+    const searchValue = url.searchParams.get('search'); // lấy search hiện tại
+
+    // Tạo URL mới chỉ chứa search
+    let newUrl = window.location.pathname;
+    if (searchValue) {
+      newUrl += `?search=${encodeURIComponent(searchValue)}`;
+    }
+
+    window.location.href = newUrl;
   })
 }
 

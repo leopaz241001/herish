@@ -198,35 +198,35 @@
             </div>
         </section>
 
-        <!-- Benefit -->
-        <section class="benefit overflow-hidden sm:pt-32 pt-16">
+        <!-- Contact -->
+        <section class="contact overflow-hidden sm:pt-32 pt-16">
             <div class="container">
-                <ul class="grid sm:grid-cols-2 gap-6">
-                    <li class="overflow-hidden p-8 max-sm:px-5 rounded-xl bg-neutral-ui text-center animate animate-top" style="--i: 1">
+                <ul id="contactList" class="grid sm:grid-cols-2 gap-6">
+                    <li class="overflow-hidden p-8 max-sm:px-5 rounded-xl bg-neutral-ui text-center">
                         <span class="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-secondary-hover-ui">
                             <span class="icon-call text-[32px] text-secondary"></span>
                         </span>
                         <strong class="text-head4 mt-6">Trò chuyện với chúng tôi</strong>
                         <p class="sm:mt-3 mt-2">08:30 đến 23:00 hàng ngày</p>
-                        <a href="tel:+84 123 456 789" class="button-main mt-6">Hotline: 0123 456 789</a>
+                        <a href="tel:+84 123 456 789" class="contact-phone button-main mt-6">Hotline: 0123 456 789</a>
                     </li>
-                    <li class="overflow-hidden p-8 max-sm:px-5 rounded-xl bg-neutral-ui text-center animate animate-top" style="--i: 1">
+                    <li class="overflow-hidden p-8 max-sm:px-5 rounded-xl bg-neutral-ui text-center">
                         <span class="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-secondary-hover-ui">
                             <span class="icon-mail text-[32px] text-secondary"></span>
                         </span>
                         <strong class="text-head4 mt-6">Gửi email cho chúng tôi</strong>
                         <p class="sm:mt-3 mt-2">08:30 đến 23:00 hàng ngày</p>
-                        <a href="mailto:cs@herish.vn" class="button-main mt-6">Email: cs@herish.vn</a>
+                        <a href="mailto:cs@herish.vn" class="contact-email button-main mt-6">Email: cs@herish.vn</a>
                     </li>
-                    <li class="overflow-hidden p-8 max-sm:px-5 rounded-xl bg-neutral-ui text-center animate animate-top" style="--i: 1">
+                    <li class="overflow-hidden p-8 max-sm:px-5 rounded-xl bg-neutral-ui text-center">
                         <span class="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-secondary-hover-ui">
                             <span class="icon-messenger text-[32px] text-secondary"></span>
                         </span>
                         <strong class="text-head4 mt-6">Liên hệ qua Messenger</strong>
                         <p class="sm:mt-3 mt-2">08:30 đến 23:00 hàng ngày</p>
-                        <a href="https://www.messenger.com/" target="_blank" class="button-main mt-6">Bắt đầu chat</a>
+                        <a href="https://www.messenger.com/" target="_blank" class="contact-messenger button-main mt-6">Bắt đầu chat</a>
                     </li>
-                    <li class="overflow-hidden p-8 max-sm:px-5 rounded-xl bg-neutral-ui text-center animate animate-top" style="--i: 1">
+                    <li class="overflow-hidden p-8 max-sm:px-5 rounded-xl bg-neutral-ui text-center">
                         <span class="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-secondary-hover-ui">
                             <span class="icon-zalo text-[32px] text-secondary flex items-center justify-center">
                                 <span class="path1 absolute"></span>
@@ -236,7 +236,7 @@
                         </span>
                         <strong class="text-head4 mt-6">Kết nối qua Zalo</strong>
                         <p class="sm:mt-3 mt-2">08:30 đến 23:00 hàng ngày</p>
-                        <a href="https://chat.zalo.me/" target="_blank" class="button-main mt-6">Bắt đầu chat</a>
+                        <a href="https://chat.zalo.me/" target="_blank" class="contact-zalo button-main mt-6">Bắt đầu chat</a>
                     </li>
                 </ul>
             </div>
@@ -246,40 +246,26 @@
         <section class="faq sm:py-32 py-16">
             <div class="container">
                 <div class="grid md:grid-cols-12 sm:gap-6 gap-4">
-                    <strong class="flex items-center gap-3 md:col-span-4 h-fit animate animate-top" style="--i: 1">
+                    <strong class="flex items-center gap-3 md:col-span-4 h-fit">
                         <span class="flex-shrink-0 icon-grass text-[32px] text-primary"></span>
                         <span class="text-body1 font-semibold">Trợ giúp</span>
                     </strong>
                     <div class="md:col-span-8">
-                        <h2 class="text-head2 animate animate-top" style="--i: 1">Câu hỏi thường gặp</h2>
-                        <p class="desc sm:mt-7 mt-3 animate animate-top" style="--i: 2">Giải đáp nhanh những thắc mắc phổ biến để bạn yên tâm mua sắm cùng HERISH.</p>
+                        <h2 class="text-head2">Câu hỏi thường gặp</h2>
+                        <p class="desc sm:mt-7 mt-3">Giải đáp nhanh những thắc mắc phổ biến để bạn yên tâm mua sắm cùng HERISH.</p>
                     </div>
                 </div>
-                <ul class="grid sm:grid-cols-2 sm:gap-6 gap-4 sm:mt-13 mt-8">
-                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 1">
+                <ul id="faqList" class="grid sm:grid-cols-2 sm:gap-6 gap-4 sm:mt-13 mt-8">
+                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui">
                         <button type="button" class="heading flex items-center justify-between gap-6 w-full">
                             <strong class="title sm:text-head6 text-body1 font-semibold text-left">Làm sao để mua hàng trên HERISH</strong>
                             <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low duration-300"></i>
                         </button>
                         <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
                     </li>
-                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 2">
+                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui">
                         <button type="button" class="heading flex items-center justify-between gap-6 w-full">
                             <strong class="title sm:text-head6 text-body1 font-semibold text-left">HERISH có cửa hàng offline không?</strong>
-                            <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low duration-300"></i>
-                        </button>
-                        <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
-                    </li>
-                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 3">
-                        <button type="button" class="heading flex items-center justify-between gap-6 w-full">
-                            <strong class="title sm:text-head6 text-body1 font-semibold text-left">HERISH có hỗ trợ gói quà không?</strong>
-                            <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low duration-300"></i>
-                        </button>
-                        <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
-                    </li>
-                    <li class="faq-item h-fit sm:p-8 py-5 px-4 rounded-xl bg-neutral-ui animate animate-top" style="--i: 4">
-                        <button type="button" class="heading flex items-center justify-between gap-6 w-full">
-                            <strong class="title sm:text-head6 text-body1 font-semibold text-left">Có thể đặt làm quà tặng cho người khác không?</strong>
                             <i class="ic-down hgi hgi-stroke hgi-arrow-down-01 text-[24px] text-neutral-txt-low duration-300"></i>
                         </button>
                         <p class="answer sm:mt-6 mt-3">Bạn chỉ cần xem chi tiết sản phẩm, bấm <strong class="font-semibold">“Mua ngay”</strong>, hệ thống sẽ dẫn bạn sang Shopee hoặc TikTok Shop để hoàn tất đơn hàng.</p>
@@ -370,12 +356,12 @@
                             <div class="footer-nav">
                                 <strong class="sm:text-head6 text-head5-mo">Sản phẩm</strong>
                                 <ul class="list-nav flex flex-col sm:gap-4 gap-3 sm:mt-6 mt-4">
-                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Hộp quà tặng</a></li>
-                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Làm đẹp & Chăm sóc cá nhân</a></li>
-                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Phụ kiện cá nhân</a></li>
-                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Đồ trang trí & Kỷ niệm</a></li>
-                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Văn phòng phẩm</a></li>
-                                    <li><a class="max-sm:text-body3 line-before line-white max-xl:before:hidden" href="product-list.html">Đồ dùng tiện ích</a></li>
+                                    <li><a href="product-list.html" class="btn-filter-product max-sm:text-body3 line-before line-white max-xl:before:hidden" data-key="product_type" data-value="Hộp quà tặng">Hộp quà tặng</a></li>
+                                    <li><a href="product-list.html" class="btn-filter-product max-sm:text-body3 line-before line-white max-xl:before:hidden" data-key="product_type" data-value="Làm đẹp & Chăm sóc cá nhân">Làm đẹp & Chăm sóc cá nhân</a></li>
+                                    <li><a href="product-list.html" class="btn-filter-product max-sm:text-body3 line-before line-white max-xl:before:hidden" data-key="product_type" data-value="Phụ kiện cá nhân">Phụ kiện cá nhân</a></li>
+                                    <li><a href="product-list.html" class="btn-filter-product max-sm:text-body3 line-before line-white max-xl:before:hidden" data-key="product_type" data-value="Đồ trang trí & Kỷ niệm">Đồ trang trí & Kỷ niệm</a></li>
+                                    <li><a href="product-list.html" class="btn-filter-product max-sm:text-body3 line-before line-white max-xl:before:hidden" data-key="product_type" data-value="Văn phòng phẩm">Văn phòng phẩm</a></li>
+                                    <li><a href="product-list.html" class="btn-filter-product max-sm:text-body3 line-before line-white max-xl:before:hidden" data-key="product_type" data-value="Đồ dùng tiện ích">Đồ dùng tiện ích</a></li>
                                 </ul>
                             </div>
                             <div class="footer-nav">
@@ -399,7 +385,7 @@
                             <a href="policy.html" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách &amp; Quy định</a>
                         </li>
                         <li>
-                            <a href="#!" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách bảo mật</a>
+                            <a href="policy-privacy.html" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách bảo mật</a>
                         </li>
                         <li>
                             <a href="policy-cookie.html" class="max-sm:text-body3 line-before line-white max-xl:before:hidden">Chính sách cookie</a>
@@ -437,22 +423,22 @@
                     <div class="sub-nav-mobile pl-3">
                         <ul>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Hộp quà tặng</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="product_type" data-value="Hộp quà tặng">Hộp quà tặng</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Làm đẹp & Chăm sóc cá nhân</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="product_type" data-value="Làm đẹp & Chăm sóc cá nhân">Làm đẹp & Chăm sóc cá nhân</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Phụ kiện cá nhân</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="product_type" data-value="Phụ kiện cá nhân">Phụ kiện cá nhân</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Đồ trang trí & Kỷ niệm</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="product_type" data-value="Đồ trang trí & Kỷ niệm">Đồ trang trí & Kỷ niệm</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Văn phòng phẩm</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="product_type" data-value="Văn phòng phẩm">Văn phòng phẩm</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Đồ dùng tiện ích</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="product_type" data-value="Đồ dùng tiện ích">Đồ dùng tiện ích</a>
                             </li>
                         </ul>
                     </div>
@@ -470,40 +456,40 @@
                     <div class="sub-nav-mobile pl-3">
                         <ul>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Tết Dương lịch (1/1)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Tết Dương lịch (1/1)">Tết Dương lịch (1/1)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Tết Nguyên Đán</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Tết Nguyên Đán">Tết Nguyên Đán</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Valentine (14/2)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Valentine (14/2)">Ngày Valentine (14/2)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Thầy thuốc Việt Nam (27/2)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Thầy thuốc Việt Nam (27/2)">Ngày Thầy thuốc Việt Nam (27/2)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Phụ nữ (8/3)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Quốc tế Phụ nữ (8/3)">Ngày Quốc tế Phụ nữ (8/3)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Hạnh phúc (20/3)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Quốc tế Hạnh phúc (20/3)">Ngày Quốc tế Hạnh phúc (20/3)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Thiếu nhi (1/6)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Quốc tế Thiếu nhi (1/6)">Ngày Quốc tế Thiếu nhi (1/6)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Tết Trung thu</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Tết Trung thu">Tết Trung thu</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Phụ nữ Việt Nam (20/10)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Phụ nữ Việt Nam (20/10)">Ngày Phụ nữ Việt Nam (20/10)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Quốc tế Nam giới (19/11)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Quốc tế Nam giới (19/11)">Ngày Quốc tế Nam giới (19/11)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Ngày Nhà giáo Việt Nam (20/11)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Ngày Nhà giáo Việt Nam (20/11)">Ngày Nhà giáo Việt Nam (20/11)</a>
                             </li>
                             <li>
-                                <a href="product-list.html" class="block px-2 py-3">Lễ Giáng Sinh (25/12)</a>
+                                <a href="product-list.html" class="btn-filter-product block px-2 py-3" data-key="occasion" data-value="Lễ Giáng Sinh (25/12)">Lễ Giáng Sinh (25/12)</a>
                             </li>
                         </ul>
                     </div>
@@ -717,7 +703,8 @@
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="./assets/js/user.js"></script>
         <script src="./assets/js/product.js"></script>
+        <script src="./assets/js/faq.js"></script>
+        <script src="./assets/js/contact.js"></script>
         <script src="./assets/js/main.js"></script>
     </body>
 </html>
-

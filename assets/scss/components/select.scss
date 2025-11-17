@@ -18,6 +18,10 @@
                     font-family: "hugeicons-stroke-rounded";
                     font-size: 24px;
                     content: "\5A25";
+
+                    @media (max-width: 639.98px) {
+                        left: 0.75rem;
+                    }
                 }
             }
         }
