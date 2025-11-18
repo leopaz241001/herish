@@ -1483,6 +1483,10 @@ video {
   background-size: cover;
 }
 
+.bg-center {
+  background-position: center;
+}
+
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
@@ -2116,6 +2120,10 @@ video {
 
   .max-lg\:flex-wrap {
     flex-wrap: wrap;
+  }
+
+  .max-lg\:items-center {
+    align-items: center;
   }
 
   .max-lg\:gap-y-5 {

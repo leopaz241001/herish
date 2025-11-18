@@ -36,6 +36,24 @@
     "image": "/assets/images/slider/category/dodung.jpg"
   },
   {
+    "name": "Cá nhân hóa",
+    "title": "Một món quà chỉ của riêng họ",
+    "desc": "Thiết kế theo phong cách, sở thích và câu chuyện mà bạn muốn gửi gắm.",
+    "image": "/assets/images/slider/category/canhanhoa.jpg"
+  },
+  {
+    "name": "Sinh nhật",
+    "title": "Ngày họ đến — và thế giới đẹp hơn một chút",
+    "desc": "Một món quà tinh tế để nói “cảm ơn vì đã đến với thế giới này”.",
+    "image": "/assets/images/slider/category/sinhnhat.jpg"
+  },
+  {
+    "name": "Ngày kỷ niệm",
+    "title": "Ghi dấu khoảnh khắc đặc biệt",
+    "desc": "Một món quà ý nghĩa để kỷ niệm những khoảnh khắc bạn muốn nhớ mãi.",
+    "image": "/assets/images/slider/category/kiniem.jpg"
+  },
+  {
     "name": "Tết Dương lịch (1/1)",
     "title": "New Year - New Moments to Cherish",
     "desc": "Trao nhau điều may mắn - để cùng bắt đầu một hành trình mới rực rỡ.",
@@ -106,5 +124,17 @@
     "title": "Giáng Sinh lung linh, quà xinh trao gửi",
     "desc": "Khám phá bộ sưu tập quà tặng để mùa lễ hội thêm trọn vẹn.",
     "image": "/assets/images/slider/category/giangsinh.jpg"
+  },
+  {
+    "name": "Ngày Vu Lan báo hiếu",
+    "title": "Lễ Vu Lan báo hiếu - ngày 15/07 âm lịch",
+    "desc": "Dịp để thể hiện lòng biết ơn đến cha mẹ - hãy chọn hoa tươi, trà thảo mộc, yến sào hoặc những món quà chăm sóc sức khỏe đầy ý nghĩa.",
+    "image": "/assets/images/slider/category/vulan.jpg"
+  },
+  {
+    "name": "Ngày Doanh nhân Việt Nam",
+    "title": "Ngày Doanh nhân Việt Nam 13/10",
+    "desc": "Hãy chọn bút ký, sổ tay da hoặc vật phẩm phong thủy để gửi lời chúc thành công đến đối tác và người thân trong giới kinh doanh.",
+    "image": "/assets/images/slider/category/doanhnhan.jpg"
   }
 ]

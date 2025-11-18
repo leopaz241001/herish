@@ -61,7 +61,7 @@
                                 </div>
                             </li>
                             <li class="h-full relative">
-                                <a href="#!" class="flex items-center gap-1 h-full text-white duration-300">
+                                <a href="product-list.html" class="btn-filter-product flex items-center gap-1 h-full text-white duration-300" data-key="product_type" data-value="Cá nhân hóa">
                                     <span>Cá nhân hóa</span>
                                 </a>
                             </li>
@@ -183,7 +183,10 @@
         <!-- Slider -->
         <section class="slider">
             <div class="slider-inner relative md:h-[612px] h-[436px] overflow-hidden">
-                <div class="slider-bg absolute top-0 left-0 w-full h-full bg-[url(../assets/images/slider/hero-contact.jpg)] bg-cover bg-right-center bg-no-repeat" aria-hidden="true"></div>
+                <div class="slider-bg absolute top-0 left-0 w-full h-full" aria-hidden="true">
+                    <img src="./assets/images/slider/hero-contact.jpg" alt="hero-contact" class="w-full h-full object-cover max-lg:hidden">
+                    <img src="./assets/images/slider/hero-contact-mo.jpg" alt="hero-contact-mo" class="w-full h-full object-cover lg:hidden">
+                </div>
                 <div class="container h-full">
                     <div class="slider-content flex flex-col items-start justify-end sm:pb-[88px] pb-5 w-full h-full text-white">
                         <div class="flex items-center gap-3 animate animate-top" style="--i: 1">
