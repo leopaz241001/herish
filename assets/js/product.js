@@ -428,17 +428,15 @@ async function fetchProductCategory() {
 
       // Khi ảnh load xong
       img.onload = function() {
-        $(".category-img")
-          .attr("src", selectedCategory.image)
-          .attr("alt", selectedCategory.name)
-          .removeClass("opacity-0"); // chỉ remove khi NEW IMG đã load
-          
+        $(".category-img").attr("src", selectedCategory.image).attr("alt", selectedCategory.name);
         $(".category-name").text(selectedCategory.name);
         $(".category-title").text(selectedCategory.title);
         $(".category-desc").text(selectedCategory.desc);
       };
     }
-    $('.category-img').removeClass('opacity-0');
+    setTimeout(() => {
+      $('.category-img').removeClass('opacity-0');
+    }, 100);
   } catch(err) {
     console.error(err);
   }
