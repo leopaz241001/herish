@@ -425,6 +425,7 @@ async function fetchProductCategory() {
     if(selectedCategory) {
       $('.category-img').attr('src', selectedCategory.image);
       $('.category-img').attr('alt', selectedCategory.name);
+      $('.category-img').removeClass('opacity-0');
       $('.category-name').text(selectedCategory.name);
       $('.category-title').text(selectedCategory.title);
       $('.category-desc').text(selectedCategory.desc);
