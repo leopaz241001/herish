@@ -421,7 +421,6 @@ async function fetchProductCategory() {
     const res = await fetch('assets/data/category.json');
     const data = await res.json();
     
-    $('.category-img').removeClass('opacity-0');
     const selectedCategory = data.find(item => item.name === category);
     if(selectedCategory) {
       $('.category-img').attr('src', selectedCategory.image);
@@ -430,6 +429,7 @@ async function fetchProductCategory() {
       $('.category-title').text(selectedCategory.title);
       $('.category-desc').text(selectedCategory.desc);
     }
+    $('.category-img').removeClass('opacity-0');
   } catch(err) {
     console.error(err);
   }
