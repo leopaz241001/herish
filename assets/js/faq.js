@@ -12,7 +12,7 @@ function renderFaq(faq) {
 
 async function fetchFaq() {
   try {
-    const res = await fetch('/api/faq');
+    const res = await fetch('https://herish.id.vn/api/faq');
     const data = await res.json();
     const list = data.data;
     

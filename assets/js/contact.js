@@ -1,6 +1,6 @@
 async function fetchContact() {
   try {
-    const res = await fetch('/api/contact');
+    const res = await fetch('https://herish.id.vn/api/contact');
     const data = await res.json();
     console.log(data);
     
