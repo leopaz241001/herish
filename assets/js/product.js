@@ -423,11 +423,20 @@ async function fetchProductCategory() {
     
     const selectedCategory = data.find(item => item.name === category);
     if(selectedCategory) {
-      $('.category-img').attr('src', selectedCategory.image);
-      $('.category-img').attr('alt', selectedCategory.name);
-      $('.category-name').text(selectedCategory.name);
-      $('.category-title').text(selectedCategory.title);
-      $('.category-desc').text(selectedCategory.desc);
+      const img = new Image();
+      img.src = selectedCategory.image;
+
+      // Khi ảnh load xong
+      img.onload = function() {
+        $(".category-img")
+          .attr("src", selectedCategory.image)
+          .attr("alt", selectedCategory.name)
+          .removeClass("opacity-0"); // chỉ remove khi NEW IMG đã load
+          
+        $(".category-name").text(selectedCategory.name);
+        $(".category-title").text(selectedCategory.title);
+        $(".category-desc").text(selectedCategory.desc);
+      };
     }
     $('.category-img').removeClass('opacity-0');
   } catch(err) {
