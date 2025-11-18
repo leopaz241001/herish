@@ -110,8 +110,6 @@ async function renderProductList({page=1, page_size, search, occasion, product_t
     });
     
     if(pagination.total_items > 0) {
-      console.log(items);
-      
       const html = items.map(renderProduct).join("");
   
       $("#productList").addClass("loading");
@@ -423,20 +421,13 @@ async function fetchProductCategory() {
     
     const selectedCategory = data.find(item => item.name === category);
     if(selectedCategory) {
-      const img = new Image();
-      img.src = selectedCategory.image;
-
-      // Khi ảnh load xong
-      img.onload = function() {
-        $(".category-img").attr("src", selectedCategory.image).attr("alt", selectedCategory.name);
-        $(".category-name").text(selectedCategory.name);
-        $(".category-title").text(selectedCategory.title);
-        $(".category-desc").text(selectedCategory.desc);
-      };
+      $(".category-img").attr("src", selectedCategory.image).attr("alt", selectedCategory.name);
+      $(".category-name").text(selectedCategory.name);
+      $(".category-title").text(selectedCategory.title);
+      $(".category-desc").text(selectedCategory.desc);
+    } else {
+      $(".category-img").attr("src", "/assets/images/slider/category/hopqua.jpg").attr("alt", "Hộp quà tặng");
     }
-    setTimeout(() => {
-      $('.category-img').removeClass('opacity-0');
-    }, 100);
   } catch(err) {
     console.error(err);
   }
