@@ -169,20 +169,24 @@ async function renderProductSuggestion() {
     if (res.ok) {
       const list = data.data.items;
       if(list.length > 0) {
+        $(`.related-product .product-list-blank`).hide();
         const html = list.map(item => renderProduct(item, true)).join("");
         $(`.related-product .swiper-wrapper`).html(html);
     
         const swiper = $(`.related-product .product-swiper`)[0]?.swiper;
         if (swiper) swiper.update();
       } else {
-        $(`.related-product .swiper-wrapper`).html(`<li class="error">Không tìm thấy sản phẩm nào phù hợp.</li>`);
+        $(`.related-product .swiper-wrapper`).hide();
+        $(`.related-product .product-list-blank`).show();
       }
     } else {
-      $(`.related-product .swiper-wrapper`).html(`<li class="error">Lỗi tải sản phẩm</li>`);
+      $(`.related-product .swiper-wrapper`).hide();
+      $(`.related-product .product-list-blank`).show();
     }
   } catch (err) {
     console.error("Fetch product failed:", err);
-    $(`.related-product .swiper-wrapper`).html(`<li class="error">Lỗi tải sản phẩm</li>`);
+    $(`.related-product .swiper-wrapper`).hide();
+    $(`.related-product .product-list-blank`).show();
   }
 }
 
@@ -253,6 +257,7 @@ async function renderProductWishlist() {
   const list = await fetchProductWishlist();
   
   if(list.length > 0) {
+    $('.product-list-blank').hide();
     const html = list.map(renderProduct).join("");
     $("#productWishlist").addClass("loading");
     $("#productWishlist").html(html);

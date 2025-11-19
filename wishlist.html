@@ -195,11 +195,10 @@
                 <div class="product sm:mt-13 mt-8">
                     <!-- Nếu có sản phẩm -->
                     <ul id="productWishlist" class="product-list grid xl:grid-cols-3 grid-cols-2 sm:gap-6 gap-4 sm:gap-y-8 gap-y-5">
-                        
                     </ul>
                     
                     <!-- Nếu không có sản phẩm -->
-                    <div class="product-list-blank flex flex-col items-center justify-center" style="display: none;">
+                    <div class="product-list-blank flex flex-col items-center justify-center">
                         <div class="flex-shrink-0 h-[200px]">
                             <img src="./assets/images/components/cart-blank.svg" alt="cart blank" class="h-full">
                         </div>
@@ -214,7 +213,7 @@
         </section>
 
         <!-- Recent product -->
-        <section class="recent-product sm:pt-32 pt-16">
+        <section class="recent-product sm:pt-32 pt-16" style="display: none;">
             <div class="container">
                 <div class="grid md:grid-cols-12 sm:gap-6 gap-4">
                     <strong class="flex items-center gap-3 md:col-span-4 h-fit">
