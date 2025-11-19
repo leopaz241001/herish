@@ -12,7 +12,7 @@ function renderProduct(product, isSlide = false) {
     <li class="product-item${isSlide ? " swiper-slide" : ""}">
       <a href="product-detail.html?product_code=${product.product_code}" class="product-link block group">
         <div class="image relative overflow-hidden rounded-xl max-sm:aspect-square">
-          <img src="${product.images.thumbnail}" alt="${product.product_name}" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
+          <img src="${product.image_thumbnail}" alt="${product.product_name}" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
           ${percentDiscount ? `<span class="badge absolute top-1.5 left-1.5 w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-ui font-semibold max-sm:text-xs">-${percentDiscount}%</span>` : ""}
         </div>
         <div class="content sm:mt-5 mt-3">
@@ -110,6 +110,8 @@ async function renderProductList({page=1, page_size, search, occasion, product_t
     });
     
     if(pagination.total_items > 0) {
+      console.log(items);
+      
       const html = items.map(renderProduct).join("");
   
       $("#productList").addClass("loading");
@@ -206,20 +208,24 @@ async function renderProductRecent() {
     if (res.ok) {
       const list = data.data.items;
       if(list.length > 0) {
+        $(`.recent-product .product-list-blank`).hide();
         const html = list.map(item => renderProduct(item, true)).join("");
         $(`.recent-product .swiper-wrapper`).html(html);
     
         const swiper = $(`.recent-product .product-swiper-two`)[0]?.swiper;
         if (swiper) swiper.update();
       } else {
-        $(`.recent-product .swiper-wrapper`).html(`<li class="error">Không tìm thấy sản phẩm nào đã xem.</li>`);
+        $(`.recent-product .swiper-wrapper`).hide();
+        $(`.recent-product .product-list-blank`).show();
       }
     } else {
-      $(`.recent-product .swiper-wrapper`).html(`<li class="error">Lỗi tải sản phẩm</li>`);
+      $(`.recent-product .swiper-wrapper`).hide();
+      $(`.recent-product .product-list-blank`).show();
     }
   } catch (err) {
     console.error("Fetch product failed:", err);
-    $(`.recent-product .swiper-wrapper`).html(`<li class="error">Lỗi tải sản phẩm</li>`);
+    $(`.recent-product .swiper-wrapper`).hide();
+    $(`.recent-product .product-list-blank`).show();
   }
 }
 
