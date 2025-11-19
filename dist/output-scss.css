@@ -16,7 +16,6 @@ body {
   line-height: 24px;
   color: var(--neutral-txt-high);
   background-color: var(--white);
-  scroll-behavior: smooth;
 }
 
 html:has(body.scroll-locked) {

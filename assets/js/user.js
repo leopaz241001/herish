@@ -10,28 +10,43 @@ async function getProfile() {
         'Authorization': `Bearer ${access_token}`
       },
     });
+
+    const resAvt = await fetch('https://herish.id.vn/api/user/avatar', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${access_token}`
+      },
+    });
     
     if(res.ok) {
       const data = await res.json();
-      // header
-      if(data.data.avatar) {
-        $('.header .avatar').attr('src', data.data.avatar).on('error', function () {
-          $(this).attr('src', './assets/images/avatar/avatar.jpeg');
-        });
+
+      // avatar
+      if(resAvt.ok) {
+        const dataAvt = await resAvt.json();
+        
+        // header
+        if(dataAvt.data.avatar_url) {
+          $('.header .avatar').attr('src', dataAvt.data.avatar_url).on('error', function () {
+            $(this).attr('src', './assets/images/avatar/avatar.jpeg');
+          });
+        }
+
+        // profile page
+        if(dataAvt.data.avatar_url) {
+          $('.avatar-block').removeAttr('style');
+          $('.avatar-block .user-avatar').attr('src', dataAvt.data.avatar_url).on('error', function () {
+            $(this).attr('src', './assets/images/avatar/avatar.jpeg');
+          });
+          $('.avatar-noimage').hide();
+        } else {
+          $('.avatar-noimage span').text(data.data.full_name.trim().charAt(0));
+        }
       }
+
       $('.header .select-profile').removeAttr('style');
       $('.header .btn-login').hide();
-
-      // profile page
-      if(data.data.avatar) {
-        $('.avatar-block').removeAttr('style');
-        $('.avatar-block .user-avatar').attr('src', data.data.avatar).on('error', function () {
-          $(this).attr('src', './assets/images/avatar/avatar.jpeg');
-        });
-        $('.avatar-noimage').hide();
-      } else {
-        $('.avatar-noimage span').text(data.data.full_name.trim().charAt(0));
-      }
       if(data.data.full_name) {
         $('.user-name').text(data.data.full_name);
         $('.input-user-name').val(data.data.full_name);
@@ -56,6 +71,10 @@ async function getProfile() {
       }
     } else {
       localStorage.getItem('access_token');
+      // show recent product
+      if($('.recent-product').length) {
+        $('.recent-product').hide();
+      }
     }
   } catch (err) {
     console.log(err);
@@ -103,21 +122,6 @@ function updateProfile() {
     const email = $('#email').val();
     const phone = $('#phone').val();
 
-    // const formData = new FormData();
-    // formData.append('full_name', $('#name').val());
-    
-    // const dateInput = $('#dateInput').val();
-    // const [day, month, year] = dateInput.split("/");
-    // const birth_date = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
-    // formData.append('birth_date', birth_date);
-
-    // formData.append('email', $('#email').val());
-    // formData.append('phone', $('#phone').val());
-
-    // if (avatarFile) {
-    //   formData.append('avatar', avatarFile);
-    // }
-
     try {
       const access_token = localStorage.getItem('access_token');
       const res = await fetch('https://herish.id.vn/api/user/update-info', {
@@ -127,9 +131,20 @@ function updateProfile() {
           'Authorization': `Bearer ${access_token}`
         },
         body: JSON.stringify({ full_name, birth_date, email, phone }),
-        // body: formData,
-        // credentials: 'include'
       });
+      
+      if (avatarFile) {
+        const formData = new FormData();
+        formData.append('file', avatarFile);
+
+        await fetch('https://herish.id.vn/api/user/avatar', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${access_token}`
+          },
+          body: formData,
+        });
+      }
 
       if (res.ok) {
         $('.toastify.success').eq(0).addClass('active');

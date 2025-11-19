@@ -71,8 +71,8 @@ async function fetchProducts({page=1,page_size,search,tags,color_theme,occasion,
     let url = `${API_URL}?page=${page}`
     if(page_size) url+= `&page_size=${page_size}`
     if(search) url+= `&search=${encodeURIComponent(search)}`
-    if(occasion) url+= `&occasion=${occasion}`
-    if(product_type) url+= `&product_type=${product_type}`
+    if(occasion) url+= `&occasion=${encodeURIComponent(occasion)}`
+    if(product_type) url+= `&product_type=${encodeURIComponent(product_type)}`
     if(featured) url+= `&featured=${featured}`
     if(min_price) url+= `&min_price=${min_price}`
     if(max_price) url+= `&max_price=${max_price}`
@@ -124,6 +124,7 @@ async function renderProductList({page=1, page_size, search, occasion, product_t
     } else {
       if (page === 1) {
         $(".product-list-blank").removeAttr("style");
+        $(".button-top").hide();
       }
     }
 
@@ -319,7 +320,6 @@ async function renderProductDetail() {
     const data = await res.json();
     if (res.ok) {
       const detail = data.data;
-      console.log(detail);
       
       const slideThumbImg = detail.image_urls.map((img, index) => `
         <div class="swiper-slide">

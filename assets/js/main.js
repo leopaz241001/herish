@@ -30,6 +30,8 @@
 
 
 ; (function (win, $) {
+    const scrollbarWidth =  window.innerWidth - document.documentElement.clientWidth;
+
     // Open menu mobile
     const handleOpenHeaderMobile = function () {
         const menu = $('.menu-mobile')
@@ -295,7 +297,7 @@
 
     // FAQs
     const handleFaq = function () {
-        $('.faq-item .heading, .toggle-item .heading').on('click', function () {
+        $(document).on('click', '.faq-item .heading, .toggle-item .heading', function () {
             $(this).closest('.faq-item, .toggle-item').toggleClass('active').siblings('.faq-item, .toggle-item').removeClass('active');
             $(this).closest('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideToggle(300)
             $(this).closest('.faq-item, .toggle-item').siblings('.faq-item, .toggle-item').find('.answer, .toggle-menu').slideUp(300);
@@ -308,6 +310,7 @@
             if ($('.modal-cookie').length > 0) {
                 $('.modal-cookie').addClass('open')
                 $('body').addClass('scroll-locked')
+                $('body, .header, .contact-list').css('padding-right', scrollbarWidth + 'px')
             }
         }, 1000);
 
@@ -315,8 +318,6 @@
             e.preventDefault()
     
             const popupType = $(this).data('type')
-            console.log(popupType);
-            
             $('.modal-item').each(function () {
                 if ($(this).data('type') === popupType) {
                     
@@ -324,6 +325,7 @@
                     $(this).addClass('open')
                     setTimeout(function () {
                         $('body').addClass('scroll-locked')
+                        $('body, .header, .contact-list').css('padding-right', scrollbarWidth + 'px')
                     }, 50);
                 }
             })
@@ -342,11 +344,13 @@
         modal.on('click', function () {
             modal.find('>.open').removeClass('open')
             $('body').removeClass('scroll-locked')
+            $('body, .header, .contact-list').css('padding-right', '0px')
         })
 
         $('.btn-close-popup').on('click', function () {
             modal.find('>.open').removeClass('open')
             $('body').removeClass('scroll-locked')
+            $('body, .header, .contact-list').css('padding-right', '0px')
         })
     }
 

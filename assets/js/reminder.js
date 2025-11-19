@@ -95,11 +95,11 @@ async function fetchReminders() {
       $(".reminders-list").append(html);
       $(".reminders-quantity").html(list.length)
     } else {
-      $(".reminders-list").html(`<li class="error">Chưa có lời nhắc nào được tạo!</li>`);
+      $(".reminders-list-blank").removeAttr("style");
     }
   } catch (err) {
     console.error("Fetch reminder failed:", err);
-    $(".reminders-list").html(`<li class="error">Lỗi khi tải danh sách lời nhắc!</li>`);
+    $(".reminders-list-blank").removeAttr("style");
   }
 }
 

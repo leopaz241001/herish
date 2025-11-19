@@ -208,41 +208,16 @@
             <div class="container">
                 <h2 class="text-head3">Lời nhắc đã lưu (<span class="reminders-quantity">0</span>)</h2>
                 <ul class="reminders-list grid lg:grid-cols-3 sm:grid-cols-2 sm:gap-6 gap-4 sm:mt-10 mt-6">
-                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 1">
-                        <div class="flex justify-between gap-12">
-                            <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 6 tháng 8</span>
-                            <div class="flex gap-6">
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-edit-02 block text-[24px]"></i>
-                                    <span class="blind">button edit</span>
-                                </button>
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-delete-03 block text-[24px] text-error"></i>
-                                    <span class="blind">button delete</span>
-                                </button>
-                            </div>
-                        </div>
-                        <strong class="block text-head4 sm:my-12 my-5">Bạn A</strong>
-                        <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Ngày kỷ niệm</span>
-                    </li>
-                    <li class="bg-neutral-ui sm:p-6 p-4 rounded-xl animate animate-top" style="--i: 2">
-                        <div class="flex justify-between gap-12">
-                            <span class="sm:text-body1 text-body3 text-neutral-txt-low">Ngày 7 tháng 8</span>
-                            <div class="flex gap-6">
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-edit-02 block text-[24px]"></i>
-                                    <span class="blind">button edit</span>
-                                </button>
-                                <button type="button">
-                                    <i class="hgi hgi-stroke hgi-delete-03 block text-[24px] text-error"></i>
-                                    <span class="blind">button delete</span>
-                                </button>
-                            </div>
-                        </div>
-                        <strong class="block text-head4 sm:my-12 my-5">Chị gái hehehe</strong>
-                        <span class="block sm:text-head6 text-sm font-semibold text-neutral-txt-low">Sinh nhật</span>
-                    </li>
                 </ul>
+                <!-- Nếu không có sản phẩm -->
+                <div class="reminders-list-blank flex flex-col items-center justify-center" style="display: none;">
+                    <div class="flex-shrink-0 h-[200px]">
+                        <img src="./assets/images/components/reminder-blank.svg" alt="reminder blank" class="h-full">
+                    </div>
+                    <strong class="text-head4 mt-8 text-center">Chưa có lời nhắc nào được tạo</strong>
+                    <p class="text-body2 mt-2 text-center">Thêm lời nhắc để không bỏ lỡ bất kỳ dịp quan trọng nào dành cho người ấy.</p>
+                    <a href="index.html" class="btn-open-popup button-main mt-8" data-type="modal-reminders" aria-label="Thêm lời nhắc">Thêm lời nhắc</a>
+                </div>
             </div>
         </section>
 
@@ -270,19 +245,19 @@
                                 <span>Theo dõi chúng tôi tại:</span>
                                 <ul class="list flex flex-wrap items-center gap-5">
                                     <li class="item">
-                                        <a href="https://www.tiktok.com/" target="_blank">
+                                        <a href="https://www.tiktok.com/@herishvn?_r=1&_t=ZS-91WE3DAtxXM" target="_blank">
                                             <span class="icon-tiktok block text-[36px]"></span>
                                             <span class="blind">link to tiktok</span>
                                         </a>
                                     </li>
                                     <li class="item">
-                                        <a href="https://www.facebook.com/" target="_blank">
+                                        <a href="https://web.facebook.com/HerishVietNam" target="_blank">
                                             <span class="icon-facebook block text-[36px]"></span>
                                             <span class="blind">link to facebook</span>
                                         </a>
                                     </li>
                                     <li class="item">
-                                        <a href="https://www.shopee.vn/" target="_blank">
+                                        <a href="https://shopee.vn/herish_vn?entryPoint=ShopBySearch&searchKeyword=herish" target="_blank">
                                             <span class="icon-shopee block text-[36px]"></span>
                                             <span class="blind">link to shopee</span>
                                         </a>
@@ -693,6 +668,14 @@
                                 </div>
                             </div>
                             <p class="text-body3 mt-2 text-neutral-txt-low">HERISH sẽ gửi lời nhắc đến bạn trước 15 ngày.</p>
+                        </div>
+                        <div class="form-checkbox sm:mt-8 mt-5">
+                            <input id="yearLoop" type="checkbox" name="yearLoop" class="checkbox" checked>
+                            <span class="check-icon icon-checkmark-square text-[20px]">
+                                <span class="path1 absolute"></span>
+                                <span class="path2 absolute"></span>
+                            </span>
+                            <label for="yearLoop" class="label pl-7 text-body3 text-neutral-txt-low">Lặp lại hàng năm</label>
                         </div>
                     </div>
                     <div class="modal-footer sm:py-8 py-5 sm:px-6 px-4 border-t border-neutral-ui">
