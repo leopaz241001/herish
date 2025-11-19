@@ -322,6 +322,14 @@
                 <div class="product sm:mt-13 mt-8">
                     <ul id="productList" class="product-list grid xl:grid-cols-3 grid-cols-2 sm:gap-6 gap-4 sm:gap-y-8 gap-y-5">
                     </ul>
+                    <!-- Nếu không có sản phẩm -->
+                    <div class="product-list-blank flex flex-col items-center justify-center" style="display: none;">
+                        <div class="flex-shrink-0 h-[200px]">
+                            <img src="./assets/images/components/product-blank.svg" alt="product blank" class="h-full">
+                        </div>
+                        <strong class="text-head4 mt-8 text-center">Không tìm thấy sản phẩm nào phù hợp!</strong>
+                        <p class="text-body2 mt-2 text-center">Thử điều chỉnh bộ lọc hoặc khám phá thêm để tìm ra món quà phù hợp với bạn.</p>
+                    </div>
                     <div id="btnLoadMore" class="w-fit mx-auto mt-13">
                         <a href="#!" class="button-main bg-primary-ui text-primary-txt-head">Xem thêm sản phẩm</a>
                     </div>
@@ -620,7 +628,7 @@
             <span class="circle">
                 <span class="content">
                     <span class="icon-arrow-up-02-round text-[20px]"></span>
-                    <span class="quantity block mt-1 text-xs font-bold">68</span>
+                    <span class="products-quantity quantity block mt-1 text-xs font-bold">68</span>
                     <span class="text-xs">sản phẩm</span>
                 </span>
             </span>

@@ -20,7 +20,7 @@ function renderProduct(product, isSlide = false) {
           <div class="flex items-end sm:gap-2 gap-1 sm:mt-3 mt-1">
           ${percentDiscount ? `
               <span class="sm:text-head4 text-head5-mo text-secondary-txt">₫${Number(product.sale_price).toLocaleString('vi-VN')}</span>
-              <span class="text-head6 mb-px text-neutral-txt-low">₫${Number(product.price).toLocaleString('vi-VN')}</span>
+              <span class="text-head6 mb-px text-neutral-txt-low line-through">₫${Number(product.price).toLocaleString('vi-VN')}</span>
             ` : `
               <span class="sm:text-head4 text-head5-mo text-secondary-txt">₫${Number(product.price).toLocaleString('vi-VN')}</span>
             `
@@ -123,7 +123,7 @@ async function renderProductList({page=1, page_size, search, occasion, product_t
       }, 1000);
     } else {
       if (page === 1) {
-        $("#productList").html(`<li class="error">Không tìm thấy sản phẩm nào phù hợp!</li>`);
+        $(".product-list-blank").removeAttr("style");
       }
     }
 
@@ -319,6 +319,7 @@ async function renderProductDetail() {
     const data = await res.json();
     if (res.ok) {
       const detail = data.data;
+      console.log(detail);
       
       const slideThumbImg = detail.image_urls.map((img, index) => `
         <div class="swiper-slide">
@@ -327,9 +328,9 @@ async function renderProductDetail() {
       `).join("");
       
       const slideListImg = detail.image_urls.map((img, index) => `
-      <div class="swiper-slide overflow-hidden rounded-xl">
-      <img src="${img}" alt="${detail.product_code}-${index}" class="w-full h-full object-cover" />
-      </div>
+        <div class="swiper-slide overflow-hidden rounded-xl">
+          <img src="${img}" alt="${detail.product_code}-${index}" class="w-full h-full object-cover" />
+        </div>
       `).join("");
 
       $('.product-detail .swiper-thumb-images .swiper-wrapper').html(slideThumbImg);
@@ -348,7 +349,8 @@ async function renderProductDetail() {
       } else {
         $('.product-detail .discount').hide();
       }
-      $('.product-detail .desc').html(`${detail.detailed_info.introduction}<br>${detail.detailed_info.meaning}<br>${detail.detailed_info.suitableFor}`);
+      const htmlDesc = detail.detailed_info.introduction.replace(/\n/g, "<br>");
+      $('.product-detail .desc').html(htmlDesc);
       $('.product-detail .btn-shopee-link').attr('href', detail.shopee_url);
       $('.product-detail .btn-tiktok-link').attr('href', detail.tiktok_url);
       $('.product-detail .btn-facebook-link').attr('href', detail.facebook_contact);
