@@ -70,8 +70,8 @@ async function getProfile() {
         $('.recent-product').show();
       }
     } else {
-      localStorage.getItem('access_token');
-      // show recent product
+      localStorage.removeItem('access_token');
+      // hide recent product
       if($('.recent-product').length) {
         $('.recent-product').hide();
       }

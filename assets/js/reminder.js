@@ -78,6 +78,12 @@ async function fetchReminders() {
   try {
     let url = `https://herish.id.vn/api/special-days`;
     const access_token = localStorage.getItem('access_token');
+    if (!access_token) {
+      alert('Vui lòng đăng nhập để thêm lời nhắc');
+      window.location.href = "login.html"
+      return;
+    }
+
     const res = await fetch(url, {
       method: 'GET',
       headers: {
@@ -89,8 +95,8 @@ async function fetchReminders() {
     const data = await res.json();
     const list = data.data?.items;
     
+    $(".reminders-list").html("");
     if(list?.length > 0) {
-      $(".reminders-list").html("");
       const html = list.map(renderReminder).join("");
       $(".reminders-list").append(html);
       $(".reminders-quantity").html(list.length)
