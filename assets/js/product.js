@@ -9,11 +9,11 @@ function renderProduct(product, isSlide = false) {
   const percentDiscount = product.sale_price ? parseInt((1 - Number(product.sale_price) / Number(product.price)) * 100) : null;
 
   return `
-    <li class="product-item${isSlide ? " swiper-slide" : ""}">
+    <li class="product-item relative${isSlide ? " swiper-slide" : ""}" data-code="${product.product_code}">
       <a href="product-detail.html?product_code=${product.product_code}" class="product-link block group">
         <div class="image relative overflow-hidden rounded-xl max-sm:aspect-square">
           <img src="${product.image_thumbnail}" alt="${product.product_name}" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
-          ${percentDiscount ? `<span class="badge absolute top-1.5 left-1.5 w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-ui font-semibold max-sm:text-xs">-${percentDiscount}%</span>` : ""}
+          ${percentDiscount ? `<span class="badge absolute top-2 left-2 w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-error-ui text-error-txt font-semibold max-sm:text-xs">-${percentDiscount}%</span>` : ""}
         </div>
         <div class="content sm:mt-5 mt-3">
           <strong class="text-head5 line-clamp-2">${product.product_name}</strong>
@@ -28,6 +28,11 @@ function renderProduct(product, isSlide = false) {
           </div>
         </div>
       </a>
+      <button type="button" class="button-wishlist button-main absolute top-2 right-2 w-12 h-12 p-0 bg-primary-ui">
+        <span class="hgi hgi-stroke hgi-favourite text-[24px] text-primary font-normal"></span>
+        <span class="icon-favourite text-[24px] text-[#FC595B] hidden"></span>
+        <span class="blind">button add to wishlist</span>
+      </button>
     </li>
   `;
 }
@@ -255,24 +260,44 @@ async function fetchProductWishlist() {
 
 async function renderProductWishlist() {
   const access_token = localStorage.getItem('access_token');
-  if (!access_token) {
-    alert('Vui lòng đăng nhập để xem danh sách yêu thích');
-    window.location.href = "login.html"
-    return;
+  const wishlist = access_token ? await fetchProductWishlist() : [];
+
+  if ($("#productWishlist").length) {
+    if (!access_token) {
+      alert('Vui lòng đăng nhập để xem danh sách yêu thích');
+      window.location.href = "login.html"
+      return;
+    }
+
+    if(wishlist.length > 0) {
+      $('.product-list-blank').hide();
+      const html = wishlist.map(renderProduct).join("");
+      $("#productWishlist").addClass("loading");
+      $("#productWishlist").html(html);
+      setTimeout(() => {
+        $("#productWishlist").removeClass("loading");
+      }, 1000);
+    } else {
+      $('#productWishlist').hide();
+      $('.product-list-blank').show();
+    }
   }
-  const list = await fetchProductWishlist();
-  
-  if(list.length > 0) {
-    $('.product-list-blank').hide();
-    const html = list.map(renderProduct).join("");
-    $("#productWishlist").addClass("loading");
-    $("#productWishlist").html(html);
-    setTimeout(() => {
-      $("#productWishlist").removeClass("loading");
-    }, 1000);
-  } else {
-    $('#productWishlist').hide();
-    $('.product-list-blank').show();
+
+  // Gán trạng thái active cho từng product-item
+  $(".product-item").each(function () {
+    const code = $(this).attr("data-code");
+    const isInWishlist = wishlist.some(item => item.product_code === code);
+
+    $(this).find(".button-wishlist").toggleClass("active", isInWishlist);
+  });
+
+  // Gán trạng thái active cho product detail
+  if ($(".product-detail").length) {
+    const params = new URLSearchParams(window.location.search);
+    const product_code = params.get("product_code");
+
+    const isInWishlist = wishlist.some(item => item.product_code === product_code);
+    $(".product-detail .images .button-wishlist").toggleClass("active", isInWishlist);
   }
 }
 
@@ -447,24 +472,20 @@ async function fetchProductCategory() {
 }
 
 async function addProductToWishlist() {
-  const params = new URLSearchParams(window.location.search);
-  const product_code = params.get("product_code");
-  const access_token = localStorage.getItem('access_token');
+  $(document).on("click", ".button-wishlist", async function(e) {
+    e.preventDefault();
+    const access_token = localStorage.getItem('access_token');
 
-  if (!$(".button-wishlist").length) return;
-
-  const list = await fetchProductWishlist();
-  const isInWishlist = list.some(item => item.product_code === product_code);
-  $(".button-wishlist").toggleClass("active", isInWishlist);
-
-  $(".button-wishlist").on("click", async function() {
     if (!access_token) {
       alert('Vui lòng đăng nhập để thêm vào danh sách yêu thích');
       window.location.href = "login.html"
       return;
     }
 
-    const isActive = $(this).hasClass("active");
+    const btn = $(this);
+    const product_code = btn.closest(".product-item").attr("data-code");
+    const isActive = btn.hasClass("active");
+
     try {
       if(!isActive) {
         const res = await fetch(`https://herish.id.vn/api/user/favorites`, {
@@ -475,7 +496,7 @@ async function addProductToWishlist() {
           },
           body: JSON.stringify({ product_code }),
         });
-        if(res.ok) $(".button-wishlist").addClass("active");
+        if(res.ok) btn.addClass("active");
       } else {
         const res = await fetch(`https://herish.id.vn/api/user/favorites/${product_code}`, {
           method: 'DELETE',
@@ -484,7 +505,7 @@ async function addProductToWishlist() {
             'Authorization': `Bearer ${access_token}`
           },
         });
-        if(res.ok) $(".button-wishlist").removeClass("active");
+        if(res.ok) btn.removeClass("active");
       }
     } catch(err) {
       console.error(err);
@@ -508,18 +529,6 @@ function clearFilterProduct() {
 }
 
 $(document).ready(async function() {
-  filterProductByLink();
-  filterProductBySelect();
-  sortProductBySelect();
-  fetchProductCategory();
-  addProductToWishlist();
-  clearFilterProduct();
-  toggleClearFilterBtn();
-
-  if ($("#productWishlist").length) {
-    renderProductWishlist();
-  }
-  
   if ($("#productList").length && !$(".search-result").length) {
     renderProductByParams(1, pageSize);
 
@@ -556,4 +565,13 @@ $(document).ready(async function() {
   if ($(".product-detail").length) {
     renderProductDetail();
   }
+
+  filterProductByLink();
+  filterProductBySelect();
+  sortProductBySelect();
+  fetchProductCategory();
+  renderProductWishlist();
+  addProductToWishlist();
+  clearFilterProduct();
+  toggleClearFilterBtn();
 });

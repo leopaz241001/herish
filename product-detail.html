@@ -197,7 +197,12 @@
         <section class="product-detail sm:pt-[88px] pt-4">
             <div class="container">
                 <div class="flex max-sm:flex-col lg:gap-[113px] gap-6">
-                    <div class="images flex-shrink-0 sm:w-[50.625%] w-full">
+                    <div class="images flex-shrink-0 relative sm:w-[50.625%] w-full">
+                        <button type="button" class="button-wishlist button-main absolute top-6 right-6 z-[2] w-14 h-14 p-0 bg-primary-ui">
+                            <span class="hgi hgi-stroke hgi-favourite text-[24px] text-primary font-normal"></span>
+                            <span class="icon-favourite text-[24px] text-[#FC595B] hidden"></span>
+                            <span class="blind">button add to wishlist</span>
+                        </button>
                         <div class="swiper swiper-thumb-images rounded-xl aspect-square">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
@@ -244,26 +249,22 @@
                                 <span class="sale-price text-head3 text-secondary-txt">₫899.000</span>
                                 <span class="price text-head5 sm:mb-0.5 text-neutral-txt-low line-through">₫1.101.000</span>
                             </div>
-                            <span class="discount badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-ui font-semibold max-sm:text-xs">-20%</span>
+                            <span class="discount badge w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-error-ui text-error-txt font-semibold max-sm:text-xs">-20%</span>
                         </div>
-                        <div class="flex max-lg:flex-col max-sm:flex-row sm:gap-4 gap-3 sm:mt-9 mt-6">
-                            <button type="button" class="button-wishlist button-main flex-shrink-0 w-14 h-14 p-0 bg-primary-ui">
-                                <span class="hgi hgi-stroke hgi-favourite text-[24px] text-primary font-normal"></span>
-                                <span class="icon-favourite text-[24px] text-[#FC595B] hidden"></span>
-                                <span class="blind">button add to wishlist</span>
-                            </button>
-                            <div class="flex flex-col gap-4 w-full">
-                                <a href="https://shopee.vn/herish_vn?entryPoint=ShopBySearch&searchKeyword=herish" class="btn-shopee-link button-main w-full max-sm:px-3" target="_blank">
-                                    <span class="icon-shopee block sm:text-[24px] text-[20px]"></span>
-                                    <span>Mua hàng qua Shopee</span>
-                                </a>
-                                <a href="https://www.tiktok.com/@herishvn?_r=1&_t=ZS-91WE3DAtxXM" class="btn-tiktok-link button-main w-full max-sm:px-3" target="_blank">
+                        <div class="sm:mt-9 mt-6">
+                            <p class="font-semibold">Mua hàng qua:</p>
+                            <div class="group-social-link flex flex-wrap gap-4 w-full mt-4">
+                                <a href="https://www.tiktok.com/@herishvn?_r=1&_t=ZS-91WE3DAtxXM" class="btn-tiktok-link button-main" target="_blank">
                                     <span class="icon-tiktok block sm:text-[24px] text-[20px]"></span>
-                                    <span>Mua hàng qua TikTok Shop</span>
+                                    <span>Tiktok Shop</span>
                                 </a>
-                                <a href="https://web.facebook.com/HerishVietNam" class="btn-facebook-link button-main w-full max-sm:px-3" target="_blank">
+                                <a href="https://shopee.vn/herish_vn?entryPoint=ShopBySearch&searchKeyword=herish" class="btn-shopee-link button-main" target="_blank">
+                                    <span class="icon-shopee block sm:text-[24px] text-[20px]"></span>
+                                    <span>Shopee</span>
+                                </a>
+                                <a href="https://web.facebook.com/HerishVietNam" class="btn-facebook-link button-main" target="_blank">
                                     <span class="icon-facebook block sm:text-[24px] text-[20px]"></span>
-                                    <span>Nhận tư vấn qua Facebook</span>
+                                    <span>Facebook</span>
                                 </a>
                             </div>
                         </div>
@@ -348,7 +349,7 @@
                                 <a href="product-detail.html" class="product-link block group">
                                     <div class="image relative overflow-hidden rounded-xl max-sm:aspect-square">
                                         <img src="./assets/images/product/1.jpg" alt="[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ" class="w-full h-full object-cover duration-1000 group-hover:scale-[1.1]">
-                                        <span class="badge absolute top-1.5 left-1.5 w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-secondary-ui font-semibold max-sm:text-xs">-20%</span>
+                                        <span class="badge absolute top-2 left-2 w-fit sm:py-2 py-1 sm:px-4 px-2 rounded-full bg-error-ui text-error-txt font-semibold max-sm:text-xs">-20%</span>
                                     </div>
                                     <div class="content sm:mt-5 mt-3">
                                         <strong class="text-head5 line-clamp-2">[20/10] Hộp quà tặng dây chuyền - Lấp lánh những điều nhỏ</strong>

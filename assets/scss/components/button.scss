@@ -111,6 +111,50 @@
             line-height: 16px;
         }
     }
+
+    &.btn-tiktok-link {
+        background-color: transparent;
+        color: var(--neutral-txt-high);
+        border: 1px solid var(--primary);
+
+        .icon-tiktok {
+            color: var(--neutral-txt-high);
+            transition: .5s ease-out;
+        }
+
+        &:hover {
+            background-color: var(--primary);
+            color: var(--white);
+
+            .icon-tiktok {
+                color: var(--white);
+            }
+        }
+    }
+
+    &.btn-facebook-link {
+        background-color: transparent;
+        color: var(--neutral-txt-high);
+        border: 1px solid var(--primary);
+
+        .icon-facebook {
+            &::before {
+                color: #1877F2;
+                transition: .5s ease-out;
+            }
+        }
+
+        &:hover {
+            background-color: var(--primary);
+            color: var(--white);
+
+            .icon-facebook {
+                &::before {
+                    color: var(--white);
+                }
+            }
+        }
+    }
 }
 
 .button-toggle {
