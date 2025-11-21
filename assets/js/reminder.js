@@ -1,3 +1,29 @@
+function getNextEventDate(dayMonthString) {
+  const [day, month] = dayMonthString.split('/').map(Number);
+  const now = new Date();
+  let year = now.getFullYear();
+
+  // Tạo ngày sự kiện của năm hiện tại
+  let eventDate = new Date(year, month - 1, day);
+
+  // Nếu ngày đó đã qua → dùng năm sau
+  if (eventDate < now.setHours(0,0,0,0)) {
+    year++;
+    eventDate = new Date(year, month - 1, day);
+  }
+
+  // Format lại: dd/mm/yyyy
+  return eventDate.toLocaleDateString('vi-VN');
+}
+
+function selectEvent() {
+  $('.event-list input').on('change', function(e) {
+    const val = e.target.value;
+    const formatted = getNextEventDate(val);
+    $('#dateInput').val(formatted);
+  })
+}
+
 const createReminder = function () {
   const formReminder = document.querySelector('#formReminder');
   
@@ -204,6 +230,7 @@ async function deleteReminder() {
 }
 
 if($('#reminders').length) {
+  selectEvent();
   createReminder();
   fetchReminders();
   handleReminderAction();

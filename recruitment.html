@@ -222,8 +222,8 @@
             </div>
         </section>
         
-        <!-- Feature -->
-        <section class="feature sm:py-32 py-16 bg-neutral-txt-high text-white">
+        <!-- Recruitment -->
+        <section class="recruitment sm:py-32 py-16 bg-neutral-txt-high text-white">
             <div class="container">
                 <div class="grid md:grid-cols-12 sm:gap-6 gap-4">
                     <strong class="flex items-center gap-3 md:col-span-4 h-fit animate animate-top" style="--i: 1">
@@ -235,8 +235,8 @@
                         <p class="desc sm:mt-7 mt-3 animate animate-top" style="--i: 2">Cơ hội để bạn phát triển sự nghiệp và cùng viết nên hành trình HERISH.</p>
                     </div>
                 </div>
-                <ul class="feature-list border-t border-neutral-hover sm:mt-13 mt-8">
-                    <li class="feature-item grid sm:grid-cols-6 items-center sm:gap-6 gap-4 py-8 max-sm:py-5 border-b border-neutral-hover duration-500 hover:px-8 hover:bg-white hover:bg-opacity-20 animate animate-top" style="--i: 1">
+                <ul id="recruitmentList" class="recruitment-list border-t border-neutral-hover sm:mt-13 mt-8">
+                    <li class="recruitment-item grid sm:grid-cols-6 items-center sm:gap-6 gap-4 py-8 max-sm:py-5 border-b border-neutral-hover duration-500 hover:px-8 hover:bg-white hover:bg-opacity-20 animate animate-top" style="--i: 1">
                         <div class="lg:col-span-2 col-span-12">
                             <a href="recruitment-detail.html" class="text-head4">Graphic Designer</a>
                         </div>
@@ -357,6 +357,14 @@
                         </div>
                     </li>
                 </ul>
+                <!-- Nếu không có sản phẩm -->
+                <div class="recruitment-list-blank flex flex-col items-center justify-center text-white" style="display: none;">
+                    <div class="flex-shrink-0 h-[200px]">
+                        <img src="./assets/images/components/recruitment-blank.svg" alt="recruitment blank" class="h-full">
+                    </div>
+                    <strong class="text-head4 mt-8 text-center">Hiện chưa có vị trí nào đang mở</strong>
+                    <p class="text-body2 mt-2 text-center">Hãy quay lại sau — HERISH sẽ cập nhật ngay khi có cơ hội mới phù hợp.</p>
+                </div>
             </div>
         </section>
 
@@ -978,6 +986,7 @@
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="./assets/js/user.js"></script>
         <script src="./assets/js/product.js"></script>
+        <script src="./assets/js/recruitment.js"></script>
         <script src="./assets/js/main.js"></script>
     </body>
 </html>

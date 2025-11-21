@@ -356,6 +356,8 @@ async function renderProductDetail() {
     const data = await res.json();
     if (res.ok) {
       const detail = data.data;
+      console.log(detail);
+      
       
       const slideThumbImg = detail.image_urls.map((img, index) => `
         <div class="swiper-slide">
