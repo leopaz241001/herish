@@ -387,8 +387,23 @@ async function renderProductDetail() {
       } else {
         $('.product-detail .discount').hide();
       }
+      detail.detailed_info.suitable_for.map(function(sui){
+        $('.product-detail .suitable-list').append(`
+          <li class="flex gap-3">
+            <span class="icon-favourite text-[20px] text-secondary"></span>
+            <span>${sui}</span>
+          </li>
+        `);
+      })
       const htmlDesc = detail.detailed_info.introduction.replace(/\n/g, "<br>");
+      const imgCertificate = detail.certificate[0];
       $('.product-detail .desc').html(htmlDesc);
+      if(imgCertificate) {
+        $('.product-detail .detail').append(`
+          <p class="mt-3 font-semibold">Sản phẩm đã được chứng nhận kiểm định chất lượng:</p>
+          <img src="${imgCertificate}" alt="certificate">
+        `)
+      }
       $('.product-detail .btn-shopee-link').attr('href', detail.shopee_url);
       $('.product-detail .btn-tiktok-link').attr('href', detail.tiktok_url);
       $('.product-detail .btn-facebook-link').attr('href', detail.facebook_contact);

@@ -2,7 +2,7 @@ function renderRecruitment(item) {
   return `
     <li class="recruitment-item grid sm:grid-cols-6 items-center sm:gap-6 gap-4 py-8 max-sm:py-5 border-b border-neutral-hover duration-500 hover:px-8 hover:bg-white hover:bg-opacity-20">
       <div class="lg:col-span-2 col-span-12">
-        <a href="recruitment-detail.html" class="text-head4">Graphic Designer</a>
+        <a href="recruitment-detail.html?id=${item.id}" class="text-head4">${item.title}</a>
       </div>
       <div class="lg:col-span-3 col-span-12">
         <div class="flex max-sm:flex-wrap sm:gap-6 gap-4">
@@ -21,7 +21,7 @@ function renderRecruitment(item) {
         </div>
       </div>
       <div class="action lg:col-span-1 col-span-12 lg:text-end">
-        <a href="recruitment-detail.html" class="button-main bg-white">Xem chi tiết</a>
+        <a href="recruitment-detail.html?id=${item.id}" class="button-main bg-white">Xem chi tiết</a>
       </div>
     </li>
   `;
@@ -32,6 +32,8 @@ async function fetchRecruitment() {
     const res = await fetch('https://herish.id.vn/api/recruitments');
     const data = await res.json();
     const list = data.data;
+    console.log(list);
+    
     
     $("#recruitmentList").html("");
     if(list?.length > 0) {
@@ -46,6 +48,29 @@ async function fetchRecruitment() {
   }
 }
 
+async function renderRecruitmentDetail() {
+  const params = new URLSearchParams(window.location.search);
+  const recruitment_id = params.get("id") || "";
+  
+  try {
+    let res = await fetch(`https://herish.id.vn/api/recruitments/${recruitment_id}`)
+    const data = await res.json();
+    console.log(data);
+    if (res.ok) {
+      const detail = data.data;
+      $(".recruitment-title").text(detail.title);
+      $(".recruitment-detail .thumbnail img").attr("src", detail.image_url);
+      
+    }
+  } catch (err) {
+    console.error("Fetch recruitments failed:", err);
+  }
+}
+
 if($('#recruitmentList').length) {
   fetchRecruitment();
+}
+
+if($('.recruitment-detail').length) {
+  renderRecruitmentDetail();
 }
