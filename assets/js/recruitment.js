@@ -6,7 +6,7 @@ function renderRecruitment(item) {
   return `
     <li class="recruitment-item grid sm:grid-cols-6 items-center sm:gap-6 gap-4 py-8 max-sm:py-5 border-b border-neutral-hover duration-500 hover:px-8 hover:bg-white hover:bg-opacity-20">
       <div class="lg:col-span-2 col-span-12">
-        <a href="recruitment-detail.html?id=${item.id}" class="text-head4">${item.title}</a>
+        <a href="recruitment-detail.html?id=${item.id}" class="text-head4">${item.position}</a>
       </div>
       <div class="lg:col-span-3 col-span-12">
         <div class="flex max-sm:flex-wrap sm:gap-6 gap-4">
@@ -20,7 +20,7 @@ function renderRecruitment(item) {
           </div>
           <div class="flex items-center gap-3 lg:w-1/3">
             <span class="icon-manager text-[24px]"></span>
-            <span>${item.position}</span>
+            <span>${item.level}</span>
           </div>
         </div>
       </div>

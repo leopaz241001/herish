@@ -14,8 +14,8 @@ async function fetchFaq() {
   try {
     const res = await fetch('https://herish.id.vn/api/faq');
     const data = await res.json();
-    const list = data.data;
-    console.log(data);
+    const list = data.data.sort((a, b) => a.order - b.order);
+    console.log(list);
     
     
     if(list?.length > 0) {
