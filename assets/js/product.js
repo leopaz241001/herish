@@ -314,11 +314,11 @@ function initDetailImgSwipers() {
   swiperListServiceDetail = new Swiper('.swiper-list-images', {
     loop: true,
     spaceBetween: 8,
-    slidesPerView: 4,
+    slidesPerView: 4.3,
     watchSlidesProgress: true,
     breakpoints: {
-      640: { slidesPerView: 4, spaceBetween: 12 },
-      1024: { slidesPerView: 5, spaceBetween: 12 },
+      640: { slidesPerView: 4.3, spaceBetween: 12 },
+      1024: { slidesPerView: 4.3, spaceBetween: 12 },
     },
   });
 
@@ -358,7 +358,6 @@ async function renderProductDetail() {
       const detail = data.data;
       console.log(detail);
       
-      
       const slideThumbImg = detail.image_urls.map((img, index) => `
         <div class="swiper-slide">
           <img src="${img}" alt="${detail.product_code}-${index}" class="w-full h-full object-cover" />
@@ -395,13 +394,14 @@ async function renderProductDetail() {
           </li>
         `);
       })
-      const htmlDesc = detail.detailed_info.introduction.replace(/\n/g, "<br>");
-      const imgCertificate = detail.certificate[0];
+      const htmlDesc = detail?.detailed_info?.introduction?.replace(/\n/g, "<br>");
       $('.product-detail .desc').html(htmlDesc);
-      if(imgCertificate) {
-        $('.product-detail .detail').append(`
+      
+      if(detail?.certificate?.length > 0) {
+        const images = detail?.certificate.map(img => `<img src="${img}" alt="certificate" class="mt-3">`).join("");
+        $('.product-detail .detail.description').append(`
           <p class="mt-3 font-semibold">Sản phẩm đã được chứng nhận kiểm định chất lượng:</p>
-          <img src="${imgCertificate}" alt="certificate">
+          ${images}
         `)
       }
       $('.product-detail .btn-shopee-link').attr('href', detail.shopee_url);

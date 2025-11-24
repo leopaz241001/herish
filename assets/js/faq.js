@@ -15,6 +15,8 @@ async function fetchFaq() {
     const res = await fetch('https://herish.id.vn/api/faq');
     const data = await res.json();
     const list = data.data;
+    console.log(data);
+    
     
     if(list?.length > 0) {
       $("#faqList").html("");

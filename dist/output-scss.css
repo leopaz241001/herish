@@ -454,36 +454,19 @@ input::-webkit-inner-spin-button {
     line-height: 16px;
   }
 }
-.button-main.btn-tiktok-link {
-  background-color: transparent;
+.button-main.button-outline {
+  background-color: var(--white);
   color: var(--neutral-txt-high);
   border: 1px solid var(--primary);
 }
-.button-main.btn-tiktok-link .icon-tiktok {
-  color: var(--neutral-txt-high);
+.button-main.button-outline [class^=icon-] {
   transition: 0.5s ease-out;
 }
-.button-main.btn-tiktok-link:hover {
+.button-main.button-outline:hover {
   background-color: var(--primary);
   color: var(--white);
 }
-.button-main.btn-tiktok-link:hover .icon-tiktok {
-  color: var(--white);
-}
-.button-main.btn-facebook-link {
-  background-color: transparent;
-  color: var(--neutral-txt-high);
-  border: 1px solid var(--primary);
-}
-.button-main.btn-facebook-link .icon-facebook::before {
-  color: #1877F2;
-  transition: 0.5s ease-out;
-}
-.button-main.btn-facebook-link:hover {
-  background-color: var(--primary);
-  color: var(--white);
-}
-.button-main.btn-facebook-link:hover .icon-facebook::before {
+.button-main.button-outline:hover [class^=icon-] {
   color: var(--white);
 }
 

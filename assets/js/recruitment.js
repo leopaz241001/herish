@@ -20,7 +20,7 @@ function renderRecruitment(item) {
           </div>
           <div class="flex items-center gap-3 lg:w-1/3">
             <span class="icon-manager text-[24px]"></span>
-            <span>${item.level}</span>
+            <span>${item.position}</span>
           </div>
         </div>
       </div>
@@ -36,6 +36,8 @@ async function fetchRecruitment() {
     const res = await fetch('https://herish.id.vn/api/recruitments');
     const data = await res.json();
     const list = data.data;
+    console.log(list);
+    
     
     $("#recruitmentList").html("");
     if(list?.length > 0) {
@@ -59,9 +61,13 @@ async function renderRecruitmentDetail() {
     const data = await res.json();
     if (res.ok) {
       const detail = data.data;
+      console.log(detail);
+      
       $(".recruitment-title").text(detail.title);
       $(".recruitment-detail .thumbnail img").attr("src", detail.image_url);
       $(".recruitment-location").text(detail.location);
+      const body = marked.parse(detail.body);
+      $(".recruitment-detail .detail").html(body);
     }
   } catch (err) {
     console.error("Fetch recruitments failed:", err);
