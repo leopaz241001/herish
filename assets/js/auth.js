@@ -152,11 +152,22 @@ if($('#login').length) {
 if($('#forgot-password').length) {  
   $('#formEmail').on('submit', async (e) => {
     e.preventDefault();
-    sendEmail();
+    $('.btn-control-email').prop('disabled', true)
+
+    await sendEmail();
+
+    setTimeout(() => {
+      $('.btn-control-email').prop('disabled', false);
+    }, 2000);
   });
 
   $('.btn-resend-code').on('click', async () => {
-    sendEmail();
+    $('.btn-resend-code').prop('disabled', true);
+    await sendEmail();
+
+    setTimeout(() => {
+      $('.btn-resend-code').prop('disabled', false);
+    }, 2000);
   });
 
   resetPassword();

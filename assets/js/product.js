@@ -386,15 +386,11 @@ async function renderProductDetail() {
       } else {
         $('.product-detail .discount').hide();
       }
-      detail.detailed_info.suitable_for.map(function(sui){
-        $('.product-detail .suitable-list').append(`
-          <li class="flex gap-3">
-            <span class="icon-favourite text-[20px] text-secondary"></span>
-            <span>${sui}</span>
-          </li>
-        `);
-      })
-      const htmlDesc = detail?.detailed_info?.introduction?.replace(/\n/g, "<br>");
+      $('.product-detail .btn-shopee-link').attr('href', detail.shopee_url);
+      $('.product-detail .btn-tiktok-link').attr('href', detail.tiktok_url);
+      $('.product-detail .btn-facebook-link').attr('href', detail.facebook_contact);
+
+      const htmlDesc = detail?.description?.replace(/\n/g, "<br>");
       $('.product-detail .desc').html(htmlDesc);
       
       if(detail?.certificate?.length > 0) {
@@ -404,9 +400,19 @@ async function renderProductDetail() {
           ${images}
         `)
       }
-      $('.product-detail .btn-shopee-link').attr('href', detail.shopee_url);
-      $('.product-detail .btn-tiktok-link').attr('href', detail.tiktok_url);
-      $('.product-detail .btn-facebook-link').attr('href', detail.facebook_contact);
+
+      $('.product-detail .material-name').html(detail.material);
+      $('.product-detail .size').html(detail.dimensions);
+      $('.product-detail .preserve').html(detail.care);
+      $('.product-detail .code').html(detail.product_code);
+      detail.detailed_info.suitable_for.map(function(sui){
+        $('.product-detail .suitable-list').append(`
+          <li class="flex gap-3">
+            <span class="icon-favourite text-[20px] text-secondary"></span>
+            <span>${sui}</span>
+          </li>
+        `);
+      })
     }
   } catch (err) {
     console.error("Fetch product failed:", err);
