@@ -115,8 +115,6 @@ async function renderProductList({page=1, page_size, search, occasion, product_t
     });
     
     if(pagination.total_items > 0) {
-      console.log(items);
-      
       const html = items.map(renderProduct).join("");
   
       $("#productList").addClass("loading");
@@ -506,7 +504,8 @@ async function addProductToWishlist() {
     }
 
     const btn = $(this);
-    const product_code = btn.closest(".product-item").attr("data-code");
+    const params = new URLSearchParams(window.location.search);
+    const product_code = params.get("product_code") || "";
     const isActive = btn.hasClass("active");
 
     try {
