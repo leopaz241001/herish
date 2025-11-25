@@ -849,10 +849,10 @@ textarea:focus {
 }
 
 .form-password .btn-show-password.active .ic-view {
-  display: none;
+  display: block;
 }
 .form-password .btn-show-password.active .ic-view-off {
-  display: block;
+  display: none;
 }
 
 .form-checkbox {

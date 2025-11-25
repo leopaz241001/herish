@@ -543,8 +543,7 @@
         $('.form-password input').on('input', function () {
             if ($(this).val() !== '') {
                 // ẩn button mắt và chuyển type input thành text mỗi lần value bằng rỗng
-                $(this).closest('.form-password').find('.btn-show-password').removeClass('hidden active')
-                $(this).attr('type', 'password')
+                $(this).closest('.form-password').find('.btn-show-password').removeClass('hidden')
             } else {
                 $(this).closest('.form-password').find('.btn-show-password').addClass('hidden')
             }

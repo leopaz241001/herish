@@ -51,10 +51,10 @@ textarea:focus {
     .btn-show-password {
         &.active {
             .ic-view {
-                display: none;
+                display: block;
 
                 &-off {
-                    display: block;
+                    display: none;
                 }
             }
         }

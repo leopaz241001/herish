@@ -624,13 +624,13 @@
                         </div>
                         <div class="form-control sm:mt-8 mt-6">
                             <label for="name" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Họ và tên<span class="text-error ml-0.5">*</span></label>
-                            <input id="name" class="input-user-name w-full p-4 rounded-lg bg-neutral-ui" type="text" name="name" placeholder="Họ và tên" required />
+                            <input id="name" class="input-user-name w-full p-4 rounded-lg bg-neutral-ui" type="date" name="name" placeholder="Họ và tên" required />
                         </div>
                         <div class="form-control sm:mt-5 mt-4">
                             <label for="dateInput" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Ngày sinh<span class="text-error ml-0.5">*</span></label>
                             <div class="form-date relative">
                                 <i class="hgi hgi-stroke hgi-calendar-03 absolute top-1/2 -translate-y-1/2 right-4 text-2xl pointer-events-none"></i>
-                                <input id="dateInput" class="datepicker-input input-user-birthday w-full p-4 rounded-lg bg-neutral-ui" type="text" name="dateInput" placeholder="01/01/2000" readonly required />
+                                <input id="dateInput" class="datepicker-input input-user-birthday w-full p-4 rounded-lg bg-neutral-ui" type="text" name="dateInput" placeholder="01/01/2000" required />
                                 <div class="datepicker hidden" id="datepicker">
                                     <div class="datepicker-header">
                                         <div class="month-year">
@@ -704,8 +704,8 @@
                             <label for="currentPassword" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Mật khẩu hiện tại<span class="text-error ml-0.5">*</span></label>
                             <div class="form-password relative">
                                 <button type="button" class="btn-show-password btn-toggle hidden absolute top-1/2 -translate-y-1/2 right-4">
-                                    <i class="ic-view hgi hgi-stroke hgi-view text-[24px] block"></i>
-                                    <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] hidden"></i>
+                                    <i class="ic-view hgi hgi-stroke hgi-view text-[24px] hidden"></i>
+                                    <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] block"></i>
                                     <span class="blind">button show hide password</span>
                                 </button>
                                 <input id="currentPassword" class="w-full p-4 pr-14 rounded-lg bg-neutral-ui" type="password" name="currentPassword" required />
@@ -715,20 +715,19 @@
                             <label for="newPassword" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Mật khẩu mới<span class="text-error ml-0.5">*</span></label>
                             <div class="form-password relative">
                                 <button type="button" class="btn-show-password btn-toggle hidden absolute top-1/2 -translate-y-1/2 right-4">
-                                    <i class="ic-view hgi hgi-stroke hgi-view text-[24px] block"></i>
-                                    <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] hidden"></i>
+                                    <i class="ic-view hgi hgi-stroke hgi-view text-[24px] hidden"></i>
+                                    <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] block"></i>
                                     <span class="blind">button show hide password</span>
                                 </button>
                                 <input id="newPassword" class="w-full p-4 pr-14 rounded-lg bg-neutral-ui" type="password" name="newPassword" required />
                             </div>
-                            <p class="text-body3 mt-2 text-neutral-txt-low">Hãy sử dụng ít nhất 8 ký tự. Trong đó có ít nhất 1 chữ hoa, 1 chữ thường, 1 số và 1 ký tự đặc biệt (Ví dụ: @, #, !...)</p>
                         </div>
                         <div class="form-control sm:mt-5 mt-4">
                             <label for="confirmPassword" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Nhập lại mật khẩu<span class="text-error ml-0.5">*</span></label>
                             <div class="form-password relative">
                                 <button type="button" class="btn-show-password btn-toggle hidden absolute top-1/2 -translate-y-1/2 right-4">
-                                    <i class="ic-view hgi hgi-stroke hgi-view text-[24px] block"></i>
-                                    <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] hidden"></i>
+                                    <i class="ic-view hgi hgi-stroke hgi-view text-[24px] hidden"></i>
+                                    <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] block"></i>
                                     <span class="blind">button show hide password</span>
                                 </button>
                                 <input id="confirmPassword" class="w-full p-4 pr-14 rounded-lg bg-neutral-ui" type="password" name="confirmPassword" required />

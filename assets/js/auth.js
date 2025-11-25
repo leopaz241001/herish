@@ -16,22 +16,24 @@ const register = function () {
   
     if(password !== confirmPassword) {
       $(".form-info .form-control-repass").addClass("error");
-      $(".form-info .btn-control").addClass("disabled");
     } else {
+      $(".form-info .form-control-repass").removeClass("error");
       try {
         const res = await fetch('https://herish.id.vn/api/auth/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ full_name, birth_date, email, phone, age, password }),
-          // credentials: "include", // gửi và nhận cookie
         });
-        const data = await res.json();
         
         if(res.ok) {
-          alert('Đăng ký thành công!');
           window.location.href = 'login.html';
         } else {
-          alert(data.message);
+          if(res.status === 409) {
+            $(".form-info .form-control-email").addClass("error");
+          }
+          if(res.status === 410) {
+            $(".form-info .form-control-phone").addClass("error");
+          }
         }
       } catch (err) {
         console.error(err);
@@ -56,13 +58,11 @@ const login = function () {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ identifier, password }),
-        // credentials: "include", // gửi và nhận cookie
       });
       const data = await res.json();
       localStorage.setItem('access_token', data.data.access_token);
   
       if(res.ok) {
-        alert('Đăng nhập thành công!');
         window.location.href = '/';
       } else {
         formControl.addClass('error');
@@ -83,7 +83,6 @@ const sendEmail = async function () {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
-      // credentials: 'include', // gửi và nhận cookie
     });
     const data = await res.json();
     
@@ -123,7 +122,6 @@ const resetPassword = async function () {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, code, new_password }),
-        // credentials: 'include', // gửi và nhận cookie
       });
       const data = await res.json();
       
@@ -152,21 +150,21 @@ if($('#login').length) {
 if($('#forgot-password').length) {  
   $('#formEmail').on('submit', async (e) => {
     e.preventDefault();
-    $('.btn-control-email').prop('disabled', true)
+    $('.btn-control-email').addClass('disabled').prop('disabled', true);
 
     await sendEmail();
 
     setTimeout(() => {
-      $('.btn-control-email').prop('disabled', false);
+      $('.btn-control-email').removeClass('disabled').prop('disabled', false);
     }, 2000);
   });
 
   $('.btn-resend-code').on('click', async () => {
-    $('.btn-resend-code').prop('disabled', true);
+    $('.btn-resend-code').addClass('disabled').prop('disabled', true);
     await sendEmail();
 
     setTimeout(() => {
-      $('.btn-resend-code').prop('disabled', false);
+      $('.btn-resend-code').removeClass('disabled').prop('disabled', false);
     }, 2000);
   });
 

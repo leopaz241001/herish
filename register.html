@@ -65,21 +65,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-control sm:mt-5 mt-4">
+                        <div class="form-control form-control-phone sm:mt-5 mt-4">
                             <label for="phone" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Số điện thoại<span class="text-error ml-0.5">*</span></label>
                             <input id="phone" class="input-control w-full p-4 rounded-lg bg-neutral-ui" type="tel" name="phone" placeholder="(+84) 123 456 789" required />
-                            <p class="text-control text-body3 mt-2 text-error-txt hidden">Số điện thoại đã được liên kết với tài khoản khác.</p>
+                            <p class="text-control text-body3 mt-2 text-error-txt capitalize hidden">Số điện thoại đã được đăng ký cho tài khoản khác.</p>
                         </div>
-                        <div class="form-control sm:mt-5 mt-4">
+                        <div class="form-control form-control-email sm:mt-5 mt-4">
                             <label for="email" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Email<span class="text-error ml-0.5">*</span></label>
-                            <input id="email" class="w-full p-4 rounded-lg bg-neutral-ui" type="email" name="email" placeholder="abc@gmail.com" required />
+                            <input id="email" class="input-control w-full p-4 rounded-lg bg-neutral-ui" type="email" name="email" placeholder="abc@gmail.com" required />
+                            <p class="text-control text-body3 mt-2 text-error-txt capitalize hidden">Email đã được đăng ký cho tài khoản khác.</p>
                         </div>
                         <div class="form-control sm:mt-5 mt-4">
                             <label for="password" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Mật khẩu<span class="text-error ml-0.5">*</span></label>
                             <div class="form-password relative">
                                 <button type="button" class="btn-show-password btn-toggle hidden absolute top-1/2 -translate-y-1/2 right-4">
-                                    <i class="ic-view hgi hgi-stroke hgi-view text-[24px] block"></i>
-                                    <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] hidden"></i>
+                                    <i class="ic-view hgi hgi-stroke hgi-view text-[24px] hidden"></i>
+                                    <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] block"></i>
                                     <span class="blind">button show hide password</span>
                                 </button>
                                 <input id="password" class="w-full p-4 pr-14 rounded-lg bg-neutral-ui" type="password" name="password" required />
@@ -89,13 +90,13 @@
                             <label for="confirmPassword" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Nhập lại mật khẩu<span class="text-error ml-0.5">*</span></label>
                             <div class="form-password relative">
                                 <button type="button" class="btn-show-password btn-toggle hidden absolute top-1/2 -translate-y-1/2 right-4">
-                                    <i class="ic-view hgi hgi-stroke hgi-view text-[24px] block"></i>
-                                    <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] hidden"></i>
+                                    <i class="ic-view hgi hgi-stroke hgi-view text-[24px] hidden"></i>
+                                    <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] block"></i>
                                     <span class="blind">button show hide password</span>
                                 </button>
                                 <input id="confirmPassword" class="input-control w-full p-4 pr-14 rounded-lg bg-neutral-ui" type="password" name="confirmPassword" required />
                             </div>
-                            <p class="text-control text-body3 mt-2 text-error-txt hidden">Mật khẩu nhập lại không khớp. Vui lòng thử lại.</p>
+                            <p class="text-control text-body3 mt-2 text-error-txt capitalize hidden">Mật khẩu nhập lại không khớp. Vui lòng thử lại.</p>
                         </div>
                         <div class="form-btn sm:mt-12 mt-auto max-sm:pt-4 pb-12">
                             <div class="form-checkbox">
@@ -115,6 +116,10 @@
                                 <label for="noti" class="label pl-7 text-body3 text-neutral-txt-low">Thông báo cho tôi khi có thông tin mới về HERISH qua email.</label>
                             </div>
                             <button type="submit" class="btn-control button-main w-full sm:mt-5 mt-4 disabled">Tiếp tục</button>
+                            <div class="flex items-center justify-center gap-2 sm:my-5 my-4">
+                                <p class="text-body3 text-neutral-txt-low text-center">Bạn đã có tài khoản?</p>
+                                <a href="login.html" class="font-bold text-primary hover:underline">Đăng nhập</a>
+                            </div>
                         </div>
                     </form>
                 </div>

@@ -32,8 +32,8 @@
                             <label for="password" class="block text-body3 text-neutral-txt-low font-semibold mb-2">Mật khẩu<span class="text-error ml-0.5">*</span></label>
                             <div class="form-password relative">
                                 <button type="button" class="btn-show-password btn-toggle hidden absolute top-1/2 -translate-y-1/2 right-4">
-                                    <i class="ic-view hgi hgi-stroke hgi-view text-[24px] block"></i>
-                                    <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] hidden"></i>
+                                    <i class="ic-view hgi hgi-stroke hgi-view text-[24px] hidden"></i>
+                                    <i class="ic-view-off hgi hgi-stroke hgi-view-off text-[24px] block"></i>
                                     <span class="blind">button show hide password</span>
                                 </button>
                                 <input id="password" class="input-control w-full p-4 pr-14 rounded-lg bg-neutral-ui" type="password" name="password" required />
@@ -53,8 +53,10 @@
                         </div>
                         <div class="form-btn sm:mt-12 mt-auto max-sm:pt-4 pb-12">
                             <button type="submit" class="btn-control button-main w-full disabled">Tiếp tục</button>
-                            <p class="text-body3 text-neutral-txt-low text-center sm:my-5 my-4">Bạn chưa có tài khoản?</p>
-                            <a href="register.html" class="button-main bg-primary-ui w-full">Đăng ký tài khoản</a>
+                            <div class="flex items-center justify-center gap-2 sm:my-5 my-4">
+                                <p class="text-body3 text-neutral-txt-low text-center">Bạn chưa có tài khoản?</p>
+                                <a href="register.html" class="font-bold text-primary hover:underline">Đăng ký</a>
+                            </div>
                         </div>
                     </form>
                 </div>
