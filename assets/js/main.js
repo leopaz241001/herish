@@ -637,6 +637,28 @@
         });
     }
 
+    // Scroll reveal
+    const handleFavWithBrowser = function () {
+        const favicon = document.querySelector("link[rel='shortcut icon']");
+        const darkMode = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const updateFavicon = () => {
+            if (darkMode.matches) {
+                // Dark mode
+                favicon.href = "./assets/images/fav-white.png";
+            } else {
+                // Light mode
+                favicon.href = "./assets/images/fav.png";
+            }
+        };
+
+        // Lần đầu chạy
+        updateFavicon();
+
+        // Khi user đổi theme hệ thống → favicon tự đổi theo
+        darkMode.addEventListener("change", updateFavicon);
+    }
+
     $(win).scroll(function () {
         handleReveal()
     }).scroll();
@@ -656,6 +678,7 @@
         handleToastify()
         handleBackToTop()
         handleContentHide()
+        handleFavWithBrowser()
         $('#page-loader').fadeOut(500)
     });
 })(window, window.jQuery);
